@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "lastUpdated": "2026-04-30",
+    "currency": "USD",
+    "note": "Sample/prototype data. Replace with real monthly finance data."
+  },
+  "months": ["2025-05","2025-06","2025-07","2025-08","2025-09","2025-10","2025-11","2025-12","2026-01","2026-02","2026-03","2026-04"],
+  "apps": [
+    { "name": "AWS",                 "category": "Cloud Infrastructure", "classification": "COGS",     "spend": [42100, 43200, 44850, 46300, 47100, 48200, 49500, 51200, 53800, 55400, 57200, 61500] },
+    { "name": "Snowflake",           "category": "Data Warehouse",       "classification": "COGS",     "spend": [18500, 19200, 19800, 21000, 22300, 23100, 24500, 25800, 26200, 27100, 28400, 31200] },
+    { "name": "Datadog",             "category": "Observability",        "classification": "COGS",     "spend": [ 8200,  8400,  8600,  8900,  9100,  9400,  9800, 10200, 10500, 10800, 11200, 11800] },
+    { "name": "Twilio",              "category": "Communications",       "classification": "COGS",     "spend": [ 6100,  6300,  6500,  6800,  7000,  7200,  7500,  7800,  8100,  8400,  8600,  9100] },
+    { "name": "SendGrid",            "category": "Communications",       "classification": "COGS",     "spend": [ 2400,  2450,  2500,  2550,  2600,  2650,  2700,  2750,  2800,  2850,  2900,  2950] },
+    { "name": "Stripe",              "category": "Payments",             "classification": "COGS",     "spend": [ 4200,  4350,  4500,  4700,  4900,  5100,  5300,  5500,  5700,  5900,  6100,  6400] },
+    { "name": "MongoDB Atlas",       "category": "Database",             "classification": "COGS",     "spend": [ 5800,  5950,  6100,  6300,  6500,  6700,  6900,  7100,  7300,  7500,  7700,  8000] },
+    { "name": "Cloudflare",          "category": "Cloud Infrastructure", "classification": "COGS",     "spend": [ 3200,  3250,  3300,  3350,  3400,  3450,  3500,  3550,  3600,  3650,  3700,  3800] },
+    { "name": "Salesforce",          "category": "CRM",                  "classification": "Non-COGS", "spend": [15400, 15400, 15400, 15400, 16800, 16800, 16800, 16800, 16800, 18200, 18200, 18200] },
+    { "name": "HubSpot",             "category": "Marketing",            "classification": "Non-COGS", "spend": [ 7800,  7800,  7800,  8400,  8400,  8400,  8400,  9200,  9200,  9200,  9200,  9800] },
+    { "name": "Slack",               "category": "Collaboration",        "classification": "Non-COGS", "spend": [ 5200,  5200,  5400,  5400,  5400,  5600,  5600,  5600,  5800,  5800,  5800,  6000] },
+    { "name": "Zoom",                "category": "Collaboration",        "classification": "Non-COGS", "spend": [ 3400,  3400,  3400,  3400,  3400,  3400,  3400,  3400,  3400,  3400,  3400,  3400] },
+    { "name": "Google Workspace",    "category": "Productivity",         "classification": "Non-COGS", "spend": [ 6200,  6200,  6300,  6300,  6300,  6400,  6400,  6400,  6500,  6500,  6500,  6600] },
+    { "name": "Atlassian (Jira)",    "category": "Engineering Tools",    "classification": "Non-COGS", "spend": [ 4100,  4100,  4100,  4300,  4300,  4300,  4300,  4500,  4500,  4500,  4500,  4700] },
+    { "name": "GitHub",              "category": "Engineering Tools",    "classification": "Non-COGS", "spend": [ 3800,  3800,  3900,  3900,  3900,  4000,  4000,  4000,  4100,  4100,  4100,  4200] },
+    { "name": "Notion",              "category": "Productivity",         "classification": "Non-COGS", "spend": [ 1200,  1200,  1200,  1200,  1400,  1400,  1400,  1400,  1400,  1400,  1400,  1600] },
+    { "name": "Figma",               "category": "Design",               "classification": "Non-COGS", "spend": [ 2100,  2100,  2100,  2100,  2300,  2300,  2300,  2300,  2300,  2300,  2300,  2500] },
+    { "name": "Okta",                "category": "Security",             "classification": "Non-COGS", "spend": [ 4800,  4800,  4800,  4800,  4800,  5200,  5200,  5200,  5200,  5200,  5200,  5600] },
+    { "name": "1Password",           "category": "Security",             "classification": "Non-COGS", "spend": [  900,   900,   900,   900,   900,   950,   950,   950,   950,   950,   950,  1000] },
+    { "name": "CrowdStrike",         "category": "Security",             "classification": "Non-COGS", "spend": [ 6400,  6400,  6400,  6400,  6400,  6400,  6400,  7200,  7200,  7200,  7200,  7200] },
+    { "name": "Workday",             "category": "HR / Finance",         "classification": "Non-COGS", "spend": [ 8200,  8200,  8200,  8200,  8200,  8200,  8200,  8200,  8800,  8800,  8800,  8800] },
+    { "name": "NetSuite",            "category": "HR / Finance",         "classification": "Non-COGS", "spend": [ 9100,  9100,  9100,  9100,  9100,  9100,  9100,  9100,  9700,  9700,  9700,  9700] },
+    { "name": "DocuSign",            "category": "Legal / Ops",          "classification": "Non-COGS", "spend": [ 1800,  1800,  1800,  1800,  1800,  1800,  1800,  1800,  1800,  1800,  1800,  1800] },
+    { "name": "Linear",              "category": "Engineering Tools",    "classification": "Non-COGS", "spend": [    0,     0,   600,   600,   600,   800,   800,   800,   900,   900,   900,  1100] },
+    { "name": "Vercel",              "category": "Cloud Infrastructure", "classification": "COGS",     "spend": [ 1400,  1450,  1500,  1600,  1700,  1800,  1900,  2000,  2100,  2200,  2300,  2500] },
+    { "name": "OpenAI API",          "category": "AI / ML",              "classification": "COGS",     "spend": [  800,  1200,  1800,  2400,  3100,  3900,  4800,  5800,  7200,  8800, 10500, 13200] },
+    { "name": "Anthropic API",       "category": "AI / ML",              "classification": "COGS",     "spend": [    0,     0,     0,   500,  1100,  1800,  2600,  3500,  4800,  6200,  7800,  9500] },
+    { "name": "Pinecone",            "category": "AI / ML",              "classification": "COGS",     "spend": [    0,   400,   600,   800,  1000,  1200,  1400,  1600,  1800,  2000,  2200,  2400] },
+    { "name": "Asana",               "category": "Collaboration",        "classification": "Non-COGS", "spend": [ 2200,  2200,  2200,  2200,     0,     0,     0,     0,     0,     0,     0,     0] },
+    { "name": "Mixpanel",            "category": "Analytics",            "classification": "Non-COGS", "spend": [ 1800,  1800,  1800,  1800,  1800,     0,     0,     0,     0,     0,     0,     0] }
+  ]
+}
