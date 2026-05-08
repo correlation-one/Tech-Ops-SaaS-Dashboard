@@ -65,11 +65,47 @@ Snowflake, Data Warehouse, COGS, 31200
       "name": "AWS",
       "category": "Cloud Infrastructure",
       "classification": "COGS",          // or "Non-COGS"
-      "spend": [42100, 43200, ...]        // one value per month, in same order
+      "department": "Engineering",        // for Spend by Department widget
+      "renewalDate": "2026-12-15",        // or null; feeds Renewal Radar + color-coded pills
+      "journaled": true,                  // boolean tag for filtering
+      "spend":     [42100, 43200, ...],   // actual spend per month
+      "projected": [43500, 38300, ...]    // projected/budgeted spend per month
     }
   ]
 }
 ```
+
+### Field details
+
+- **`department`** (string): used by the Spend-by-Department widget and the department filter. Free-form — any value you use becomes a filter option automatically.
+- **`renewalDate`** (string `YYYY-MM-DD` or `null`): the contract renewal date. Drives:
+  - The colored **Renewal pill** in the All Apps table (green > 90d, yellow 31–90d, red ≤ 30d, grey if expired).
+  - The **Renewal Radar** widget, which auto-populates with all apps renewing in the next 90 days or expired in the last 60.
+  - Set to `null` for usage-based / no-fixed-renewal contracts.
+- **`journaled`** (boolean): flags apps that are journaled / tracked separately for accounting. Adds a "Journaled" badge throughout the UI and enables the Journaled filter.
+- **`projected`** (array of numbers): one budget/forecast value per month, in the same order as `months`. Used by Actual vs. Projected widgets. If you don't have projections yet, fill with `0` or copy actuals.
+
+## Widgets
+
+- **KPI tiles**: total spend, COGS, Non-COGS, active app count, with MoM deltas.
+- **Total Spend Trend**: stacked area of COGS vs Non-COGS over time.
+- **Top Apps by Spend**: ranked horizontal bars for the selected month.
+- **Spend by Category**: doughnut chart for the selected month.
+- **MoM Increases / Decreases**: tables of biggest movers.
+- **Actual vs. Projected — Trend**: overlay line chart, actual vs budget across all months.
+- **Spend by Department**: horizontal bars by department for the selected month.
+- **Outliers & Anomalies**: apps deviating ±25% from their trailing 3-month average, plus newly added or discontinued apps.
+- **Renewal Radar**: upcoming renewals (next 90 days) and recently expired contracts, color-coded.
+- **Actual vs. Projected — By App**: per-app variance table.
+- **All Apps**: full table with department, classification, renewal status, spend, share, MoM delta, and Journaled tags.
+
+## Filters
+
+- **View Month** — pick any month to refocus all widgets.
+- **Classification** — All / COGS / Non-COGS.
+- **Top N apps** — 5 / 10 / 15 / All.
+- **Department** — auto-populated from your data.
+- **Journaled** — All / Journaled only / Not journaled.
 
 ## Customizing
 

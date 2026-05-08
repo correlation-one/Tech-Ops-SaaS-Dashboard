@@ -139,6 +139,64 @@
     font-size: 12px;
     border-top: 1px solid var(--border);
   }
+  /* New widget styles */
+  .renewal-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  .renewal-pill.green { background: rgba(109, 211, 168, 0.15); color: var(--accent-2); }
+  .renewal-pill.yellow { background: rgba(245, 165, 36, 0.15); color: var(--warn); }
+  .renewal-pill.red { background: rgba(245, 101, 101, 0.18); color: var(--danger); }
+  .renewal-pill.expired { background: rgba(138, 148, 166, 0.15); color: var(--text-dim); }
+  .renewal-pill.none { background: transparent; color: var(--text-dim); font-style: italic; }
+  .journaled-tag {
+    display: inline-block;
+    padding: 1px 6px;
+    margin-left: 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 600;
+    background: rgba(167, 139, 250, 0.18);
+    color: #c4b5fd;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  .anomaly-badge {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  .anomaly-badge.spike { background: rgba(245, 101, 101, 0.18); color: var(--danger); }
+  .anomaly-badge.drop { background: rgba(109, 211, 168, 0.15); color: var(--accent-2); }
+  .anomaly-badge.new { background: rgba(245, 165, 36, 0.15); color: var(--warn); }
+  .renewal-radar-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    gap: 12px;
+  }
+  .renewal-radar-row:last-child { border-bottom: none; }
+  .renewal-radar-row .name { flex: 1; font-weight: 500; }
+  .renewal-radar-row .meta-line { color: var(--text-dim); font-size: 12px; margin-top: 2px; }
+  .empty-state {
+    color: var(--text-dim);
+    text-align: center;
+    padding: 24px;
+    font-style: italic;
+  }
+  .variance.over { color: var(--danger); }
+  .variance.under { color: var(--accent-2); }
+  .variance.flat { color: var(--text-dim); }
 </style>
 </head>
 <body>
@@ -170,6 +228,20 @@
       <option value="10" selected>Top 10</option>
       <option value="15">Top 15</option>
       <option value="999">All</option>
+    </select>
+  </div>
+  <div>
+    <label>Department</label><br/>
+    <select id="deptSelect">
+      <option value="all">All</option>
+    </select>
+  </div>
+  <div>
+    <label>Journaled</label><br/>
+    <select id="journaledSelect">
+      <option value="all">All</option>
+      <option value="yes">Journaled only</option>
+      <option value="no">Not journaled</option>
     </select>
   </div>
 </div>
@@ -231,14 +303,61 @@
     </table>
   </div>
 
+  <div class="card chart-half">
+    <h3>Actual vs. Projected — Trend</h3>
+    <div class="chart-container"><canvas id="actualVsProjChart"></canvas></div>
+  </div>
+
+  <div class="card chart-half">
+    <h3>Spend by Department (Selected Month)</h3>
+    <div class="chart-container"><canvas id="deptChart"></canvas></div>
+  </div>
+
+  <div class="card chart-half">
+    <h3>Outliers & Anomalies (Selected Month)</h3>
+    <div style="font-size:12px;color:var(--text-dim);margin-bottom:8px">
+      Apps where current spend deviates &gt;25% from their trailing 3-month average, or appeared/disappeared.
+    </div>
+    <table>
+      <thead>
+        <tr><th>App</th><th>Type</th><th class="num">3-mo Avg</th><th class="num">Current</th><th class="num">Δ %</th></tr>
+      </thead>
+      <tbody id="anomalyTable"></tbody>
+    </table>
+  </div>
+
+  <div class="card chart-half">
+    <h3>Renewal Radar (Next 90 days &amp; recently expired)</h3>
+    <div id="renewalRadar"></div>
+  </div>
+
+  <div class="card chart-wide">
+    <h3>Actual vs. Projected — By App (Selected Month)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>App</th>
+          <th>Department</th>
+          <th class="num">Projected</th>
+          <th class="num">Actual</th>
+          <th class="num">Variance $</th>
+          <th class="num">Variance %</th>
+        </tr>
+      </thead>
+      <tbody id="varianceTable"></tbody>
+    </table>
+  </div>
+
   <div class="card chart-wide">
     <h3>All Apps — Selected Month</h3>
     <table>
       <thead>
         <tr>
           <th>App</th>
+          <th>Department</th>
           <th>Category</th>
           <th>Classification</th>
+          <th>Renewal</th>
           <th class="num">Spend</th>
           <th class="num">% of Total</th>
           <th class="num">vs. Prev Month</th>
@@ -278,7 +397,17 @@ async function load() {
   });
   sel.value = DATA.months.length - 1;
 
-  ["monthSelect", "classSelect", "topNSelect"].forEach(id =>
+  // Populate department dropdown
+  const depts = [...new Set(DATA.apps.map(a => a.department).filter(Boolean))].sort();
+  const deptSel = document.getElementById("deptSelect");
+  depts.forEach(d => {
+    const opt = document.createElement("option");
+    opt.value = d;
+    opt.textContent = d;
+    deptSel.appendChild(opt);
+  });
+
+  ["monthSelect", "classSelect", "topNSelect", "deptSelect", "journaledSelect"].forEach(id =>
     document.getElementById(id).addEventListener("change", render)
   );
   render();
@@ -286,7 +415,15 @@ async function load() {
 
 function filteredApps() {
   const cls = document.getElementById("classSelect").value;
-  return cls === "all" ? DATA.apps : DATA.apps.filter(a => a.classification === cls);
+  const dept = document.getElementById("deptSelect").value;
+  const journaled = document.getElementById("journaledSelect").value;
+  return DATA.apps.filter(a => {
+    if (cls !== "all" && a.classification !== cls) return false;
+    if (dept !== "all" && a.department !== dept) return false;
+    if (journaled === "yes" && !a.journaled) return false;
+    if (journaled === "no" && a.journaled) return false;
+    return true;
+  });
 }
 
 function render() {
@@ -367,7 +504,72 @@ function render() {
   renderMoverTable("topIncreases", increases, "up");
   renderMoverTable("topDecreases", decreases, "down");
 
-  // Full table
+  // === NEW: Actual vs Projected trend chart ===
+  const projTotalsByMonth = DATA.months.map((_, i) => apps.reduce((s, a) => s + (a.projected ? a.projected[i] : 0), 0));
+  drawChart("actualVsProjChart", "line", {
+    labels: DATA.months.map(monthLabel),
+    datasets: [
+      { label: "Actual", data: totalsByMonth, borderColor: "#4f8cff", backgroundColor: "rgba(79,140,255,0.15)", fill: true, tension: 0.3, borderWidth: 2 },
+      { label: "Projected", data: projTotalsByMonth, borderColor: "#f5a524", borderDash: [6, 4], fill: false, tension: 0.3, borderWidth: 2, pointRadius: 2 }
+    ]
+  }, lineOpts());
+
+  // === NEW: Spend by Department ===
+  const deptTotals = {};
+  apps.forEach(a => {
+    const dep = a.department || "Other";
+    deptTotals[dep] = (deptTotals[dep] || 0) + a.spend[idx];
+  });
+  const deptEntries = Object.entries(deptTotals).filter(([, v]) => v > 0).sort((a, b) => b[1] - a[1]);
+  drawChart("deptChart", "bar", {
+    labels: deptEntries.map(d => d[0]),
+    datasets: [{
+      label: "Spend",
+      data: deptEntries.map(d => d[1]),
+      backgroundColor: "#a78bfa",
+      borderRadius: 4
+    }]
+  }, barOpts(true));
+
+  // === NEW: Outliers / Anomalies ===
+  const anomalies = [];
+  apps.forEach(a => {
+    const cur = a.spend[idx];
+    // Trailing 3-month avg (excluding current)
+    const window = [];
+    for (let i = Math.max(0, idx - 3); i < idx; i++) window.push(a.spend[i]);
+    const avg = window.length ? window.reduce((s, v) => s + v, 0) / window.length : 0;
+
+    // New app: had 0 in trailing window, now has spend
+    if (avg === 0 && cur > 0) {
+      anomalies.push({ ...a, type: "NEW", avg, cur, pctDelta: Infinity, sortKey: cur });
+      return;
+    }
+    // Discontinued: had spend, now 0
+    if (avg > 0 && cur === 0) {
+      anomalies.push({ ...a, type: "DROP", avg, cur, pctDelta: -100, sortKey: avg });
+      return;
+    }
+    // Threshold: ±25% from trailing avg AND absolute change > $500 (avoid noise)
+    if (avg > 0) {
+      const pct = ((cur - avg) / avg) * 100;
+      if (Math.abs(pct) >= 25 && Math.abs(cur - avg) >= 500) {
+        anomalies.push({
+          ...a, type: pct > 0 ? "SPIKE" : "DROP", avg, cur, pctDelta: pct, sortKey: Math.abs(cur - avg)
+        });
+      }
+    }
+  });
+  anomalies.sort((a, b) => b.sortKey - a.sortKey);
+  renderAnomalyTable(anomalies);
+
+  // === NEW: Renewal Radar ===
+  renderRenewalRadar(apps);
+
+  // === NEW: Variance table ===
+  renderVarianceTable(apps, idx);
+
+  // === Full app table (enhanced) ===
   const tbody = document.getElementById("appTable");
   tbody.innerHTML = "";
   ranked.forEach(a => {
@@ -377,9 +579,11 @@ function render() {
     const share = (a.current / total * 100).toFixed(1);
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td>${a.name}</td>
+      <td>${a.name}${a.journaled ? '<span class="journaled-tag" title="Journaled">Journaled</span>' : ''}</td>
+      <td>${a.department || "—"}</td>
       <td>${a.category}</td>
       <td><span class="pill ${a.classification === "COGS" ? "cogs" : "noncogs"}">${a.classification}</span></td>
+      <td>${renewalPill(a.renewalDate)}</td>
       <td class="num">${fmt(a.current)}</td>
       <td class="num">${share}%</td>
       <td class="num ${delta > 0 ? "change up" : delta < 0 ? "change down" : ""}">${
@@ -387,6 +591,103 @@ function render() {
       }</td>
     `;
     tbody.appendChild(tr);
+  });
+}
+
+// ===== Renewal helpers =====
+function daysUntil(dateStr) {
+  if (!dateStr) return null;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const d = new Date(dateStr);
+  return Math.round((d - today) / (1000 * 60 * 60 * 24));
+}
+function renewalPill(dateStr) {
+  if (!dateStr) return '<span class="renewal-pill none">—</span>';
+  const days = daysUntil(dateStr);
+  let cls, label;
+  if (days < 0) { cls = "expired"; label = `Expired ${Math.abs(days)}d ago`; }
+  else if (days <= 30) { cls = "red"; label = `${days}d (${dateStr})`; }
+  else if (days <= 90) { cls = "yellow"; label = `${days}d (${dateStr})`; }
+  else { cls = "green"; label = `${days}d (${dateStr})`; }
+  return `<span class="renewal-pill ${cls}" title="${dateStr}">${label}</span>`;
+}
+
+function renderAnomalyTable(rows) {
+  const el = document.getElementById("anomalyTable");
+  el.innerHTML = "";
+  if (!rows.length) {
+    el.innerHTML = `<tr><td colspan="5" class="empty-state">No anomalies detected for this month</td></tr>`;
+    return;
+  }
+  rows.slice(0, 10).forEach(r => {
+    const badgeCls = r.type === "SPIKE" ? "spike" : r.type === "NEW" ? "new" : "drop";
+    const pctTxt = !isFinite(r.pctDelta) ? "NEW" : (r.pctDelta >= 0 ? "+" : "") + r.pctDelta.toFixed(0) + "%";
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${r.name}${r.journaled ? '<span class="journaled-tag">Journaled</span>' : ''}</td>
+      <td><span class="anomaly-badge ${badgeCls}">${r.type}</span></td>
+      <td class="num">${fmt(r.avg)}</td>
+      <td class="num">${fmt(r.cur)}</td>
+      <td class="num">${pctTxt}</td>
+    `;
+    el.appendChild(tr);
+  });
+}
+
+function renderRenewalRadar(apps) {
+  const el = document.getElementById("renewalRadar");
+  el.innerHTML = "";
+  // Apps with renewal dates: upcoming within 90 days OR expired within last 60 days
+  const flagged = apps
+    .filter(a => a.renewalDate)
+    .map(a => ({ ...a, days: daysUntil(a.renewalDate) }))
+    .filter(a => a.days <= 90 && a.days >= -60)
+    .sort((a, b) => a.days - b.days);
+  if (!flagged.length) {
+    el.innerHTML = `<div class="empty-state">No renewals in the next 90 days</div>`;
+    return;
+  }
+  flagged.forEach(a => {
+    const row = document.createElement("div");
+    row.className = "renewal-radar-row";
+    row.innerHTML = `
+      <div>
+        <div class="name">${a.name}${a.journaled ? '<span class="journaled-tag">Journaled</span>' : ''}</div>
+        <div class="meta-line">${a.department || "—"} · <span class="pill ${a.classification === "COGS" ? "cogs" : "noncogs"}">${a.classification}</span></div>
+      </div>
+      <div>${renewalPill(a.renewalDate)}</div>
+    `;
+    el.appendChild(row);
+  });
+}
+
+function renderVarianceTable(apps, idx) {
+  const el = document.getElementById("varianceTable");
+  el.innerHTML = "";
+  const rows = apps
+    .map(a => {
+      const actual = a.spend[idx];
+      const projected = a.projected ? a.projected[idx] : 0;
+      const variance = actual - projected;
+      const pct = projected === 0 ? (actual > 0 ? Infinity : 0) : (variance / projected) * 100;
+      return { ...a, actual, projected, variance, pct };
+    })
+    .filter(r => r.actual > 0 || r.projected > 0)
+    .sort((a, b) => Math.abs(b.variance) - Math.abs(a.variance));
+  rows.forEach(r => {
+    const cls = r.variance > 0 ? "over" : r.variance < 0 ? "under" : "flat";
+    const pctTxt = !isFinite(r.pct) ? "—" : (r.pct >= 0 ? "+" : "") + r.pct.toFixed(1) + "%";
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${r.name}${r.journaled ? '<span class="journaled-tag">Journaled</span>' : ''}</td>
+      <td>${r.department || "—"}</td>
+      <td class="num">${fmt(r.projected)}</td>
+      <td class="num">${fmt(r.actual)}</td>
+      <td class="num variance ${cls}">${(r.variance >= 0 ? "+" : "") + fmt(r.variance)}</td>
+      <td class="num variance ${cls}">${pctTxt}</td>
+    `;
+    el.appendChild(tr);
   });
 }
 
