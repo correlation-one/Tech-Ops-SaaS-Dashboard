@@ -103,11 +103,13 @@
     border-collapse: collapse;
     margin-top: 12px;
     font-size: 13px;
+    table-layout: auto;
   }
   th, td {
     padding: 10px 12px;
     text-align: left;
     border-bottom: 1px solid var(--border);
+    vertical-align: middle;
   }
   th {
     color: var(--text-dim);
@@ -115,8 +117,13 @@
     text-transform: uppercase;
     font-size: 11px;
     letter-spacing: 0.5px;
+    white-space: nowrap;
   }
-  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  th.num, td.num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
   .pill {
     display: inline-block;
     padding: 2px 8px;
@@ -139,49 +146,68 @@
     font-size: 12px;
     border-top: 1px solid var(--border);
   }
-  /* New widget styles */
+  /* New widget styles - visually prominent */
   .renewal-pill {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
     font-variant-numeric: tabular-nums;
+    border: 1px solid transparent;
   }
-  .renewal-pill.green { background: rgba(109, 211, 168, 0.15); color: var(--accent-2); }
-  .renewal-pill.yellow { background: rgba(245, 165, 36, 0.15); color: var(--warn); }
-  .renewal-pill.red { background: rgba(245, 101, 101, 0.18); color: var(--danger); }
-  .renewal-pill.expired { background: rgba(138, 148, 166, 0.15); color: var(--text-dim); }
-  .renewal-pill.none { background: transparent; color: var(--text-dim); font-style: italic; }
+  .renewal-pill::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+  .renewal-pill.green   { background: rgba(109, 211, 168, 0.18); color: var(--accent-2); border-color: rgba(109, 211, 168, 0.4); }
+  .renewal-pill.yellow  { background: rgba(245, 165, 36, 0.20);  color: var(--warn);     border-color: rgba(245, 165, 36, 0.5); }
+  .renewal-pill.red     { background: rgba(245, 101, 101, 0.22); color: var(--danger);   border-color: rgba(245, 101, 101, 0.5); animation: pulse 2s ease-in-out infinite; }
+  .renewal-pill.expired { background: rgba(138, 148, 166, 0.18); color: var(--text-dim); border-color: rgba(138, 148, 166, 0.3); }
+  .renewal-pill.none    { background: transparent; color: var(--text-dim); font-style: italic; font-weight: 400; border: none; }
+  .renewal-pill.none::before { display: none; }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(245, 101, 101, 0.4); }
+    50%      { box-shadow: 0 0 0 4px rgba(245, 101, 101, 0); }
+  }
   .journaled-tag {
     display: inline-block;
-    padding: 1px 6px;
-    margin-left: 6px;
-    border-radius: 3px;
+    padding: 2px 7px;
+    margin-left: 8px;
+    border-radius: 4px;
     font-size: 10px;
-    font-weight: 600;
-    background: rgba(167, 139, 250, 0.18);
-    color: #c4b5fd;
+    font-weight: 700;
+    background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+    color: #fff;
     text-transform: uppercase;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.6px;
+    vertical-align: middle;
+    box-shadow: 0 1px 2px rgba(139, 92, 246, 0.4);
   }
   .anomaly-badge {
     display: inline-block;
-    padding: 1px 6px;
-    border-radius: 3px;
+    padding: 3px 8px;
+    border-radius: 4px;
     font-size: 10px;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.5px;
+    border: 1px solid transparent;
   }
-  .anomaly-badge.spike { background: rgba(245, 101, 101, 0.18); color: var(--danger); }
-  .anomaly-badge.drop { background: rgba(109, 211, 168, 0.15); color: var(--accent-2); }
-  .anomaly-badge.new { background: rgba(245, 165, 36, 0.15); color: var(--warn); }
+  .anomaly-badge.spike { background: rgba(245, 101, 101, 0.22); color: var(--danger);   border-color: rgba(245, 101, 101, 0.4); }
+  .anomaly-badge.drop  { background: rgba(109, 211, 168, 0.18); color: var(--accent-2); border-color: rgba(109, 211, 168, 0.4); }
+  .anomaly-badge.new   { background: rgba(245, 165, 36, 0.22);  color: var(--warn);     border-color: rgba(245, 165, 36, 0.4); }
   .renewal-radar-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 0;
+    padding: 10px 0;
     border-bottom: 1px solid var(--border);
     gap: 12px;
   }
@@ -194,9 +220,91 @@
     padding: 24px;
     font-style: italic;
   }
-  .variance.over { color: var(--danger); }
+  .variance.over  { color: var(--danger); }
   .variance.under { color: var(--accent-2); }
-  .variance.flat { color: var(--text-dim); }
+  .variance.flat  { color: var(--text-dim); }
+
+  /* Renewal Calendar */
+  .calendar-legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .calendar-legend .lg-item { display: flex; align-items: center; gap: 6px; }
+  .calendar-legend .lg-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+  }
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .calendar-month {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px;
+    background: var(--panel-2);
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+  }
+  .calendar-month.current {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+  .calendar-month-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .calendar-month-count {
+    font-size: 10px;
+    background: var(--panel);
+    border-radius: 10px;
+    padding: 1px 7px;
+    color: var(--text);
+  }
+  .calendar-event {
+    font-size: 11px;
+    padding: 3px 6px;
+    margin-bottom: 3px;
+    border-radius: 3px;
+    border-left: 3px solid;
+    background: var(--panel);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: default;
+  }
+  .calendar-event.green   { border-left-color: var(--accent-2); }
+  .calendar-event.yellow  { border-left-color: var(--warn); }
+  .calendar-event.red     { border-left-color: var(--danger); }
+  .calendar-event.expired { border-left-color: var(--text-dim); opacity: 0.6; }
+  .calendar-event-day {
+    color: var(--text-dim);
+    font-variant-numeric: tabular-nums;
+    margin-right: 4px;
+  }
+  .calendar-empty {
+    color: var(--text-dim);
+    font-size: 11px;
+    font-style: italic;
+    text-align: center;
+    padding: 8px 0;
+  }
+  @media (max-width: 1100px) {
+    .calendar-grid { grid-template-columns: repeat(3, 1fr); }
+  }
 </style>
 </head>
 <body>
@@ -329,6 +437,17 @@
   <div class="card chart-half">
     <h3>Renewal Radar (Next 90 days &amp; recently expired)</h3>
     <div id="renewalRadar"></div>
+  </div>
+
+  <div class="card chart-wide">
+    <h3>📅 Renewal Calendar — Next 6 Months</h3>
+    <div class="calendar-legend">
+      <div class="lg-item"><span class="lg-dot" style="background:var(--accent-2)"></span>&gt; 90 days away</div>
+      <div class="lg-item"><span class="lg-dot" style="background:var(--warn)"></span>31–90 days</div>
+      <div class="lg-item"><span class="lg-dot" style="background:var(--danger)"></span>≤ 30 days</div>
+      <div class="lg-item"><span class="lg-dot" style="background:var(--text-dim)"></span>Expired</div>
+    </div>
+    <div class="calendar-grid" id="renewalCalendar"></div>
   </div>
 
   <div class="card chart-wide">
@@ -566,6 +685,9 @@ function render() {
   // === NEW: Renewal Radar ===
   renderRenewalRadar(apps);
 
+  // === NEW: Renewal Calendar ===
+  renderRenewalCalendar(apps);
+
   // === NEW: Variance table ===
   renderVarianceTable(apps, idx);
 
@@ -659,6 +781,71 @@ function renderRenewalRadar(apps) {
       <div>${renewalPill(a.renewalDate)}</div>
     `;
     el.appendChild(row);
+  });
+}
+
+function renderRenewalCalendar(apps) {
+  const el = document.getElementById("renewalCalendar");
+  el.innerHTML = "";
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  // Build 6 month buckets: previous month, current, next 4 months
+  const buckets = [];
+  for (let offset = -1; offset <= 4; offset++) {
+    const d = new Date(today.getFullYear(), today.getMonth() + offset, 1);
+    buckets.push({
+      year: d.getFullYear(),
+      month: d.getMonth(),
+      label: d.toLocaleString("en", { month: "short", year: "numeric" }),
+      isCurrent: offset === 0,
+      events: []
+    });
+  }
+
+  // Place each app's renewal into the matching bucket
+  apps.filter(a => a.renewalDate).forEach(a => {
+    const d = new Date(a.renewalDate);
+    const bucket = buckets.find(b => b.year === d.getFullYear() && b.month === d.getMonth());
+    if (bucket) {
+      const days = daysUntil(a.renewalDate);
+      let cls;
+      if (days < 0) cls = "expired";
+      else if (days <= 30) cls = "red";
+      else if (days <= 90) cls = "yellow";
+      else cls = "green";
+      bucket.events.push({
+        name: a.name,
+        day: d.getDate(),
+        cls,
+        date: a.renewalDate,
+        journaled: a.journaled,
+        classification: a.classification,
+        department: a.department
+      });
+    }
+  });
+
+  // Render each bucket
+  buckets.forEach(b => {
+    b.events.sort((x, y) => x.day - y.day);
+    const monthEl = document.createElement("div");
+    monthEl.className = "calendar-month" + (b.isCurrent ? " current" : "");
+    const eventsHtml = b.events.length
+      ? b.events.map(ev => `
+          <div class="calendar-event ${ev.cls}" title="${ev.name} — ${ev.date}${ev.department ? ' · ' + ev.department : ''}${ev.journaled ? ' · Journaled' : ''}">
+            <span class="calendar-event-day">${String(ev.day).padStart(2,'0')}</span>${ev.name}
+          </div>
+        `).join("")
+      : `<div class="calendar-empty">No renewals</div>`;
+    monthEl.innerHTML = `
+      <div class="calendar-month-label">
+        <span>${b.label}${b.isCurrent ? ' · NOW' : ''}</span>
+        ${b.events.length ? `<span class="calendar-month-count">${b.events.length}</span>` : ''}
+      </div>
+      ${eventsHtml}
+    `;
+    el.appendChild(monthEl);
   });
 }
 

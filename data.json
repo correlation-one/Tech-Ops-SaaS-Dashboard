@@ -362,7 +362,7 @@
         9800
       ],
       "department": "Marketing",
-      "renewalDate": "2026-07-01",
+      "renewalDate": "2026-07-08",
       "journaled": false,
       "projected": [
         7700,
@@ -398,7 +398,7 @@
         6000
       ],
       "department": "Operations",
-      "renewalDate": "2026-10-01",
+      "renewalDate": "2026-09-01",
       "journaled": false,
       "projected": [
         5550,
@@ -470,7 +470,7 @@
         6600
       ],
       "department": "Operations",
-      "renewalDate": "2027-02-28",
+      "renewalDate": "2026-08-28",
       "journaled": false,
       "projected": [
         6100,
@@ -506,7 +506,7 @@
         4700
       ],
       "department": "Engineering",
-      "renewalDate": "2026-08-20",
+      "renewalDate": "2026-07-22",
       "journaled": false,
       "projected": [
         3950,
@@ -542,7 +542,7 @@
         4200
       ],
       "department": "Engineering",
-      "renewalDate": "2026-09-01",
+      "renewalDate": "2026-09-30",
       "journaled": false,
       "projected": [
         3550,
@@ -614,7 +614,7 @@
         2500
       ],
       "department": "Design",
-      "renewalDate": "2026-05-08",
+      "renewalDate": "2026-05-12",
       "journaled": false,
       "projected": [
         1950,
@@ -650,7 +650,7 @@
         5600
       ],
       "department": "Security",
-      "renewalDate": "2026-11-15",
+      "renewalDate": "2026-06-30",
       "journaled": false,
       "projected": [
         4800,
@@ -758,7 +758,7 @@
         8800
       ],
       "department": "People & Finance",
-      "renewalDate": "2027-03-15",
+      "renewalDate": "2026-08-15",
       "journaled": true,
       "projected": [
         8050,
@@ -794,7 +794,7 @@
         9700
       ],
       "department": "People & Finance",
-      "renewalDate": "2027-04-01",
+      "renewalDate": "2026-09-20",
       "journaled": true,
       "projected": [
         8150,
@@ -866,7 +866,7 @@
         1100
       ],
       "department": "Engineering",
-      "renewalDate": "2026-10-15",
+      "renewalDate": "2026-08-08",
       "journaled": false,
       "projected": [
         0,
@@ -902,7 +902,7 @@
         2500
       ],
       "department": "Engineering",
-      "renewalDate": "2026-08-08",
+      "renewalDate": "2026-06-10",
       "journaled": false,
       "projected": [
         1500,
@@ -1010,7 +1010,7 @@
         2400
       ],
       "department": "Engineering",
-      "renewalDate": "2026-12-20",
+      "renewalDate": "2026-07-15",
       "journaled": false,
       "projected": [
         0,
@@ -1082,7 +1082,7 @@
         0
       ],
       "department": "Marketing",
-      "renewalDate": "2025-10-30",
+      "renewalDate": "2026-04-22",
       "journaled": false,
       "projected": [
         1950,
