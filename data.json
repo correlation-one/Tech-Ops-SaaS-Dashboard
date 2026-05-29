@@ -1,19 +1,21 @@
 {
   "meta": {
     "lastUpdated": "2026-05-29",
-    "months": [
-      "2026-01",
-      "2026-02",
-      "2026-03",
-      "2026-04"
-    ],
-    "monthLabels": [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr"
-    ]
+    "currency": "USD",
+    "sources": "Jan\u2013Mar from App spend totals tab \u00b7 classification from SaaS Apps Classification tab \u00b7 April from Apr 26 Spend tab \u00b7 renewals from Notion SaaS Apps DB"
   },
+  "months": [
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04"
+  ],
+  "monthLabels": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr"
+  ],
   "monthly": [
     {
       "total": 152017.74,
@@ -39,2735 +41,3483 @@
   "apps": [
     {
       "name": "GCP",
-      "cogs": false,
-      "dept": "Engineering",
+      "classification": "Non-COGS",
+      "department": "Engineering",
       "journaled": true,
+      "category": null,
       "spend": [
         25808.48,
         24640.29,
         25931.3,
         22812.62
       ],
-      "mom": [
-        null,
-        -4.5,
-        5.2,
-        -12.0
-      ]
+      "projected": [
+        25808.48,
+        25808.48,
+        25224.39,
+        25460.02
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Salesforce - Slack Enterprise",
-      "cogs": true,
-      "dept": "Operations",
+      "classification": "COGS",
+      "department": "Operations",
       "journaled": false,
+      "category": null,
       "spend": [
         24074.98,
         24074.98,
         24074.98,
         22721.88
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        -5.6
-      ]
+      "projected": [
+        24074.98,
+        24074.98,
+        24074.98,
+        24074.98
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Comptia",
-      "cogs": true,
-      "dept": "Operations",
+      "classification": "COGS",
+      "department": "Operations",
       "journaled": false,
+      "category": null,
       "spend": [
         20324.03,
         20324.03,
         20324.03,
         24618.07
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        21.1
-      ]
+      "projected": [
+        20324.03,
+        20324.03,
+        20324.03,
+        20324.03
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Codio",
-      "cogs": true,
-      "dept": "Learning Experience Design",
+      "classification": "COGS",
+      "department": "Learning Experience Design",
       "journaled": false,
+      "category": null,
       "spend": [
         3923.8,
         11836.68,
         12598.66,
         14893.37
       ],
-      "mom": [
-        null,
-        201.7,
-        6.4,
-        18.2
-      ]
+      "projected": [
+        3923.8,
+        3923.8,
+        7880.24,
+        9453.05
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Google",
-      "cogs": false,
-      "dept": "Tech Operations and AI Enablement",
+      "classification": "Non-COGS",
+      "department": "Tech Operations and AI Enablement",
       "journaled": true,
+      "category": "Productivity & Comms",
       "spend": [
         8936.58,
         8851.24,
         8808.72,
         8777.96
       ],
-      "mom": [
-        null,
-        -1.0,
-        -0.5,
-        -0.3
-      ]
+      "projected": [
+        8936.58,
+        8936.58,
+        8893.91,
+        8865.51
+      ],
+      "renewalDate": "2025-02-09",
+      "renewalStatus": "Active",
+      "owner": "Joe Novak",
+      "annualCost": 95833.54,
+      "billingCycle": "Annual"
     },
     {
       "name": "Salesforce Inc",
-      "cogs": true,
-      "dept": "Operations",
+      "classification": "COGS",
+      "department": "Operations",
       "journaled": true,
+      "category": null,
       "spend": [
         6018.75,
         6018.75,
         6018.75,
         7547.76
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        25.4
-      ]
+      "projected": [
+        6018.75,
+        6018.75,
+        6018.75,
+        6018.75
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Calendly",
-      "cogs": true,
-      "dept": "Operations",
+      "classification": "COGS",
+      "department": "Operations",
       "journaled": true,
+      "category": "Productivity & Comms",
       "spend": [
         3935.83,
         3935.83,
         3935.83,
         3935.83
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        0.0
-      ]
+      "projected": [
+        3935.83,
+        3935.83,
+        3935.83,
+        3935.83
+      ],
+      "renewalDate": "2026-01-05",
+      "renewalStatus": "Active",
+      "owner": "Trevor Cook",
+      "annualCost": 179.63,
+      "billingCycle": "Annual"
     },
     {
       "name": "Zoom",
-      "cogs": false,
-      "dept": "Operations",
+      "classification": "Non-COGS",
+      "department": "Operations",
       "journaled": true,
+      "category": null,
       "spend": [
         3332.2,
         3332.2,
         3332.2,
         3330.56
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        -0.0
-      ]
+      "projected": [
+        3332.2,
+        3332.2,
+        3332.2,
+        3332.2
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Worksuite",
-      "cogs": true,
-      "dept": "People Operations",
+      "classification": "COGS",
+      "department": "People Operations",
       "journaled": true,
+      "category": null,
       "spend": [
         4265.63,
         328.13,
         4265.63,
         4265.63
       ],
-      "mom": [
-        null,
-        -92.3,
-        1200.0,
-        0.0
-      ]
-    },
-    {
-      "name": "Profound",
-      "cogs": false,
-      "dept": "Operations",
-      "journaled": true,
-      "spend": [
-        0.0,
-        3750.0,
-        3750.0,
-        3000.0
+      "projected": [
+        4265.63,
+        4265.63,
+        2296.88,
+        2953.13
       ],
-      "mom": [
-        null,
-        null,
-        0.0,
-        -20.0
-      ]
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Okta",
-      "cogs": false,
-      "dept": "Engineering",
+      "classification": "Non-COGS",
+      "department": "Engineering",
       "journaled": true,
+      "category": null,
       "spend": [
         2608.6,
         2608.6,
         2608.6,
         2608.6
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        0.0
-      ]
+      "projected": [
+        2608.6,
+        2608.6,
+        2608.6,
+        2608.6
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
-      "name": "Saasoptics",
-      "cogs": false,
-      "dept": "Finance",
+      "name": "Profound",
+      "classification": "Non-COGS",
+      "department": "Operations",
       "journaled": true,
+      "category": null,
       "spend": [
-        3402.34,
-        3402.34,
         0.0,
-        3629.17
+        3750.0,
+        3750.0,
+        3000.0
       ],
-      "mom": [
-        null,
+      "projected": [
         0.0,
-        -100.0,
-        null
-      ]
+        0,
+        3750.0,
+        3750.0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Hubspot",
-      "cogs": false,
-      "dept": "Operations",
+      "classification": "Non-COGS",
+      "department": "Operations",
       "journaled": true,
+      "category": "Sales & CRM",
       "spend": [
         2445.53,
         2445.54,
         2445.54,
         2445.53
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        -0.0
-      ]
+      "projected": [
+        2445.53,
+        2445.53,
+        2445.53,
+        2445.54
+      ],
+      "renewalDate": "2026-05-17",
+      "renewalStatus": "Review",
+      "owner": "Laurence Chalude",
+      "annualCost": null,
+      "billingCycle": "Annual"
     },
     {
       "name": "1Password",
-      "cogs": false,
-      "dept": "Tech Operations and AI Enablement",
+      "classification": "Non-COGS",
+      "department": "Tech Operations and AI Enablement",
       "journaled": true,
+      "category": "Security",
       "spend": [
         2421.45,
         2421.45,
         2421.45,
         2421.45
       ],
-      "mom": [
-        null,
+      "projected": [
+        2421.45,
+        2421.45,
+        2421.45,
+        2421.45
+      ],
+      "renewalDate": "2027-05-29",
+      "renewalStatus": "Renewing Soon",
+      "owner": "",
+      "annualCost": null,
+      "billingCycle": "Annual"
+    },
+    {
+      "name": "Saasoptics",
+      "classification": "Non-COGS",
+      "department": "Finance",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        3402.34,
+        3402.34,
         0.0,
-        0.0,
-        0.0
-      ]
+        3629.17
+      ],
+      "projected": [
+        3402.34,
+        3402.34,
+        3402.34,
+        3402.34
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Airtable",
-      "cogs": true,
-      "dept": "Operations",
+      "classification": "COGS",
+      "department": "Operations",
       "journaled": false,
+      "category": null,
       "spend": [
         2200.12,
         2226.74,
         2238.55,
         2247.81
       ],
-      "mom": [
-        null,
-        1.2,
-        0.5,
-        0.4
-      ]
-    },
-    {
-      "name": "Claude",
-      "cogs": false,
-      "dept": "Tech Operations and AI Enablement",
-      "journaled": false,
-      "spend": [
-        43.03,
-        623.86,
-        2885.79,
-        5315.7
+      "projected": [
+        2200.12,
+        2200.12,
+        2213.43,
+        2221.8
       ],
-      "mom": [
-        null,
-        1349.8,
-        362.6,
-        84.2
-      ]
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Surveymonkey Inc",
-      "cogs": true,
-      "dept": "Operations",
+      "classification": "COGS",
+      "department": "Operations",
       "journaled": true,
+      "category": null,
       "spend": [
         2156.25,
         2156.25,
         2156.25,
         2156.25
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        0.0
-      ]
+      "projected": [
+        2156.25,
+        2156.25,
+        2156.25,
+        2156.25
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Twilio",
-      "cogs": true,
-      "dept": "Engineering",
+      "classification": "COGS",
+      "department": "Engineering",
       "journaled": false,
+      "category": null,
       "spend": [
         2244.63,
         1879.05,
         1582.86,
         2142.05
       ],
-      "mom": [
-        null,
-        -16.3,
-        -15.8,
-        35.3
-      ]
-    },
-    {
-      "name": "Zendesk",
-      "cogs": true,
-      "dept": "Operations",
-      "journaled": true,
-      "spend": [
-        1285.8,
-        1285.81,
-        2576.15,
-        2082.0
+      "projected": [
+        2244.63,
+        2244.63,
+        2061.84,
+        1902.18
       ],
-      "mom": [
-        null,
-        0.0,
-        100.4,
-        -19.2
-      ]
-    },
-    {
-      "name": "Sentry",
-      "cogs": false,
-      "dept": "Engineering",
-      "journaled": true,
-      "spend": [
-        1474.18,
-        1474.18,
-        1474.18,
-        2290.59
-      ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        55.4
-      ]
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Mindhub",
-      "cogs": true,
-      "dept": "Operations",
+      "classification": "COGS",
+      "department": "Operations",
       "journaled": true,
+      "category": null,
       "spend": [
         1818.31,
         1818.32,
         1818.32,
         1026.09
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        -43.6
-      ]
+      "projected": [
+        1818.31,
+        1818.31,
+        1818.32,
+        1818.32
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Zendesk",
+      "classification": "COGS",
+      "department": "Operations",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        1285.8,
+        1285.81,
+        2576.15,
+        2082.0
+      ],
+      "projected": [
+        1285.8,
+        1285.8,
+        1285.8,
+        1715.92
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Sentry",
+      "classification": "Non-COGS",
+      "department": "Engineering",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        1474.18,
+        1474.18,
+        1474.18,
+        2290.59
+      ],
+      "projected": [
+        1474.18,
+        1474.18,
+        1474.18,
+        1474.18
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Mailchimp",
-      "cogs": true,
-      "dept": "Operations",
+      "classification": "COGS",
+      "department": "Operations",
       "journaled": true,
+      "category": null,
       "spend": [
         1469.81,
         1469.81,
         1469.81,
         1469.81
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        0.0
-      ]
+      "projected": [
+        1469.81,
+        1469.81,
+        1469.81,
+        1469.81
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Greenhouse",
-      "cogs": false,
-      "dept": "People Operations",
+      "classification": "Non-COGS",
+      "department": "People Operations",
       "journaled": true,
+      "category": "HR & Recruiting",
       "spend": [
         1421.78,
         1421.78,
         1421.78,
         1421.78
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        0.0
-      ]
-    },
-    {
-      "name": "Accredible",
-      "cogs": true,
-      "dept": "Operations",
-      "journaled": false,
-      "spend": [
-        1306.67,
-        1306.67,
-        1306.67,
-        1306.67
+      "projected": [
+        1421.78,
+        1421.78,
+        1421.78,
+        1421.78
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        0.0
-      ]
+      "renewalDate": "2026-05-18",
+      "renewalStatus": "Review",
+      "owner": "Janna Millette",
+      "annualCost": null,
+      "billingCycle": "Annual"
     },
     {
       "name": "ChatGPT",
-      "cogs": false,
-      "dept": "Tech Operations and AI Enablement",
+      "classification": "Non-COGS",
+      "department": "Tech Operations and AI Enablement",
       "journaled": true,
+      "category": "AI & Automation",
       "spend": [
         1236.45,
         1215.94,
         1482.75,
         899.02
       ],
-      "mom": [
-        null,
-        -1.7,
-        21.9,
-        -39.4
-      ]
+      "projected": [
+        1236.45,
+        1236.45,
+        1226.2,
+        1311.71
+      ],
+      "renewalDate": null,
+      "renewalStatus": "Active",
+      "owner": "",
+      "annualCost": null,
+      "billingCycle": "Monthly"
     },
     {
-      "name": "Salesforce - Tableau Cloud Creator",
-      "cogs": false,
-      "dept": "Tech Operations and AI Enablement",
+      "name": "Accredible",
+      "classification": "COGS",
+      "department": "Operations",
       "journaled": false,
+      "category": "Learning & Certification",
       "spend": [
-        1171.16,
-        1171.17,
-        1171.17,
-        1171.16
+        1306.67,
+        1306.67,
+        1306.67,
+        1306.67
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        -0.0
-      ]
-    },
-    {
-      "name": "Adobe",
-      "cogs": false,
-      "dept": "Tech Operations and AI Enablement",
-      "journaled": true,
-      "spend": [
-        1096.14,
-        861.44,
-        1111.44,
-        1111.44
+      "projected": [
+        1306.67,
+        1306.67,
+        1306.67,
+        1306.67
       ],
-      "mom": [
-        null,
-        -21.4,
-        29.0,
-        0.0
-      ]
-    },
-    {
-      "name": "Carta",
-      "cogs": false,
-      "dept": "Operations",
-      "journaled": true,
-      "spend": [
-        1043.39,
-        1043.39,
-        1043.39,
-        1043.39
-      ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        0.0
-      ]
-    },
-    {
-      "name": "Outreach",
-      "cogs": false,
-      "dept": "Sales",
-      "journaled": true,
-      "spend": [
-        0.0,
-        1367.33,
-        1367.33,
-        1367.33
-      ],
-      "mom": [
-        null,
-        null,
-        0.0,
-        0.0
-      ]
-    },
-    {
-      "name": "Notion",
-      "cogs": false,
-      "dept": "Tech Operations and AI Enablement",
-      "journaled": true,
-      "spend": [
-        993.28,
-        993.28,
-        993.28,
-        993.28
-      ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        0.0
-      ]
+      "renewalDate": "2026-05-14",
+      "renewalStatus": "Review",
+      "owner": "",
+      "annualCost": null,
+      "billingCycle": "Annual"
     },
     {
       "name": "Hireflix",
-      "cogs": false,
-      "dept": "Operations",
+      "classification": "Non-COGS",
+      "department": "Operations",
       "journaled": false,
+      "category": null,
       "spend": [
         3600.0,
         0.0,
         0.0,
         0.0
       ],
-      "mom": [
-        null,
-        -100.0,
-        null,
-        null
-      ]
+      "projected": [
+        3600.0,
+        3600.0,
+        3600.0,
+        3600.0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Cake",
-      "cogs": true,
-      "dept": "Operations",
+      "classification": "COGS",
+      "department": "Operations",
       "journaled": false,
+      "category": null,
       "spend": [
         1395.25,
         1082.45,
         1098.58,
         0.0
       ],
-      "mom": [
-        null,
-        -22.4,
-        1.5,
-        -100.0
-      ]
+      "projected": [
+        1395.25,
+        1395.25,
+        1238.85,
+        1192.09
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
-      "name": "Apprentiscope",
-      "cogs": true,
-      "dept": "Operations",
+      "name": "Salesforce - Tableau Cloud Creator",
+      "classification": "Non-COGS",
+      "department": "Tech Operations and AI Enablement",
       "journaled": false,
+      "category": null,
       "spend": [
-        399.66,
-        1300.86,
-        1700.52,
+        1171.16,
+        1171.17,
+        1171.17,
+        1171.16
+      ],
+      "projected": [
+        1171.16,
+        1171.16,
+        1171.16,
+        1171.17
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Carta",
+      "classification": "Non-COGS",
+      "department": "Operations",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        1043.39,
+        1043.39,
+        1043.39,
+        1043.39
+      ],
+      "projected": [
+        1043.39,
+        1043.39,
+        1043.39,
+        1043.39
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Adobe",
+      "classification": "Non-COGS",
+      "department": "Tech Operations and AI Enablement",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        1096.14,
+        861.44,
+        1111.44,
+        1111.44
+      ],
+      "projected": [
+        1096.14,
+        1096.14,
+        978.79,
+        1023.01
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Salesforce - Slack Internal",
+      "classification": "Non-COGS",
+      "department": "Tech Operations and AI Enablement",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        0.0,
+        1529.01,
+        1529.01,
         0.0
       ],
-      "mom": [
-        null,
-        225.5,
-        30.7,
-        -100.0
-      ]
+      "projected": [
+        0.0,
+        0,
+        1529.01,
+        1529.01
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
-      "name": "Atlassian",
-      "cogs": false,
-      "dept": "Engineering",
+      "name": "Notion",
+      "classification": "Non-COGS",
+      "department": "Tech Operations and AI Enablement",
       "journaled": true,
+      "category": "Productivity & Comms",
       "spend": [
-        840.73,
-        840.73,
-        820.81,
-        892.08
+        993.28,
+        993.28,
+        993.28,
+        993.28
       ],
-      "mom": [
-        null,
-        0.0,
-        -2.4,
-        8.7
-      ]
-    },
-    {
-      "name": "Linkedin",
-      "cogs": false,
-      "dept": "Marketing",
-      "journaled": false,
-      "spend": [
-        0.0,
-        1125.53,
-        1125.53,
-        1125.53
+      "projected": [
+        993.28,
+        993.28,
+        993.28,
+        993.28
       ],
-      "mom": [
-        null,
-        null,
-        0.0,
-        0.0
-      ]
-    },
-    {
-      "name": "Microsoft",
-      "cogs": false,
-      "dept": "Tech Operations and AI Enablement",
-      "journaled": true,
-      "spend": [
-        794.88,
-        913.4,
-        769.19,
-        741.85
-      ],
-      "mom": [
-        null,
-        14.9,
-        -15.8,
-        -3.6
-      ]
+      "renewalDate": "2026-06-22",
+      "renewalStatus": "Active",
+      "owner": "Joe Novak",
+      "annualCost": 285.62,
+      "billingCycle": "Annual"
     },
     {
       "name": "Cursor",
-      "cogs": false,
-      "dept": "Engineering",
+      "classification": "Non-COGS",
+      "department": "Engineering",
       "journaled": true,
+      "category": "Dev & Engineering",
       "spend": [
         867.82,
         1354.98,
         697.5,
         217.75
       ],
-      "mom": [
-        null,
-        56.1,
-        -48.5,
-        -68.8
-      ]
+      "projected": [
+        867.82,
+        867.82,
+        1111.4,
+        973.43
+      ],
+      "renewalDate": null,
+      "renewalStatus": "Active",
+      "owner": "",
+      "annualCost": 7839.03,
+      "billingCycle": "Monthly"
+    },
+    {
+      "name": "Claude",
+      "classification": "Non-COGS",
+      "department": "Tech Operations and AI Enablement",
+      "journaled": false,
+      "category": "AI & Automation",
+      "spend": [
+        43.03,
+        623.86,
+        2885.79,
+        5315.7
+      ],
+      "projected": [
+        43.03,
+        43.03,
+        333.44,
+        1184.23
+      ],
+      "renewalDate": null,
+      "renewalStatus": "Active",
+      "owner": "",
+      "annualCost": 9169.59,
+      "billingCycle": "Monthly"
+    },
+    {
+      "name": "Outreach",
+      "classification": "Non-COGS",
+      "department": "Sales",
+      "journaled": true,
+      "category": "Sales & CRM",
+      "spend": [
+        0.0,
+        1367.33,
+        1367.33,
+        1367.33
+      ],
+      "projected": [
+        0.0,
+        0,
+        1367.33,
+        1367.33
+      ],
+      "renewalDate": "2026-09-15",
+      "renewalStatus": "Cancel?",
+      "owner": "",
+      "annualCost": null,
+      "billingCycle": "Annual"
+    },
+    {
+      "name": "Atlassian",
+      "classification": "Non-COGS",
+      "department": "Engineering",
+      "journaled": true,
+      "category": "Dev & Engineering",
+      "spend": [
+        840.73,
+        840.73,
+        820.81,
+        892.08
+      ],
+      "projected": [
+        840.73,
+        840.73,
+        840.73,
+        834.09
+      ],
+      "renewalDate": null,
+      "renewalStatus": "Active",
+      "owner": "Jose Gunasingh",
+      "annualCost": 9511.77,
+      "billingCycle": "Annual"
+    },
+    {
+      "name": "Microsoft",
+      "classification": "Non-COGS",
+      "department": "Tech Operations and AI Enablement",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        794.88,
+        913.4,
+        769.19,
+        741.85
+      ],
+      "projected": [
+        794.88,
+        794.88,
+        854.14,
+        825.82
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Bamboohr",
-      "cogs": false,
-      "dept": "People Operations",
+      "classification": "Non-COGS",
+      "department": "People Operations",
       "journaled": true,
+      "category": "HR & Recruiting",
       "spend": [
         781.8,
         781.8,
         781.8,
         781.8
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        0.0
-      ]
-    },
-    {
-      "name": "Salesforce - Slack Internal",
-      "cogs": false,
-      "dept": "Tech Operations and AI Enablement",
-      "journaled": true,
-      "spend": [
-        0.0,
-        1529.01,
-        1529.01,
-        0.0
+      "projected": [
+        781.8,
+        781.8,
+        781.8,
+        781.8
       ],
-      "mom": [
-        null,
-        null,
-        0.0,
-        -100.0
-      ]
+      "renewalDate": "2026-10-04",
+      "renewalStatus": "Active",
+      "owner": "Janna Millette",
+      "annualCost": null,
+      "billingCycle": "Annual"
     },
     {
       "name": "Workforce",
-      "cogs": false,
-      "dept": "People Operations",
+      "classification": "Non-COGS",
+      "department": "People Operations",
       "journaled": true,
+      "category": null,
       "spend": [
         1100.0,
         600.0,
         600.0,
         600.0
       ],
-      "mom": [
-        null,
-        -45.5,
-        0.0,
-        0.0
-      ]
+      "projected": [
+        1100.0,
+        1100.0,
+        850.0,
+        766.67
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
-      "name": "Lovable Dover",
-      "cogs": false,
-      "dept": "Operations",
+      "name": "Linkedin",
+      "classification": "Non-COGS",
+      "department": "Marketing",
       "journaled": false,
+      "category": "HR & Recruiting",
       "spend": [
-        1001.65,
-        86.65,
-        568.97,
-        933.42
-      ],
-      "mom": [
-        null,
-        -91.3,
-        556.6,
-        64.1
-      ]
-    },
-    {
-      "name": "Cultureamp",
-      "cogs": false,
-      "dept": "People Operations",
-      "journaled": true,
-      "spend": [
-        642.23,
-        642.23,
-        642.23,
-        642.23
-      ],
-      "mom": [
-        null,
         0.0,
-        0.0,
-        0.0
-      ]
-    },
-    {
-      "name": "Hook Security",
-      "cogs": false,
-      "dept": "Operations",
-      "journaled": false,
-      "spend": [
-        1176.0,
-        1176.0,
-        0.0,
-        0.0
+        1125.53,
+        1125.53,
+        1125.53
       ],
-      "mom": [
-        null,
+      "projected": [
         0.0,
-        -100.0,
-        null
-      ]
-    },
-    {
-      "name": "Github",
-      "cogs": false,
-      "dept": "Engineering",
-      "journaled": true,
-      "spend": [
-        518.05,
-        460.8,
-        659.33,
-        699.43
+        0,
+        1125.53,
+        1125.53
       ],
-      "mom": [
-        null,
-        -11.1,
-        43.1,
-        6.1
-      ]
+      "renewalDate": "2026-01-02",
+      "renewalStatus": "Active",
+      "owner": "",
+      "annualCost": null,
+      "billingCycle": "Annual"
     },
     {
       "name": "Paypal",
-      "cogs": false,
-      "dept": "Finance",
+      "classification": "Non-COGS",
+      "department": "Finance",
       "journaled": true,
+      "category": null,
       "spend": [
         531.18,
         970.95,
         531.17,
         0.0
       ],
-      "mom": [
-        null,
-        82.8,
-        -45.3,
-        -100.0
-      ]
+      "projected": [
+        531.18,
+        531.18,
+        751.07,
+        677.77
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Cultureamp",
+      "classification": "Non-COGS",
+      "department": "People Operations",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        642.23,
+        642.23,
+        642.23,
+        642.23
+      ],
+      "projected": [
+        642.23,
+        642.23,
+        642.23,
+        642.23
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Apprenticeships For",
-      "cogs": false,
-      "dept": "1",
+      "classification": "Non-COGS",
+      "department": "1",
       "journaled": false,
+      "category": null,
       "spend": [
         0.0,
         1900.0,
         0.0,
         0.0
       ],
-      "mom": [
-        null,
-        null,
-        -100.0,
-        null
-      ]
-    },
-    {
-      "name": "Yesware",
-      "cogs": false,
-      "dept": "Operations",
-      "journaled": true,
-      "spend": [
-        440.94,
-        440.94,
-        440.94,
-        440.94
+      "projected": [
+        0.0,
+        0,
+        1900.0,
+        1900.0
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        0.0
-      ]
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
-      "name": "Apprenti Apprentiscope",
-      "cogs": true,
-      "dept": "Operations",
+      "name": "Apprentiscope",
+      "classification": "COGS",
+      "department": "Operations",
       "journaled": false,
+      "category": null,
       "spend": [
         399.66,
-        0.0,
-        0.0,
-        1300.86
+        1300.86,
+        1700.52,
+        0.0
       ],
-      "mom": [
-        null,
-        -100.0,
-        null,
-        null
-      ]
+      "projected": [
+        399.66,
+        399.66,
+        850.26,
+        1133.68
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Lovable Dover",
+      "classification": "Non-COGS",
+      "department": "Operations",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        1001.65,
+        86.65,
+        568.97,
+        933.42
+      ],
+      "projected": [
+        1001.65,
+        1001.65,
+        544.15,
+        552.42
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Github",
+      "classification": "Non-COGS",
+      "department": "Engineering",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        518.05,
+        460.8,
+        659.33,
+        699.43
+      ],
+      "projected": [
+        518.05,
+        518.05,
+        489.42,
+        546.06
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Typeform",
-      "cogs": true,
-      "dept": "Product Management",
+      "classification": "COGS",
+      "department": "Product Management",
       "journaled": false,
+      "category": "Marketing",
       "spend": [
         1622.24,
         0.0,
         0.0,
         0.0
       ],
-      "mom": [
-        null,
-        -100.0,
-        null,
-        null
-      ]
+      "projected": [
+        1622.24,
+        1622.24,
+        1622.24,
+        1622.24
+      ],
+      "renewalDate": "2027-01-17",
+      "renewalStatus": "Active",
+      "owner": "Trevor Cook",
+      "annualCost": 1622.24,
+      "billingCycle": "Annual"
     },
     {
       "name": "Zapier",
-      "cogs": false,
-      "dept": "Operations",
+      "classification": "Non-COGS",
+      "department": "Operations",
       "journaled": false,
+      "category": null,
       "spend": [
         29.99,
         1457.99,
         29.99,
         29.99
       ],
-      "mom": [
-        null,
-        4761.6,
-        -97.9,
-        0.0
-      ]
-    },
-    {
-      "name": "Launchdarkly",
-      "cogs": false,
-      "dept": "Engineering",
-      "journaled": true,
-      "spend": [
-        381.06,
-        381.06,
-        381.06,
-        381.06
+      "projected": [
+        29.99,
+        29.99,
+        743.99,
+        505.99
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        0.0
-      ]
-    },
-    {
-      "name": "Squadcast",
-      "cogs": false,
-      "dept": "Engineering",
-      "journaled": true,
-      "spend": [
-        456.0,
-        475.79,
-        393.04,
-        0.0
-      ],
-      "mom": [
-        null,
-        4.3,
-        -17.4,
-        -100.0
-      ]
-    },
-    {
-      "name": "Tremendous",
-      "cogs": true,
-      "dept": "Operations",
-      "journaled": false,
-      "spend": [
-        103.0,
-        721.0,
-        478.95,
-        0.0
-      ],
-      "mom": [
-        null,
-        600.0,
-        -33.6,
-        -100.0
-      ]
-    },
-    {
-      "name": "Figma",
-      "cogs": false,
-      "dept": "Product",
-      "journaled": true,
-      "spend": [
-        49.0,
-        70.07,
-        153.2,
-        1012.78
-      ],
-      "mom": [
-        null,
-        43.0,
-        118.6,
-        561.1
-      ]
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Gamma",
-      "cogs": false,
-      "dept": "Operations",
+      "classification": "Non-COGS",
+      "department": "Operations",
       "journaled": true,
+      "category": null,
       "spend": [
         0.0,
         348.94,
         307.76,
         281.51
       ],
-      "mom": [
-        null,
-        null,
-        -11.8,
-        -8.5
-      ]
+      "projected": [
+        0.0,
+        0,
+        348.94,
+        328.35
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
-      "name": "Refiner",
-      "cogs": false,
-      "dept": "Operations",
+      "name": "Squadcast",
+      "classification": "Non-COGS",
+      "department": "Engineering",
       "journaled": true,
+      "category": null,
       "spend": [
-        219.0,
-        219.0,
-        219.0,
-        219.0
+        456.0,
+        475.79,
+        393.04,
+        0.0
       ],
-      "mom": [
-        null,
-        0.0,
+      "projected": [
+        456.0,
+        456.0,
+        465.89,
+        441.61
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Yesware",
+      "classification": "Non-COGS",
+      "department": "Operations",
+      "journaled": true,
+      "category": "Sales & CRM",
+      "spend": [
+        440.94,
+        440.94,
+        440.94,
+        440.94
+      ],
+      "projected": [
+        440.94,
+        440.94,
+        440.94,
+        440.94
+      ],
+      "renewalDate": "2026-10-04",
+      "renewalStatus": "Active",
+      "owner": "Trevor Cook",
+      "annualCost": null,
+      "billingCycle": "Annual"
+    },
+    {
+      "name": "Tremendous",
+      "classification": "COGS",
+      "department": "Operations",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        103.0,
+        721.0,
+        478.95,
+        0.0
+      ],
+      "projected": [
+        103.0,
+        103.0,
+        412.0,
+        434.32
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Hook Security",
+      "classification": "Non-COGS",
+      "department": "Operations",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        1176.0,
+        1176.0,
         0.0,
         0.0
-      ]
+      ],
+      "projected": [
+        1176.0,
+        1176.0,
+        1176.0,
+        1176.0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Launchdarkly",
+      "classification": "Non-COGS",
+      "department": "Engineering",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        381.06,
+        381.06,
+        381.06,
+        381.06
+      ],
+      "projected": [
+        381.06,
+        381.06,
+        381.06,
+        381.06
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Aws",
-      "cogs": false,
-      "dept": "Engineering",
+      "classification": "Non-COGS",
+      "department": "Engineering",
       "journaled": false,
+      "category": null,
       "spend": [
         554.09,
         184.65,
         50.44,
         54.43
       ],
-      "mom": [
-        null,
-        -66.7,
-        -72.7,
-        7.9
-      ]
+      "projected": [
+        554.09,
+        554.09,
+        369.37,
+        263.06
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Refiner",
+      "classification": "Non-COGS",
+      "department": "Operations",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        219.0,
+        219.0,
+        219.0,
+        219.0
+      ],
+      "projected": [
+        219.0,
+        219.0,
+        219.0,
+        219.0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Deepsource",
-      "cogs": false,
-      "dept": "Engineering",
+      "classification": "Non-COGS",
+      "department": "Engineering",
       "journaled": true,
+      "category": null,
       "spend": [
         210.0,
         210.0,
         210.0,
         210.0
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        0.0
-      ]
+      "projected": [
+        210.0,
+        210.0,
+        210.0,
+        210.0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
-      "name": "Loom",
-      "cogs": true,
-      "dept": "Operations",
+      "name": "Hex",
+      "classification": "Non-COGS",
+      "department": "Engineering",
       "journaled": true,
+      "category": null,
       "spend": [
-        46.66,
-        0.0,
-        0.0,
-        720.0
+        195.98,
+        195.98,
+        195.98,
+        0.0
       ],
-      "mom": [
-        null,
-        -100.0,
-        null,
-        null
-      ]
+      "projected": [
+        195.98,
+        195.98,
+        195.98,
+        195.98
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Artillery",
-      "cogs": false,
-      "dept": "Engineering",
+      "classification": "Non-COGS",
+      "department": "Engineering",
       "journaled": true,
+      "category": null,
       "spend": [
         199.0,
         132.2,
         199.0,
         199.0
       ],
-      "mom": [
-        null,
-        -33.6,
-        50.5,
-        0.0
-      ]
+      "projected": [
+        199.0,
+        199.0,
+        165.6,
+        176.73
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
-      "name": "Hex",
-      "cogs": false,
-      "dept": "Engineering",
-      "journaled": true,
+      "name": "Apprenti Apprentiscope",
+      "classification": "COGS",
+      "department": "Operations",
+      "journaled": false,
+      "category": null,
       "spend": [
-        195.98,
-        195.98,
-        195.98,
-        0.0
+        399.66,
+        0.0,
+        0.0,
+        1300.86
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        -100.0
-      ]
+      "projected": [
+        399.66,
+        399.66,
+        399.66,
+        399.66
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Salesforce - Sales Cloud Enterprise",
-      "cogs": false,
-      "dept": "Tech Operations and AI Enablement",
+      "classification": "Non-COGS",
+      "department": "Tech Operations and AI Enablement",
       "journaled": false,
+      "category": "Sales & CRM",
       "spend": [
         0.0,
         195.5,
         195.5,
         195.5
       ],
-      "mom": [
-        null,
-        null,
+      "projected": [
         0.0,
-        0.0
-      ]
+        0,
+        195.5,
+        195.5
+      ],
+      "renewalDate": "2026-01-23",
+      "renewalStatus": "Active",
+      "owner": "",
+      "annualCost": null,
+      "billingCycle": "Annual"
     },
     {
       "name": "Coderpad",
-      "cogs": false,
-      "dept": "Engineering",
+      "classification": "Non-COGS",
+      "department": "Engineering",
       "journaled": true,
+      "category": null,
       "spend": [
         108.88,
         108.88,
         130.65,
         130.65
       ],
-      "mom": [
-        null,
-        0.0,
-        20.0,
-        0.0
-      ]
-    },
-    {
-      "name": "Dnsimple",
-      "cogs": false,
-      "dept": "Engineering",
-      "journaled": true,
-      "spend": [
-        66.0,
-        97.0,
-        81.5,
-        162.0
+      "projected": [
+        108.88,
+        108.88,
+        108.88,
+        116.14
       ],
-      "mom": [
-        null,
-        47.0,
-        -16.0,
-        98.8
-      ]
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Geocode",
-      "cogs": false,
-      "dept": "Engineering",
+      "classification": "Non-COGS",
+      "department": "Engineering",
       "journaled": true,
+      "category": null,
       "spend": [
         100.0,
         100.0,
         100.0,
         100.0
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        0.0
-      ]
-    },
-    {
-      "name": "Quickbooks",
-      "cogs": false,
-      "dept": "\\#N/A",
-      "journaled": false,
-      "spend": [
-        125.21,
-        125.21,
-        125.21,
-        0.0
+      "projected": [
+        100.0,
+        100.0,
+        100.0,
+        100.0
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        -100.0
-      ]
-    },
-    {
-      "name": "Mailgun",
-      "cogs": true,
-      "dept": "Operations",
-      "journaled": true,
-      "spend": [
-        87.1,
-        87.1,
-        87.1,
-        87.1
-      ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        0.0
-      ]
-    },
-    {
-      "name": "Docusign",
-      "cogs": false,
-      "dept": "People Operations",
-      "journaled": true,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        326.63
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Tango",
-      "cogs": false,
-      "dept": "Engineering",
-      "journaled": true,
-      "spend": [
-        84.92,
-        84.92,
-        84.92,
-        65.33
-      ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        -23.1
-      ]
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Perplexity",
-      "cogs": false,
-      "dept": "Tech Operations and AI Enablement",
+      "classification": "Non-COGS",
+      "department": "Tech Operations and AI Enablement",
       "journaled": false,
+      "category": null,
       "spend": [
         239.0,
         21.25,
         21.25,
         21.25
       ],
-      "mom": [
-        null,
-        -91.1,
-        0.0,
-        0.0
-      ]
+      "projected": [
+        239.0,
+        239.0,
+        130.12,
+        93.83
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Figma",
+      "classification": "Non-COGS",
+      "department": "Product",
+      "journaled": true,
+      "category": "Design & Content",
+      "spend": [
+        49.0,
+        70.07,
+        153.2,
+        1012.78
+      ],
+      "projected": [
+        49.0,
+        49.0,
+        59.53,
+        90.76
+      ],
+      "renewalDate": null,
+      "renewalStatus": "Active",
+      "owner": "",
+      "annualCost": 1635.95,
+      "billingCycle": "Monthly"
+    },
+    {
+      "name": "Mailgun",
+      "classification": "COGS",
+      "department": "Operations",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        87.1,
+        87.1,
+        87.1,
+        87.1
+      ],
+      "projected": [
+        87.1,
+        87.1,
+        87.1,
+        87.1
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Tango",
+      "classification": "Non-COGS",
+      "department": "Engineering",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        84.92,
+        84.92,
+        84.92,
+        65.33
+      ],
+      "projected": [
+        84.92,
+        84.92,
+        84.92,
+        84.92
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Dnsimple",
+      "classification": "Non-COGS",
+      "department": "Engineering",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        66.0,
+        97.0,
+        81.5,
+        162.0
+      ],
+      "projected": [
+        66.0,
+        66.0,
+        81.5,
+        81.5
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Hireright Llc",
-      "cogs": false,
-      "dept": "Operations",
+      "classification": "Non-COGS",
+      "department": "Operations",
       "journaled": false,
+      "category": null,
       "spend": [
         224.23,
         0.0,
         0.0,
         0.0
       ],
-      "mom": [
-        null,
-        -100.0,
-        null,
-        null
-      ]
+      "projected": [
+        224.23,
+        224.23,
+        224.23,
+        224.23
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Stape",
-      "cogs": false,
-      "dept": "Engineering",
+      "classification": "Non-COGS",
+      "department": "Engineering",
       "journaled": false,
+      "category": null,
       "spend": [
         50.0,
         54.44,
         54.44,
         54.44
       ],
-      "mom": [
-        null,
-        8.9,
-        0.0,
-        0.0
-      ]
-    },
-    {
-      "name": "Track1099",
-      "cogs": false,
-      "dept": "Operations",
-      "journaled": false,
-      "spend": [
-        68.32,
-        4.87,
-        2.57,
-        125.21
+      "projected": [
+        50.0,
+        50.0,
+        52.22,
+        52.96
       ],
-      "mom": [
-        null,
-        -92.9,
-        -47.2,
-        4772.0
-      ]
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Dropbox",
-      "cogs": false,
-      "dept": "Operations",
+      "classification": "Non-COGS",
+      "department": "Operations",
       "journaled": false,
+      "category": null,
       "spend": [
         41.76,
         43.53,
         43.53,
         43.53
       ],
-      "mom": [
-        null,
-        4.2,
-        0.0,
-        0.0
-      ]
-    },
-    {
-      "name": "Vercel",
-      "cogs": false,
-      "dept": "Engineering",
-      "journaled": false,
-      "spend": [
-        40.0,
-        40.0,
-        40.0,
-        44.8
+      "projected": [
+        41.76,
+        41.76,
+        42.64,
+        42.94
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        12.0
-      ]
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Plus Docs",
-      "cogs": false,
-      "dept": "Operations",
+      "classification": "Non-COGS",
+      "department": "Operations",
       "journaled": false,
+      "category": null,
       "spend": [
         40.0,
         40.0,
         40.0,
         40.0
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        0.0
-      ]
-    },
-    {
-      "name": "Godaddy",
-      "cogs": false,
-      "dept": "Engineering",
-      "journaled": true,
-      "spend": [
-        47.18,
-        0.0,
-        0.0,
-        89.99
+      "projected": [
+        40.0,
+        40.0,
+        40.0,
+        40.0
       ],
-      "mom": [
-        null,
-        -100.0,
-        null,
-        null
-      ]
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
-      "name": "Imkey Breda",
-      "cogs": false,
-      "dept": "Operations",
+      "name": "Vercel",
+      "classification": "Non-COGS",
+      "department": "Engineering",
       "journaled": false,
+      "category": null,
       "spend": [
-        32.9,
-        29.95,
-        62.85,
-        0.0
+        40.0,
+        40.0,
+        40.0,
+        44.8
       ],
-      "mom": [
-        null,
-        -9.0,
-        109.8,
-        -100.0
-      ]
+      "projected": [
+        40.0,
+        40.0,
+        40.0,
+        40.0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Paddle",
-      "cogs": false,
-      "dept": "Finance",
+      "classification": "Non-COGS",
+      "department": "Finance",
       "journaled": true,
+      "category": null,
       "spend": [
         27.22,
         27.22,
         27.22,
         27.22
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        0.0
-      ]
+      "projected": [
+        27.22,
+        27.22,
+        27.22,
+        27.22
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
-      "name": "Fal Features",
-      "cogs": false,
-      "dept": "Operations",
+      "name": "Track1099",
+      "classification": "Non-COGS",
+      "department": "Operations",
       "journaled": false,
+      "category": null,
       "spend": [
-        50.0,
-        50.0,
-        0.0,
-        0.0
+        68.32,
+        4.87,
+        2.57,
+        125.21
       ],
-      "mom": [
-        null,
-        0.0,
-        -100.0,
-        null
-      ]
+      "projected": [
+        68.32,
+        68.32,
+        36.59,
+        25.25
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Dmarcian",
-      "cogs": false,
-      "dept": "Engineering",
+      "classification": "Non-COGS",
+      "department": "Engineering",
       "journaled": false,
+      "category": null,
       "spend": [
         24.0,
         24.0,
         24.0,
         24.0
       ],
-      "mom": [
-        null,
-        0.0,
+      "projected": [
+        24.0,
+        24.0,
+        24.0,
+        24.0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Imkey Breda",
+      "classification": "Non-COGS",
+      "department": "Operations",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        32.9,
+        29.95,
+        62.85,
+        0.0
+      ],
+      "projected": [
+        32.9,
+        32.9,
+        31.42,
+        41.9
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Fal Features",
+      "classification": "Non-COGS",
+      "department": "Operations",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        50.0,
+        50.0,
         0.0,
         0.0
-      ]
+      ],
+      "projected": [
+        50.0,
+        50.0,
+        50.0,
+        50.0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Godaddy",
+      "classification": "Non-COGS",
+      "department": "Engineering",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        47.18,
+        0.0,
+        0.0,
+        89.99
+      ],
+      "projected": [
+        47.18,
+        47.18,
+        47.18,
+        47.18
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Loom",
+      "classification": "COGS",
+      "department": "Operations",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        46.66,
+        0.0,
+        0.0,
+        720.0
+      ],
+      "projected": [
+        46.66,
+        46.66,
+        46.66,
+        46.66
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Helix Pay",
-      "cogs": false,
-      "dept": "Operations",
+      "classification": "Non-COGS",
+      "department": "Operations",
       "journaled": false,
+      "category": null,
       "spend": [
         27.35,
         0.0,
         0.0,
         0.0
       ],
-      "mom": [
-        null,
-        -100.0,
-        null,
-        null
-      ]
+      "projected": [
+        27.35,
+        27.35,
+        27.35,
+        27.35
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Squarespace",
-      "cogs": false,
-      "dept": "Engineering",
+      "classification": "Non-COGS",
+      "department": "Engineering",
       "journaled": false,
+      "category": null,
       "spend": [
         0.0,
         0.0,
         24.0,
         0.0
       ],
-      "mom": [
-        null,
-        null,
-        null,
-        -100.0
-      ]
+      "projected": [
+        0.0,
+        0,
+        0,
+        24.0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Digital Ocean",
-      "cogs": false,
-      "dept": "Engineering",
+      "classification": "Non-COGS",
+      "department": "Engineering",
       "journaled": false,
+      "category": null,
       "spend": [
         6.0,
         6.0,
         6.0,
         6.0
       ],
-      "mom": [
-        null,
-        0.0,
-        0.0,
-        0.0
-      ]
+      "projected": [
+        6.0,
+        6.0,
+        6.0,
+        6.0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Abstract",
-      "cogs": false,
-      "dept": "0",
+      "classification": "Non-COGS",
+      "department": "0",
       "journaled": false,
+      "category": null,
       "spend": [
         0.0,
         0.0,
         0.0,
         0.0
       ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Askai",
-      "cogs": false,
-      "dept": "Tech Operations and AI Enablement",
+      "classification": "Non-COGS",
+      "department": "Tech Operations and AI Enablement",
       "journaled": false,
+      "category": null,
       "spend": [
         0.0,
         0.0,
         0.0,
         0.0
       ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Beautiful",
-      "cogs": false,
-      "dept": "0",
+      "classification": "Non-COGS",
+      "department": "0",
       "journaled": false,
+      "category": null,
       "spend": [
         0.0,
         0.0,
         0.0,
         0.0
       ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Billigence",
-      "cogs": false,
-      "dept": "Operations",
+      "classification": "Non-COGS",
+      "department": "Operations",
       "journaled": false,
+      "category": "Dev & Engineering",
       "spend": [
         0.0,
         0.0,
         0.0,
         0.0
       ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": "Active",
+      "owner": "",
+      "annualCost": null,
+      "billingCycle": "Annual"
     },
     {
       "name": "Calget",
-      "cogs": true,
-      "dept": "Tech Operations and AI Enablement",
+      "classification": "COGS",
+      "department": "Tech Operations and AI Enablement",
       "journaled": false,
+      "category": null,
       "spend": [
         0.0,
         0.0,
         0.0,
         0.0
       ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Canva",
-      "cogs": false,
-      "dept": "Marketing",
+      "classification": "Non-COGS",
+      "department": "Marketing",
       "journaled": true,
+      "category": "Design & Content",
       "spend": [
         0.0,
         0.0,
         0.0,
         0.0
       ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": "Active",
+      "owner": "",
+      "annualCost": null,
+      "billingCycle": "Monthly"
     },
     {
       "name": "Circleci",
-      "cogs": false,
-      "dept": "0",
+      "classification": "Non-COGS",
+      "department": "0",
       "journaled": false,
+      "category": null,
       "spend": [
         0.0,
         0.0,
         0.0,
         0.0
       ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Cision",
-      "cogs": false,
-      "dept": "Operations",
+      "classification": "Non-COGS",
+      "department": "Operations",
       "journaled": false,
+      "category": null,
       "spend": [
         0.0,
         0.0,
         0.0,
         0.0
       ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Cockatoo",
-      "cogs": false,
-      "dept": "0",
+      "classification": "Non-COGS",
+      "department": "0",
       "journaled": false,
+      "category": null,
       "spend": [
         0.0,
         0.0,
         0.0,
         0.0
       ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Coresignal",
-      "cogs": false,
-      "dept": "Operations",
+      "classification": "Non-COGS",
+      "department": "Operations",
       "journaled": false,
+      "category": null,
       "spend": [
         0.0,
         0.0,
         0.0,
         0.0
       ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Ctfd",
-      "cogs": false,
-      "dept": "Operations",
+      "classification": "Non-COGS",
+      "department": "Operations",
       "journaled": false,
+      "category": null,
       "spend": [
         0.0,
         0.0,
         0.0,
         0.0
       ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Donut",
-      "cogs": false,
-      "dept": "0",
-      "journaled": false,
-      "spend": [
+      "projected": [
         0.0,
-        0.0,
-        0.0,
-        0.0
+        0,
+        0,
+        0
       ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Every",
-      "cogs": false,
-      "dept": "0",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Expensify",
-      "cogs": false,
-      "dept": "Finance",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "ExpressVPN",
-      "cogs": false,
-      "dept": "0",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Focus Force",
-      "cogs": false,
-      "dept": "Marketing",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Font Awesome",
-      "cogs": false,
-      "dept": "0",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Gilmore Global",
-      "cogs": false,
-      "dept": "Operations",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Gmelius",
-      "cogs": false,
-      "dept": "0",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Goto",
-      "cogs": false,
-      "dept": "0",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Grammarly",
-      "cogs": false,
-      "dept": "Tech Operations and AI Enablement",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Happy Scribe",
-      "cogs": false,
-      "dept": "0",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Hotjar",
-      "cogs": false,
-      "dept": "Marketing",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Hoxhunt",
-      "cogs": false,
-      "dept": "Tech Operations and AI Enablement",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Intego",
-      "cogs": false,
-      "dept": "Tech Operations and AI Enablement",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Jobs That",
-      "cogs": false,
-      "dept": "0",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Jotform",
-      "cogs": false,
-      "dept": "Engineering",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Kahoot",
-      "cogs": false,
-      "dept": "0",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Knowledge Anywhere",
-      "cogs": false,
-      "dept": "0",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Lambdatest",
-      "cogs": false,
-      "dept": "Engineering",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Lightcast",
-      "cogs": false,
-      "dept": "Engineering",
-      "journaled": true,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Lingo",
-      "cogs": false,
-      "dept": "Operations",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Lucid",
-      "cogs": false,
-      "dept": "Engineering",
-      "journaled": true,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Mailjet",
-      "cogs": false,
-      "dept": "0",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Mentimeter Stockholm",
-      "cogs": false,
-      "dept": "0",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Miro",
-      "cogs": false,
-      "dept": "Product",
-      "journaled": true,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Mobbin",
-      "cogs": false,
-      "dept": "0",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Monday",
-      "cogs": false,
-      "dept": "Operations",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Mui",
-      "cogs": false,
-      "dept": "0",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Number Api",
-      "cogs": false,
-      "dept": "0",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "One And",
-      "cogs": false,
-      "dept": "Operations",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Otter",
-      "cogs": false,
-      "dept": "Operations",
-      "journaled": true,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Paypro",
-      "cogs": false,
-      "dept": "0",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Playbookux",
-      "cogs": false,
-      "dept": "Operations",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Podcastle",
-      "cogs": false,
-      "dept": "0",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Productboard",
-      "cogs": false,
-      "dept": "Engineering",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Recruitcrm",
-      "cogs": false,
-      "dept": "People Operations",
-      "journaled": true,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Salesforce - Exams",
-      "cogs": true,
-      "dept": "Operations",
-      "journaled": true,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Semrush",
-      "cogs": false,
-      "dept": "Marketing",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Sense",
-      "cogs": false,
-      "dept": "Operations",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Sorenson",
-      "cogs": true,
-      "dept": "Operations",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Speechify",
-      "cogs": false,
-      "dept": "0",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Statista",
-      "cogs": false,
-      "dept": "Marketing",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Sumup Social",
-      "cogs": false,
-      "dept": "0",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Superside",
-      "cogs": false,
-      "dept": "Marketing",
-      "journaled": true,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Textla",
-      "cogs": true,
-      "dept": "Operations",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "The Noun",
-      "cogs": false,
-      "dept": "0",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Todoist",
-      "cogs": false,
-      "dept": "0",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Vimeo",
-      "cogs": false,
-      "dept": "Operations",
-      "journaled": true,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Zluri",
-      "cogs": false,
-      "dept": "Tech Operations and AI Enablement",
-      "journaled": false,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "name": "Zoominfo",
-      "cogs": false,
-      "dept": "Sales",
-      "journaled": true,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "mom": [
-        null,
-        null,
-        null,
-        null
-      ]
-    }
-  ],
-  "movers": [
-    {
-      "name": "Track1099",
-      "prev": 2.57,
-      "curr": 125.21,
-      "pct": 4772.0
-    },
-    {
-      "name": "Saasoptics",
-      "prev": 0.0,
-      "curr": 3629.17,
-      "pct": 999
-    },
-    {
-      "name": "Apprenti Apprentiscope",
-      "prev": 0.0,
-      "curr": 1300.86,
-      "pct": 999
-    },
-    {
-      "name": "Loom",
-      "prev": 0.0,
-      "curr": 720.0,
-      "pct": 999
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Docusign",
-      "prev": 0.0,
-      "curr": 326.63,
-      "pct": 999
+      "classification": "Non-COGS",
+      "department": "People Operations",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        326.63
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
-      "name": "Godaddy",
-      "prev": 0.0,
-      "curr": 89.99,
-      "pct": 999
+      "name": "Donut",
+      "classification": "Non-COGS",
+      "department": "0",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
-      "name": "Figma",
-      "prev": 153.2,
-      "curr": 1012.78,
-      "pct": 561.1
+      "name": "Every",
+      "classification": "Non-COGS",
+      "department": "0",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
-      "name": "Cake",
-      "prev": 1098.58,
-      "curr": 0.0,
-      "pct": -100
+      "name": "Expensify",
+      "classification": "Non-COGS",
+      "department": "Finance",
+      "journaled": false,
+      "category": "Finance & Admin",
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": "Active",
+      "owner": "",
+      "annualCost": null,
+      "billingCycle": "Annual"
     },
     {
-      "name": "Apprentiscope",
-      "prev": 1700.52,
-      "curr": 0.0,
-      "pct": -100
+      "name": "ExpressVPN",
+      "classification": "Non-COGS",
+      "department": "0",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
-      "name": "Salesforce - Slack Internal",
-      "prev": 1529.01,
-      "curr": 0.0,
-      "pct": -100
+      "name": "Focus Force",
+      "classification": "Non-COGS",
+      "department": "Marketing",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
-      "name": "Paypal",
-      "prev": 531.17,
-      "curr": 0.0,
-      "pct": -100
+      "name": "Font Awesome",
+      "classification": "Non-COGS",
+      "department": "0",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
-      "name": "Squadcast",
-      "prev": 393.04,
-      "curr": 0.0,
-      "pct": -100
+      "name": "Gilmore Global",
+      "classification": "Non-COGS",
+      "department": "Operations",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
-      "name": "Tremendous",
-      "prev": 478.95,
-      "curr": 0.0,
-      "pct": -100
+      "name": "Gmelius",
+      "classification": "Non-COGS",
+      "department": "0",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
-      "name": "Hex",
-      "prev": 195.98,
-      "curr": 0.0,
-      "pct": -100
+      "name": "Goto",
+      "classification": "Non-COGS",
+      "department": "0",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Grammarly",
+      "classification": "Non-COGS",
+      "department": "Tech Operations and AI Enablement",
+      "journaled": false,
+      "category": "Productivity & Comms",
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": "Review",
+      "owner": "",
+      "annualCost": null,
+      "billingCycle": "Annual"
+    },
+    {
+      "name": "Happy Scribe",
+      "classification": "Non-COGS",
+      "department": "0",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Hotjar",
+      "classification": "Non-COGS",
+      "department": "Marketing",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Hoxhunt",
+      "classification": "Non-COGS",
+      "department": "Tech Operations and AI Enablement",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Intego",
+      "classification": "Non-COGS",
+      "department": "Tech Operations and AI Enablement",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Jobs That",
+      "classification": "Non-COGS",
+      "department": "0",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Jotform",
+      "classification": "Non-COGS",
+      "department": "Engineering",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Kahoot",
+      "classification": "Non-COGS",
+      "department": "0",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Knowledge Anywhere",
+      "classification": "Non-COGS",
+      "department": "0",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Lambdatest",
+      "classification": "Non-COGS",
+      "department": "Engineering",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Lightcast",
+      "classification": "Non-COGS",
+      "department": "Engineering",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Lingo",
+      "classification": "Non-COGS",
+      "department": "Operations",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Lucid",
+      "classification": "Non-COGS",
+      "department": "Engineering",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Mailjet",
+      "classification": "Non-COGS",
+      "department": "0",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Mentimeter Stockholm",
+      "classification": "Non-COGS",
+      "department": "0",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Miro",
+      "classification": "Non-COGS",
+      "department": "Product",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Mobbin",
+      "classification": "Non-COGS",
+      "department": "0",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Monday",
+      "classification": "Non-COGS",
+      "department": "Operations",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Mui",
+      "classification": "Non-COGS",
+      "department": "0",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Number Api",
+      "classification": "Non-COGS",
+      "department": "0",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "One And",
+      "classification": "Non-COGS",
+      "department": "Operations",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Otter",
+      "classification": "Non-COGS",
+      "department": "Operations",
+      "journaled": true,
+      "category": "Productivity & Comms",
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": "2026-09-01",
+      "renewalStatus": "Active",
+      "owner": "John Nelson",
+      "annualCost": 4714.82,
+      "billingCycle": "Annual"
+    },
+    {
+      "name": "Paypro",
+      "classification": "Non-COGS",
+      "department": "0",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Playbookux",
+      "classification": "Non-COGS",
+      "department": "Operations",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Podcastle",
+      "classification": "Non-COGS",
+      "department": "0",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Productboard",
+      "classification": "Non-COGS",
+      "department": "Engineering",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
       "name": "Quickbooks",
-      "prev": 125.21,
-      "curr": 0.0,
-      "pct": -100
+      "classification": "Non-COGS",
+      "department": "\\#N/A",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        125.21,
+        125.21,
+        125.21,
+        0.0
+      ],
+      "projected": [
+        125.21,
+        125.21,
+        125.21,
+        125.21
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
-      "name": "Imkey Breda",
-      "prev": 62.85,
-      "curr": 0.0,
-      "pct": -100
+      "name": "Recruitcrm",
+      "classification": "Non-COGS",
+      "department": "People Operations",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
-      "name": "Dnsimple",
-      "prev": 81.5,
-      "curr": 162.0,
-      "pct": 98.8
+      "name": "Salesforce - Exams",
+      "classification": "COGS",
+      "department": "Operations",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
-      "name": "Claude",
-      "prev": 2885.79,
-      "curr": 5315.7,
-      "pct": 84.2
+      "name": "Semrush",
+      "classification": "Non-COGS",
+      "department": "Marketing",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
-      "name": "Cursor",
-      "prev": 697.5,
-      "curr": 217.75,
-      "pct": -68.8
+      "name": "Sense",
+      "classification": "Non-COGS",
+      "department": "Operations",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     },
     {
-      "name": "Lovable Dover",
-      "prev": 568.97,
-      "curr": 933.42,
-      "pct": 64.1
+      "name": "Sorenson",
+      "classification": "COGS",
+      "department": "Operations",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Speechify",
+      "classification": "Non-COGS",
+      "department": "0",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Statista",
+      "classification": "Non-COGS",
+      "department": "Marketing",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Sumup Social",
+      "classification": "Non-COGS",
+      "department": "0",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Superside",
+      "classification": "Non-COGS",
+      "department": "Marketing",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Textla",
+      "classification": "COGS",
+      "department": "Operations",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "The Noun",
+      "classification": "Non-COGS",
+      "department": "0",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Todoist",
+      "classification": "Non-COGS",
+      "department": "0",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Vimeo",
+      "classification": "Non-COGS",
+      "department": "Operations",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Zluri",
+      "classification": "Non-COGS",
+      "department": "Tech Operations and AI Enablement",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Zoominfo",
+      "classification": "Non-COGS",
+      "department": "Sales",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projected": [
+        0.0,
+        0,
+        0,
+        0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
     }
   ]
 }
