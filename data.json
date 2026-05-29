@@ -1,1103 +1,2788 @@
 {
   "meta": {
-    "lastUpdated": "2026-04-30",
+    "lastUpdated": "2026-05-29",
+    "months": [
+      "2026-01",
+      "2026-02",
+      "2026-03",
+      "2026-04"
+    ],
+    "monthLabels": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr"
+    ],
+    "currentMonth": "April 2026",
     "currency": "USD",
-    "note": "Sample/prototype data. Replace with real monthly finance data."
+    "sources": {
+      "jan_mar": "App spend totals tab (2026 SaaS Spend sheet)",
+      "classification": "SaaS Apps Classification tab (2026 SaaS Spend sheet)",
+      "apr": "Apr 26 Spend tab (GL file)"
+    }
   },
-  "months": [
-    "2025-05",
-    "2025-06",
-    "2025-07",
-    "2025-08",
-    "2025-09",
-    "2025-10",
-    "2025-11",
-    "2025-12",
-    "2026-01",
-    "2026-02",
-    "2026-03",
-    "2026-04"
+  "monthly": [
+    {
+      "total": 152505.14,
+      "cogs": 79078.18,
+      "nonCogs": 73426.96
+    },
+    {
+      "total": 161027.96,
+      "cogs": 81852.46,
+      "nonCogs": 79175.5
+    },
+    {
+      "total": 162350.15,
+      "cogs": 87731.64,
+      "nonCogs": 74618.51
+    },
+    {
+      "total": 60534.5,
+      "cogs": 16139.58,
+      "nonCogs": 44394.92
+    }
   ],
   "apps": [
     {
-      "name": "AWS",
-      "category": "Cloud Infrastructure",
-      "classification": "COGS",
-      "spend": [
-        42100,
-        43200,
-        44850,
-        46300,
-        47100,
-        48200,
-        49500,
-        51200,
-        53800,
-        55400,
-        57200,
-        61500
-      ],
-      "department": "Engineering",
-      "renewalDate": "2026-12-15",
+      "name": "GCP",
+      "cogs": false,
+      "dept": "Engineering",
       "journaled": true,
-      "projected": [
-        43500,
-        38300,
-        42450,
-        43200,
-        49750,
-        50250,
-        54150,
-        46100,
-        52800,
-        49150,
-        53350,
-        61600
+      "spend": [
+        25808.48,
+        24640.29,
+        25931.3,
+        0.0
+      ],
+      "mom": [
+        null,
+        -4.5,
+        5.2,
+        -100.0
       ]
     },
     {
-      "name": "Snowflake",
-      "category": "Data Warehouse",
-      "classification": "COGS",
+      "name": "Salesforce - Slack Enterprise",
+      "cogs": true,
+      "dept": "Operations",
+      "journaled": false,
       "spend": [
-        18500,
-        19200,
-        19800,
-        21000,
-        22300,
-        23100,
-        24500,
-        25800,
-        26200,
-        27100,
-        28400,
-        31200
+        24074.98,
+        24074.98,
+        24074.98,
+        2721.88
       ],
-      "department": "Data",
-      "renewalDate": "2026-06-01",
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        -88.7
+      ]
+    },
+    {
+      "name": "Comptia",
+      "cogs": true,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        20324.03,
+        20324.03,
+        20324.03,
+        0.0
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        -100.0
+      ]
+    },
+    {
+      "name": "Google",
+      "cogs": false,
+      "dept": "Tech Operations and AI Enablement",
       "journaled": true,
-      "projected": [
-        16400,
-        17800,
-        20500,
-        21250,
-        20800,
-        23600,
-        26300,
-        22750,
-        28100,
-        28400,
-        27300,
-        28600
+      "spend": [
+        8936.58,
+        8851.24,
+        8808.72,
+        8777.96
+      ],
+      "mom": [
+        null,
+        -1.0,
+        -0.5,
+        -0.3
       ]
     },
     {
-      "name": "Datadog",
-      "category": "Observability",
-      "classification": "COGS",
-      "spend": [
-        8200,
-        8400,
-        8600,
-        8900,
-        9100,
-        9400,
-        9800,
-        10200,
-        10500,
-        10800,
-        11200,
-        11800
-      ],
-      "department": "Engineering",
-      "renewalDate": "2026-05-20",
+      "name": "Codio",
+      "cogs": true,
+      "dept": "Learning Experience Design",
       "journaled": false,
-      "projected": [
-        9100,
-        8050,
-        7750,
-        8050,
-        9850,
-        9650,
-        10500,
-        10750,
-        10600,
-        12050,
-        10850,
-        11950
+      "spend": [
+        3923.8,
+        11836.68,
+        12598.66,
+        0.0
+      ],
+      "mom": [
+        null,
+        201.7,
+        6.4,
+        -100.0
       ]
     },
     {
-      "name": "Twilio",
-      "category": "Communications",
-      "classification": "COGS",
-      "spend": [
-        6100,
-        6300,
-        6500,
-        6800,
-        7000,
-        7200,
-        7500,
-        7800,
-        8100,
-        8400,
-        8600,
-        9100
-      ],
-      "department": "Engineering",
-      "renewalDate": "2027-01-10",
-      "journaled": false,
-      "projected": [
-        6600,
-        6500,
-        7050,
-        6950,
-        7350,
-        6400,
-        7000,
-        7400,
-        7300,
-        7850,
-        7800,
-        8600
-      ]
-    },
-    {
-      "name": "SendGrid",
-      "category": "Communications",
-      "classification": "COGS",
-      "spend": [
-        2400,
-        2450,
-        2500,
-        2550,
-        2600,
-        2650,
-        2700,
-        2750,
-        2800,
-        2850,
-        2900,
-        2950
-      ],
-      "department": "Marketing",
-      "renewalDate": "2026-08-01",
-      "journaled": false,
-      "projected": [
-        2500,
-        2350,
-        2400,
-        2350,
-        2450,
-        2950,
-        2800,
-        2800,
-        2600,
-        3000,
-        2650,
-        2850
-      ]
-    },
-    {
-      "name": "Stripe",
-      "category": "Payments",
-      "classification": "COGS",
-      "spend": [
-        4200,
-        4350,
-        4500,
-        4700,
-        4900,
-        5100,
-        5300,
-        5500,
-        5700,
-        5900,
-        6100,
-        6400
-      ],
-      "department": "Finance",
-      "renewalDate": null,
-      "journaled": false,
-      "projected": [
-        4700,
-        4500,
-        4550,
-        4900,
-        5300,
-        5450,
-        4950,
-        4900,
-        5450,
-        5550,
-        5700,
-        7100
-      ]
-    },
-    {
-      "name": "MongoDB Atlas",
-      "category": "Database",
-      "classification": "COGS",
-      "spend": [
-        5800,
-        5950,
-        6100,
-        6300,
-        6500,
-        6700,
-        6900,
-        7100,
-        7300,
-        7500,
-        7700,
-        8000
-      ],
-      "department": "Engineering",
-      "renewalDate": "2026-09-15",
-      "journaled": false,
-      "projected": [
-        6300,
-        5700,
-        6350,
-        6150,
-        7150,
-        6650,
-        6500,
-        6650,
-        7400,
-        7050,
-        7850,
-        8750
-      ]
-    },
-    {
-      "name": "Cloudflare",
-      "category": "Cloud Infrastructure",
-      "classification": "COGS",
-      "spend": [
-        3200,
-        3250,
-        3300,
-        3350,
-        3400,
-        3450,
-        3500,
-        3550,
-        3600,
-        3650,
-        3700,
-        3800
-      ],
-      "department": "Engineering",
-      "renewalDate": "2026-11-30",
-      "journaled": false,
-      "projected": [
-        3100,
-        3050,
-        3700,
-        3350,
-        3050,
-        3100,
-        3150,
-        3650,
-        3850,
-        3600,
-        3300,
-        3700
-      ]
-    },
-    {
-      "name": "Salesforce",
-      "category": "CRM",
-      "classification": "Non-COGS",
-      "spend": [
-        15400,
-        15400,
-        15400,
-        15400,
-        16800,
-        16800,
-        16800,
-        16800,
-        16800,
-        18200,
-        18200,
-        18200
-      ],
-      "department": "Sales",
-      "renewalDate": "2026-05-15",
+      "name": "Salesforce Inc",
+      "cogs": true,
+      "dept": "Operations",
       "journaled": true,
-      "projected": [
-        17250,
-        15500,
-        17150,
-        16750,
-        14850,
-        17700,
-        17550,
-        16950,
-        15850,
-        18800,
-        16500,
-        17900
-      ]
-    },
-    {
-      "name": "HubSpot",
-      "category": "Marketing",
-      "classification": "Non-COGS",
       "spend": [
-        7800,
-        7800,
-        7800,
-        8400,
-        8400,
-        8400,
-        8400,
-        9200,
-        9200,
-        9200,
-        9200,
-        9800
+        6018.75,
+        6018.75,
+        6018.75,
+        0.0
       ],
-      "department": "Marketing",
-      "renewalDate": "2026-07-08",
-      "journaled": false,
-      "projected": [
-        7700,
-        8650,
-        8500,
-        7900,
-        8400,
-        7750,
-        9250,
-        10000,
-        8750,
-        9500,
-        9450,
-        9000
-      ]
-    },
-    {
-      "name": "Slack",
-      "category": "Collaboration",
-      "classification": "Non-COGS",
-      "spend": [
-        5200,
-        5200,
-        5400,
-        5400,
-        5400,
-        5600,
-        5600,
-        5600,
-        5800,
-        5800,
-        5800,
-        6000
-      ],
-      "department": "Operations",
-      "renewalDate": "2026-09-01",
-      "journaled": false,
-      "projected": [
-        5550,
-        5250,
-        5750,
-        5450,
-        4750,
-        5350,
-        4950,
-        6200,
-        6350,
-        6250,
-        5550,
-        5350
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        -100.0
       ]
     },
     {
       "name": "Zoom",
-      "category": "Collaboration",
-      "classification": "Non-COGS",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": true,
       "spend": [
-        3400,
-        3400,
-        3400,
-        3400,
-        3400,
-        3400,
-        3400,
-        3400,
-        3400,
-        3400,
-        3400,
-        3400
+        3332.2,
+        3332.2,
+        3332.2,
+        3330.56
       ],
-      "department": "Operations",
-      "renewalDate": "2026-06-15",
-      "journaled": false,
-      "projected": [
-        3700,
-        3750,
-        3050,
-        3400,
-        3050,
-        3600,
-        3600,
-        3100,
-        3400,
-        3450,
-        3200,
-        3700
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        -0.0
       ]
     },
     {
-      "name": "Google Workspace",
-      "category": "Productivity",
-      "classification": "Non-COGS",
+      "name": "Worksuite",
+      "cogs": true,
+      "dept": "People Operations",
+      "journaled": true,
       "spend": [
-        6200,
-        6200,
-        6300,
-        6300,
-        6300,
-        6400,
-        6400,
-        6400,
-        6500,
-        6500,
-        6500,
-        6600
+        4265.63,
+        328.13,
+        4265.63,
+        4265.63
       ],
-      "department": "Operations",
-      "renewalDate": "2026-08-28",
-      "journaled": false,
-      "projected": [
-        6100,
-        5750,
-        6350,
-        6650,
-        5850,
-        6100,
-        7150,
-        6650,
-        6400,
-        6550,
-        5900,
-        6150
+      "mom": [
+        null,
+        -92.3,
+        1200.0,
+        0.0
       ]
     },
     {
-      "name": "Atlassian (Jira)",
-      "category": "Engineering Tools",
-      "classification": "Non-COGS",
+      "name": "Calendly",
+      "cogs": true,
+      "dept": "Operations",
+      "journaled": true,
       "spend": [
-        4100,
-        4100,
-        4100,
-        4300,
-        4300,
-        4300,
-        4300,
-        4500,
-        4500,
-        4500,
-        4500,
-        4700
+        3935.83,
+        3935.83,
+        3935.83,
+        16.33
       ],
-      "department": "Engineering",
-      "renewalDate": "2026-07-22",
-      "journaled": false,
-      "projected": [
-        3950,
-        4200,
-        3850,
-        4000,
-        3850,
-        4450,
-        4000,
-        4950,
-        4900,
-        4050,
-        4200,
-        4900
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        -99.6
       ]
     },
     {
-      "name": "GitHub",
-      "category": "Engineering Tools",
-      "classification": "Non-COGS",
+      "name": "Saasoptics",
+      "cogs": false,
+      "dept": "Finance",
+      "journaled": true,
       "spend": [
-        3800,
-        3800,
-        3900,
-        3900,
-        3900,
-        4000,
-        4000,
-        4000,
-        4100,
-        4100,
-        4100,
-        4200
+        3402.34,
+        3402.34,
+        0.0,
+        3629.17
       ],
-      "department": "Engineering",
-      "renewalDate": "2026-09-30",
-      "journaled": false,
-      "projected": [
-        3550,
-        3450,
-        4300,
-        3950,
-        3850,
-        4250,
-        4300,
-        3700,
-        3700,
-        4050,
-        4000,
-        4150
+      "mom": [
+        null,
+        0.0,
+        -100.0,
+        null
       ]
     },
     {
-      "name": "Notion",
-      "category": "Productivity",
-      "classification": "Non-COGS",
+      "name": "Hubspot",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": true,
       "spend": [
-        1200,
-        1200,
-        1200,
-        1200,
-        1400,
-        1400,
-        1400,
-        1400,
-        1400,
-        1400,
-        1400,
-        1600
+        2445.53,
+        2445.54,
+        2445.54,
+        2445.53
       ],
-      "department": "Operations",
-      "renewalDate": "2026-12-01",
-      "journaled": false,
-      "projected": [
-        1250,
-        1250,
-        1350,
-        1100,
-        1350,
-        1350,
-        1500,
-        1300,
-        1300,
-        1400,
-        1350,
-        1500
-      ]
-    },
-    {
-      "name": "Figma",
-      "category": "Design",
-      "classification": "Non-COGS",
-      "spend": [
-        2100,
-        2100,
-        2100,
-        2100,
-        2300,
-        2300,
-        2300,
-        2300,
-        2300,
-        2300,
-        2300,
-        2500
-      ],
-      "department": "Design",
-      "renewalDate": "2026-05-12",
-      "journaled": false,
-      "projected": [
-        1950,
-        2300,
-        2050,
-        2300,
-        2350,
-        2050,
-        2600,
-        2500,
-        2550,
-        2550,
-        2500,
-        2300
-      ]
-    },
-    {
-      "name": "Okta",
-      "category": "Security",
-      "classification": "Non-COGS",
-      "spend": [
-        4800,
-        4800,
-        4800,
-        4800,
-        4800,
-        5200,
-        5200,
-        5200,
-        5200,
-        5200,
-        5200,
-        5600
-      ],
-      "department": "Security",
-      "renewalDate": "2026-06-30",
-      "journaled": false,
-      "projected": [
-        4800,
-        4450,
-        4700,
-        4300,
-        4650,
-        5800,
-        4900,
-        5550,
-        5150,
-        5100,
-        5750,
-        6250
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        -0.0
       ]
     },
     {
       "name": "1Password",
-      "category": "Security",
-      "classification": "Non-COGS",
-      "spend": [
-        900,
-        900,
-        900,
-        900,
-        900,
-        950,
-        950,
-        950,
-        950,
-        950,
-        950,
-        1000
-      ],
-      "department": "Security",
-      "renewalDate": "2026-07-20",
-      "journaled": false,
-      "projected": [
-        900,
-        950,
-        850,
-        850,
-        1000,
-        950,
-        950,
-        1000,
-        850,
-        950,
-        950,
-        1100
-      ]
-    },
-    {
-      "name": "CrowdStrike",
-      "category": "Security",
-      "classification": "Non-COGS",
-      "spend": [
-        6400,
-        6400,
-        6400,
-        6400,
-        6400,
-        6400,
-        6400,
-        7200,
-        7200,
-        7200,
-        7200,
-        7200
-      ],
-      "department": "Security",
-      "renewalDate": "2027-01-31",
-      "journaled": false,
-      "projected": [
-        5850,
-        7100,
-        5750,
-        5900,
-        6550,
-        6650,
-        6000,
-        6550,
-        7850,
-        6750,
-        7350,
-        7400
-      ]
-    },
-    {
-      "name": "Workday",
-      "category": "HR / Finance",
-      "classification": "Non-COGS",
-      "spend": [
-        8200,
-        8200,
-        8200,
-        8200,
-        8200,
-        8200,
-        8200,
-        8200,
-        8800,
-        8800,
-        8800,
-        8800
-      ],
-      "department": "People & Finance",
-      "renewalDate": "2026-08-15",
+      "cogs": false,
+      "dept": "Tech Operations and AI Enablement",
       "journaled": true,
-      "projected": [
-        8050,
-        8350,
-        8250,
-        9050,
-        7600,
-        8650,
-        7700,
-        8000,
-        9150,
-        8400,
-        8400,
-        9350
+      "spend": [
+        2421.45,
+        2421.45,
+        2421.45,
+        2421.45
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        0.0
       ]
     },
     {
-      "name": "NetSuite",
-      "category": "HR / Finance",
-      "classification": "Non-COGS",
+      "name": "Airtable",
+      "cogs": true,
+      "dept": "Operations",
+      "journaled": false,
       "spend": [
-        9100,
-        9100,
-        9100,
-        9100,
-        9100,
-        9100,
-        9100,
-        9100,
-        9700,
-        9700,
-        9700,
-        9700
+        2200.12,
+        2226.74,
+        2238.55,
+        2247.81
       ],
-      "department": "People & Finance",
-      "renewalDate": "2026-09-20",
+      "mom": [
+        null,
+        1.2,
+        0.5,
+        0.4
+      ]
+    },
+    {
+      "name": "Claude",
+      "cogs": false,
+      "dept": "Tech Operations and AI Enablement",
+      "journaled": false,
+      "spend": [
+        43.03,
+        623.86,
+        2885.79,
+        5315.7
+      ],
+      "mom": [
+        null,
+        1349.8,
+        362.6,
+        84.2
+      ]
+    },
+    {
+      "name": "Twilio",
+      "cogs": true,
+      "dept": "Engineering",
+      "journaled": false,
+      "spend": [
+        2244.63,
+        1879.05,
+        1582.86,
+        2142.05
+      ],
+      "mom": [
+        null,
+        -16.3,
+        -15.8,
+        35.3
+      ]
+    },
+    {
+      "name": "Okta",
+      "cogs": false,
+      "dept": "Engineering",
       "journaled": true,
-      "projected": [
-        8150,
-        9000,
-        10200,
-        10200,
-        8150,
-        8450,
-        8600,
-        10050,
-        10600,
-        10600,
-        9400,
-        8900
+      "spend": [
+        2608.6,
+        2608.6,
+        2608.6,
+        0.0
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        -100.0
       ]
     },
     {
-      "name": "DocuSign",
-      "category": "Legal / Ops",
-      "classification": "Non-COGS",
+      "name": "Zendesk",
+      "cogs": true,
+      "dept": "Operations",
+      "journaled": true,
       "spend": [
-        1800,
-        1800,
-        1800,
-        1800,
-        1800,
-        1800,
-        1800,
-        1800,
-        1800,
-        1800,
-        1800,
-        1800
+        1285.8,
+        1285.81,
+        2576.15,
+        2637.92
       ],
-      "department": "Legal",
-      "renewalDate": "2026-04-15",
-      "journaled": false,
-      "projected": [
-        1950,
-        1900,
-        1850,
-        2000,
-        1850,
-        1600,
-        1950,
-        1700,
-        1850,
-        2000,
-        1650,
-        1650
+      "mom": [
+        null,
+        0.0,
+        100.4,
+        2.4
       ]
     },
     {
-      "name": "Linear",
-      "category": "Engineering Tools",
-      "classification": "Non-COGS",
+      "name": "Profound",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": true,
       "spend": [
-        0,
-        0,
-        600,
-        600,
-        600,
-        800,
-        800,
-        800,
-        900,
-        900,
-        900,
-        1100
+        0.0,
+        3750.0,
+        3750.0,
+        0.0
       ],
-      "department": "Engineering",
-      "renewalDate": "2026-08-08",
+      "mom": [
+        null,
+        null,
+        0.0,
+        -100.0
+      ]
+    },
+    {
+      "name": "Sentry",
+      "cogs": false,
+      "dept": "Engineering",
+      "journaled": true,
+      "spend": [
+        1474.18,
+        1474.18,
+        1474.18,
+        2290.59
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        55.4
+      ]
+    },
+    {
+      "name": "Surveymonkey Inc",
+      "cogs": true,
+      "dept": "Operations",
+      "journaled": true,
+      "spend": [
+        2156.25,
+        2156.25,
+        2156.25,
+        0.0
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        -100.0
+      ]
+    },
+    {
+      "name": "Greenhouse",
+      "cogs": false,
+      "dept": "People Operations",
+      "journaled": true,
+      "spend": [
+        1421.78,
+        1421.78,
+        1421.78,
+        1421.78
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Mindhub",
+      "cogs": true,
+      "dept": "Operations",
+      "journaled": true,
+      "spend": [
+        1818.31,
+        1818.32,
+        1818.32,
+        0.0
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        -100.0
+      ]
+    },
+    {
+      "name": "ChatGPT",
+      "cogs": false,
+      "dept": "Tech Operations and AI Enablement",
+      "journaled": true,
+      "spend": [
+        1236.45,
+        1215.94,
+        1482.75,
+        899.02
+      ],
+      "mom": [
+        null,
+        -1.7,
+        21.9,
+        -39.4
+      ]
+    },
+    {
+      "name": "Salesforce - Tableau Cloud Creator",
+      "cogs": false,
+      "dept": "Tech Operations and AI Enablement",
       "journaled": false,
-      "projected": [
-        0,
-        0,
-        550,
-        600,
-        550,
-        800,
-        850,
-        750,
-        950,
-        850,
-        900,
-        1200
+      "spend": [
+        1171.16,
+        1171.17,
+        1171.17,
+        1171.16
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "name": "Mailchimp",
+      "cogs": true,
+      "dept": "Operations",
+      "journaled": true,
+      "spend": [
+        1469.81,
+        1469.81,
+        1469.81,
+        0.0
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        -100.0
+      ]
+    },
+    {
+      "name": "Adobe",
+      "cogs": false,
+      "dept": "Tech Operations and AI Enablement",
+      "journaled": true,
+      "spend": [
+        1096.14,
+        861.44,
+        1111.44,
+        1111.44
+      ],
+      "mom": [
+        null,
+        -21.4,
+        29.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Carta",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": true,
+      "spend": [
+        1043.39,
+        1043.39,
+        1043.39,
+        1043.39
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Notion",
+      "cogs": false,
+      "dept": "Tech Operations and AI Enablement",
+      "journaled": true,
+      "spend": [
+        993.28,
+        993.28,
+        993.28,
+        993.28
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Accredible",
+      "cogs": true,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        1306.67,
+        1306.67,
+        1306.67,
+        0.0
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        -100.0
+      ]
+    },
+    {
+      "name": "Hireflix",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        3600.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        -100.0,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Cake",
+      "cogs": true,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        1395.25,
+        1082.45,
+        1098.58,
+        0.0
+      ],
+      "mom": [
+        null,
+        -22.4,
+        1.5,
+        -100.0
+      ]
+    },
+    {
+      "name": "Apprentiscope",
+      "cogs": true,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        399.66,
+        1300.86,
+        1700.52,
+        0.0
+      ],
+      "mom": [
+        null,
+        225.5,
+        30.7,
+        -100.0
+      ]
+    },
+    {
+      "name": "Atlassian",
+      "cogs": false,
+      "dept": "Engineering",
+      "journaled": true,
+      "spend": [
+        840.73,
+        840.73,
+        820.81,
+        892.08
+      ],
+      "mom": [
+        null,
+        0.0,
+        -2.4,
+        8.7
+      ]
+    },
+    {
+      "name": "Microsoft",
+      "cogs": false,
+      "dept": "Tech Operations and AI Enablement",
+      "journaled": true,
+      "spend": [
+        794.88,
+        913.4,
+        769.19,
+        741.85
+      ],
+      "mom": [
+        null,
+        14.9,
+        -15.8,
+        -3.6
+      ]
+    },
+    {
+      "name": "Cursor",
+      "cogs": false,
+      "dept": "Engineering",
+      "journaled": true,
+      "spend": [
+        867.82,
+        1354.98,
+        697.5,
+        217.75
+      ],
+      "mom": [
+        null,
+        56.1,
+        -48.5,
+        -68.8
+      ]
+    },
+    {
+      "name": "Bamboohr",
+      "cogs": false,
+      "dept": "People Operations",
+      "journaled": true,
+      "spend": [
+        781.8,
+        781.8,
+        781.8,
+        781.8
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Salesforce - Slack Internal",
+      "cogs": false,
+      "dept": "Tech Operations and AI Enablement",
+      "journaled": true,
+      "spend": [
+        0.0,
+        1529.01,
+        1529.01,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        0.0,
+        -100.0
+      ]
+    },
+    {
+      "name": "Workforce",
+      "cogs": false,
+      "dept": "People Operations",
+      "journaled": true,
+      "spend": [
+        1100.0,
+        600.0,
+        600.0,
+        600.0
+      ],
+      "mom": [
+        null,
+        -45.5,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Outreach",
+      "cogs": false,
+      "dept": "Sales",
+      "journaled": true,
+      "spend": [
+        0.0,
+        1367.33,
+        1367.33,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        0.0,
+        -100.0
+      ]
+    },
+    {
+      "name": "Lovable Dover",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        1001.65,
+        86.65,
+        568.97,
+        933.42
+      ],
+      "mom": [
+        null,
+        -91.3,
+        556.6,
+        64.1
+      ]
+    },
+    {
+      "name": "Cultureamp",
+      "cogs": false,
+      "dept": "People Operations",
+      "journaled": true,
+      "spend": [
+        642.23,
+        642.23,
+        642.23,
+        642.23
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Hook Security",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        1176.0,
+        1176.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        0.0,
+        -100.0,
+        null
+      ]
+    },
+    {
+      "name": "Github",
+      "cogs": false,
+      "dept": "Engineering",
+      "journaled": true,
+      "spend": [
+        518.05,
+        460.8,
+        659.33,
+        699.43
+      ],
+      "mom": [
+        null,
+        -11.1,
+        43.1,
+        6.1
+      ]
+    },
+    {
+      "name": "Linkedin",
+      "cogs": false,
+      "dept": "Marketing",
+      "journaled": false,
+      "spend": [
+        0.0,
+        1125.53,
+        1125.53,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        0.0,
+        -100.0
+      ]
+    },
+    {
+      "name": "Paypal",
+      "cogs": false,
+      "dept": "Finance",
+      "journaled": true,
+      "spend": [
+        531.18,
+        970.95,
+        531.17,
+        0.0
+      ],
+      "mom": [
+        null,
+        82.8,
+        -45.3,
+        -100.0
+      ]
+    },
+    {
+      "name": "Apprenticeships For",
+      "cogs": false,
+      "dept": "1",
+      "journaled": false,
+      "spend": [
+        0.0,
+        1900.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        -100.0,
+        null
+      ]
+    },
+    {
+      "name": "Yesware",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": true,
+      "spend": [
+        440.94,
+        440.94,
+        440.94,
+        440.94
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Apprenti Apprentiscope",
+      "cogs": true,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        399.66,
+        0.0,
+        0.0,
+        1300.86
+      ],
+      "mom": [
+        null,
+        -100.0,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Typeform",
+      "cogs": true,
+      "dept": "Product Management",
+      "journaled": false,
+      "spend": [
+        1622.24,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        -100.0,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Zapier",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        29.99,
+        1457.99,
+        29.99,
+        29.99
+      ],
+      "mom": [
+        null,
+        4761.6,
+        -97.9,
+        0.0
+      ]
+    },
+    {
+      "name": "Launchdarkly",
+      "cogs": false,
+      "dept": "Engineering",
+      "journaled": true,
+      "spend": [
+        381.06,
+        381.06,
+        381.06,
+        381.06
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Squadcast",
+      "cogs": false,
+      "dept": "Engineering",
+      "journaled": true,
+      "spend": [
+        456.0,
+        475.79,
+        393.04,
+        0.0
+      ],
+      "mom": [
+        null,
+        4.3,
+        -17.4,
+        -100.0
+      ]
+    },
+    {
+      "name": "Tremendous",
+      "cogs": true,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        103.0,
+        721.0,
+        478.95,
+        0.0
+      ],
+      "mom": [
+        null,
+        600.0,
+        -33.6,
+        -100.0
+      ]
+    },
+    {
+      "name": "Figma",
+      "cogs": false,
+      "dept": "Product",
+      "journaled": true,
+      "spend": [
+        49.0,
+        70.07,
+        153.2,
+        1012.78
+      ],
+      "mom": [
+        null,
+        43.0,
+        118.6,
+        561.1
+      ]
+    },
+    {
+      "name": "Gamma",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": true,
+      "spend": [
+        0.0,
+        348.94,
+        307.76,
+        281.51
+      ],
+      "mom": [
+        null,
+        null,
+        -11.8,
+        -8.5
+      ]
+    },
+    {
+      "name": "Refiner",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": true,
+      "spend": [
+        219.0,
+        219.0,
+        219.0,
+        219.0
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Deepsource",
+      "cogs": false,
+      "dept": "Engineering",
+      "journaled": true,
+      "spend": [
+        210.0,
+        210.0,
+        210.0,
+        210.0
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Aws",
+      "cogs": false,
+      "dept": "Engineering",
+      "journaled": false,
+      "spend": [
+        554.09,
+        184.65,
+        50.44,
+        0.0
+      ],
+      "mom": [
+        null,
+        -66.7,
+        -72.7,
+        -100.0
+      ]
+    },
+    {
+      "name": "Loom",
+      "cogs": true,
+      "dept": "Operations",
+      "journaled": true,
+      "spend": [
+        46.66,
+        0.0,
+        0.0,
+        720.0
+      ],
+      "mom": [
+        null,
+        -100.0,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Artillery",
+      "cogs": false,
+      "dept": "Engineering",
+      "journaled": true,
+      "spend": [
+        199.0,
+        132.2,
+        199.0,
+        199.0
+      ],
+      "mom": [
+        null,
+        -33.6,
+        50.5,
+        0.0
+      ]
+    },
+    {
+      "name": "Hex",
+      "cogs": false,
+      "dept": "Engineering",
+      "journaled": true,
+      "spend": [
+        195.98,
+        195.98,
+        195.98,
+        0.0
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        -100.0
+      ]
+    },
+    {
+      "name": "Coderpad",
+      "cogs": false,
+      "dept": "Engineering",
+      "journaled": true,
+      "spend": [
+        108.88,
+        108.88,
+        130.65,
+        130.65
+      ],
+      "mom": [
+        null,
+        0.0,
+        20.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Dnsimple",
+      "cogs": false,
+      "dept": "Engineering",
+      "journaled": true,
+      "spend": [
+        66.0,
+        97.0,
+        81.5,
+        162.0
+      ],
+      "mom": [
+        null,
+        47.0,
+        -16.0,
+        98.8
+      ]
+    },
+    {
+      "name": "Geocode",
+      "cogs": false,
+      "dept": "Engineering",
+      "journaled": true,
+      "spend": [
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Salesforce - Sales Cloud Enterprise",
+      "cogs": false,
+      "dept": "Tech Operations and AI Enablement",
+      "journaled": false,
+      "spend": [
+        0.0,
+        195.5,
+        195.5,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        0.0,
+        -100.0
+      ]
+    },
+    {
+      "name": "Quickbooks",
+      "cogs": false,
+      "dept": "\\#N/A",
+      "journaled": false,
+      "spend": [
+        125.21,
+        125.21,
+        125.21,
+        0.0
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        -100.0
+      ]
+    },
+    {
+      "name": "Mailgun",
+      "cogs": true,
+      "dept": "Operations",
+      "journaled": true,
+      "spend": [
+        87.1,
+        87.1,
+        87.1,
+        87.1
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Docusign",
+      "cogs": false,
+      "dept": "People Operations",
+      "journaled": true,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        326.63
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Tango",
+      "cogs": false,
+      "dept": "Engineering",
+      "journaled": true,
+      "spend": [
+        84.92,
+        84.92,
+        84.92,
+        65.33
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        -23.1
+      ]
+    },
+    {
+      "name": "Perplexity",
+      "cogs": false,
+      "dept": "Tech Operations and AI Enablement",
+      "journaled": false,
+      "spend": [
+        239.0,
+        21.25,
+        21.25,
+        21.25
+      ],
+      "mom": [
+        null,
+        -91.1,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Hireright Llc",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        224.23,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        -100.0,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Stape",
+      "cogs": false,
+      "dept": "Engineering",
+      "journaled": false,
+      "spend": [
+        50.0,
+        54.44,
+        54.44,
+        54.44
+      ],
+      "mom": [
+        null,
+        8.9,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Track1099",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        68.32,
+        4.87,
+        2.57,
+        125.21
+      ],
+      "mom": [
+        null,
+        -92.9,
+        -47.2,
+        4772.0
+      ]
+    },
+    {
+      "name": "Dropbox",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        41.76,
+        43.53,
+        43.53,
+        43.53
+      ],
+      "mom": [
+        null,
+        4.2,
+        0.0,
+        0.0
       ]
     },
     {
       "name": "Vercel",
-      "category": "Cloud Infrastructure",
-      "classification": "COGS",
-      "spend": [
-        1400,
-        1450,
-        1500,
-        1600,
-        1700,
-        1800,
-        1900,
-        2000,
-        2100,
-        2200,
-        2300,
-        2500
-      ],
-      "department": "Engineering",
-      "renewalDate": "2026-06-10",
+      "cogs": false,
+      "dept": "Engineering",
       "journaled": false,
-      "projected": [
-        1500,
-        1300,
-        1450,
-        1500,
-        1500,
-        1900,
-        1950,
-        1900,
-        2200,
-        2250,
-        2250,
-        2200
+      "spend": [
+        40.0,
+        40.0,
+        40.0,
+        44.8
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        12.0
       ]
     },
     {
-      "name": "OpenAI API",
-      "category": "AI / ML",
-      "classification": "COGS",
+      "name": "Plus Docs",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": false,
       "spend": [
-        800,
-        1200,
-        1800,
-        2400,
-        3100,
-        3900,
-        4800,
-        5800,
-        7200,
-        8800,
-        10500,
-        13200
+        40.0,
+        40.0,
+        40.0,
+        40.0
       ],
-      "department": "Engineering",
-      "renewalDate": null,
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Godaddy",
+      "cogs": false,
+      "dept": "Engineering",
       "journaled": true,
-      "projected": [
-        700,
-        1300,
-        1950,
-        2450,
-        3350,
-        4000,
-        4400,
-        5300,
-        6850,
-        9650,
-        11250,
-        14350
+      "spend": [
+        47.18,
+        0.0,
+        0.0,
+        89.99
+      ],
+      "mom": [
+        null,
+        -100.0,
+        null,
+        null
       ]
     },
     {
-      "name": "Anthropic API",
-      "category": "AI / ML",
-      "classification": "COGS",
+      "name": "Imkey Breda",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": false,
       "spend": [
-        0,
-        0,
-        0,
-        500,
-        1100,
-        1800,
-        2600,
-        3500,
-        4800,
-        6200,
-        7800,
-        9500
+        32.9,
+        29.95,
+        62.85,
+        0.0
       ],
-      "department": "Engineering",
-      "renewalDate": null,
+      "mom": [
+        null,
+        -9.0,
+        109.8,
+        -100.0
+      ]
+    },
+    {
+      "name": "Paddle",
+      "cogs": false,
+      "dept": "Finance",
       "journaled": true,
-      "projected": [
-        0,
-        0,
-        0,
-        550,
-        1000,
-        1700,
-        2350,
-        3750,
-        5250,
-        6050,
-        8050,
-        8700
+      "spend": [
+        27.22,
+        27.22,
+        27.22,
+        27.22
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        0.0
       ]
     },
     {
-      "name": "Pinecone",
-      "category": "AI / ML",
-      "classification": "COGS",
-      "spend": [
-        0,
-        400,
-        600,
-        800,
-        1000,
-        1200,
-        1400,
-        1600,
-        1800,
-        2000,
-        2200,
-        2400
-      ],
-      "department": "Engineering",
-      "renewalDate": "2026-07-15",
+      "name": "Fal Features",
+      "cogs": false,
+      "dept": "Operations",
       "journaled": false,
-      "projected": [
-        0,
-        450,
-        650,
-        900,
-        1050,
-        1300,
-        1250,
-        1700,
-        1750,
-        2200,
-        2350,
-        2600
+      "spend": [
+        50.0,
+        50.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        0.0,
+        -100.0,
+        null
       ]
     },
     {
-      "name": "Asana",
-      "category": "Collaboration",
-      "classification": "Non-COGS",
-      "spend": [
-        2200,
-        2200,
-        2200,
-        2200,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "department": "Operations",
-      "renewalDate": "2025-09-01",
+      "name": "Dmarcian",
+      "cogs": false,
+      "dept": "Engineering",
       "journaled": false,
-      "projected": [
-        2350,
-        2100,
-        2350,
-        2000,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+      "spend": [
+        24.0,
+        24.0,
+        24.0,
+        24.0
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        0.0
       ]
     },
     {
-      "name": "Mixpanel",
-      "category": "Analytics",
-      "classification": "Non-COGS",
-      "spend": [
-        1800,
-        1800,
-        1800,
-        1800,
-        1800,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "department": "Marketing",
-      "renewalDate": "2026-04-22",
+      "name": "Helix Pay",
+      "cogs": false,
+      "dept": "Operations",
       "journaled": false,
-      "projected": [
-        1950,
-        1950,
-        1700,
-        1950,
-        1800,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+      "spend": [
+        27.35,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        -100.0,
+        null,
+        null
       ]
+    },
+    {
+      "name": "Squarespace",
+      "cogs": false,
+      "dept": "Engineering",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        24.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        -100.0
+      ]
+    },
+    {
+      "name": "Digital Ocean",
+      "cogs": false,
+      "dept": "Engineering",
+      "journaled": false,
+      "spend": [
+        6.0,
+        6.0,
+        6.0,
+        6.0
+      ],
+      "mom": [
+        null,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Abstract",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Askai",
+      "cogs": false,
+      "dept": "Tech Operations and AI Enablement",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Beautiful",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Billigence",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Calget",
+      "cogs": true,
+      "dept": "Tech Operations and AI Enablement",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Canva",
+      "cogs": false,
+      "dept": "Marketing",
+      "journaled": true,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Circleci",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Cision",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Cockatoo",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Coresignal",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Ctfd",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Donut",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Every",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Expensify",
+      "cogs": false,
+      "dept": "Finance",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "ExpressVPN",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Focus Force",
+      "cogs": false,
+      "dept": "Marketing",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Font Awesome",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Gilmore Global",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Gmelius",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Goto",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Grammarly",
+      "cogs": false,
+      "dept": "Tech Operations and AI Enablement",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Happy Scribe",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Hotjar",
+      "cogs": false,
+      "dept": "Marketing",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Hoxhunt",
+      "cogs": false,
+      "dept": "Tech Operations and AI Enablement",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Intego",
+      "cogs": false,
+      "dept": "Tech Operations and AI Enablement",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Jobs That",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Jotform",
+      "cogs": false,
+      "dept": "Engineering",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Kahoot",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Knowledge Anywhere",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Lambdatest",
+      "cogs": false,
+      "dept": "Engineering",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Lightcast",
+      "cogs": false,
+      "dept": "Engineering",
+      "journaled": true,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Lingo",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Lucid",
+      "cogs": false,
+      "dept": "Engineering",
+      "journaled": true,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Mailjet",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Mentimeter Stockholm",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Miro",
+      "cogs": false,
+      "dept": "Product",
+      "journaled": true,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Mobbin",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Monday",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Mui",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Number Api",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "One And",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Otter",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": true,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Paypro",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Playbookux",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Podcastle",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Productboard",
+      "cogs": false,
+      "dept": "Engineering",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Recruitcrm",
+      "cogs": false,
+      "dept": "People Operations",
+      "journaled": true,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Salesforce - Exams",
+      "cogs": true,
+      "dept": "Operations",
+      "journaled": true,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Semrush",
+      "cogs": false,
+      "dept": "Marketing",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Sense",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Sorenson",
+      "cogs": true,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Speechify",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Statista",
+      "cogs": false,
+      "dept": "Marketing",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Sumup Social",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Superside",
+      "cogs": false,
+      "dept": "Marketing",
+      "journaled": true,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Textla",
+      "cogs": true,
+      "dept": "Operations",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "The Noun",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Todoist",
+      "cogs": false,
+      "dept": "0",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Vimeo",
+      "cogs": false,
+      "dept": "Operations",
+      "journaled": true,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Zluri",
+      "cogs": false,
+      "dept": "Tech Operations and AI Enablement",
+      "journaled": false,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Zoominfo",
+      "cogs": false,
+      "dept": "Sales",
+      "journaled": true,
+      "spend": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mom": [
+        null,
+        null,
+        null,
+        null
+      ]
+    }
+  ],
+  "deptTotals": {
+    "Tech Operations and AI Enablement": 21453.109999999997,
+    "Operations": 18664.979999999996,
+    "People Operations": 8038.070000000001,
+    "Engineering": 7709.17,
+    "Finance": 3656.39,
+    "Product": 1012.78
+  },
+  "movers": [
+    {
+      "name": "Track1099",
+      "prev": 2.57,
+      "curr": 125.21,
+      "pct": 4772.0
+    },
+    {
+      "name": "Saasoptics",
+      "prev": 0.0,
+      "curr": 3629.17,
+      "pct": 999
+    },
+    {
+      "name": "Apprenti Apprentiscope",
+      "prev": 0.0,
+      "curr": 1300.86,
+      "pct": 999
+    },
+    {
+      "name": "Loom",
+      "prev": 0.0,
+      "curr": 720.0,
+      "pct": 999
+    },
+    {
+      "name": "Docusign",
+      "prev": 0.0,
+      "curr": 326.63,
+      "pct": 999
+    },
+    {
+      "name": "Godaddy",
+      "prev": 0.0,
+      "curr": 89.99,
+      "pct": 999
+    },
+    {
+      "name": "Figma",
+      "prev": 153.2,
+      "curr": 1012.78,
+      "pct": 561.1
+    },
+    {
+      "name": "GCP",
+      "prev": 25931.3,
+      "curr": 0.0,
+      "pct": -100
+    },
+    {
+      "name": "Comptia",
+      "prev": 20324.03,
+      "curr": 0.0,
+      "pct": -100
+    },
+    {
+      "name": "Codio",
+      "prev": 12598.66,
+      "curr": 0.0,
+      "pct": -100
+    },
+    {
+      "name": "Salesforce Inc",
+      "prev": 6018.75,
+      "curr": 0.0,
+      "pct": -100
+    },
+    {
+      "name": "Okta",
+      "prev": 2608.6,
+      "curr": 0.0,
+      "pct": -100
+    },
+    {
+      "name": "Profound",
+      "prev": 3750.0,
+      "curr": 0.0,
+      "pct": -100
+    },
+    {
+      "name": "Surveymonkey Inc",
+      "prev": 2156.25,
+      "curr": 0.0,
+      "pct": -100
+    },
+    {
+      "name": "Mindhub",
+      "prev": 1818.32,
+      "curr": 0.0,
+      "pct": -100
+    },
+    {
+      "name": "Mailchimp",
+      "prev": 1469.81,
+      "curr": 0.0,
+      "pct": -100
+    },
+    {
+      "name": "Accredible",
+      "prev": 1306.67,
+      "curr": 0.0,
+      "pct": -100
+    },
+    {
+      "name": "Cake",
+      "prev": 1098.58,
+      "curr": 0.0,
+      "pct": -100
+    },
+    {
+      "name": "Apprentiscope",
+      "prev": 1700.52,
+      "curr": 0.0,
+      "pct": -100
+    },
+    {
+      "name": "Salesforce - Slack Internal",
+      "prev": 1529.01,
+      "curr": 0.0,
+      "pct": -100
     }
   ]
 }
