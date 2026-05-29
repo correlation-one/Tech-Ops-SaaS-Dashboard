@@ -115,7 +115,6 @@
 </header>
 
 <main>
-  <div class="apr-note" id="apr-note"></div>
   <div class="grid-4" id="kpi-row"></div>
 
   <div class="grid-3">
@@ -235,15 +234,6 @@ function renderKPIs() {
   const prev = activeMonth > 0 ? DATA.monthly[activeMonth-1] : null;
   const mom = prev ? ((mt.total - prev.total)/prev.total*100) : null;
   const ytd = DATA.monthly.slice(0, activeMonth+1).reduce((s,m)=>s+m.total, 0);
-
-  // April note
-  const note = document.getElementById('apr-note');
-  if (activeMonth === 3 && DATA.meta.aprNote) {
-    note.textContent = '⚠ ' + DATA.meta.aprNote;
-    note.classList.add('show');
-  } else {
-    note.classList.remove('show');
-  }
 
   let deltaDir = 'neutral';
   if (mom !== null) deltaDir = mom > 0.05 ? 'up' : (mom < -0.05 ? 'down' : 'neutral');
