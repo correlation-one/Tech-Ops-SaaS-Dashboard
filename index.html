@@ -174,7 +174,6 @@
   <div><label>View Month</label><div class="month-switch" id="monthSwitch"></div></div>
   <div><label>Classification</label><select id="classSelect"><option value="all">All</option><option value="COGS">COGS</option><option value="Non-COGS">Non-COGS</option></select></div>
   <div><label>Department</label><select id="deptSelect"><option value="all">All</option></select></div>
-  <div><label>Category</label><select id="catSelect"><option value="all">All</option></select></div>
   <div><label>Journaled</label><select id="journaledSelect"><option value="all">All</option><option value="yes">Journaled only</option><option value="no">Not journaled</option></select></div>
   <div><label>Top N (charts)</label><select id="topNSelect"><option value="5">Top 5</option><option value="10" selected>Top 10</option><option value="15">Top 15</option><option value="999">All</option></select></div>
 </div>
@@ -204,8 +203,8 @@
 
   <!-- Department donut -->
   <div class="card chart-half">
-    <h3>Spend by Category — <span id="catMonth"></span></h3>
-    <div class="chart-container tall"><canvas id="categoryChart"></canvas></div>
+    <h3>Spend by Department — <span id="deptDonutMonth"></span></h3>
+    <div class="chart-container tall"><canvas id="deptDonut"></canvas></div>
   </div>
 
   <!-- MoM movers -->
@@ -218,14 +217,10 @@
     <table><thead><tr><th>App</th><th>Class</th><th class="num">Prev</th><th class="num">Current</th><th class="num">Δ $</th></tr></thead><tbody id="topDecreases"></tbody></table>
   </div>
 
-  <!-- Top apps + department -->
-  <div class="card chart-twothirds">
+  <!-- Top apps (full width) -->
+  <div class="card chart-wide">
     <h3>Top Apps by Spend — <span id="topMonth"></span></h3>
     <div class="chart-container tall"><canvas id="topAppsChart"></canvas></div>
-  </div>
-  <div class="card chart-third">
-    <h3>Spend by Department — <span id="deptMonth"></span></h3>
-    <div class="chart-container tall"><canvas id="deptChart"></canvas></div>
   </div>
 
   <!-- Renewal calendar (from Notion) -->
@@ -308,13 +303,10 @@ async function load() {
   document.getElementById("monthSwitch").innerHTML = DATA.monthLabels.map((l,i)=>
     `<button class="month-btn ${i===activeMonth?'active':''}" data-i="${i}" onclick="setMonth(${i})">${l}</button>`).join("");
 
-  // Populate dept + category dropdowns
+  // Populate department dropdown
   const depts = [...new Set(DATA.apps.map(a=>a.department).filter(Boolean))].sort();
   document.getElementById("deptSelect").innerHTML = '<option value="all">All</option>' + depts.map(d=>`<option>${d}</option>`).join("");
-  const cats = [...new Set(DATA.apps.map(a=>a.category).filter(Boolean))].sort();
-  document.getElementById("catSelect").innerHTML = '<option value="all">All</option>' + cats.map(c=>`<option>${c}</option>`).join("");
-
-  ["classSelect","deptSelect","catSelect","journaledSelect","topNSelect"].forEach(id=>
+  ["classSelect","deptSelect","journaledSelect","topNSelect"].forEach(id=>
     document.getElementById(id).addEventListener("change", render));
   document.getElementById("searchBox").addEventListener("input", renderTable);
 
@@ -326,12 +318,10 @@ function setMonth(i){ activeMonth = i; document.querySelectorAll(".month-btn").f
 function filteredApps() {
   const cls = document.getElementById("classSelect").value;
   const dept = document.getElementById("deptSelect").value;
-  const cat = document.getElementById("catSelect").value;
   const jr = document.getElementById("journaledSelect").value;
   return DATA.apps.filter(a=>{
     if (cls!=="all" && a.classification!==cls) return false;
     if (dept!=="all" && a.department!==dept) return false;
-    if (cat!=="all" && a.category!==cat) return false;
     if (jr==="yes" && !a.journaled) return false;
     if (jr==="no" && a.journaled) return false;
     return true;
@@ -358,7 +348,7 @@ function draw(id, type, data, opts) {
 function render() {
   const idx = activeMonth, apps = filteredApps();
   const ML = DATA.monthLabels;
-  ["kpiMonthLabel","anomMonth","catMonth","topMonth","deptMonth"].forEach(id=>document.getElementById(id).textContent = ML[idx]);
+  ["kpiMonthLabel","anomMonth","deptDonutMonth","topMonth"].forEach(id=>document.getElementById(id).textContent = ML[idx]);
   document.getElementById("kpiYtdMonth").textContent = ML[idx];
 
   const totals = DATA.months.map((_,i)=>apps.reduce((s,a)=>s+a.spend[i],0));
@@ -405,13 +395,14 @@ function render() {
     y:{ticks:{color:axisColor,font:{family:"IBM Plex Sans",size:11}},grid:{display:false}}
   }}));
 
-  // Category donut
-  const catTot={}; apps.forEach(a=>{ if(a.category) catTot[a.category]=(catTot[a.category]||0)+a.spend[idx]; });
-  const cats = Object.entries(catTot).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]);
-  draw("categoryChart","doughnut",{
-    labels:cats.map(c=>c[0]),
-    datasets:[{data:cats.map(c=>c[1]),backgroundColor:CATCOLORS,borderColor:"#181d25",borderWidth:2}]
-  }, chartOpts({cutout:"58%",plugins:{legend:{position:"right",labels:{color:"#8a93a3",font:{family:"IBM Plex Sans",size:11},usePointStyle:true,pointStyle:"circle",boxWidth:8,padding:9}}}}));
+  // Department donut
+  const deptTotDonut={}; apps.forEach(a=>{ const d=a.department||"Other"; deptTotDonut[d]=(deptTotDonut[d]||0)+a.spend[idx]; });
+  const deptSlices = Object.entries(deptTotDonut).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]);
+  draw("deptDonut","doughnut",{
+    labels:deptSlices.map(d=>d[0]),
+    datasets:[{data:deptSlices.map(d=>d[1]),backgroundColor:CATCOLORS,borderColor:"#181d25",borderWidth:2}]
+  }, chartOpts({cutout:"58%",plugins:{legend:{position:"right",labels:{color:"#8a93a3",font:{family:"IBM Plex Sans",size:11},usePointStyle:true,pointStyle:"circle",boxWidth:8,padding:9}},
+    tooltip:{backgroundColor:"#20262f",titleColor:"#e8ebef",bodyColor:"#8a93a3",borderColor:"#2a313c",borderWidth:1,padding:11,titleFont:{family:"IBM Plex Sans",weight:"600"},bodyFont:{family:"IBM Plex Mono"},callbacks:{label:c=>" "+c.label+": "+fmt(c.raw)}}}}));
 
   // MoM movers
   const movers = idx>0 ? apps.map(a=>{const cur=a.spend[idx],prev=a.spend[idx-1];return{...a,cur,prev,delta:cur-prev,pct:prev===0?(cur>0?Infinity:0):(cur-prev)/prev*100};}).filter(m=>m.delta!==0) : [];
@@ -427,14 +418,6 @@ function render() {
       {label:"Projected",data:proj,borderColor:"#f0a93a",borderDash:[6,4],fill:false,tension:.3,borderWidth:2,pointRadius:2}
     ]
   }, chartOpts({scales:{x:{ticks:{color:axisColor,font:{family:"IBM Plex Mono",size:11}},grid:{display:false}},y:{ticks:{color:axisColor,font:{family:"IBM Plex Mono",size:11},callback:v=>fmt(v)},grid:{color:gridColor}}}}));
-
-  // Department
-  const deptTot={}; apps.forEach(a=>{const d=a.department||"Other";deptTot[d]=(deptTot[d]||0)+a.spend[idx];});
-  const depts = Object.entries(deptTot).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]);
-  draw("deptChart","bar",{
-    labels:depts.map(d=>d[0]),
-    datasets:[{label:"Spend",data:depts.map(d=>d[1]),backgroundColor:"#a98bf5",borderRadius:4}]
-  }, chartOpts({indexAxis:"y",plugins:{legend:{display:false}},scales:{x:{ticks:{color:axisColor,font:{family:"IBM Plex Mono",size:10},callback:v=>fmt(v)},grid:{color:gridColor}},y:{ticks:{color:axisColor,font:{family:"IBM Plex Sans",size:10}},grid:{display:false}}}}));
 
   // Anomalies
   const anomalies=[];
