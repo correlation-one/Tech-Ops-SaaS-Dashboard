@@ -1,8 +1,7 @@
 {
   "meta": {
     "lastUpdated": "2026-05-29",
-    "currency": "USD",
-    "sources": "Jan\u2013Mar from App spend totals tab \u00b7 classification from SaaS Apps Classification tab \u00b7 April from Apr 26 Spend tab \u00b7 renewals from Notion SaaS Apps DB"
+    "currency": "USD"
   },
   "months": [
     "2026-01",
@@ -1026,7 +1025,7 @@
     {
       "name": "Apprenticeships For",
       "classification": "Non-COGS",
-      "department": "1",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -2010,7 +2009,7 @@
     {
       "name": "Abstract",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -2058,7 +2057,7 @@
     {
       "name": "Beautiful",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -2154,7 +2153,7 @@
     {
       "name": "Circleci",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -2202,7 +2201,7 @@
     {
       "name": "Cockatoo",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -2298,7 +2297,7 @@
     {
       "name": "Donut",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -2322,7 +2321,7 @@
     {
       "name": "Every",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -2370,7 +2369,7 @@
     {
       "name": "ExpressVPN",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -2418,7 +2417,7 @@
     {
       "name": "Font Awesome",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -2466,7 +2465,7 @@
     {
       "name": "Gmelius",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -2490,7 +2489,7 @@
     {
       "name": "Goto",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -2538,7 +2537,7 @@
     {
       "name": "Happy Scribe",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -2634,7 +2633,7 @@
     {
       "name": "Jobs That",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -2682,7 +2681,7 @@
     {
       "name": "Kahoot",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -2706,7 +2705,7 @@
     {
       "name": "Knowledge Anywhere",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -2826,7 +2825,7 @@
     {
       "name": "Mailjet",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -2850,7 +2849,7 @@
     {
       "name": "Mentimeter Stockholm",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -2898,7 +2897,7 @@
     {
       "name": "Mobbin",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -2946,7 +2945,7 @@
     {
       "name": "Mui",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -2970,7 +2969,7 @@
     {
       "name": "Number Api",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -3042,7 +3041,7 @@
     {
       "name": "Paypro",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -3090,7 +3089,7 @@
     {
       "name": "Podcastle",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -3138,7 +3137,7 @@
     {
       "name": "Quickbooks",
       "classification": "Non-COGS",
-      "department": "\\#N/A",
+      "department": "Finance",
       "journaled": false,
       "category": null,
       "spend": [
@@ -3282,7 +3281,7 @@
     {
       "name": "Speechify",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -3330,7 +3329,7 @@
     {
       "name": "Sumup Social",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -3402,7 +3401,7 @@
     {
       "name": "The Noun",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
@@ -3426,7 +3425,7 @@
     {
       "name": "Todoist",
       "classification": "Non-COGS",
-      "department": "0",
+      "department": "Operations",
       "journaled": false,
       "category": null,
       "spend": [
