@@ -1,958 +1,554 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>IT SaaS Spend Dashboard</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C1 SaaS Spend Dashboard · 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0f1419;
-    --panel: #1a2028;
-    --panel-2: #232a35;
-    --border: #2d3543;
-    --text: #e6e8eb;
-    --text-dim: #8a94a6;
-    --accent: #4f8cff;
-    --accent-2: #6dd3a8;
-    --warn: #f5a524;
-    --danger: #f56565;
-    --cogs: #4f8cff;
-    --noncogs: #6dd3a8;
+    --bg: #0d0f14;
+    --surface: #161a22;
+    --surface2: #1d2230;
+    --border: #252c3a;
+    --accent: #4f9eff;
+    --accent2: #f5a623;
+    --cogs-color: #4f9eff;
+    --noncogs-color: #52d68a;
+    --text: #e8edf5;
+    --text2: #7a8499;
+    --red: #ff5f5f;
+    --green: #52d68a;
+    --yellow: #f5a623;
+    --purple: #b084ff;
+    --radius: 12px;
+    --mono: 'DM Mono', monospace;
+    --sans: 'Syne', sans-serif;
   }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    font-size: 14px;
-    line-height: 1.5;
-  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); min-height: 100vh; }
+  
+  /* ── HEADER ─────────────────────────────────────── */
   header {
-    padding: 24px 32px;
+    padding: 28px 40px 20px;
     border-bottom: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: linear-gradient(135deg, #0d0f14 0%, #111521 100%);
   }
-  header h1 { margin: 0; font-size: 22px; font-weight: 600; }
-  header .meta { color: var(--text-dim); font-size: 13px; }
-  .controls {
-    padding: 16px 32px;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    flex-wrap: wrap;
-    background: var(--panel);
+  header h1 { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; }
+  header h1 span { color: var(--accent); }
+  #last-updated { font-family: var(--mono); font-size: 12px; color: var(--text2); }
+  #month-tabs { display: flex; gap: 4px; }
+  .month-tab {
+    padding: 6px 16px; border-radius: 6px; cursor: pointer;
+    font-family: var(--mono); font-size: 12px; font-weight: 500;
+    border: 1px solid var(--border); color: var(--text2);
+    background: transparent; transition: all .15s;
   }
-  .controls label { color: var(--text-dim); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
-  .controls select {
-    background: var(--panel-2);
-    color: var(--text);
-    border: 1px solid var(--border);
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 13px;
-    cursor: pointer;
-  }
-  main {
-    padding: 24px 32px;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 20px;
-  }
+  .month-tab:hover { border-color: var(--accent); color: var(--accent); }
+  .month-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  /* ── LAYOUT ─────────────────────────────────────── */
+  main { padding: 32px 40px; max-width: 1400px; margin: 0 auto; }
+  
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+  .grid-3 { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+  
+  /* ── CARDS ─────────────────────────────────────── */
   .card {
-    background: var(--panel);
+    background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: var(--radius);
     padding: 20px;
   }
-  .card h3 {
-    margin: 0 0 4px 0;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  .card-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px;
+    color: var(--text2); text-transform: uppercase; margin-bottom: 8px;
   }
-  .card .big {
-    font-size: 28px;
-    font-weight: 600;
-    margin-top: 4px;
+  .card-value {
+    font-size: 28px; font-weight: 800; letter-spacing: -1px; line-height: 1;
   }
-  .card .delta {
-    font-size: 13px;
-    margin-top: 6px;
+  .card-sub { font-family: var(--mono); font-size: 12px; color: var(--text2); margin-top: 6px; }
+  .card-delta {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-family: var(--mono); font-size: 12px; margin-top: 8px;
+    padding: 3px 8px; border-radius: 4px;
   }
-  .delta.up { color: var(--danger); }
-  .delta.down { color: var(--accent-2); }
-  .delta.flat { color: var(--text-dim); }
-  .kpi { grid-column: span 3; }
-  .chart-wide { grid-column: span 12; }
-  .chart-half { grid-column: span 6; }
-  .chart-third { grid-column: span 4; }
-  .chart-twothirds { grid-column: span 8; }
-  .chart-container { position: relative; height: 320px; margin-top: 12px; }
-  .chart-container.tall { height: 400px; }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 12px;
-    font-size: 13px;
-    table-layout: auto;
-  }
-  th, td {
-    padding: 10px 12px;
-    text-align: left;
-    border-bottom: 1px solid var(--border);
-    vertical-align: middle;
-  }
-  th {
-    color: var(--text-dim);
-    font-weight: 500;
-    text-transform: uppercase;
-    font-size: 11px;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-  }
-  th.num, td.num {
-    text-align: right;
-    font-variant-numeric: tabular-nums;
-    white-space: nowrap;
-  }
-  .pill {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 500;
-  }
-  .pill.cogs { background: rgba(79, 140, 255, 0.15); color: var(--cogs); }
-  .pill.noncogs { background: rgba(109, 211, 168, 0.15); color: var(--noncogs); }
-  .change.up { color: var(--danger); }
-  .change.down { color: var(--accent-2); }
-  .change.new { color: var(--warn); }
-  @media (max-width: 1100px) {
-    .kpi { grid-column: span 6; }
-    .chart-half, .chart-third, .chart-twothirds { grid-column: span 12; }
-  }
-  footer {
-    padding: 24px 32px;
-    color: var(--text-dim);
-    font-size: 12px;
-    border-top: 1px solid var(--border);
-  }
-  /* New widget styles - visually prominent */
-  .renewal-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: 600;
-    font-variant-numeric: tabular-nums;
-    border: 1px solid transparent;
-  }
-  .renewal-pill::before {
-    content: "";
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: currentColor;
-  }
-  .renewal-pill.green   { background: rgba(109, 211, 168, 0.18); color: var(--accent-2); border-color: rgba(109, 211, 168, 0.4); }
-  .renewal-pill.yellow  { background: rgba(245, 165, 36, 0.20);  color: var(--warn);     border-color: rgba(245, 165, 36, 0.5); }
-  .renewal-pill.red     { background: rgba(245, 101, 101, 0.22); color: var(--danger);   border-color: rgba(245, 101, 101, 0.5); animation: pulse 2s ease-in-out infinite; }
-  .renewal-pill.expired { background: rgba(138, 148, 166, 0.18); color: var(--text-dim); border-color: rgba(138, 148, 166, 0.3); }
-  .renewal-pill.none    { background: transparent; color: var(--text-dim); font-style: italic; font-weight: 400; border: none; }
-  .renewal-pill.none::before { display: none; }
-  @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(245, 101, 101, 0.4); }
-    50%      { box-shadow: 0 0 0 4px rgba(245, 101, 101, 0); }
-  }
-  .journaled-tag {
-    display: inline-block;
-    padding: 2px 7px;
-    margin-left: 8px;
-    border-radius: 4px;
-    font-size: 10px;
-    font-weight: 700;
-    background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    vertical-align: middle;
-    box-shadow: 0 1px 2px rgba(139, 92, 246, 0.4);
-  }
-  .anomaly-badge {
-    display: inline-block;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border: 1px solid transparent;
-  }
-  .anomaly-badge.spike { background: rgba(245, 101, 101, 0.22); color: var(--danger);   border-color: rgba(245, 101, 101, 0.4); }
-  .anomaly-badge.drop  { background: rgba(109, 211, 168, 0.18); color: var(--accent-2); border-color: rgba(109, 211, 168, 0.4); }
-  .anomaly-badge.new   { background: rgba(245, 165, 36, 0.22);  color: var(--warn);     border-color: rgba(245, 165, 36, 0.4); }
-  .renewal-radar-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid var(--border);
-    gap: 12px;
-  }
-  .renewal-radar-row:last-child { border-bottom: none; }
-  .renewal-radar-row .name { flex: 1; font-weight: 500; }
-  .renewal-radar-row .meta-line { color: var(--text-dim); font-size: 12px; margin-top: 2px; }
-  .empty-state {
-    color: var(--text-dim);
-    text-align: center;
-    padding: 24px;
-    font-style: italic;
-  }
-  .variance.over  { color: var(--danger); }
-  .variance.under { color: var(--accent-2); }
-  .variance.flat  { color: var(--text-dim); }
+  .card-delta.up { background: rgba(82,214,138,.12); color: var(--green); }
+  .card-delta.down { background: rgba(255,95,95,.12); color: var(--red); }
+  .card-delta.neutral { background: rgba(122,132,153,.12); color: var(--text2); }
 
-  /* Renewal Calendar */
-  .calendar-legend {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-bottom: 12px;
-    font-size: 12px;
-    color: var(--text-dim);
+  /* ── KPI ACCENT BARS ─────────────────────────────── */
+  .kpi-bar { height: 3px; border-radius: 2px; margin-top: 12px; }
+
+  /* ── SECTION HEADERS ─────────────────────────────── */
+  .section-title {
+    font-size: 13px; font-weight: 700; color: var(--text2);
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;
+    padding-bottom: 8px; border-bottom: 1px solid var(--border);
   }
-  .calendar-legend .lg-item { display: flex; align-items: center; gap: 6px; }
-  .calendar-legend .lg-dot {
-    width: 10px; height: 10px; border-radius: 50%;
-  }
-  .calendar-grid {
+
+  /* ── TREND CHART ─────────────────────────────────── */
+  #trend-chart-wrap { position: relative; height: 220px; }
+  #trend-chart { width: 100%; height: 100%; }
+  
+  /* ── DONUT ──────────────────────────────────────── */
+  #donut-wrap { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 220px; gap: 16px; }
+  #donut-svg { width: 140px; height: 140px; }
+  .donut-legend { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+  .donut-legend-item { display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12px; }
+  .donut-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .donut-pct { margin-left: auto; color: var(--text2); }
+
+  /* ── TOP APPS TABLE ──────────────────────────────── */
+  .apps-table { width: 100%; }
+  .apps-table-row {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    margin-top: 4px;
-  }
-  .calendar-month {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 10px;
-    background: var(--panel-2);
-    min-height: 110px;
-    display: flex;
-    flex-direction: column;
-  }
-  .calendar-month.current {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 1px var(--accent);
-  }
-  .calendar-month-label {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 6px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .calendar-month-count {
-    font-size: 10px;
-    background: var(--panel);
-    border-radius: 10px;
-    padding: 1px 7px;
-    color: var(--text);
-  }
-  .calendar-event {
-    font-size: 11px;
-    padding: 3px 6px;
-    margin-bottom: 3px;
-    border-radius: 3px;
-    border-left: 3px solid;
-    background: var(--panel);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    cursor: default;
-  }
-  .calendar-event.green   { border-left-color: var(--accent-2); }
-  .calendar-event.yellow  { border-left-color: var(--warn); }
-  .calendar-event.red     { border-left-color: var(--danger); }
-  .calendar-event.expired { border-left-color: var(--text-dim); opacity: 0.6; }
-  .calendar-event-day {
-    color: var(--text-dim);
-    font-variant-numeric: tabular-nums;
-    margin-right: 4px;
-  }
-  .calendar-empty {
-    color: var(--text-dim);
-    font-size: 11px;
-    font-style: italic;
-    text-align: center;
+    grid-template-columns: 24px 1fr 80px 90px 60px 60px;
+    align-items: center; gap: 8px;
     padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-family: var(--mono); font-size: 12px;
   }
-  @media (max-width: 1100px) {
-    .calendar-grid { grid-template-columns: repeat(3, 1fr); }
+  .apps-table-row:last-child { border-bottom: none; }
+  .apps-table-header { color: var(--text2); font-size: 10px; letter-spacing: 1px; }
+  .app-rank { color: var(--text2); font-size: 11px; text-align: right; }
+  .app-name-cell { font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .app-badge {
+    font-size: 9px; padding: 2px 6px; border-radius: 3px; font-weight: 600;
+    letter-spacing: 0.5px;
   }
+  .badge-cogs { background: rgba(79,158,255,.15); color: var(--cogs-color); }
+  .badge-noncogs { background: rgba(82,214,138,.12); color: var(--noncogs-color); }
+  .badge-journaled { background: rgba(176,132,255,.12); color: var(--purple); }
+  .spend-bar-cell { }
+  .spend-bar { height: 4px; border-radius: 2px; background: var(--accent); }
+  .amount-cell { text-align: right; }
+  .mom-cell { text-align: right; }
+  .mom-up { color: var(--green); }
+  .mom-down { color: var(--red); }
+  .mom-flat { color: var(--text2); }
+
+  /* ── MOVERS ──────────────────────────────────────── */
+  .movers-list { display: flex; flex-direction: column; gap: 8px; }
+  .mover-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 8px 12px; border-radius: 8px;
+    background: var(--surface2); gap: 8px;
+  }
+  .mover-name { font-weight: 600; font-size: 13px; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .mover-amounts { font-family: var(--mono); font-size: 11px; color: var(--text2); }
+  .mover-pct {
+    font-family: var(--mono); font-size: 13px; font-weight: 500;
+    padding: 3px 10px; border-radius: 5px; white-space: nowrap;
+  }
+  .pct-up { background: rgba(82,214,138,.12); color: var(--green); }
+  .pct-down { background: rgba(255,95,95,.12); color: var(--red); }
+  .pct-new { background: rgba(245,166,35,.12); color: var(--yellow); }
+
+  /* ── DEPT BARS ───────────────────────────────────── */
+  .dept-bars { display: flex; flex-direction: column; gap: 10px; }
+  .dept-bar-row { }
+  .dept-bar-label { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 11px; margin-bottom: 4px; }
+  .dept-bar-track { height: 6px; background: var(--surface2); border-radius: 3px; }
+  .dept-bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); }
+
+  /* ── ALL APPS TABLE ──────────────────────────────── */
+  .full-table-wrap { overflow-x: auto; }
+  .full-table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 12px; }
+  .full-table th {
+    text-align: left; padding: 8px 12px; background: var(--surface2);
+    color: var(--text2); font-size: 10px; letter-spacing: 1px; text-transform: uppercase;
+    cursor: pointer; user-select: none; border-bottom: 1px solid var(--border);
+    position: sticky; top: 0;
+  }
+  .full-table th:hover { color: var(--accent); }
+  .full-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); }
+  .full-table tr:hover td { background: var(--surface2); }
+  .full-table tr:last-child td { border-bottom: none; }
+  .filter-row { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; align-items: center; }
+  .filter-input {
+    background: var(--surface2); border: 1px solid var(--border); border-radius: 6px;
+    color: var(--text); font-family: var(--mono); font-size: 12px; padding: 6px 12px;
+    outline: none;
+  }
+  .filter-input:focus { border-color: var(--accent); }
+  .filter-btn {
+    padding: 6px 14px; border-radius: 6px; cursor: pointer; font-family: var(--mono);
+    font-size: 11px; font-weight: 500; border: 1px solid var(--border);
+    background: transparent; color: var(--text2); transition: all .15s;
+  }
+  .filter-btn:hover, .filter-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(79,158,255,.08); }
+
+  /* ── FOOTER ──────────────────────────────────────── */
+  footer { padding: 20px 40px; border-top: 1px solid var(--border); font-family: var(--mono); font-size: 11px; color: var(--text2); }
+
+  .tag { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 10px; font-weight: 600; letter-spacing: 0.5px; }
+  .tag-cogs { background: rgba(79,158,255,.15); color: var(--cogs-color); }
+  .tag-nc { background: rgba(82,214,138,.12); color: var(--noncogs-color); }
+  .tag-j { background: rgba(176,132,255,.12); color: var(--purple); }
 </style>
 </head>
 <body>
 
 <header>
   <div>
-    <h1>IT SaaS Spend Dashboard</h1>
-    <div class="meta" id="metaLine">Loading…</div>
+    <h1>C1 <span>SaaS</span> Spend · 2026</h1>
+    <div id="last-updated" style="margin-top:4px"></div>
   </div>
+  <div id="month-tabs"></div>
 </header>
 
-<div class="controls">
-  <div>
-    <label>View Month</label><br/>
-    <select id="monthSelect"></select>
-  </div>
-  <div>
-    <label>Classification</label><br/>
-    <select id="classSelect">
-      <option value="all">All</option>
-      <option value="COGS">COGS</option>
-      <option value="Non-COGS">Non-COGS</option>
-    </select>
-  </div>
-  <div>
-    <label>Top N apps</label><br/>
-    <select id="topNSelect">
-      <option value="5">Top 5</option>
-      <option value="10" selected>Top 10</option>
-      <option value="15">Top 15</option>
-      <option value="999">All</option>
-    </select>
-  </div>
-  <div>
-    <label>Department</label><br/>
-    <select id="deptSelect">
-      <option value="all">All</option>
-    </select>
-  </div>
-  <div>
-    <label>Journaled</label><br/>
-    <select id="journaledSelect">
-      <option value="all">All</option>
-      <option value="yes">Journaled only</option>
-      <option value="no">Not journaled</option>
-    </select>
-  </div>
-</div>
-
 <main>
-  <div class="card kpi">
-    <h3>Total Spend (Selected Month)</h3>
-    <div class="big" id="kpiTotal">—</div>
-    <div class="delta" id="kpiTotalDelta">—</div>
-  </div>
-  <div class="card kpi">
-    <h3>COGS Spend</h3>
-    <div class="big" id="kpiCogs">—</div>
-    <div class="delta" id="kpiCogsDelta">—</div>
-  </div>
-  <div class="card kpi">
-    <h3>Non-COGS Spend</h3>
-    <div class="big" id="kpiNonCogs">—</div>
-    <div class="delta" id="kpiNonCogsDelta">—</div>
-  </div>
-  <div class="card kpi">
-    <h3>Active Apps</h3>
-    <div class="big" id="kpiApps">—</div>
-    <div class="delta" id="kpiAppsDelta">—</div>
-  </div>
+  <!-- KPIs -->
+  <div class="grid-4" id="kpi-row"></div>
 
-  <div class="card chart-wide">
-    <h3>Total Spend Trend — COGS vs Non-COGS</h3>
-    <div class="chart-container"><canvas id="trendChart"></canvas></div>
-  </div>
-
-  <div class="card chart-twothirds">
-    <h3>Top Apps by Spend (Selected Month)</h3>
-    <div class="chart-container tall"><canvas id="topAppsChart"></canvas></div>
-  </div>
-
-  <div class="card chart-third">
-    <h3>Spend by Category (Selected Month)</h3>
-    <div class="chart-container tall"><canvas id="categoryChart"></canvas></div>
-  </div>
-
-  <div class="card chart-half">
-    <h3>Biggest Month-over-Month Increases</h3>
-    <table>
-      <thead>
-        <tr><th>App</th><th>Class</th><th class="num">Prev</th><th class="num">Current</th><th class="num">Δ $</th><th class="num">Δ %</th></tr>
-      </thead>
-      <tbody id="topIncreases"></tbody>
-    </table>
-  </div>
-
-  <div class="card chart-half">
-    <h3>Biggest Month-over-Month Decreases</h3>
-    <table>
-      <thead>
-        <tr><th>App</th><th>Class</th><th class="num">Prev</th><th class="num">Current</th><th class="num">Δ $</th><th class="num">Δ %</th></tr>
-      </thead>
-      <tbody id="topDecreases"></tbody>
-    </table>
-  </div>
-
-  <div class="card chart-half">
-    <h3>Actual vs. Projected — Trend</h3>
-    <div class="chart-container"><canvas id="actualVsProjChart"></canvas></div>
-  </div>
-
-  <div class="card chart-half">
-    <h3>Spend by Department (Selected Month)</h3>
-    <div class="chart-container"><canvas id="deptChart"></canvas></div>
-  </div>
-
-  <div class="card chart-half">
-    <h3>Outliers & Anomalies (Selected Month)</h3>
-    <div style="font-size:12px;color:var(--text-dim);margin-bottom:8px">
-      Apps where current spend deviates &gt;25% from their trailing 3-month average, or appeared/disappeared.
+  <!-- Trend + Donut + Dept -->
+  <div class="grid-3">
+    <div class="card" style="grid-column: span 1">
+      <div class="section-title">Monthly Spend Trend</div>
+      <div id="trend-chart-wrap"><canvas id="trend-chart"></canvas></div>
     </div>
-    <table>
-      <thead>
-        <tr><th>App</th><th>Type</th><th class="num">3-mo Avg</th><th class="num">Current</th><th class="num">Δ %</th></tr>
-      </thead>
-      <tbody id="anomalyTable"></tbody>
-    </table>
-  </div>
-
-  <div class="card chart-half">
-    <h3>Renewal Radar (Next 90 days &amp; recently expired)</h3>
-    <div id="renewalRadar"></div>
-  </div>
-
-  <div class="card chart-wide">
-    <h3>📅 Renewal Calendar — Next 6 Months</h3>
-    <div class="calendar-legend">
-      <div class="lg-item"><span class="lg-dot" style="background:var(--accent-2)"></span>&gt; 90 days away</div>
-      <div class="lg-item"><span class="lg-dot" style="background:var(--warn)"></span>31–90 days</div>
-      <div class="lg-item"><span class="lg-dot" style="background:var(--danger)"></span>≤ 30 days</div>
-      <div class="lg-item"><span class="lg-dot" style="background:var(--text-dim)"></span>Expired</div>
+    <div class="card">
+      <div class="section-title">COGS Split — Current Month</div>
+      <div id="donut-wrap"></div>
     </div>
-    <div class="calendar-grid" id="renewalCalendar"></div>
+    <div class="card">
+      <div class="section-title">Spend by Department — Current Month</div>
+      <div class="dept-bars" id="dept-bars"></div>
+    </div>
   </div>
 
-  <div class="card chart-wide">
-    <h3>Actual vs. Projected — By App (Selected Month)</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>App</th>
-          <th>Department</th>
-          <th class="num">Projected</th>
-          <th class="num">Actual</th>
-          <th class="num">Variance $</th>
-          <th class="num">Variance %</th>
-        </tr>
-      </thead>
-      <tbody id="varianceTable"></tbody>
-    </table>
+  <!-- Top Apps + MoM Movers -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="section-title">Top Apps — Current Month</div>
+      <div id="top-apps-table"></div>
+    </div>
+    <div class="card">
+      <div class="section-title">Month-over-Month Movers (Mar → Apr)</div>
+      <div class="movers-list" id="movers-list"></div>
+    </div>
   </div>
 
-  <div class="card chart-wide">
-    <h3>All Apps — Selected Month</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>App</th>
-          <th>Department</th>
-          <th>Category</th>
-          <th>Classification</th>
-          <th>Renewal</th>
-          <th class="num">Spend</th>
-          <th class="num">% of Total</th>
-          <th class="num">vs. Prev Month</th>
-        </tr>
-      </thead>
-      <tbody id="appTable"></tbody>
-    </table>
+  <!-- All Apps Table -->
+  <div class="card">
+    <div class="section-title">All Apps</div>
+    <div class="filter-row">
+      <input class="filter-input" id="search-input" placeholder="Search apps…" style="width:200px">
+      <button class="filter-btn" data-filter="all" onclick="setFilter('all')">All</button>
+      <button class="filter-btn" data-filter="cogs" onclick="setFilter('cogs')">COGS</button>
+      <button class="filter-btn" data-filter="noncogs" onclick="setFilter('noncogs')">Non-COGS</button>
+      <button class="filter-btn" data-filter="journaled" onclick="setFilter('journaled')">Journaled</button>
+      <span id="app-count" style="margin-left:auto; font-family:var(--mono); font-size:11px; color:var(--text2)"></span>
+    </div>
+    <div class="full-table-wrap">
+      <table class="full-table" id="full-table">
+        <thead><tr id="table-head"></tr></thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
   </div>
 </main>
 
-<footer>
-  Prototype dashboard · Data: <code>data.json</code> · Update monthly by editing <code>data.json</code> and pushing to GitHub.
-</footer>
+<footer id="footer"></footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <script>
-const fmt = n => "$" + Math.round(n).toLocaleString();
-const fmtPct = n => (n >= 0 ? "+" : "") + n.toFixed(1) + "%";
-const monthLabel = m => {
-  const [y, mo] = m.split("-");
-  return new Date(y, mo - 1, 1).toLocaleString("en", { month: "short", year: "numeric" });
-};
+let DATA = null;
+let activeMonth = 3; // Apr (index 3)
+let activeFilter = 'all';
+let sortKey = 'spend3';
+let sortAsc = false;
 
-let DATA, charts = {};
-
-async function load() {
-  const res = await fetch("data.json");
+async function init() {
+  const res = await fetch('data.json');
   DATA = await res.json();
-  document.getElementById("metaLine").textContent =
-    `Tracking ${DATA.apps.length} apps across ${DATA.months.length} months · Last updated ${DATA.meta.lastUpdated}`;
-
-  const sel = document.getElementById("monthSelect");
-  DATA.months.forEach((m, i) => {
-    const opt = document.createElement("option");
-    opt.value = i;
-    opt.textContent = monthLabel(m);
-    sel.appendChild(opt);
-  });
-  sel.value = DATA.months.length - 1;
-
-  // Populate department dropdown
-  const depts = [...new Set(DATA.apps.map(a => a.department).filter(Boolean))].sort();
-  const deptSel = document.getElementById("deptSelect");
-  depts.forEach(d => {
-    const opt = document.createElement("option");
-    opt.value = d;
-    opt.textContent = d;
-    deptSel.appendChild(opt);
-  });
-
-  ["monthSelect", "classSelect", "topNSelect", "deptSelect", "journaledSelect"].forEach(id =>
-    document.getElementById(id).addEventListener("change", render)
-  );
-  render();
+  renderAll();
 }
 
-function filteredApps() {
-  const cls = document.getElementById("classSelect").value;
-  const dept = document.getElementById("deptSelect").value;
-  const journaled = document.getElementById("journaledSelect").value;
-  return DATA.apps.filter(a => {
-    if (cls !== "all" && a.classification !== cls) return false;
-    if (dept !== "all" && a.department !== dept) return false;
-    if (journaled === "yes" && !a.journaled) return false;
-    if (journaled === "no" && a.journaled) return false;
-    return true;
-  });
+function fmt(n) {
+  if (n >= 1000000) return '$' + (n/1000000).toFixed(1) + 'M';
+  if (n >= 1000) return '$' + (n/1000).toFixed(1) + 'K';
+  return '$' + n.toFixed(0);
+}
+function fmtFull(n) {
+  return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+function fmtPct(p) {
+  if (p === null || p === undefined) return '—';
+  if (p >= 999) return 'NEW';
+  return (p >= 0 ? '+' : '') + p.toFixed(1) + '%';
+}
+function pctClass(p) {
+  if (p === null || p === undefined) return 'mom-flat';
+  if (p >= 999) return 'mom-up';
+  return p > 0 ? 'mom-up' : p < 0 ? 'mom-down' : 'mom-flat';
 }
 
-function render() {
-  const idx = parseInt(document.getElementById("monthSelect").value);
-  const topN = parseInt(document.getElementById("topNSelect").value);
-  const apps = filteredApps();
+function renderAll() {
+  renderTabs();
+  renderKPIs();
+  renderTrend();
+  renderDonut();
+  renderDeptBars();
+  renderTopApps();
+  renderMovers();
+  renderTable();
+  
+  document.getElementById('last-updated').textContent = 'Updated ' + DATA.meta.lastUpdated;
+  document.getElementById('footer').textContent =
+    'Sources: Jan–Mar from App spend totals tab · Classification from SaaS Apps Classification tab · Apr from Apr 26 Spend GL tab';
+}
 
-  const totalsByMonth = DATA.months.map((_, i) => apps.reduce((s, a) => s + a.spend[i], 0));
-  const cogsByMonth = DATA.months.map((_, i) =>
-    apps.filter(a => a.classification === "COGS").reduce((s, a) => s + a.spend[i], 0));
-  const nonCogsByMonth = DATA.months.map((_, i) =>
-    apps.filter(a => a.classification === "Non-COGS").reduce((s, a) => s + a.spend[i], 0));
+function renderTabs() {
+  const wrap = document.getElementById('month-tabs');
+  wrap.innerHTML = DATA.meta.monthLabels.map((lbl, i) =>
+    `<button class="month-tab ${i===activeMonth?'active':''}" onclick="setMonth(${i})">${lbl}</button>`
+  ).join('');
+}
 
-  const total = totalsByMonth[idx];
-  const totalPrev = idx > 0 ? totalsByMonth[idx - 1] : null;
-  const cogs = cogsByMonth[idx];
-  const cogsPrev = idx > 0 ? cogsByMonth[idx - 1] : null;
-  const nonCogs = nonCogsByMonth[idx];
-  const nonCogsPrev = idx > 0 ? nonCogsByMonth[idx - 1] : null;
-  const activeApps = apps.filter(a => a.spend[idx] > 0).length;
-  const activeAppsPrev = idx > 0 ? apps.filter(a => a.spend[idx - 1] > 0).length : null;
+function setMonth(i) {
+  activeMonth = i;
+  renderTabs();
+  renderKPIs();
+  renderDonut();
+  renderDeptBars();
+  renderTopApps();
+  renderTable();
+}
 
-  setKPI("kpiTotal", "kpiTotalDelta", total, totalPrev);
-  setKPI("kpiCogs", "kpiCogsDelta", cogs, cogsPrev);
-  setKPI("kpiNonCogs", "kpiNonCogsDelta", nonCogs, nonCogsPrev);
-  setKPICount("kpiApps", "kpiAppsDelta", activeApps, activeAppsPrev);
+function renderKPIs() {
+  const mt = DATA.monthly[activeMonth];
+  const prev = activeMonth > 0 ? DATA.monthly[activeMonth-1] : null;
+  const mom = prev ? ((mt.total - prev.total)/prev.total*100) : null;
+  const ytd = DATA.monthly.slice(0, activeMonth+1).reduce((s,m)=>s+m.total, 0);
+  
+  const appsWithSpend = DATA.apps.filter(a=>a.spend[activeMonth]>0).length;
 
-  // Trend chart
-  drawChart("trendChart", "line", {
-    labels: DATA.months.map(monthLabel),
-    datasets: [
-      { label: "COGS", data: cogsByMonth, borderColor: "#4f8cff", backgroundColor: "rgba(79,140,255,0.15)", fill: true, tension: 0.3, borderWidth: 2 },
-      { label: "Non-COGS", data: nonCogsByMonth, borderColor: "#6dd3a8", backgroundColor: "rgba(109,211,168,0.15)", fill: true, tension: 0.3, borderWidth: 2 },
-      { label: "Total", data: totalsByMonth, borderColor: "#e6e8eb", borderDash: [4, 4], fill: false, tension: 0.3, borderWidth: 1.5, pointRadius: 0 }
-    ]
-  }, lineOpts());
+  const cards = [
+    { label: 'Total Spend', value: fmt(mt.total), sub: fmtFull(mt.total),
+      delta: mom !== null ? fmtPct(mom) : null, deltaDir: mom > 0 ? 'up' : 'down',
+      color: '#4f9eff' },
+    { label: 'YTD Spend', value: fmt(ytd), sub: fmtFull(ytd), color: '#52d68a' },
+    { label: 'COGS', value: fmt(mt.cogs),
+      sub: (mt.total ? (mt.cogs/mt.total*100).toFixed(1) : 0) + '% of total', color: '#4f9eff' },
+    { label: 'Non-COGS', value: fmt(mt.nonCogs),
+      sub: (mt.total ? (mt.nonCogs/mt.total*100).toFixed(1) : 0) + '% of total', color: '#52d68a' },
+  ];
 
-  // Top apps current month
-  const ranked = [...apps]
-    .map(a => ({ ...a, current: a.spend[idx] }))
-    .filter(a => a.current > 0)
-    .sort((a, b) => b.current - a.current);
-  const top = ranked.slice(0, topN);
+  document.getElementById('kpi-row').innerHTML = cards.map(c => `
+    <div class="card">
+      <div class="card-label">${c.label}</div>
+      <div class="card-value">${c.value}</div>
+      <div class="card-sub">${c.sub}</div>
+      ${c.delta ? `<div class="card-delta ${c.deltaDir}">${c.delta} MoM</div>` : ''}
+      <div class="kpi-bar" style="background:${c.color}40;"><div style="height:100%;width:60%;background:${c.color};border-radius:2px"></div></div>
+    </div>
+  `).join('');
+}
 
-  drawChart("topAppsChart", "bar", {
-    labels: top.map(a => a.name),
-    datasets: [{
-      label: "Spend",
-      data: top.map(a => a.current),
-      backgroundColor: top.map(a => a.classification === "COGS" ? "#4f8cff" : "#6dd3a8"),
-      borderRadius: 4
-    }]
-  }, barOpts(true));
-
-  // Category breakdown
-  const catTotals = {};
-  apps.forEach(a => { catTotals[a.category] = (catTotals[a.category] || 0) + a.spend[idx]; });
-  const cats = Object.entries(catTotals).filter(([, v]) => v > 0).sort((a, b) => b[1] - a[1]);
-  drawChart("categoryChart", "doughnut", {
-    labels: cats.map(c => c[0]),
-    datasets: [{
-      data: cats.map(c => c[1]),
-      backgroundColor: ["#4f8cff","#6dd3a8","#f5a524","#f56565","#a78bfa","#38bdf8","#fb7185","#facc15","#34d399","#94a3b8","#c084fc"]
-    }]
-  }, doughnutOpts());
-
-  // MoM movers
-  const movers = idx > 0 ? apps.map(a => {
-    const cur = a.spend[idx], prev = a.spend[idx - 1];
-    const delta = cur - prev;
-    const pct = prev === 0 ? (cur > 0 ? Infinity : 0) : (delta / prev) * 100;
-    return { ...a, cur, prev, delta, pct };
-  }).filter(m => m.delta !== 0) : [];
-
-  const increases = [...movers].filter(m => m.delta > 0).sort((a, b) => b.delta - a.delta).slice(0, 8);
-  const decreases = [...movers].filter(m => m.delta < 0).sort((a, b) => a.delta - b.delta).slice(0, 8);
-
-  renderMoverTable("topIncreases", increases, "up");
-  renderMoverTable("topDecreases", decreases, "down");
-
-  // === NEW: Actual vs Projected trend chart ===
-  const projTotalsByMonth = DATA.months.map((_, i) => apps.reduce((s, a) => s + (a.projected ? a.projected[i] : 0), 0));
-  drawChart("actualVsProjChart", "line", {
-    labels: DATA.months.map(monthLabel),
-    datasets: [
-      { label: "Actual", data: totalsByMonth, borderColor: "#4f8cff", backgroundColor: "rgba(79,140,255,0.15)", fill: true, tension: 0.3, borderWidth: 2 },
-      { label: "Projected", data: projTotalsByMonth, borderColor: "#f5a524", borderDash: [6, 4], fill: false, tension: 0.3, borderWidth: 2, pointRadius: 2 }
-    ]
-  }, lineOpts());
-
-  // === NEW: Spend by Department ===
-  const deptTotals = {};
-  apps.forEach(a => {
-    const dep = a.department || "Other";
-    deptTotals[dep] = (deptTotals[dep] || 0) + a.spend[idx];
-  });
-  const deptEntries = Object.entries(deptTotals).filter(([, v]) => v > 0).sort((a, b) => b[1] - a[1]);
-  drawChart("deptChart", "bar", {
-    labels: deptEntries.map(d => d[0]),
-    datasets: [{
-      label: "Spend",
-      data: deptEntries.map(d => d[1]),
-      backgroundColor: "#a78bfa",
-      borderRadius: 4
-    }]
-  }, barOpts(true));
-
-  // === NEW: Outliers / Anomalies ===
-  const anomalies = [];
-  apps.forEach(a => {
-    const cur = a.spend[idx];
-    // Trailing 3-month avg (excluding current)
-    const window = [];
-    for (let i = Math.max(0, idx - 3); i < idx; i++) window.push(a.spend[i]);
-    const avg = window.length ? window.reduce((s, v) => s + v, 0) / window.length : 0;
-
-    // New app: had 0 in trailing window, now has spend
-    if (avg === 0 && cur > 0) {
-      anomalies.push({ ...a, type: "NEW", avg, cur, pctDelta: Infinity, sortKey: cur });
-      return;
-    }
-    // Discontinued: had spend, now 0
-    if (avg > 0 && cur === 0) {
-      anomalies.push({ ...a, type: "DROP", avg, cur, pctDelta: -100, sortKey: avg });
-      return;
-    }
-    // Threshold: ±25% from trailing avg AND absolute change > $500 (avoid noise)
-    if (avg > 0) {
-      const pct = ((cur - avg) / avg) * 100;
-      if (Math.abs(pct) >= 25 && Math.abs(cur - avg) >= 500) {
-        anomalies.push({
-          ...a, type: pct > 0 ? "SPIKE" : "DROP", avg, cur, pctDelta: pct, sortKey: Math.abs(cur - avg)
-        });
+let trendChart = null;
+function renderTrend() {
+  const ctx = document.getElementById('trend-chart').getContext('2d');
+  if (trendChart) trendChart.destroy();
+  
+  const labels = DATA.meta.monthLabels;
+  const totals = DATA.monthly.map(m=>m.total);
+  const cogs = DATA.monthly.map(m=>m.cogs);
+  const nc = DATA.monthly.map(m=>m.nonCogs);
+  
+  trendChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        { label: 'COGS', data: cogs, backgroundColor: 'rgba(79,158,255,.7)', borderRadius: 4, stack: 'a' },
+        { label: 'Non-COGS', data: nc, backgroundColor: 'rgba(82,214,138,.55)', borderRadius: 4, stack: 'a' },
+        { label: 'Total', data: totals, type: 'line', borderColor: '#f5a623', backgroundColor: 'transparent',
+          pointBackgroundColor: '#f5a623', pointRadius: 4, borderWidth: 2, tension: 0.3, yAxisID: 'y' }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { labels: { color: '#7a8499', font: { family: 'DM Mono', size: 11 }, boxWidth: 10 }},
+        tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + fmtFull(ctx.raw) }}
+      },
+      scales: {
+        x: { stacked: true, ticks: { color: '#7a8499', font: { family: 'DM Mono', size: 11 } }, grid: { color: '#252c3a' }},
+        y: { stacked: true, ticks: { color: '#7a8499', font: { family: 'DM Mono', size: 11 },
+             callback: v => fmt(v) }, grid: { color: '#252c3a' }}
       }
     }
   });
-  anomalies.sort((a, b) => b.sortKey - a.sortKey);
-  renderAnomalyTable(anomalies);
+}
 
-  // === NEW: Renewal Radar ===
-  renderRenewalRadar(apps);
+function renderDonut() {
+  const mt = DATA.monthly[activeMonth];
+  const total = mt.total || 1;
+  const cogsPct = (mt.cogs/total*100).toFixed(1);
+  const ncPct = (mt.nonCogs/total*100).toFixed(1);
+  const r = 50, cx = 60, cy = 60, strokeW = 16;
+  const circ = 2*Math.PI*r;
+  const cogsDash = mt.cogs/total*circ;
 
-  // === NEW: Renewal Calendar ===
-  renderRenewalCalendar(apps);
+  document.getElementById('donut-wrap').innerHTML = `
+    <svg id="donut-svg" viewBox="0 0 120 120">
+      <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#252c3a" stroke-width="${strokeW}"/>
+      <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#52d68a" stroke-width="${strokeW}"
+        stroke-dasharray="${circ} ${circ}" stroke-dashoffset="0" transform="rotate(-90 ${cx} ${cy})"/>
+      <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#4f9eff" stroke-width="${strokeW}"
+        stroke-dasharray="${cogsDash} ${circ}" stroke-dashoffset="0" transform="rotate(-90 ${cx} ${cy})"/>
+      <text x="${cx}" y="${cy-6}" text-anchor="middle" fill="#e8edf5" font-family="Syne" font-size="14" font-weight="800">${fmt(total)}</text>
+      <text x="${cx}" y="${cy+10}" text-anchor="middle" fill="#7a8499" font-family="DM Mono" font-size="9">TOTAL</text>
+    </svg>
+    <div class="donut-legend">
+      <div class="donut-legend-item"><div class="donut-dot" style="background:#4f9eff"></div>
+        <span>COGS</span><span class="donut-pct">${cogsPct}% · ${fmt(mt.cogs)}</span></div>
+      <div class="donut-legend-item"><div class="donut-dot" style="background:#52d68a"></div>
+        <span>Non-COGS</span><span class="donut-pct">${ncPct}% · ${fmt(mt.nonCogs)}</span></div>
+    </div>`;
+}
 
-  // === NEW: Variance table ===
-  renderVarianceTable(apps, idx);
-
-  // === Full app table (enhanced) ===
-  const tbody = document.getElementById("appTable");
-  tbody.innerHTML = "";
-  ranked.forEach(a => {
-    const prev = idx > 0 ? a.spend[idx - 1] : null;
-    const delta = prev !== null ? a.current - prev : null;
-    const pct = prev > 0 ? (delta / prev) * 100 : null;
-    const share = (a.current / total * 100).toFixed(1);
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td>${a.name}${a.journaled ? '<span class="journaled-tag" title="Journaled">Journaled</span>' : ''}</td>
-      <td>${a.department || "—"}</td>
-      <td>${a.category}</td>
-      <td><span class="pill ${a.classification === "COGS" ? "cogs" : "noncogs"}">${a.classification}</span></td>
-      <td>${renewalPill(a.renewalDate)}</td>
-      <td class="num">${fmt(a.current)}</td>
-      <td class="num">${share}%</td>
-      <td class="num ${delta > 0 ? "change up" : delta < 0 ? "change down" : ""}">${
-        delta === null ? "—" : (delta > 0 ? "+" : "") + fmt(delta) + (pct !== null && isFinite(pct) ? ` (${fmtPct(pct)})` : "")
-      }</td>
-    `;
-    tbody.appendChild(tr);
+function renderDeptBars() {
+  // Compute dept totals for active month
+  const deptMap = {};
+  DATA.apps.forEach(a => {
+    const amt = a.spend[activeMonth];
+    if (amt > 0) deptMap[a.dept] = (deptMap[a.dept]||0) + amt;
   });
-}
-
-// ===== Renewal helpers =====
-function daysUntil(dateStr) {
-  if (!dateStr) return null;
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  const d = new Date(dateStr);
-  return Math.round((d - today) / (1000 * 60 * 60 * 24));
-}
-function renewalPill(dateStr) {
-  if (!dateStr) return '<span class="renewal-pill none">—</span>';
-  const days = daysUntil(dateStr);
-  let cls, label;
-  if (days < 0) { cls = "expired"; label = `Expired ${Math.abs(days)}d ago`; }
-  else if (days <= 30) { cls = "red"; label = `${days}d (${dateStr})`; }
-  else if (days <= 90) { cls = "yellow"; label = `${days}d (${dateStr})`; }
-  else { cls = "green"; label = `${days}d (${dateStr})`; }
-  return `<span class="renewal-pill ${cls}" title="${dateStr}">${label}</span>`;
-}
-
-function renderAnomalyTable(rows) {
-  const el = document.getElementById("anomalyTable");
-  el.innerHTML = "";
-  if (!rows.length) {
-    el.innerHTML = `<tr><td colspan="5" class="empty-state">No anomalies detected for this month</td></tr>`;
-    return;
-  }
-  rows.slice(0, 10).forEach(r => {
-    const badgeCls = r.type === "SPIKE" ? "spike" : r.type === "NEW" ? "new" : "drop";
-    const pctTxt = !isFinite(r.pctDelta) ? "NEW" : (r.pctDelta >= 0 ? "+" : "") + r.pctDelta.toFixed(0) + "%";
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td>${r.name}${r.journaled ? '<span class="journaled-tag">Journaled</span>' : ''}</td>
-      <td><span class="anomaly-badge ${badgeCls}">${r.type}</span></td>
-      <td class="num">${fmt(r.avg)}</td>
-      <td class="num">${fmt(r.cur)}</td>
-      <td class="num">${pctTxt}</td>
-    `;
-    el.appendChild(tr);
-  });
-}
-
-function renderRenewalRadar(apps) {
-  const el = document.getElementById("renewalRadar");
-  el.innerHTML = "";
-  // Apps with renewal dates: upcoming within 90 days OR expired within last 60 days
-  const flagged = apps
-    .filter(a => a.renewalDate)
-    .map(a => ({ ...a, days: daysUntil(a.renewalDate) }))
-    .filter(a => a.days <= 90 && a.days >= -60)
-    .sort((a, b) => a.days - b.days);
-  if (!flagged.length) {
-    el.innerHTML = `<div class="empty-state">No renewals in the next 90 days</div>`;
-    return;
-  }
-  flagged.forEach(a => {
-    const row = document.createElement("div");
-    row.className = "renewal-radar-row";
-    row.innerHTML = `
-      <div>
-        <div class="name">${a.name}${a.journaled ? '<span class="journaled-tag">Journaled</span>' : ''}</div>
-        <div class="meta-line">${a.department || "—"} · <span class="pill ${a.classification === "COGS" ? "cogs" : "noncogs"}">${a.classification}</span></div>
+  const sorted = Object.entries(deptMap).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  const maxVal = sorted[0]?.[1] || 1;
+  
+  document.getElementById('dept-bars').innerHTML = sorted.map(([dept, amt]) => `
+    <div class="dept-bar-row">
+      <div class="dept-bar-label">
+        <span style="max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${dept}</span>
+        <span style="color:var(--text2)">${fmt(amt)}</span>
       </div>
-      <div>${renewalPill(a.renewalDate)}</div>
-    `;
-    el.appendChild(row);
-  });
+      <div class="dept-bar-track">
+        <div class="dept-bar-fill" style="width:${(amt/maxVal*100).toFixed(1)}%"></div>
+      </div>
+    </div>
+  `).join('');
 }
 
-function renderRenewalCalendar(apps) {
-  const el = document.getElementById("renewalCalendar");
-  el.innerHTML = "";
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-
-  // Build 6 month buckets: previous month, current, next 4 months
-  const buckets = [];
-  for (let offset = -1; offset <= 4; offset++) {
-    const d = new Date(today.getFullYear(), today.getMonth() + offset, 1);
-    buckets.push({
-      year: d.getFullYear(),
-      month: d.getMonth(),
-      label: d.toLocaleString("en", { month: "short", year: "numeric" }),
-      isCurrent: offset === 0,
-      events: []
-    });
-  }
-
-  // Place each app's renewal into the matching bucket
-  apps.filter(a => a.renewalDate).forEach(a => {
-    const d = new Date(a.renewalDate);
-    const bucket = buckets.find(b => b.year === d.getFullYear() && b.month === d.getMonth());
-    if (bucket) {
-      const days = daysUntil(a.renewalDate);
-      let cls;
-      if (days < 0) cls = "expired";
-      else if (days <= 30) cls = "red";
-      else if (days <= 90) cls = "yellow";
-      else cls = "green";
-      bucket.events.push({
-        name: a.name,
-        day: d.getDate(),
-        cls,
-        date: a.renewalDate,
-        journaled: a.journaled,
-        classification: a.classification,
-        department: a.department
-      });
-    }
-  });
-
-  // Render each bucket
-  buckets.forEach(b => {
-    b.events.sort((x, y) => x.day - y.day);
-    const monthEl = document.createElement("div");
-    monthEl.className = "calendar-month" + (b.isCurrent ? " current" : "");
-    const eventsHtml = b.events.length
-      ? b.events.map(ev => `
-          <div class="calendar-event ${ev.cls}" title="${ev.name} — ${ev.date}${ev.department ? ' · ' + ev.department : ''}${ev.journaled ? ' · Journaled' : ''}">
-            <span class="calendar-event-day">${String(ev.day).padStart(2,'0')}</span>${ev.name}
+function renderTopApps() {
+  const apps = DATA.apps.filter(a=>a.spend[activeMonth]>0)
+    .sort((a,b)=>b.spend[activeMonth]-a.spend[activeMonth]).slice(0,15);
+  const maxAmt = apps[0]?.spend[activeMonth] || 1;
+  const mom_idx = activeMonth;
+  
+  document.getElementById('top-apps-table').innerHTML = `
+    <div class="apps-table">
+      <div class="apps-table-row apps-table-header">
+        <div>#</div><div>App</div><div>Type</div><div>Amount</div><div>Bar</div><div>MoM</div>
+      </div>
+      ${apps.map((a,i)=>{
+        const amt = a.spend[activeMonth];
+        const mom = a.mom[activeMonth];
+        const barW = (amt/maxAmt*100).toFixed(1);
+        return `
+        <div class="apps-table-row">
+          <div class="app-rank">${i+1}</div>
+          <div class="app-name-cell" title="${a.name}">${a.name}</div>
+          <div>
+            <span class="app-badge ${a.cogs?'badge-cogs':'badge-noncogs'}">${a.cogs?'COGS':'NC'}</span>
+            ${a.journaled?`<span class="app-badge badge-journaled" style="margin-left:2px">JE</span>`:''}
           </div>
-        `).join("")
-      : `<div class="calendar-empty">No renewals</div>`;
-    monthEl.innerHTML = `
-      <div class="calendar-month-label">
-        <span>${b.label}${b.isCurrent ? ' · NOW' : ''}</span>
-        ${b.events.length ? `<span class="calendar-month-count">${b.events.length}</span>` : ''}
-      </div>
-      ${eventsHtml}
-    `;
-    el.appendChild(monthEl);
+          <div class="amount-cell">${fmtFull(amt)}</div>
+          <div><div class="spend-bar" style="width:${barW}%"></div></div>
+          <div class="mom-cell ${pctClass(mom)}">${fmtPct(mom)}</div>
+        </div>`;
+      }).join('')}
+    </div>`;
+}
+
+function renderMovers() {
+  const movers = DATA.movers.slice(0,12);
+  document.getElementById('movers-list').innerHTML = movers.map(m => {
+    const isNew = m.prev === 0;
+    const isUp = m.pct > 0;
+    const cls = isNew ? 'pct-new' : isUp ? 'pct-up' : 'pct-down';
+    const lbl = isNew ? 'NEW' : (m.pct >= 999 ? 'NEW' : fmtPct(m.pct));
+    return `
+    <div class="mover-row">
+      <div class="mover-name">${m.name}</div>
+      <div class="mover-amounts">${fmt(m.prev)} → ${fmt(m.curr)}</div>
+      <div class="mover-pct ${cls}">${lbl}</div>
+    </div>`;
+  }).join('');
+}
+
+let tableFilter = '';
+function setFilter(f) {
+  activeFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active', b.dataset.filter===f));
+  renderTable();
+}
+
+document.addEventListener('DOMContentLoaded', ()=>{
+  document.getElementById('search-input').addEventListener('input', e=>{
+    tableFilter = e.target.value.toLowerCase();
+    renderTable();
   });
-}
+});
 
-function renderVarianceTable(apps, idx) {
-  const el = document.getElementById("varianceTable");
-  el.innerHTML = "";
-  const rows = apps
-    .map(a => {
-      const actual = a.spend[idx];
-      const projected = a.projected ? a.projected[idx] : 0;
-      const variance = actual - projected;
-      const pct = projected === 0 ? (actual > 0 ? Infinity : 0) : (variance / projected) * 100;
-      return { ...a, actual, projected, variance, pct };
-    })
-    .filter(r => r.actual > 0 || r.projected > 0)
-    .sort((a, b) => Math.abs(b.variance) - Math.abs(a.variance));
-  rows.forEach(r => {
-    const cls = r.variance > 0 ? "over" : r.variance < 0 ? "under" : "flat";
-    const pctTxt = !isFinite(r.pct) ? "—" : (r.pct >= 0 ? "+" : "") + r.pct.toFixed(1) + "%";
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td>${r.name}${r.journaled ? '<span class="journaled-tag">Journaled</span>' : ''}</td>
-      <td>${r.department || "—"}</td>
-      <td class="num">${fmt(r.projected)}</td>
-      <td class="num">${fmt(r.actual)}</td>
-      <td class="num variance ${cls}">${(r.variance >= 0 ? "+" : "") + fmt(r.variance)}</td>
-      <td class="num variance ${cls}">${pctTxt}</td>
-    `;
-    el.appendChild(tr);
+function renderTable() {
+  const cols = ['Name','Classification','Department','Journaled','Jan','Feb','Mar','Apr','YTD'];
+  const headEl = document.getElementById('table-head');
+  headEl.innerHTML = cols.map((c,i)=>`<th onclick="sortTable('${c}')">${c} ${sortKey===c?(sortAsc?'↑':'↓'):''}</th>`).join('');
+  
+  let apps = DATA.apps.filter(a=>{
+    const hasSpend = a.spend.some(s=>s>0);
+    if (!hasSpend) return false;
+    if (tableFilter && !a.name.toLowerCase().includes(tableFilter)) return false;
+    if (activeFilter === 'cogs') return a.cogs;
+    if (activeFilter === 'noncogs') return !a.cogs;
+    if (activeFilter === 'journaled') return a.journaled;
+    return true;
   });
-}
-
-function renderMoverTable(id, rows, dir) {
-  const el = document.getElementById(id);
-  el.innerHTML = "";
-  if (!rows.length) { el.innerHTML = `<tr><td colspan="6" style="color:var(--text-dim);text-align:center;padding:20px">No data — select a later month</td></tr>`; return; }
-  rows.forEach(r => {
-    const tr = document.createElement("tr");
-    const pctTxt = !isFinite(r.pct) ? "NEW" : fmtPct(r.pct);
-    const pctCls = !isFinite(r.pct) ? "new" : dir;
-    tr.innerHTML = `
-      <td>${r.name}</td>
-      <td><span class="pill ${r.classification === "COGS" ? "cogs" : "noncogs"}">${r.classification}</span></td>
-      <td class="num">${fmt(r.prev)}</td>
-      <td class="num">${fmt(r.cur)}</td>
-      <td class="num change ${dir}">${(r.delta > 0 ? "+" : "") + fmt(r.delta)}</td>
-      <td class="num change ${pctCls}">${pctTxt}</td>
-    `;
-    el.appendChild(tr);
+  
+  // Sort
+  apps.sort((a,b)=>{
+    let va, vb;
+    if (sortKey==='Name') { va=a.name; vb=b.name; }
+    else if (sortKey==='YTD') { va=a.spend.reduce((s,v)=>s+v,0); vb=b.spend.reduce((s,v)=>s+v,0); }
+    else if (['Jan','Feb','Mar','Apr'].includes(sortKey)) {
+      const idx = ['Jan','Feb','Mar','Apr'].indexOf(sortKey);
+      va=a.spend[idx]; vb=b.spend[idx];
+    } else { va=0; vb=0; }
+    return sortAsc ? (va>vb?1:va<vb?-1:0) : (va<vb?1:va>vb?-1:0);
   });
+  
+  document.getElementById('app-count').textContent = apps.length + ' apps';
+  
+  document.getElementById('table-body').innerHTML = apps.map(a=>{
+    const ytd = a.spend.reduce((s,v)=>s+v,0);
+    return `<tr>
+      <td>${a.name}</td>
+      <td><span class="tag ${a.cogs?'tag-cogs':'tag-nc'}">${a.cogs?'COGS':'Non-COGS'}</span></td>
+      <td style="color:var(--text2);font-size:11px">${a.dept}</td>
+      <td><span class="tag tag-j" style="opacity:${a.journaled?1:.3}">${a.journaled?'Yes':'No'}</span></td>
+      <td style="text-align:right">${a.spend[0]>0?fmtFull(a.spend[0]):'—'}</td>
+      <td style="text-align:right">${a.spend[1]>0?fmtFull(a.spend[1]):'—'}</td>
+      <td style="text-align:right">${a.spend[2]>0?fmtFull(a.spend[2]):'—'}</td>
+      <td style="text-align:right">${a.spend[3]>0?fmtFull(a.spend[3]):'—'}</td>
+      <td style="text-align:right;color:var(--accent);font-weight:600">${fmtFull(ytd)}</td>
+    </tr>`;
+  }).join('');
 }
 
-function setKPI(valId, deltaId, cur, prev) {
-  document.getElementById(valId).textContent = fmt(cur);
-  const d = document.getElementById(deltaId);
-  if (prev === null) { d.textContent = "—"; d.className = "delta flat"; return; }
-  const diff = cur - prev;
-  const pct = prev === 0 ? 0 : (diff / prev) * 100;
-  d.textContent = `${diff >= 0 ? "▲" : "▼"} ${fmt(Math.abs(diff))} (${fmtPct(pct)}) vs prev month`;
-  d.className = "delta " + (diff > 0 ? "up" : diff < 0 ? "down" : "flat");
-}
-function setKPICount(valId, deltaId, cur, prev) {
-  document.getElementById(valId).textContent = cur;
-  const d = document.getElementById(deltaId);
-  if (prev === null) { d.textContent = "—"; d.className = "delta flat"; return; }
-  const diff = cur - prev;
-  d.textContent = `${diff >= 0 ? "▲" : "▼"} ${Math.abs(diff)} apps vs prev month`;
-  d.className = "delta " + (diff > 0 ? "up" : diff < 0 ? "down" : "flat");
+function sortTable(key) {
+  if (sortKey === key) sortAsc = !sortAsc;
+  else { sortKey = key; sortAsc = false; }
+  renderTable();
 }
 
-function drawChart(id, type, data, options) {
-  if (charts[id]) charts[id].destroy();
-  charts[id] = new Chart(document.getElementById(id), { type, data, options });
-}
-
-function lineOpts() {
-  return {
-    responsive: true, maintainAspectRatio: false,
-    plugins: { legend: { labels: { color: "#e6e8eb" } } },
-    scales: {
-      x: { ticks: { color: "#8a94a6" }, grid: { color: "#2d3543" } },
-      y: { ticks: { color: "#8a94a6", callback: v => "$" + (v/1000) + "k" }, grid: { color: "#2d3543" } }
-    }
-  };
-}
-function barOpts(horizontal) {
-  return {
-    indexAxis: horizontal ? "y" : "x",
-    responsive: true, maintainAspectRatio: false,
-    plugins: { legend: { display: false } },
-    scales: {
-      x: { ticks: { color: "#8a94a6", callback: v => "$" + (v/1000) + "k" }, grid: { color: "#2d3543" } },
-      y: { ticks: { color: "#8a94a6" }, grid: { display: false } }
-    }
-  };
-}
-function doughnutOpts() {
-  return {
-    responsive: true, maintainAspectRatio: false,
-    plugins: {
-      legend: { position: "right", labels: { color: "#e6e8eb", font: { size: 11 }, boxWidth: 12 } }
-    }
-  };
-}
-
-load();
+init();
 </script>
-
 </body>
 </html>
