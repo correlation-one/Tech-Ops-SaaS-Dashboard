@@ -18,23 +18,23 @@
   "monthly": [
     {
       "total": 152505.14,
-      "cogs": 80249.34,
-      "nonCogs": 72255.8
+      "cogs": 79078.18,
+      "nonCogs": 73426.96
     },
     {
       "total": 161027.96,
-      "cogs": 83219.13,
-      "nonCogs": 77808.83
+      "cogs": 81852.46,
+      "nonCogs": 79175.5
     },
     {
       "total": 162350.15,
-      "cogs": 89098.31,
-      "nonCogs": 73251.84
+      "cogs": 87731.64,
+      "nonCogs": 74618.51
     },
     {
       "total": 168080.11,
-      "cogs": 93887.84,
-      "nonCogs": 74192.27
+      "cogs": 92521.18,
+      "nonCogs": 75558.93
     }
   ],
   "apps": [
@@ -157,30 +157,6 @@
       "owner": "Joe Novak",
       "annualCost": 95833.54,
       "billingCycle": "Annual"
-    },
-    {
-      "name": "Salesforce - Other",
-      "classification": "COGS",
-      "department": "Operations",
-      "journaled": true,
-      "category": null,
-      "spend": [
-        7189.91,
-        7385.42,
-        7385.42,
-        8914.42
-      ],
-      "projected": [
-        7189.91,
-        7189.91,
-        7287.66,
-        7320.25
-      ],
-      "renewalDate": null,
-      "renewalStatus": null,
-      "owner": null,
-      "annualCost": null,
-      "billingCycle": null
     },
     {
       "name": "Calendly",
@@ -3439,6 +3415,54 @@
         0,
         0,
         0
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Salesforce - Other",
+      "classification": "COGS",
+      "department": "Operations",
+      "journaled": true,
+      "category": null,
+      "spend": [
+        6018.75,
+        6018.75,
+        6018.75,
+        7547.76
+      ],
+      "projected": [
+        6018.75,
+        6018.75,
+        6018.75,
+        6018.75
+      ],
+      "renewalDate": null,
+      "renewalStatus": null,
+      "owner": null,
+      "annualCost": null,
+      "billingCycle": null
+    },
+    {
+      "name": "Salesforce - Other (Non-COGS)",
+      "classification": "Non-COGS",
+      "department": "Tech Operations and AI Enablement",
+      "journaled": false,
+      "category": null,
+      "spend": [
+        1171.16,
+        1366.67,
+        1366.67,
+        1366.66
+      ],
+      "projected": [
+        1171.16,
+        1171.16,
+        1268.91,
+        1301.5
       ],
       "renewalDate": null,
       "renewalStatus": null,
