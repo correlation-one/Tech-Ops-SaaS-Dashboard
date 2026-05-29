@@ -1,0 +1,38 @@
+{
+  "_README": "Canonical name map: FINANCE-SHEET / VENDOR NAME (left)  ->  DASHBOARD DISPLAY NAME (right). When a vendor appears in the GL or App-spend-totals tab under a name you want shown differently on the dashboard, add an entry here. The monthly build reads this file and renames apps accordingly. To add a new rename, add a line: \"Name as it appears in finance sheet\": \"Name to show on dashboard\". Keep names exactly as they appear in the source (case-sensitive).",
+  "_lastUpdated": "2026-05-29",
+
+  "name_map": {
+    "Salesforce Inc": "Salesforce - Other",
+    "Imkey Breda": "Resume IO",
+    "Apprentiscope": "Apprenti Apprentiscope",
+    "Quickbooks": "Quickbooks Payments"
+  },
+
+  "_vendor_aliases_README": "These are RAW GL/bank-descriptor strings that map to a single app. Used when parsing the GL so that e.g. all PEARSON VUE / VUE*COMPTIA lines roll up into one 'Comptia' line. Left = substring found in the GL 'Name' or 'Memo' column; right = app name (which is then passed through name_map above for final display).",
+  "vendor_aliases": {
+    "SADA SYSTEMS": "GCP",
+    "CODIO": "Codio",
+    "COMPTIA": "Comptia",
+    "VUE*COMPTIA": "Comptia",
+    "PEARSON VUE": "Comptia",
+    "PEARSON": "Comptia",
+    "SLACK": "Salesforce - Slack Enterprise",
+    "PUMBLE": "Salesforce - Slack Enterprise",
+    "MAXIO": "Saasoptics",
+    "SAASOPTICS": "Saasoptics",
+    "LIBRATO": "Sentry",
+    "SOLARWINDS": "Sentry",
+    "ANTHROPIC": "Claude",
+    "CLAUDE.AI": "Claude",
+    "GOOGLE WORKSPACE": "Google",
+    "GOOGLE SVCS": "Google",
+    "INTUIT": "Quickbooks Payments",
+    "QUICKBOOKS": "Quickbooks Payments"
+  },
+
+  "_non_saas_exclude_README": "Substrings/vendors that are NOT SaaS and should be dropped from the dashboard entirely (e.g. food delivery, reimbursements).",
+  "non_saas_exclude": [
+    "WONDER"
+  ]
+}
