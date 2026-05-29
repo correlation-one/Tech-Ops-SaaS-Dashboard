@@ -36,8 +36,8 @@
   header h1 { margin: 0; font-family: var(--display); font-size: 20px; font-weight: 700; letter-spacing: -0.3px; display: flex; align-items: center; gap: 10px; }
   header h1 .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--cogs); }
   header .meta { color: var(--text-dim); font-size: 12px; font-family: var(--mono); margin-top: 4px; }
-  .month-switch { display: flex; gap: 3px; background: var(--bg); padding: 4px; border-radius: 9px; border: 1px solid var(--border); }
-  .month-btn { padding: 7px 18px; border-radius: 6px; border: none; background: transparent; color: var(--text-dim); font-family: var(--sans); font-size: 13px; font-weight: 500; cursor: pointer; transition: all .15s; }
+  .month-switch { display: flex; gap: 3px; background: var(--panel-2); padding: 3px; border-radius: 8px; border: 1px solid var(--border); }
+  .month-btn { padding: 6px 16px; border-radius: 6px; border: none; background: transparent; color: var(--text-dim); font-family: var(--sans); font-size: 13px; font-weight: 500; cursor: pointer; transition: all .15s; }
   .month-btn:hover { color: var(--text); }
   .month-btn.active { background: var(--cogs); color: #fff; font-weight: 600; }
 
@@ -168,10 +168,10 @@
     <h1><span class="dot"></span> Tech Ops · SaaS Spend</h1>
     <div class="meta" id="metaLine">Loading…</div>
   </div>
-  <div class="month-switch" id="monthSwitch"></div>
 </header>
 
 <div class="controls">
+  <div><label>View Month</label><div class="month-switch" id="monthSwitch"></div></div>
   <div><label>Classification</label><select id="classSelect"><option value="all">All</option><option value="COGS">COGS</option><option value="Non-COGS">Non-COGS</option></select></div>
   <div><label>Department</label><select id="deptSelect"><option value="all">All</option></select></div>
   <div><label>Category</label><select id="catSelect"><option value="all">All</option></select></div>
@@ -202,9 +202,9 @@
     </table>
   </div>
 
-  <!-- Category donut -->
+  <!-- Department donut -->
   <div class="card chart-half">
-    <h3>Spend by Category — <span id="catMonth"></span></h3>
+    <h3>Spend by Department — <span id="catMonth"></span></h3>
     <div class="chart-container tall"><canvas id="categoryChart"></canvas></div>
   </div>
 
@@ -251,19 +251,16 @@
     <div class="chart-container"><canvas id="actualVsProjChart"></canvas></div>
   </div>
 
-  <!-- All apps -->
+  <!-- All apps — full 2026 monthly breakdown -->
   <div class="card chart-wide">
-    <h3>All Apps — <span id="tableMonth"></span></h3>
+    <h3>All Apps — Monthly Spend 2026</h3>
     <div style="margin-bottom:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
       <input class="search-box" id="searchBox" placeholder="Search apps…">
       <span class="hint" id="rowCount"></span>
       <span class="hint" style="margin-left:auto">Click any row to see app history &amp; details →</span>
     </div>
     <table>
-      <thead><tr>
-        <th>App</th><th>Department</th><th>Category</th><th>Class</th><th>Renewal</th>
-        <th class="num">Spend</th><th class="num">% Total</th><th class="num">vs Prev</th>
-      </tr></thead>
+      <thead><tr id="appTableHead"></tr></thead>
       <tbody id="appTable"></tbody>
     </table>
   </div>
@@ -361,7 +358,7 @@ function draw(id, type, data, opts) {
 function render() {
   const idx = activeMonth, apps = filteredApps();
   const ML = DATA.monthLabels;
-  ["kpiMonthLabel","anomMonth","catMonth","topMonth","deptMonth","tableMonth"].forEach(id=>document.getElementById(id).textContent = ML[idx]);
+  ["kpiMonthLabel","anomMonth","catMonth","topMonth","deptMonth"].forEach(id=>document.getElementById(id).textContent = ML[idx]);
   document.getElementById("kpiYtdMonth").textContent = ML[idx];
 
   const totals = DATA.months.map((_,i)=>apps.reduce((s,a)=>s+a.spend[i],0));
@@ -531,25 +528,48 @@ function renderCalendar(apps) {
 }
 
 function renderTable() {
-  const idx=activeMonth, apps=filteredApps();
+  const apps=filteredApps();
+  const ML = DATA.monthLabels;
   const q=(document.getElementById("searchBox").value||"").toLowerCase();
-  const total = apps.reduce((s,a)=>s+a.spend[idx],0);
-  const ranked = apps.map(a=>({...a,cur:a.spend[idx]})).filter(a=>a.spend.some(s=>s>0)).filter(a=>!q||a.name.toLowerCase().includes(q)).sort((a,b)=>b.cur-a.cur);
+
+  // Header: App | Department | Category | Class | Renewal | <each month> | YTD
+  const monthCols = ML.map(l=>`<th class="num">${l}</th>`).join("");
+  document.getElementById("appTableHead").innerHTML =
+    `<th>App</th><th>Department</th><th>Category</th><th>Class</th><th>Renewal</th>${monthCols}<th class="num">YTD</th>`;
+
+  // Sort by YTD (total across all months), descending
+  const ranked = apps
+    .map(a=>({...a, ytd:a.spend.reduce((s,v)=>s+v,0)}))
+    .filter(a=>a.spend.some(s=>s>0))
+    .filter(a=>!q||a.name.toLowerCase().includes(q))
+    .sort((a,b)=>b.ytd-a.ytd);
+
   document.getElementById("rowCount").textContent = ranked.length+" apps";
-  document.getElementById("appTable").innerHTML = ranked.map(a=>{
-    const prev=idx>0?a.spend[idx-1]:null, delta=prev!==null?a.cur-prev:null, pct=prev>0?delta/prev*100:null;
-    const share = total? (a.cur/total*100).toFixed(1):"0.0";
+
+  const rows = ranked.map(a=>{
+    const cells = a.spend.map(v=>`<td class="num">${v>0?fmt(v):"—"}</td>`).join("");
     return `<tr class="clickable" onclick="openModal('${esc(a.name)}')">
       <td>${a.name}${a.journaled?'<span class="je-tag">JE</span>':''}</td>
       <td>${a.department||"—"}</td><td>${a.category||"—"}</td>
       <td><span class="pill ${a.classification==="COGS"?"cogs":"noncogs"}">${a.classification}</span></td>
       <td>${renewalPill(a.renewalDate)}</td>
-      <td class="num">${a.cur>0?fmt(a.cur):"—"}</td><td class="num">${share}%</td>
-      <td class="num ${delta>0?"change up":delta<0?"change down":""}">${delta===null?"—":(delta>0?"+":"")+fmt(delta)+(pct!==null&&isFinite(pct)?` (${fmtPct(pct)})`:"")}</td>
+      ${cells}
+      <td class="num" style="font-weight:600;color:var(--text)">${fmt(a.ytd)}</td>
     </tr>`;
   }).join("");
+
+  // Totals row across the filtered set
+  const monthTotals = ML.map((_,i)=>ranked.reduce((s,a)=>s+a.spend[i],0));
+  const grand = monthTotals.reduce((s,v)=>s+v,0);
+  const totalCells = monthTotals.map(t=>`<td class="num" style="font-weight:600">${fmt(t)}</td>`).join("");
+  const totalRow = `<tr style="border-top:2px solid var(--border);background:var(--panel-2)">
+      <td style="font-weight:700">Total (${ranked.length})</td><td></td><td></td><td></td><td></td>
+      ${totalCells}<td class="num" style="font-weight:700;color:var(--cogs)">${fmt(grand)}</td>
+    </tr>`;
+
+  document.getElementById("appTable").innerHTML = rows + totalRow;
   document.getElementById("footer").textContent =
-    "Jan–Mar totals from App spend totals tab · classification from SaaS Apps Classification tab · April from Apr 26 Spend tab · renewals from Notion SaaS Apps DB";
+    "Jan–Mar totals from App spend totals tab · classification & department from SaaS Apps Classification tab · April from Apr 26 Spend tab · renewals from Notion SaaS Apps DB";
 }
 
 // ===== App detail modal =====
