@@ -3,36 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>C1 SaaS Spend Dashboard · 2026</title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>Tech Ops SaaS Spend Dashboard · 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0d0f14;
-    --surface: #161a22;
-    --surface2: #1d2230;
-    --border: #252c3a;
-    --accent: #4f9eff;
-    --accent2: #f5a623;
-    --cogs-color: #4f9eff;
-    --noncogs-color: #52d68a;
-    --text: #e8edf5;
-    --text2: #7a8499;
-    --red: #ff5f5f;
-    --green: #52d68a;
-    --yellow: #f5a623;
-    --purple: #b084ff;
-    --radius: 12px;
-    --mono: 'DM Mono', monospace;
-    --sans: 'Syne', sans-serif;
+    --bg: #0d0f14; --surface: #161a22; --surface2: #1d2230; --border: #252c3a;
+    --accent: #4f9eff; --accent2: #f5a623;
+    --cogs-color: #4f9eff; --noncogs-color: #52d68a;
+    --text: #e8edf5; --text2: #7a8499;
+    --red: #ff5f5f; --green: #52d68a; --yellow: #f5a623; --purple: #b084ff;
+    --radius: 12px; --mono: 'DM Mono', monospace; --sans: 'Syne', sans-serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--bg); color: var(--text); font-family: var(--sans); min-height: 100vh; }
-  
-  /* ── HEADER ─────────────────────────────────────── */
   header {
-    padding: 28px 40px 20px;
-    border-bottom: 1px solid var(--border);
+    padding: 28px 40px 20px; border-bottom: 1px solid var(--border);
     display: flex; align-items: center; justify-content: space-between;
     background: linear-gradient(135deg, #0d0f14 0%, #111521 100%);
   }
@@ -48,143 +35,69 @@
   }
   .month-tab:hover { border-color: var(--accent); color: var(--accent); }
   .month-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-
-  /* ── LAYOUT ─────────────────────────────────────── */
   main { padding: 32px 40px; max-width: 1400px; margin: 0 auto; }
-  
   .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
   .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
   .grid-3 { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 16px; margin-bottom: 24px; }
-  
-  /* ── CARDS ─────────────────────────────────────── */
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 20px;
-  }
-  .card-label {
-    font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px;
-    color: var(--text2); text-transform: uppercase; margin-bottom: 8px;
-  }
-  .card-value {
-    font-size: 28px; font-weight: 800; letter-spacing: -1px; line-height: 1;
-  }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+  .card-label { font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; color: var(--text2); text-transform: uppercase; margin-bottom: 8px; }
+  .card-value { font-size: 28px; font-weight: 800; letter-spacing: -1px; line-height: 1; }
   .card-sub { font-family: var(--mono); font-size: 12px; color: var(--text2); margin-top: 6px; }
-  .card-delta {
-    display: inline-flex; align-items: center; gap: 4px;
-    font-family: var(--mono); font-size: 12px; margin-top: 8px;
-    padding: 3px 8px; border-radius: 4px;
-  }
+  .card-delta { display: inline-flex; align-items: center; gap: 4px; font-family: var(--mono); font-size: 12px; margin-top: 8px; padding: 3px 8px; border-radius: 4px; }
   .card-delta.up { background: rgba(82,214,138,.12); color: var(--green); }
   .card-delta.down { background: rgba(255,95,95,.12); color: var(--red); }
   .card-delta.neutral { background: rgba(122,132,153,.12); color: var(--text2); }
-
-  /* ── KPI ACCENT BARS ─────────────────────────────── */
   .kpi-bar { height: 3px; border-radius: 2px; margin-top: 12px; }
-
-  /* ── SECTION HEADERS ─────────────────────────────── */
-  .section-title {
-    font-size: 13px; font-weight: 700; color: var(--text2);
-    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;
-    padding-bottom: 8px; border-bottom: 1px solid var(--border);
-  }
-
-  /* ── TREND CHART ─────────────────────────────────── */
+  .section-title { font-size: 13px; font-weight: 700; color: var(--text2); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
   #trend-chart-wrap { position: relative; height: 220px; }
-  #trend-chart { width: 100%; height: 100%; }
-  
-  /* ── DONUT ──────────────────────────────────────── */
   #donut-wrap { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 220px; gap: 16px; }
   #donut-svg { width: 140px; height: 140px; }
   .donut-legend { display: flex; flex-direction: column; gap: 8px; width: 100%; }
   .donut-legend-item { display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12px; }
   .donut-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
   .donut-pct { margin-left: auto; color: var(--text2); }
-
-  /* ── TOP APPS TABLE ──────────────────────────────── */
   .apps-table { width: 100%; }
-  .apps-table-row {
-    display: grid;
-    grid-template-columns: 24px 1fr 80px 90px 60px 60px;
-    align-items: center; gap: 8px;
-    padding: 8px 0;
-    border-bottom: 1px solid var(--border);
-    font-family: var(--mono); font-size: 12px;
-  }
+  .apps-table-row { display: grid; grid-template-columns: 24px 1fr 70px 95px 50px 56px; align-items: center; gap: 8px; padding: 8px 0; border-bottom: 1px solid var(--border); font-family: var(--mono); font-size: 12px; }
   .apps-table-row:last-child { border-bottom: none; }
   .apps-table-header { color: var(--text2); font-size: 10px; letter-spacing: 1px; }
   .app-rank { color: var(--text2); font-size: 11px; text-align: right; }
   .app-name-cell { font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .app-badge {
-    font-size: 9px; padding: 2px 6px; border-radius: 3px; font-weight: 600;
-    letter-spacing: 0.5px;
-  }
+  .app-badge { font-size: 9px; padding: 2px 6px; border-radius: 3px; font-weight: 600; letter-spacing: 0.5px; }
   .badge-cogs { background: rgba(79,158,255,.15); color: var(--cogs-color); }
   .badge-noncogs { background: rgba(82,214,138,.12); color: var(--noncogs-color); }
   .badge-journaled { background: rgba(176,132,255,.12); color: var(--purple); }
-  .spend-bar-cell { }
   .spend-bar { height: 4px; border-radius: 2px; background: var(--accent); }
   .amount-cell { text-align: right; }
   .mom-cell { text-align: right; }
   .mom-up { color: var(--green); }
   .mom-down { color: var(--red); }
   .mom-flat { color: var(--text2); }
-
-  /* ── MOVERS ──────────────────────────────────────── */
   .movers-list { display: flex; flex-direction: column; gap: 8px; }
-  .mover-row {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 8px 12px; border-radius: 8px;
-    background: var(--surface2); gap: 8px;
-  }
+  .mover-row { display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; border-radius: 8px; background: var(--surface2); gap: 8px; }
   .mover-name { font-weight: 600; font-size: 13px; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .mover-amounts { font-family: var(--mono); font-size: 11px; color: var(--text2); }
-  .mover-pct {
-    font-family: var(--mono); font-size: 13px; font-weight: 500;
-    padding: 3px 10px; border-radius: 5px; white-space: nowrap;
-  }
+  .mover-pct { font-family: var(--mono); font-size: 13px; font-weight: 500; padding: 3px 10px; border-radius: 5px; white-space: nowrap; }
   .pct-up { background: rgba(82,214,138,.12); color: var(--green); }
   .pct-down { background: rgba(255,95,95,.12); color: var(--red); }
   .pct-new { background: rgba(245,166,35,.12); color: var(--yellow); }
-
-  /* ── DEPT BARS ───────────────────────────────────── */
   .dept-bars { display: flex; flex-direction: column; gap: 10px; }
-  .dept-bar-row { }
   .dept-bar-label { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 11px; margin-bottom: 4px; }
   .dept-bar-track { height: 6px; background: var(--surface2); border-radius: 3px; }
   .dept-bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); }
-
-  /* ── ALL APPS TABLE ──────────────────────────────── */
   .full-table-wrap { overflow-x: auto; }
   .full-table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 12px; }
-  .full-table th {
-    text-align: left; padding: 8px 12px; background: var(--surface2);
-    color: var(--text2); font-size: 10px; letter-spacing: 1px; text-transform: uppercase;
-    cursor: pointer; user-select: none; border-bottom: 1px solid var(--border);
-    position: sticky; top: 0;
-  }
+  .full-table th { text-align: left; padding: 8px 12px; background: var(--surface2); color: var(--text2); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; user-select: none; border-bottom: 1px solid var(--border); }
   .full-table th:hover { color: var(--accent); }
   .full-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); }
   .full-table tr:hover td { background: var(--surface2); }
-  .full-table tr:last-child td { border-bottom: none; }
   .filter-row { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; align-items: center; }
-  .filter-input {
-    background: var(--surface2); border: 1px solid var(--border); border-radius: 6px;
-    color: var(--text); font-family: var(--mono); font-size: 12px; padding: 6px 12px;
-    outline: none;
-  }
+  .filter-input { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-family: var(--mono); font-size: 12px; padding: 6px 12px; outline: none; }
   .filter-input:focus { border-color: var(--accent); }
-  .filter-btn {
-    padding: 6px 14px; border-radius: 6px; cursor: pointer; font-family: var(--mono);
-    font-size: 11px; font-weight: 500; border: 1px solid var(--border);
-    background: transparent; color: var(--text2); transition: all .15s;
-  }
+  .filter-btn { padding: 6px 14px; border-radius: 6px; cursor: pointer; font-family: var(--mono); font-size: 11px; font-weight: 500; border: 1px solid var(--border); background: transparent; color: var(--text2); transition: all .15s; }
   .filter-btn:hover, .filter-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(79,158,255,.08); }
-
-  /* ── FOOTER ──────────────────────────────────────── */
   footer { padding: 20px 40px; border-top: 1px solid var(--border); font-family: var(--mono); font-size: 11px; color: var(--text2); }
-
+  .apr-note { background: rgba(245,166,35,.08); border: 1px solid rgba(245,166,35,.25); border-radius: 8px; padding: 10px 14px; font-family: var(--mono); font-size: 11px; color: var(--yellow); margin-bottom: 24px; display: none; }
+  .apr-note.show { display: block; }
   .tag { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 10px; font-weight: 600; letter-spacing: 0.5px; }
   .tag-cogs { background: rgba(79,158,255,.15); color: var(--cogs-color); }
   .tag-nc { background: rgba(82,214,138,.12); color: var(--noncogs-color); }
@@ -195,36 +108,34 @@
 
 <header>
   <div>
-    <h1>C1 <span>SaaS</span> Spend · 2026</h1>
+    <h1>Tech Ops <span>SaaS</span> Spend · 2026</h1>
     <div id="last-updated" style="margin-top:4px"></div>
   </div>
   <div id="month-tabs"></div>
 </header>
 
 <main>
-  <!-- KPIs -->
+  <div class="apr-note" id="apr-note"></div>
   <div class="grid-4" id="kpi-row"></div>
 
-  <!-- Trend + Donut + Dept -->
   <div class="grid-3">
-    <div class="card" style="grid-column: span 1">
+    <div class="card">
       <div class="section-title">Monthly Spend Trend</div>
       <div id="trend-chart-wrap"><canvas id="trend-chart"></canvas></div>
     </div>
     <div class="card">
-      <div class="section-title">COGS Split — Current Month</div>
+      <div class="section-title" id="donut-title">COGS Split</div>
       <div id="donut-wrap"></div>
     </div>
     <div class="card">
-      <div class="section-title">Spend by Department — Current Month</div>
+      <div class="section-title" id="dept-title">Spend by Department</div>
       <div class="dept-bars" id="dept-bars"></div>
     </div>
   </div>
 
-  <!-- Top Apps + MoM Movers -->
   <div class="grid-2">
     <div class="card">
-      <div class="section-title">Top Apps — Current Month</div>
+      <div class="section-title" id="top-apps-title">Top Apps</div>
       <div id="top-apps-table"></div>
     </div>
     <div class="card">
@@ -233,12 +144,11 @@
     </div>
   </div>
 
-  <!-- All Apps Table -->
   <div class="card">
     <div class="section-title">All Apps</div>
     <div class="filter-row">
       <input class="filter-input" id="search-input" placeholder="Search apps…" style="width:200px">
-      <button class="filter-btn" data-filter="all" onclick="setFilter('all')">All</button>
+      <button class="filter-btn active" data-filter="all" onclick="setFilter('all')">All</button>
       <button class="filter-btn" data-filter="cogs" onclick="setFilter('cogs')">COGS</button>
       <button class="filter-btn" data-filter="noncogs" onclick="setFilter('noncogs')">Non-COGS</button>
       <button class="filter-btn" data-filter="journaled" onclick="setFilter('journaled')">Journaled</button>
@@ -258,25 +168,27 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <script>
 let DATA = null;
-let activeMonth = 3; // Apr (index 3)
+let activeMonth = 3;       // Apr by default
 let activeFilter = 'all';
-let sortKey = 'spend3';
+let sortKey = 'Apr';
 let sortAsc = false;
+let tableFilter = '';
 
 async function init() {
-  const res = await fetch('data.json');
+  const res = await fetch('data.json?v=' + Date.now());  // cache-bust
   DATA = await res.json();
+  activeMonth = DATA.monthLabels ? DATA.monthLabels.length - 1 : (DATA.meta.monthLabels.length - 1);
   renderAll();
 }
+
+const ML = () => DATA.meta.monthLabels;
 
 function fmt(n) {
   if (n >= 1000000) return '$' + (n/1000000).toFixed(1) + 'M';
   if (n >= 1000) return '$' + (n/1000).toFixed(1) + 'K';
   return '$' + n.toFixed(0);
 }
-function fmtFull(n) {
-  return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-}
+function fmtFull(n) { return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
 function fmtPct(p) {
   if (p === null || p === undefined) return '—';
   if (p >= 999) return 'NEW';
@@ -297,19 +209,18 @@ function renderAll() {
   renderTopApps();
   renderMovers();
   renderTable();
-  
   document.getElementById('last-updated').textContent = 'Updated ' + DATA.meta.lastUpdated;
   document.getElementById('footer').textContent =
-    'Sources: Jan–Mar from App spend totals tab · Classification from SaaS Apps Classification tab · Apr from Apr 26 Spend GL tab';
+    'Jan–Mar totals from App spend totals tab · classification from SaaS Apps Classification tab · April from Apr 26 Spend GL tab';
 }
 
 function renderTabs() {
-  const wrap = document.getElementById('month-tabs');
-  wrap.innerHTML = DATA.meta.monthLabels.map((lbl, i) =>
+  document.getElementById('month-tabs').innerHTML = ML().map((lbl, i) =>
     `<button class="month-tab ${i===activeMonth?'active':''}" onclick="setMonth(${i})">${lbl}</button>`
   ).join('');
 }
 
+// month-dependent rerenders, all in one place
 function setMonth(i) {
   activeMonth = i;
   renderTabs();
@@ -317,7 +228,6 @@ function setMonth(i) {
   renderDonut();
   renderDeptBars();
   renderTopApps();
-  renderTable();
 }
 
 function renderKPIs() {
@@ -325,18 +235,29 @@ function renderKPIs() {
   const prev = activeMonth > 0 ? DATA.monthly[activeMonth-1] : null;
   const mom = prev ? ((mt.total - prev.total)/prev.total*100) : null;
   const ytd = DATA.monthly.slice(0, activeMonth+1).reduce((s,m)=>s+m.total, 0);
-  
-  const appsWithSpend = DATA.apps.filter(a=>a.spend[activeMonth]>0).length;
+
+  // April note
+  const note = document.getElementById('apr-note');
+  if (activeMonth === 3 && DATA.meta.aprNote) {
+    note.textContent = '⚠ ' + DATA.meta.aprNote;
+    note.classList.add('show');
+  } else {
+    note.classList.remove('show');
+  }
+
+  let deltaDir = 'neutral';
+  if (mom !== null) deltaDir = mom > 0.05 ? 'up' : (mom < -0.05 ? 'down' : 'neutral');
 
   const cards = [
     { label: 'Total Spend', value: fmt(mt.total), sub: fmtFull(mt.total),
-      delta: mom !== null ? fmtPct(mom) : null, deltaDir: mom > 0 ? 'up' : 'down',
-      color: '#4f9eff' },
+      delta: mom !== null ? fmtPct(mom) + ' MoM' : null, deltaDir, color: '#4f9eff' },
     { label: 'YTD Spend', value: fmt(ytd), sub: fmtFull(ytd), color: '#52d68a' },
     { label: 'COGS', value: fmt(mt.cogs),
-      sub: (mt.total ? (mt.cogs/mt.total*100).toFixed(1) : 0) + '% of total', color: '#4f9eff' },
+      sub: (mt.total ? (mt.cogs/mt.total*100).toFixed(1) : 0) + '% of total', color: '#4f9eff',
+      barPct: mt.total ? (mt.cogs/mt.total*100) : 0 },
     { label: 'Non-COGS', value: fmt(mt.nonCogs),
-      sub: (mt.total ? (mt.nonCogs/mt.total*100).toFixed(1) : 0) + '% of total', color: '#52d68a' },
+      sub: (mt.total ? (mt.nonCogs/mt.total*100).toFixed(1) : 0) + '% of total', color: '#52d68a',
+      barPct: mt.total ? (mt.nonCogs/mt.total*100) : 0 },
   ];
 
   document.getElementById('kpi-row').innerHTML = cards.map(c => `
@@ -344,8 +265,8 @@ function renderKPIs() {
       <div class="card-label">${c.label}</div>
       <div class="card-value">${c.value}</div>
       <div class="card-sub">${c.sub}</div>
-      ${c.delta ? `<div class="card-delta ${c.deltaDir}">${c.delta} MoM</div>` : ''}
-      <div class="kpi-bar" style="background:${c.color}40;"><div style="height:100%;width:60%;background:${c.color};border-radius:2px"></div></div>
+      ${c.delta ? `<div class="card-delta ${c.deltaDir}">${c.delta}</div>` : ''}
+      <div class="kpi-bar" style="background:${c.color}40;"><div style="height:100%;width:${c.barPct!==undefined?c.barPct.toFixed(0):60}%;background:${c.color};border-radius:2px"></div></div>
     </div>
   `).join('');
 }
@@ -354,21 +275,14 @@ let trendChart = null;
 function renderTrend() {
   const ctx = document.getElementById('trend-chart').getContext('2d');
   if (trendChart) trendChart.destroy();
-  
-  const labels = DATA.meta.monthLabels;
-  const totals = DATA.monthly.map(m=>m.total);
-  const cogs = DATA.monthly.map(m=>m.cogs);
-  const nc = DATA.monthly.map(m=>m.nonCogs);
-  
   trendChart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels,
+      labels: ML(),
       datasets: [
-        { label: 'COGS', data: cogs, backgroundColor: 'rgba(79,158,255,.7)', borderRadius: 4, stack: 'a' },
-        { label: 'Non-COGS', data: nc, backgroundColor: 'rgba(82,214,138,.55)', borderRadius: 4, stack: 'a' },
-        { label: 'Total', data: totals, type: 'line', borderColor: '#f5a623', backgroundColor: 'transparent',
-          pointBackgroundColor: '#f5a623', pointRadius: 4, borderWidth: 2, tension: 0.3, yAxisID: 'y' }
+        { label: 'COGS', data: DATA.monthly.map(m=>m.cogs), backgroundColor: 'rgba(79,158,255,.7)', borderRadius: 4, stack: 'a' },
+        { label: 'Non-COGS', data: DATA.monthly.map(m=>m.nonCogs), backgroundColor: 'rgba(82,214,138,.55)', borderRadius: 4, stack: 'a' },
+        { label: 'Total', data: DATA.monthly.map(m=>m.total), type: 'line', borderColor: '#f5a623', backgroundColor: 'transparent', pointBackgroundColor: '#f5a623', pointRadius: 4, borderWidth: 2, tension: 0.3 }
       ]
     },
     options: {
@@ -379,8 +293,7 @@ function renderTrend() {
       },
       scales: {
         x: { stacked: true, ticks: { color: '#7a8499', font: { family: 'DM Mono', size: 11 } }, grid: { color: '#252c3a' }},
-        y: { stacked: true, ticks: { color: '#7a8499', font: { family: 'DM Mono', size: 11 },
-             callback: v => fmt(v) }, grid: { color: '#252c3a' }}
+        y: { stacked: true, ticks: { color: '#7a8499', font: { family: 'DM Mono', size: 11 }, callback: v => fmt(v) }, grid: { color: '#252c3a' }}
       }
     }
   });
@@ -391,30 +304,24 @@ function renderDonut() {
   const total = mt.total || 1;
   const cogsPct = (mt.cogs/total*100).toFixed(1);
   const ncPct = (mt.nonCogs/total*100).toFixed(1);
-  const r = 50, cx = 60, cy = 60, strokeW = 16;
-  const circ = 2*Math.PI*r;
+  const r = 50, cx = 60, cy = 60, strokeW = 16, circ = 2*Math.PI*r;
   const cogsDash = mt.cogs/total*circ;
-
+  document.getElementById('donut-title').textContent = 'COGS Split — ' + ML()[activeMonth];
   document.getElementById('donut-wrap').innerHTML = `
     <svg id="donut-svg" viewBox="0 0 120 120">
       <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#252c3a" stroke-width="${strokeW}"/>
-      <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#52d68a" stroke-width="${strokeW}"
-        stroke-dasharray="${circ} ${circ}" stroke-dashoffset="0" transform="rotate(-90 ${cx} ${cy})"/>
-      <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#4f9eff" stroke-width="${strokeW}"
-        stroke-dasharray="${cogsDash} ${circ}" stroke-dashoffset="0" transform="rotate(-90 ${cx} ${cy})"/>
+      <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#52d68a" stroke-width="${strokeW}" stroke-dasharray="${circ} ${circ}" transform="rotate(-90 ${cx} ${cy})"/>
+      <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#4f9eff" stroke-width="${strokeW}" stroke-dasharray="${cogsDash} ${circ}" transform="rotate(-90 ${cx} ${cy})"/>
       <text x="${cx}" y="${cy-6}" text-anchor="middle" fill="#e8edf5" font-family="Syne" font-size="14" font-weight="800">${fmt(total)}</text>
       <text x="${cx}" y="${cy+10}" text-anchor="middle" fill="#7a8499" font-family="DM Mono" font-size="9">TOTAL</text>
     </svg>
     <div class="donut-legend">
-      <div class="donut-legend-item"><div class="donut-dot" style="background:#4f9eff"></div>
-        <span>COGS</span><span class="donut-pct">${cogsPct}% · ${fmt(mt.cogs)}</span></div>
-      <div class="donut-legend-item"><div class="donut-dot" style="background:#52d68a"></div>
-        <span>Non-COGS</span><span class="donut-pct">${ncPct}% · ${fmt(mt.nonCogs)}</span></div>
+      <div class="donut-legend-item"><div class="donut-dot" style="background:#4f9eff"></div><span>COGS</span><span class="donut-pct">${cogsPct}% · ${fmt(mt.cogs)}</span></div>
+      <div class="donut-legend-item"><div class="donut-dot" style="background:#52d68a"></div><span>Non-COGS</span><span class="donut-pct">${ncPct}% · ${fmt(mt.nonCogs)}</span></div>
     </div>`;
 }
 
 function renderDeptBars() {
-  // Compute dept totals for active month
   const deptMap = {};
   DATA.apps.forEach(a => {
     const amt = a.spend[activeMonth];
@@ -422,26 +329,19 @@ function renderDeptBars() {
   });
   const sorted = Object.entries(deptMap).sort((a,b)=>b[1]-a[1]).slice(0,8);
   const maxVal = sorted[0]?.[1] || 1;
-  
-  document.getElementById('dept-bars').innerHTML = sorted.map(([dept, amt]) => `
-    <div class="dept-bar-row">
-      <div class="dept-bar-label">
-        <span style="max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${dept}</span>
-        <span style="color:var(--text2)">${fmt(amt)}</span>
-      </div>
-      <div class="dept-bar-track">
-        <div class="dept-bar-fill" style="width:${(amt/maxVal*100).toFixed(1)}%"></div>
-      </div>
-    </div>
-  `).join('');
+  document.getElementById('dept-title').textContent = 'Spend by Department — ' + ML()[activeMonth];
+  document.getElementById('dept-bars').innerHTML = sorted.length ? sorted.map(([dept, amt]) => `
+    <div>
+      <div class="dept-bar-label"><span style="max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${dept}</span><span style="color:var(--text2)">${fmt(amt)}</span></div>
+      <div class="dept-bar-track"><div class="dept-bar-fill" style="width:${(amt/maxVal*100).toFixed(1)}%"></div></div>
+    </div>`).join('') : '<div style="color:var(--text2);font-family:var(--mono);font-size:12px">No data for this month</div>';
 }
 
 function renderTopApps() {
   const apps = DATA.apps.filter(a=>a.spend[activeMonth]>0)
     .sort((a,b)=>b.spend[activeMonth]-a.spend[activeMonth]).slice(0,15);
   const maxAmt = apps[0]?.spend[activeMonth] || 1;
-  const mom_idx = activeMonth;
-  
+  document.getElementById('top-apps-title').textContent = 'Top Apps — ' + ML()[activeMonth];
   document.getElementById('top-apps-table').innerHTML = `
     <div class="apps-table">
       <div class="apps-table-row apps-table-header">
@@ -451,14 +351,10 @@ function renderTopApps() {
         const amt = a.spend[activeMonth];
         const mom = a.mom[activeMonth];
         const barW = (amt/maxAmt*100).toFixed(1);
-        return `
-        <div class="apps-table-row">
+        return `<div class="apps-table-row">
           <div class="app-rank">${i+1}</div>
           <div class="app-name-cell" title="${a.name}">${a.name}</div>
-          <div>
-            <span class="app-badge ${a.cogs?'badge-cogs':'badge-noncogs'}">${a.cogs?'COGS':'NC'}</span>
-            ${a.journaled?`<span class="app-badge badge-journaled" style="margin-left:2px">JE</span>`:''}
-          </div>
+          <div><span class="app-badge ${a.cogs?'badge-cogs':'badge-noncogs'}">${a.cogs?'COGS':'NC'}</span>${a.journaled?`<span class="app-badge badge-journaled" style="margin-left:2px">JE</span>`:''}</div>
           <div class="amount-cell">${fmtFull(amt)}</div>
           <div><div class="spend-bar" style="width:${barW}%"></div></div>
           <div class="mom-cell ${pctClass(mom)}">${fmtPct(mom)}</div>
@@ -468,14 +364,11 @@ function renderTopApps() {
 }
 
 function renderMovers() {
-  const movers = DATA.movers.slice(0,12);
-  document.getElementById('movers-list').innerHTML = movers.map(m => {
-    const isNew = m.prev === 0;
-    const isUp = m.pct > 0;
-    const cls = isNew ? 'pct-new' : isUp ? 'pct-up' : 'pct-down';
-    const lbl = isNew ? 'NEW' : (m.pct >= 999 ? 'NEW' : fmtPct(m.pct));
-    return `
-    <div class="mover-row">
+  document.getElementById('movers-list').innerHTML = DATA.movers.slice(0,12).map(m => {
+    const isNew = m.prev === 0 || m.pct >= 999;
+    const cls = isNew ? 'pct-new' : (m.pct > 0 ? 'pct-up' : 'pct-down');
+    const lbl = isNew ? 'NEW' : fmtPct(m.pct);
+    return `<div class="mover-row">
       <div class="mover-name">${m.name}</div>
       <div class="mover-amounts">${fmt(m.prev)} → ${fmt(m.curr)}</div>
       <div class="mover-pct ${cls}">${lbl}</div>
@@ -483,49 +376,39 @@ function renderMovers() {
   }).join('');
 }
 
-let tableFilter = '';
 function setFilter(f) {
   activeFilter = f;
   document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active', b.dataset.filter===f));
   renderTable();
 }
 
-document.addEventListener('DOMContentLoaded', ()=>{
-  document.getElementById('search-input').addEventListener('input', e=>{
-    tableFilter = e.target.value.toLowerCase();
-    renderTable();
-  });
-});
-
 function renderTable() {
   const cols = ['Name','Classification','Department','Journaled','Jan','Feb','Mar','Apr','YTD'];
-  const headEl = document.getElementById('table-head');
-  headEl.innerHTML = cols.map((c,i)=>`<th onclick="sortTable('${c}')">${c} ${sortKey===c?(sortAsc?'↑':'↓'):''}</th>`).join('');
-  
+  document.getElementById('table-head').innerHTML = cols.map(c=>`<th onclick="sortTable('${c}')">${c} ${sortKey===c?(sortAsc?'↑':'↓'):''}</th>`).join('');
+
   let apps = DATA.apps.filter(a=>{
-    const hasSpend = a.spend.some(s=>s>0);
-    if (!hasSpend) return false;
+    if (!a.spend.some(s=>s>0)) return false;
     if (tableFilter && !a.name.toLowerCase().includes(tableFilter)) return false;
     if (activeFilter === 'cogs') return a.cogs;
     if (activeFilter === 'noncogs') return !a.cogs;
     if (activeFilter === 'journaled') return a.journaled;
     return true;
   });
-  
-  // Sort
+
   apps.sort((a,b)=>{
     let va, vb;
-    if (sortKey==='Name') { va=a.name; vb=b.name; }
+    if (sortKey==='Name') { va=a.name.toLowerCase(); vb=b.name.toLowerCase(); }
+    else if (sortKey==='Classification') { va=a.cogs?1:0; vb=b.cogs?1:0; }
+    else if (sortKey==='Department') { va=a.dept; vb=b.dept; }
+    else if (sortKey==='Journaled') { va=a.journaled?1:0; vb=b.journaled?1:0; }
     else if (sortKey==='YTD') { va=a.spend.reduce((s,v)=>s+v,0); vb=b.spend.reduce((s,v)=>s+v,0); }
-    else if (['Jan','Feb','Mar','Apr'].includes(sortKey)) {
-      const idx = ['Jan','Feb','Mar','Apr'].indexOf(sortKey);
-      va=a.spend[idx]; vb=b.spend[idx];
-    } else { va=0; vb=0; }
-    return sortAsc ? (va>vb?1:va<vb?-1:0) : (va<vb?1:va>vb?-1:0);
+    else { const idx=['Jan','Feb','Mar','Apr'].indexOf(sortKey); va=a.spend[idx]; vb=b.spend[idx]; }
+    if (va<vb) return sortAsc?-1:1;
+    if (va>vb) return sortAsc?1:-1;
+    return 0;
   });
-  
+
   document.getElementById('app-count').textContent = apps.length + ' apps';
-  
   document.getElementById('table-body').innerHTML = apps.map(a=>{
     const ytd = a.spend.reduce((s,v)=>s+v,0);
     return `<tr>
@@ -548,7 +431,11 @@ function sortTable(key) {
   renderTable();
 }
 
-init();
+document.addEventListener('DOMContentLoaded', ()=>{
+  const si = document.getElementById('search-input');
+  if (si) si.addEventListener('input', e=>{ tableFilter = e.target.value.toLowerCase(); renderTable(); });
+  init();
+});
 </script>
 </body>
 </html>
