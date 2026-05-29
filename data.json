@@ -13,29 +13,23 @@
       "Mar",
       "Apr"
     ],
-    "currentMonth": "April 2026",
-    "currency": "USD",
-    "sources": {
-      "jan_mar": "App spend totals tab (2026 SaaS Spend sheet)",
-      "classification": "SaaS Apps Classification tab (2026 SaaS Spend sheet)",
-      "apr": "Apr 26 Spend tab (GL file)"
-    }
+    "aprNote": "April is GL-derived; some COGS journal entries (Codio, Comptia, Salesforce Slack) may not have posted yet, so April runs lower than a full month."
   },
   "monthly": [
     {
-      "total": 152505.14,
-      "cogs": 79078.18,
-      "nonCogs": 73426.96
+      "total": 152017.74,
+      "cogs": 72751.42,
+      "nonCogs": 79266.32
     },
     {
-      "total": 161027.96,
-      "cogs": 81852.46,
-      "nonCogs": 79175.5
+      "total": 160074.85,
+      "cogs": 77575.91,
+      "nonCogs": 82498.95
     },
     {
-      "total": 162350.15,
-      "cogs": 87731.64,
-      "nonCogs": 74618.51
+      "total": 164314.73,
+      "cogs": 82324.88,
+      "nonCogs": 81989.85
     },
     {
       "total": 60534.5,
@@ -2655,14 +2649,6 @@
       ]
     }
   ],
-  "deptTotals": {
-    "Tech Operations and AI Enablement": 21453.109999999997,
-    "Operations": 18664.979999999996,
-    "People Operations": 8038.070000000001,
-    "Engineering": 7709.17,
-    "Finance": 3656.39,
-    "Product": 1012.78
-  },
   "movers": [
     {
       "name": "Track1099",
