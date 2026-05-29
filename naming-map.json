@@ -6,8 +6,14 @@
     "Salesforce Inc": "Salesforce - Other",
     "Imkey Breda": "Resume IO",
     "Apprentiscope": "Apprenti Apprentiscope",
-    "Quickbooks": "Quickbooks Payments"
+    "Quickbooks": "Quickbooks Payments",
+    "Salesforce - Tableau Cloud Creator": "Salesforce - Other",
+    "Salesforce - Sales Cloud Enterprise": "Salesforce - Other",
+    "Salesforce - Exams": "Salesforce - Other",
+    "Tableau": "Salesforce - Other"
   },
+
+  "_salesforce_rule": "Salesforce is consolidated into exactly THREE dashboard entries: 'Salesforce - Slack Enterprise' (COGS), 'Salesforce - Slack Internal' (Non-COGS), and 'Salesforce - Other' (COGS, catch-all for every other Salesforce SKU — Tableau, Sales Cloud, Exams, generic Salesforce Inc, etc.). NOTE: 'Salesforce - Other' is classified COGS even though Tableau and Sales Cloud are Non-COGS in the finance sheet; this is an intentional simplification that shifts ~$1.4k/mo from Non-COGS to COGS. Keep the two Slack lines separate — do NOT fold them into Other.",
 
   "_vendor_aliases_README": "These are RAW GL/bank-descriptor strings that map to a single app. Used when parsing the GL so that e.g. all PEARSON VUE / VUE*COMPTIA lines roll up into one 'Comptia' line. Left = substring found in the GL 'Name' or 'Memo' column; right = app name (which is then passed through name_map above for final display).",
   "vendor_aliases": {
