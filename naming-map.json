@@ -7,13 +7,13 @@
     "Imkey Breda": "Resume IO",
     "Apprentiscope": "Apprenti Apprentiscope",
     "Quickbooks": "Quickbooks Payments",
-    "Salesforce - Tableau Cloud Creator": "Salesforce - Other",
-    "Salesforce - Sales Cloud Enterprise": "Salesforce - Other",
     "Salesforce - Exams": "Salesforce - Other",
-    "Tableau": "Salesforce - Other"
+    "Salesforce - Tableau Cloud Creator": "Salesforce - Other (Non-COGS)",
+    "Salesforce - Sales Cloud Enterprise": "Salesforce - Other (Non-COGS)",
+    "Tableau": "Salesforce - Other (Non-COGS)"
   },
 
-  "_salesforce_rule": "Salesforce is consolidated into exactly THREE dashboard entries: 'Salesforce - Slack Enterprise' (COGS), 'Salesforce - Slack Internal' (Non-COGS), and 'Salesforce - Other' (COGS, catch-all for every other Salesforce SKU — Tableau, Sales Cloud, Exams, generic Salesforce Inc, etc.). NOTE: 'Salesforce - Other' is classified COGS even though Tableau and Sales Cloud are Non-COGS in the finance sheet; this is an intentional simplification that shifts ~$1.4k/mo from Non-COGS to COGS. Keep the two Slack lines separate — do NOT fold them into Other.",
+  "_salesforce_rule": "Salesforce is consolidated into exactly FOUR dashboard entries, kept classification-accurate so the COGS/Non-COGS split matches the finance sheet: (1) 'Salesforce - Slack Enterprise' = COGS; (2) 'Salesforce - Slack Internal' = Non-COGS; (3) 'Salesforce - Other' = COGS, catch-all for COGS Salesforce SKUs (generic Salesforce Inc, Exams, any future COGS SKU); (4) 'Salesforce - Other (Non-COGS)' = Non-COGS, catch-all for Non-COGS Salesforce SKUs (Tableau Cloud Creator, Sales Cloud Enterprise, any future Non-COGS SKU). RULE FOR NEW SALESFORCE SKUs: check its classification in the SaaS Apps Classification tab, then fold it into the matching 'Other' bucket by classification — COGS SKUs -> 'Salesforce - Other', Non-COGS SKUs -> 'Salesforce - Other (Non-COGS)'. Keep the two Slack lines separate; never fold them into an Other bucket.",
 
   "_vendor_aliases_README": "These are RAW GL/bank-descriptor strings that map to a single app. Used when parsing the GL so that e.g. all PEARSON VUE / VUE*COMPTIA lines roll up into one 'Comptia' line. Left = substring found in the GL 'Name' or 'Memo' column; right = app name (which is then passed through name_map above for final display).",
   "vendor_aliases": {
