@@ -159,7 +159,7 @@
       "billingCycle": "Annual"
     },
     {
-      "name": "Salesforce Inc",
+      "name": "Salesforce - Other",
       "classification": "COGS",
       "department": "Operations",
       "journaled": true,
@@ -1839,7 +1839,7 @@
       "billingCycle": null
     },
     {
-      "name": "Imkey Breda",
+      "name": "Resume IO",
       "classification": "Non-COGS",
       "department": "Operations",
       "journaled": false,
