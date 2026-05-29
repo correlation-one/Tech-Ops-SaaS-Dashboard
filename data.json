@@ -17,24 +17,24 @@
   ],
   "monthly": [
     {
-      "total": 152017.74,
-      "cogs": 72751.42,
-      "nonCogs": 79266.32
+      "total": 152505.14,
+      "cogs": 80249.34,
+      "nonCogs": 72255.8
     },
     {
-      "total": 160074.85,
-      "cogs": 77575.91,
-      "nonCogs": 82498.95
+      "total": 161027.96,
+      "cogs": 83219.13,
+      "nonCogs": 77808.83
     },
     {
-      "total": 164314.73,
-      "cogs": 82324.88,
-      "nonCogs": 81989.85
+      "total": 162350.15,
+      "cogs": 89098.31,
+      "nonCogs": 73251.84
     },
     {
       "total": 168080.11,
-      "cogs": 92521.18,
-      "nonCogs": 75558.93
+      "cogs": 93887.84,
+      "nonCogs": 74192.27
     }
   ],
   "apps": [
@@ -165,16 +165,16 @@
       "journaled": true,
       "category": null,
       "spend": [
-        6018.75,
-        6018.75,
-        6018.75,
-        7547.76
+        7189.91,
+        7385.42,
+        7385.42,
+        8914.42
       ],
       "projected": [
-        6018.75,
-        6018.75,
-        6018.75,
-        6018.75
+        7189.91,
+        7189.91,
+        7287.66,
+        7320.25
       ],
       "renewalDate": null,
       "renewalStatus": null,
@@ -655,30 +655,6 @@
         1395.25,
         1238.85,
         1192.09
-      ],
-      "renewalDate": null,
-      "renewalStatus": null,
-      "owner": null,
-      "annualCost": null,
-      "billingCycle": null
-    },
-    {
-      "name": "Salesforce - Tableau Cloud Creator",
-      "classification": "Non-COGS",
-      "department": "Tech Operations and AI Enablement",
-      "journaled": false,
-      "category": null,
-      "spend": [
-        1171.16,
-        1171.17,
-        1171.17,
-        1171.16
-      ],
-      "projected": [
-        1171.16,
-        1171.16,
-        1171.16,
-        1171.17
       ],
       "renewalDate": null,
       "renewalStatus": null,
@@ -1453,30 +1429,6 @@
       "owner": null,
       "annualCost": null,
       "billingCycle": null
-    },
-    {
-      "name": "Salesforce - Sales Cloud Enterprise",
-      "classification": "Non-COGS",
-      "department": "Tech Operations and AI Enablement",
-      "journaled": false,
-      "category": "Sales & CRM",
-      "spend": [
-        0.0,
-        195.5,
-        195.5,
-        195.5
-      ],
-      "projected": [
-        0.0,
-        0,
-        195.5,
-        195.5
-      ],
-      "renewalDate": "2026-01-23",
-      "renewalStatus": "Active",
-      "owner": "",
-      "annualCost": null,
-      "billingCycle": "Annual"
     },
     {
       "name": "Coderpad",
@@ -3162,30 +3114,6 @@
       "name": "Recruitcrm",
       "classification": "Non-COGS",
       "department": "People Operations",
-      "journaled": true,
-      "category": null,
-      "spend": [
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "projected": [
-        0.0,
-        0,
-        0,
-        0
-      ],
-      "renewalDate": null,
-      "renewalStatus": null,
-      "owner": null,
-      "annualCost": null,
-      "billingCycle": null
-    },
-    {
-      "name": "Salesforce - Exams",
-      "classification": "COGS",
-      "department": "Operations",
       "journaled": true,
       "category": null,
       "spend": [
