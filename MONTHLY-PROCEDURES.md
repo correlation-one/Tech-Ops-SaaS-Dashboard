@@ -28,6 +28,12 @@ It is a static site: one `index.html` (layout + charts) and one `data.json` (all
    - `non_saas_exclude` drops non-SaaS rows (food delivery, reimbursements, etc.).
    - `name_map` applies final display renames (e.g. `Salesforce Inc` → `Salesforce - Other`).
    - **Confirm the new-month total matches the GL grand total** (minus excluded non-SaaS) before trusting it.
+   - **Salesforce consolidation (do every month):** Salesforce must collapse to exactly **four** entries, kept classification-accurate:
+     - `Salesforce - Slack Enterprise` (COGS) — keep separate
+     - `Salesforce - Slack Internal` (Non-COGS) — keep separate
+     - `Salesforce - Other` (COGS) — fold in every **COGS** Salesforce SKU (generic Salesforce Inc, Exams, etc.)
+     - `Salesforce - Other (Non-COGS)` — fold in every **Non-COGS** Salesforce SKU (Tableau Cloud Creator, Sales Cloud Enterprise, etc.)
+     - If a **new** Salesforce SKU appears: look up its COGS/Non-COGS in the Classification tab, then fold it into the matching "Other" bucket. Never merge across classifications (that would throw off the COGS/Non-COGS split).
 3. **Reconcile classification + department** against the "SaaS Apps Classifcation" tab.
 4. **Run the new-app + journaling review** (Section 3) — flag anything ambiguous.
 5. **Refresh renewals from Notion** if dates have changed.
