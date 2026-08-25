@@ -1,519 +1,131 @@
-[
- {
-  "app": "Google",
-  "spend": [
-   8936.58,
-   8851.24,
-   8808.72,
-   8777.96,
-   8796.25,
-   8822.36
-  ],
-  "reasons": [
-   "payment >= $5k but not journaled"
-  ]
- },
- {
-  "app": "Salesforce - Other",
-  "spend": [
-   6018.75,
-   6018.75,
-   6018.75,
-   6018.75,
-   6018.75,
-   6018.75
-  ],
-  "reasons": [
-   "absent from SaaS Apps Classifcation tab"
-  ]
- },
- {
-  "app": "Claude",
-  "spend": [
-   43.03,
-   623.86,
-   2885.79,
-   5315.7,
-   5665.82,
-   5749.49
-  ],
-  "reasons": [
-   "payment >= $5k but not journaled"
-  ]
- },
- {
-  "app": "Profound",
-  "spend": [
-   0.0,
-   3750.0,
-   3750.0,
-   3000.0,
-   0.0,
-   0.0
-  ],
-  "reasons": [
-   "spend stopped before the latest month"
-  ]
- },
- {
-  "app": "Salesforce - Other (Non-COGS)",
-  "spend": [
-   1171.16,
-   1366.66,
-   1366.66,
-   1366.66,
-   1366.66,
-   1171.16
-  ],
-  "reasons": [
-   "absent from SaaS Apps Classifcation tab"
-  ]
- },
- {
-  "app": "Cooper Square Technologies",
-  "spend": [
-   0.0,
-   0.0,
-   0.0,
-   0.0,
-   3266.25,
-   3266.25
-  ],
-  "reasons": [
-   "classification fell back to GL account default \u2014 needs a decision",
-   "absent from SaaS Apps Classifcation tab"
-  ]
- },
- {
-  "app": "Culture Amp",
-  "spend": [
-   642.23,
-   642.23,
-   642.23,
-   642.23,
-   642.23,
-   642.23
-  ],
-  "reasons": [
-   "classification fell back to GL account default \u2014 needs a decision",
-   "absent from SaaS Apps Classifcation tab"
-  ]
- },
- {
-  "app": "Hireflix",
-  "spend": [
-   3600.0,
-   0.0,
-   0.0,
-   0.0,
-   0.0,
-   0.0
-  ],
-  "reasons": [
-   "only one month of spend \u2014 one-time or new subscription?",
-   "spend stopped before the latest month"
-  ]
- },
- {
-  "app": "Cake",
-  "spend": [
-   1395.25,
-   1082.45,
-   1098.58,
-   0.0,
-   0.0,
-   0.0
-  ],
-  "reasons": [
-   "spend stopped before the latest month"
-  ]
- },
- {
-  "app": "Figma",
-  "spend": [
-   49.0,
-   70.07,
-   153.2,
-   1012.78,
-   255.86,
-   255.86
-  ],
-  "reasons": [
-   "one month >3x the next \u2014 possible annual/lump"
-  ]
- },
- {
-  "app": "Typeform",
-  "spend": [
-   1622.24,
-   0.0,
-   0.0,
-   0.0,
-   0.0,
-   0.0
-  ],
-  "reasons": [
-   "only one month of spend \u2014 one-time or new subscription?",
-   "spend stopped before the latest month"
-  ]
- },
- {
-  "app": "Zapier",
-  "spend": [
-   29.99,
-   1457.99,
-   29.99,
-   29.99,
-   29.99,
-   29.99
-  ],
-  "reasons": [
-   "one month >3x the next \u2014 possible annual/lump"
-  ]
- },
- {
-  "app": "Paypal",
-  "spend": [
-   531.18,
-   531.17,
-   531.17,
-   0.0,
-   0.0,
-   0.0
-  ],
-  "reasons": [
-   "spend stopped before the latest month"
-  ]
- },
- {
-  "app": "Hook Security",
-  "spend": [
-   0.0,
-   0.0,
-   1176.0,
-   0.0,
-   0.0,
-   0.0
-  ],
-  "reasons": [
-   "only one month of spend \u2014 one-time or new subscription?",
-   "spend stopped before the latest month"
-  ]
- },
- {
-  "app": "Aws",
-  "spend": [
-   554.09,
-   184.65,
-   50.44,
-   54.43,
-   53.14,
-   54.46
-  ],
-  "reasons": [
-   "one month >3x the next \u2014 possible annual/lump"
-  ]
- },
- {
-  "app": "Suptask",
-  "spend": [
-   0.0,
-   0.0,
-   0.0,
-   0.0,
-   0.0,
-   940.68
-  ],
-  "reasons": [
-   "classification fell back to GL account default \u2014 needs a decision",
-   "absent from SaaS Apps Classifcation tab",
-   "only one month of spend \u2014 one-time or new subscription?"
-  ]
- },
- {
-  "app": "Loom",
-  "spend": [
-   46.66,
-   0.0,
-   0.0,
-   720.0,
-   0.0,
-   0.0
-  ],
-  "reasons": [
-   "one month >3x the next \u2014 possible annual/lump",
-   "spend stopped before the latest month"
-  ]
- },
- {
-  "app": "Apollo.io",
-  "spend": [
-   0.0,
-   0.0,
-   0.0,
-   0.0,
-   323.36,
-   323.36
-  ],
-  "reasons": [
-   "classification fell back to GL account default \u2014 needs a decision",
-   "absent from SaaS Apps Classifcation tab"
-  ]
- },
- {
-  "app": "Coderpad",
-  "spend": [
-   108.88,
-   108.88,
-   130.65,
-   130.65,
-   130.65,
-   0.0
-  ],
-  "reasons": [
-   "spend stopped before the latest month"
-  ]
- },
- {
-  "app": "Godaddy",
-  "spend": [
-   47.18,
-   0.0,
-   0.0,
-   89.99,
-   411.1,
-   0.0
-  ],
-  "reasons": [
-   "one month >3x the next \u2014 possible annual/lump",
-   "spend stopped before the latest month"
-  ]
- },
- {
-  "app": "Artisan AI",
-  "spend": [
-   0.0,
-   0.0,
-   0.0,
-   0.0,
-   0.0,
-   493.41
-  ],
-  "reasons": [
-   "classification fell back to GL account default \u2014 needs a decision",
-   "absent from SaaS Apps Classifcation tab",
-   "only one month of spend \u2014 one-time or new subscription?"
-  ]
- },
- {
-  "app": "Intego",
-  "spend": [
-   0.0,
-   439.78,
-   0.0,
-   0.0,
-   0.0,
-   0.0
-  ],
-  "reasons": [
-   "only one month of spend \u2014 one-time or new subscription?",
-   "spend stopped before the latest month"
-  ]
- },
- {
-  "app": "Perplexity",
-  "spend": [
-   239.0,
-   21.25,
-   21.25,
-   21.25,
-   21.25,
-   21.25
-  ],
-  "reasons": [
-   "one month >3x the next \u2014 possible annual/lump"
-  ]
- },
- {
-  "app": "Docusign",
-  "spend": [
-   0.0,
-   0.0,
-   0.0,
-   326.63,
-   0.0,
-   0.0
-  ],
-  "reasons": [
-   "only one month of spend \u2014 one-time or new subscription?",
-   "spend stopped before the latest month"
-  ]
- },
- {
-  "app": "Dropbox",
-  "spend": [
-   41.76,
-   43.53,
-   43.53,
-   43.53,
-   43.53,
-   43.52
-  ],
-  "reasons": [
-   "absent from SaaS Apps Classifcation tab"
-  ]
- },
- {
-  "app": "Linear",
-  "spend": [
-   0.0,
-   0.0,
-   0.0,
-   0.0,
-   58.79,
-   176.38
-  ],
-  "reasons": [
-   "classification fell back to GL account default \u2014 needs a decision",
-   "absent from SaaS Apps Classifcation tab",
-   "one month >3x the next \u2014 possible annual/lump"
-  ]
- },
- {
-  "app": "Hireright Llc",
-  "spend": [
-   224.23,
-   0.0,
-   0.0,
-   0.0,
-   0.0,
-   0.0
-  ],
-  "reasons": [
-   "only one month of spend \u2014 one-time or new subscription?",
-   "spend stopped before the latest month"
-  ]
- },
- {
-  "app": "Resume IO",
-  "spend": [
-   0.0,
-   32.9,
-   101.59,
-   0.0,
-   0.0,
-   0.0
-  ],
-  "reasons": [
-   "absent from SaaS Apps Classifcation tab",
-   "one month >3x the next \u2014 possible annual/lump",
-   "spend stopped before the latest month"
-  ]
- },
- {
-  "app": "Guidde",
-  "spend": [
-   0.0,
-   0.0,
-   0.0,
-   0.0,
-   64.24,
-   64.24
-  ],
-  "reasons": [
-   "classification fell back to GL account default \u2014 needs a decision",
-   "absent from SaaS Apps Classifcation tab"
-  ]
- },
- {
-  "app": "Noun Project",
-  "spend": [
-   0.0,
-   0.0,
-   0.0,
-   0.0,
-   39.99,
-   39.99
-  ],
-  "reasons": [
-   "classification fell back to GL account default \u2014 needs a decision",
-   "absent from SaaS Apps Classifcation tab"
-  ]
- },
- {
-  "app": "Track1099",
-  "spend": [
-   68.32,
-   4.87,
-   2.57,
-   0.0,
-   0.0,
-   0.0
-  ],
-  "reasons": [
-   "absent from SaaS Apps Classifcation tab",
-   "one month >3x the next \u2014 possible annual/lump",
-   "spend stopped before the latest month"
-  ]
- },
- {
-  "app": "Helix Pay",
-  "spend": [
-   27.35,
-   0.0,
-   0.0,
-   0.0,
-   30.78,
-   0.0
-  ],
-  "reasons": [
-   "spend stopped before the latest month"
-  ]
- },
- {
-  "app": "Fal Features",
-  "spend": [
-   0.0,
-   0.0,
-   50.0,
-   0.0,
-   0.0,
-   0.0
-  ],
-  "reasons": [
-   "only one month of spend \u2014 one-time or new subscription?",
-   "spend stopped before the latest month"
-  ]
- },
- {
-  "app": "Digitalocean",
-  "spend": [
-   6.0,
-   6.0,
-   6.0,
-   6.0,
-   6.0,
-   0.0
-  ],
-  "reasons": [
-   "classification fell back to GL account default \u2014 needs a decision",
-   "absent from SaaS Apps Classifcation tab",
-   "spend stopped before the latest month"
-  ]
- },
- {
-  "app": "Squarespace",
-  "spend": [
-   0.0,
-   0.0,
-   24.0,
-   0.0,
-   0.0,
-   0.0
-  ],
-  "reasons": [
-   "only one month of spend \u2014 one-time or new subscription?",
-   "spend stopped before the latest month"
-  ]
- }
-]
+{
+ "generated": "2026-08-25",
+ "classification_flags": [
+  {
+   "app": "Dropbox",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    96100
+   ],
+   "h1_jul": 302.93
+  },
+  {
+   "app": "Track1099",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    96100
+   ],
+   "h1_jul": 75.76
+  },
+  {
+   "app": "Resume IO",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    96100
+   ],
+   "h1_jul": 134.49
+  },
+  {
+   "app": "Salesforce - Sales Cloud Enterprise",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    81000
+   ],
+   "h1_jul": 782.0
+  },
+  {
+   "app": "Librato",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    96100
+   ],
+   "h1_jul": 956.74
+  },
+  {
+   "app": "The Noun Project",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    96100
+   ],
+   "h1_jul": 79.98
+  },
+  {
+   "app": "Cooper Square Technologies",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    96100
+   ],
+   "h1_jul": 9798.75
+  },
+  {
+   "app": "Indeed",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    96100
+   ],
+   "h1_jul": 67.35
+  },
+  {
+   "app": "LambdaTest",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    96100
+   ],
+   "h1_jul": 326.63
+  },
+  {
+   "app": "Lucid",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    96100
+   ],
+   "h1_jul": 548.39
+  },
+  {
+   "app": "Slido",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    96100
+   ],
+   "h1_jul": 211.12
+  },
+  {
+   "app": "Speechify",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    96100
+   ],
+   "h1_jul": 239.0
+  },
+  {
+   "app": "Unidentified Wire (55000)",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "COGS",
+   "accounts": [
+    55000
+   ],
+   "h1_jul": 311.36
+  }
+ ],
+ "open_items": [
+  "April GCP/Sada line (~$22,812.62) removed from GL after 21 Jul - confirm with ben@ where April GCP consumption is booked",
+  "prepaid04.26 Codio accrual $14,893.37: no invoice, no reversing entry through July",
+  "Unidentified Wire (55000): two prepaid07.26 journal lines totaling $311.36 with wire-transfer memos - ask ben@ for the vendor",
+  "PRO SAN FRANCISCO CA $21.25 (Jul) mapped to Perplexity AI by amount pattern - confirm",
+  "Indeed $67.35 (Jul, 96100) treated as an app - confirm SaaS vs recruiting spend",
+  "Slido $211.12 (Jul) - new app, needs owner/department",
+  "Cooper Square Technologies - still needs classification in the review sheet (defaulted Non-COGS)"
+ ]
+}

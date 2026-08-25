@@ -1,0 +1,1835 @@
+{
+ "GCP": {
+  "m": [
+   25808.48,
+   24640.29,
+   25931.3,
+   0.0,
+   22269.96,
+   22797.52
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "Cost of Goods Sold:53000 Web Hosting"
+ },
+ "Comptia": {
+  "m": [
+   20324.030000000006,
+   20324.02852,
+   20324.02852,
+   20000.0,
+   15285.48,
+   13443.813329999999
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "Cost of Goods Sold:55000 Training Related"
+ },
+ "Salesforce - Slack Enterprise": {
+  "m": [
+   24074.98,
+   24074.98,
+   24074.98,
+   21529.01,
+   0.0,
+   8754.64
+  ],
+  "dept": "Operations",
+  "cogs": 1.0,
+  "acct": "55000 Cost of Goods Sold:Training Related"
+ },
+ "Codio": {
+  "m": [
+   3923.8,
+   11836.68,
+   12598.66,
+   14893.37,
+   22278.85,
+   18790.48
+  ],
+  "dept": "Learning Experience Design",
+  "cogs": 0.0,
+  "acct": "Cost of Goods Sold:55000 Training Related"
+ },
+ "Google": {
+  "m": [
+   8936.58,
+   8851.24,
+   8808.72,
+   8777.96,
+   8796.25,
+   8822.36
+  ],
+  "dept": "Tech Operations and AI Enablement",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Salesforce Inc": {
+  "m": [
+   6018.75,
+   6018.746,
+   6018.746,
+   6018.75,
+   6018.75,
+   6018.75
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "Cost of Goods Sold:55000 Training Related"
+ },
+ "Calendly": {
+  "m": [
+   3935.83,
+   3935.83,
+   3935.83,
+   3935.83,
+   3935.83,
+   3935.83
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "Cost of Goods Sold:55000 Training Related"
+ },
+ "Worksuite": {
+  "m": [
+   4265.63,
+   328.125,
+   4265.625,
+   4265.63,
+   4265.63,
+   3937.5
+  ],
+  "dept": "People Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Zoom": {
+  "m": [
+   3332.2,
+   3332.2,
+   3332.2,
+   3330.56,
+   3330.56,
+   3330.56
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Okta": {
+  "m": [
+   2608.6,
+   2608.602,
+   2608.602,
+   2608.6,
+   2608.6,
+   2608.6
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "Cost of Goods Sold:55000 Training Related"
+ },
+ "1Password": {
+  "m": [
+   2421.45,
+   2421.446,
+   2421.446,
+   2421.45,
+   2421.45,
+   2568.21
+  ],
+  "dept": "Tech Operations and AI Enablement",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Claude": {
+  "m": [
+   43.03,
+   623.86,
+   2885.79,
+   3149.33,
+   3591.96,
+   3269.95
+  ],
+  "dept": "Tech Operations and AI Enablement",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Airtable": {
+  "m": [
+   2200.12,
+   2226.74,
+   2238.55,
+   2247.81,
+   2189.0099999999998,
+   2348.3
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Surveymonkey Inc": {
+  "m": [
+   2156.25,
+   2156.253,
+   2156.253,
+   2156.25,
+   2156.25,
+   2156.25
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "Cost of Goods Sold:55000 Training Related"
+ },
+ "Hubspot": {
+  "m": [
+   2445.5299999999997,
+   2445.53633,
+   2445.53633,
+   2445.5299999999997,
+   0.0,
+   2817.0183297
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Slack - Internal": {
+  "m": [
+   1529.01,
+   1529.01,
+   1529.01,
+   1529.01,
+   1529.01,
+   1529.01
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "Cost of Goods Sold:55000 Training Related"
+ },
+ "Twilio": {
+  "m": [
+   2244.63,
+   1879.0499999999997,
+   1582.8600000000001,
+   2142.05,
+   2439.4,
+   1472.5699999999997
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Maxio": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   3629.17,
+   3629.17,
+   3629.17
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Profound": {
+  "m": [
+   0.0,
+   3750.0,
+   3750.0,
+   3000.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "S&M:81000 Enterprise Marketing"
+ },
+ "Zendesk": {
+  "m": [
+   1285.8000000000002,
+   1285.808,
+   2576.148,
+   2082.0,
+   1284.8000000000002,
+   1285.8000000000002
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Sentry": {
+  "m": [
+   1474.18,
+   1474.18,
+   1474.18,
+   1799.29,
+   1541.72,
+   1552.23
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Cake": {
+  "m": [
+   1395.25,
+   1082.4499999999998,
+   1098.58,
+   0.0,
+   2721.88,
+   2721.88
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Mailchimp": {
+  "m": [
+   1469.81,
+   1469.81,
+   1469.81,
+   1469.81,
+   1469.81,
+   1469.81
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "Cost of Goods Sold:55000 Training Related"
+ },
+ "Mindhub": {
+  "m": [
+   1818.31,
+   1818.3182,
+   1818.3182,
+   1026.09,
+   1026.09,
+   1026.09
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "Cost of Goods Sold:55000 Training Related"
+ },
+ "Greenhouse": {
+  "m": [
+   1421.78,
+   1421.78,
+   1421.78,
+   1421.78,
+   1421.78,
+   1088.75
+  ],
+  "dept": "People Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Accredible": {
+  "m": [
+   1306.67,
+   1306.667,
+   1306.667,
+   1306.67,
+   1043.38583,
+   1043.38583
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "Cost of Goods Sold:55000 Training Related"
+ },
+ "ChatGPT": {
+  "m": [
+   1236.45,
+   1215.94,
+   1482.75,
+   899.02,
+   1012.54,
+   1254.63
+  ],
+  "dept": "Tech Operations and AI Enablement",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Tableau": {
+  "m": [
+   1171.16,
+   1171.16885,
+   1171.16885,
+   1171.16,
+   1171.16,
+   1171.16
+  ],
+  "dept": "Data Science & Analytics",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Outreach": {
+  "m": [
+   0.0,
+   1367.331,
+   1367.331,
+   1367.33,
+   1367.33,
+   1367.33
+  ],
+  "dept": "Sales",
+  "cogs": 0.0,
+  "acct": "S&M:81000 Enterprise Marketing"
+ },
+ "Saasoptics": {
+  "m": [
+   3402.34,
+   3402.344,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Finance",
+  "cogs": 0.0,
+  "acct": "96100.0"
+ },
+ "Anthropic": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   2166.37,
+   2073.86,
+   2479.5399999999995
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Adobe": {
+  "m": [
+   1096.14,
+   861.44,
+   1111.44,
+   1111.44,
+   1257.48,
+   1242.04
+  ],
+  "dept": "Tech Operations and AI Enablement",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Cooper Square": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   3266.25,
+   3266.25
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Carta": {
+  "m": [
+   1043.39,
+   1043.386,
+   1043.386,
+   1043.39,
+   1043.39,
+   1043.39
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Notion": {
+  "m": [
+   993.28,
+   993.275,
+   993.275,
+   993.28,
+   1026.93,
+   993.28
+  ],
+  "dept": "Tech Operations and AI Enablement",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Apprentiscope": {
+  "m": [
+   0.0,
+   399.66,
+   1300.86,
+   1300.86,
+   1300.86,
+   1300.86
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Linkedin": {
+  "m": [
+   0.0,
+   1125.5283,
+   1125.5283,
+   974.01,
+   1125.53,
+   974.01
+  ],
+  "dept": "Marketing",
+  "cogs": 0.0,
+  "acct": "S&M:81000 Enterprise Marketing"
+ },
+ "Atlassian": {
+  "m": [
+   840.73,
+   840.73,
+   820.81,
+   892.08,
+   935.14,
+   895.17
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Lovable Dover": {
+  "m": [
+   1001.65,
+   86.64999999999998,
+   568.97,
+   933.42,
+   439.86,
+   1994.4499999999998
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Microsoft": {
+  "m": [
+   794.88,
+   913.4,
+   769.19,
+   741.85,
+   740.4,
+   920.54
+  ],
+  "dept": "Tech Operations and AI Enablement",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "ZoomInfo": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   2426.46,
+   2426.46
+  ],
+  "dept": "Sales",
+  "cogs": 0.0,
+  "acct": "S&M:81000 Enterprise Marketing"
+ },
+ "Bamboohr": {
+  "m": [
+   781.8,
+   781.8017,
+   781.8017,
+   781.8,
+   781.8,
+   781.8
+  ],
+  "dept": "People Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Workforce": {
+  "m": [
+   1100.0,
+   600.0,
+   600.0,
+   600.0,
+   600.0,
+   450.0
+  ],
+  "dept": "People Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Cultureamp": {
+  "m": [
+   642.23,
+   642.2258,
+   642.2258,
+   642.23,
+   642.23,
+   642.23
+  ],
+  "dept": "People Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Github": {
+  "m": [
+   518.0500000000001,
+   460.8,
+   659.33,
+   699.4300000000001,
+   710.28,
+   602.37
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Cursor": {
+  "m": [
+   867.8199999999999,
+   1354.98,
+   697.5,
+   217.75,
+   263.6,
+   217.75
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Hireflix": {
+  "m": [
+   3600.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "96100.0"
+ },
+ "Salesforce - Tableau Cloud Creator": {
+  "m": [
+   1171.16,
+   1171.16885,
+   1171.16885,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Tech Operations and AI Enablement",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Vue Pearson": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   291.65999999999997,
+   1491.6599999999999,
+   1708.3266669999998
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "Cost of Goods Sold:55000 Training Related"
+ },
+ "Tremendous": {
+  "m": [
+   103.0,
+   721.0,
+   478.95,
+   0.0,
+   781.62,
+   1241.01
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "S&M:81000 Enterprise Marketing"
+ },
+ "Salesforce - Slack Internal": {
+  "m": [
+   0.0,
+   1529.01,
+   1529.01,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Tech Operations and AI Enablement",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Pumble": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   2721.88,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "account number not found"
+ },
+ "Yesware": {
+  "m": [
+   440.94,
+   440.9442,
+   440.9442,
+   440.94,
+   440.94,
+   440.94
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Launchdarkly": {
+  "m": [
+   381.06,
+   381.06,
+   381.06,
+   381.06,
+   381.06,
+   381.06
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Paypal": {
+  "m": [
+   531.18,
+   970.9517,
+   531.1717,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Finance",
+  "cogs": 0.0,
+  "acct": "55000.0"
+ },
+ "Apprenticeships For": {
+  "m": [
+   0.0,
+   1900.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "account number not found"
+ },
+ "Figma": {
+  "m": [
+   49.0,
+   70.07,
+   153.2,
+   1012.78,
+   255.86,
+   255.86
+  ],
+  "dept": "Product",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Squadcast": {
+  "m": [
+   456.0,
+   475.79,
+   393.04,
+   0.0,
+   0.0,
+   465.44
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Typeform": {
+  "m": [
+   1622.24,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Product Management",
+  "cogs": 1.0,
+  "acct": "96100.0"
+ },
+ "Zapier": {
+  "m": [
+   29.99,
+   1457.99,
+   29.99,
+   29.99,
+   29.99,
+   29.99
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Refiner": {
+  "m": [
+   219.0,
+   219.0,
+   219.0,
+   219.0,
+   219.0,
+   219.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Deepsource": {
+  "m": [
+   210.0,
+   210.0,
+   210.0,
+   210.0,
+   210.0,
+   210.0
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Hook Security": {
+  "m": [
+   0.0,
+   0.0,
+   1176.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "96100.0"
+ },
+ "Gamma": {
+  "m": [
+   0.0,
+   348.94,
+   307.76,
+   281.51,
+   124.27,
+   111.28
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Artillery": {
+  "m": [
+   199.0,
+   132.2,
+   199.0,
+   199.0,
+   199.0,
+   199.0
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Paddle": {
+  "m": [
+   27.22,
+   27.22,
+   27.22,
+   27.22,
+   27.22,
+   967.9
+  ],
+  "dept": "Finance",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Librato Solarwindaustin": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   491.3,
+   465.44,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Aws": {
+  "m": [
+   554.09,
+   184.65,
+   50.44,
+   54.43,
+   53.14,
+   54.46
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "Cost of Goods Sold:53000 Web Hosting"
+ },
+ "Hex": {
+  "m": [
+   195.98,
+   195.98,
+   195.98,
+   0.0,
+   0.0,
+   248.14000000000001
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Salesforce - Sales Cloud Enterprise": {
+  "m": [
+   0.0,
+   195.4958,
+   195.4958,
+   195.5,
+   195.5,
+   0.0
+  ],
+  "dept": "Tech Operations and AI Enablement",
+  "cogs": 0.0,
+  "acct": "S&M:81000 Enterprise Marketing"
+ },
+ "Loom": {
+  "m": [
+   46.66,
+   0.0,
+   0.0,
+   720.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "96100 Sofware Expense"
+ },
+ "Quickbooks": {
+  "m": [
+   125.21,
+   125.21,
+   125.21,
+   125.21,
+   125.21,
+   125.21
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Apollo": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   323.36,
+   323.36
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Dnsimple": {
+  "m": [
+   66.0,
+   97.0,
+   81.5,
+   162.0,
+   141.4,
+   81.5
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Coderpad": {
+  "m": [
+   108.88,
+   108.88,
+   130.65,
+   130.65,
+   130.65,
+   0.0
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Geocode": {
+  "m": [
+   100.0,
+   100.0,
+   100.0,
+   100.0,
+   100.0,
+   100.0
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Godaddy": {
+  "m": [
+   47.18,
+   0.0,
+   0.0,
+   89.99,
+   411.1,
+   0.0
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Mailgun": {
+  "m": [
+   87.1,
+   87.1,
+   87.1,
+   87.1,
+   87.1,
+   87.1
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Artisan": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   493.40999999999997
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Tango": {
+  "m": [
+   84.92,
+   84.92,
+   84.92,
+   65.33,
+   65.33,
+   48.75
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Apprenti Apprentiscope": {
+  "m": [
+   399.66,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 1.0,
+  "acct": "96100.0"
+ },
+ "Perplexity": {
+  "m": [
+   239.0,
+   21.25,
+   21.25,
+   21.25,
+   21.25,
+   21.25
+  ],
+  "dept": "Tech Operations and AI Enablement",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Docusign": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   326.63,
+   0.0,
+   0.0
+  ],
+  "dept": "People Operations",
+  "cogs": 0.0,
+  "acct": "96100 Sofware Expense"
+ },
+ "Stape": {
+  "m": [
+   50.0,
+   54.44,
+   54.44,
+   54.44,
+   54.44,
+   54.44
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Dropbox": {
+  "m": [
+   41.76,
+   43.53,
+   43.53,
+   43.53,
+   43.53,
+   43.52
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Vercel": {
+  "m": [
+   40.0,
+   40.0,
+   40.0,
+   44.8,
+   44.8,
+   44.8
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Plus Docs": {
+  "m": [
+   40.0,
+   40.0,
+   40.0,
+   40.0,
+   40.0,
+   40.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Linear": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   58.79,
+   176.38
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Hireright Llc": {
+  "m": [
+   224.23,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "96100.0"
+ },
+ "Sales Navigator": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   151.52,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "account number not found"
+ },
+ "Dmarcian": {
+  "m": [
+   24.0,
+   24.0,
+   24.0,
+   24.0,
+   24.0,
+   24.0
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Guidde Inc": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   64.24,
+   64.24
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "The Noun": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   39.99,
+   39.99
+  ],
+  "dept": "Marketing",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Track1099": {
+  "m": [
+   68.32,
+   4.87,
+   2.57,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "96100.0"
+ },
+ "Imkey Breda": {
+  "m": [
+   0.0,
+   32.9,
+   29.95,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "96100.0"
+ },
+ "Helix Pay": {
+  "m": [
+   27.35,
+   0.0,
+   0.0,
+   0.0,
+   30.78,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Fal Features": {
+  "m": [
+   0.0,
+   0.0,
+   50.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "96100.0"
+ },
+ "Digital Ocean": {
+  "m": [
+   6.0,
+   6.0,
+   6.0,
+   6.0,
+   6.0,
+   0.0
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Wonder": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   8.7,
+   8.7,
+   8.7
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "G&A:92000 General & Administrative Expenses:96000 Technology:96100 Software Expense"
+ },
+ "Squarespace": {
+  "m": [
+   0.0,
+   0.0,
+   24.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "96100.0"
+ },
+ "Abstract": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Askai": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Tech Operations and AI Enablement",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Beautiful": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Tech Operations and AI Enablement",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Billigence": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "55000 Cost of Goods Sold:Training Related"
+ },
+ "Calget": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Tech Operations and AI Enablement",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Canva": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Marketing",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Circleci": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Cision": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Cockatoo": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Coresignal": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "account number not found"
+ },
+ "Ctfd": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Donut": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "People Operations",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Every": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Expensify": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Finance",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "ExpressVPN": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Tech Operations and AI Enablement",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Focus Force": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Marketing",
+  "cogs": 0.0,
+  "acct": "55000 Cost of Goods Sold:Training Related"
+ },
+ "Font Awesome": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Gilmore Global": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "55000 Cost of Goods Sold:Training Related"
+ },
+ "Gmelius": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Goto": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Grammarly": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Tech Operations and AI Enablement",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Happy Scribe": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Hotjar": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Marketing",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Hoxhunt": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Tech Operations and AI Enablement",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Intego": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Tech Operations and AI Enablement",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Jobs That": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "81500 S&M:Other Marketing"
+ },
+ "Jotform": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Kahoot": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Lambdatest": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "account number not found"
+ },
+ "Lightcast": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Lingo": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Lucid": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Mailjet": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Miro": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Product",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Mobbin": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Monday": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Number Api": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Engineering",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Otter": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Superside": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Marketing",
+  "cogs": 0.0,
+  "acct": "81500.0"
+ },
+ "Statista": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Marketing",
+  "cogs": 0.0,
+  "acct": "96100 G&A:General & Administrative Expenses:Technology:Software Expense"
+ },
+ "Textla": {
+  "m": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dept": "Operations",
+  "cogs": 1.0,
+  "acct": "55000 Cost of Goods Sold:Training Related"
+ }
+}

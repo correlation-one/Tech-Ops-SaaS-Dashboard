@@ -1,0 +1,487 @@
+{
+ "GCP": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "True"
+ },
+ "Salesforce - Slack Enterprise": {
+  "cogs": "COGS",
+  "dept": "Operations",
+  "journaled": "False"
+ },
+ "Comptia": {
+  "cogs": "COGS",
+  "dept": "Operations",
+  "journaled": "False"
+ },
+ "Codio": {
+  "cogs": "COGS",
+  "dept": "Learning Experience Design",
+  "journaled": "False"
+ },
+ "Google": {
+  "cogs": "Non-Cogs",
+  "dept": "Tech Operations and AI Enablement",
+  "journaled": "True"
+ },
+ "Calendly": {
+  "cogs": "COGS",
+  "dept": "Operations",
+  "journaled": "True"
+ },
+ "Zoom": {
+  "cogs": "Non-Cogs",
+  "dept": "Operations",
+  "journaled": "True"
+ },
+ "Worksuite": {
+  "cogs": "COGS",
+  "dept": "People Operations",
+  "journaled": "True"
+ },
+ "Okta": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "True"
+ },
+ "Profound": {
+  "cogs": "Non-Cogs",
+  "dept": "Operations",
+  "journaled": "True"
+ },
+ "Hubspot": {
+  "cogs": "Non-Cogs",
+  "dept": "Operations",
+  "journaled": "True"
+ },
+ "1Password": {
+  "cogs": "Non-Cogs",
+  "dept": "Tech Operations and AI Enablement",
+  "journaled": "True"
+ },
+ "Saasoptics": {
+  "cogs": "Non-Cogs",
+  "dept": "Finance",
+  "journaled": "True"
+ },
+ "Airtable": {
+  "cogs": "COGS",
+  "dept": "Operations",
+  "journaled": "False"
+ },
+ "Surveymonkey Inc": {
+  "cogs": "COGS",
+  "dept": "Operations",
+  "journaled": "True"
+ },
+ "Twilio": {
+  "cogs": "COGS",
+  "dept": "Engineering",
+  "journaled": "False"
+ },
+ "Mindhub": {
+  "cogs": "COGS",
+  "dept": "Operations",
+  "journaled": "True"
+ },
+ "Zendesk": {
+  "cogs": "COGS",
+  "dept": "Operations",
+  "journaled": "True"
+ },
+ "Sentry": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "True"
+ },
+ "Mailchimp": {
+  "cogs": "COGS",
+  "dept": "Operations",
+  "journaled": "True"
+ },
+ "Greenhouse": {
+  "cogs": "Non-Cogs",
+  "dept": "People Operations",
+  "journaled": "True"
+ },
+ "ChatGPT": {
+  "cogs": "Non-Cogs",
+  "dept": "Tech Operations and AI Enablement",
+  "journaled": "True"
+ },
+ "Accredible": {
+  "cogs": "COGS",
+  "dept": "Operations",
+  "journaled": "False"
+ },
+ "Hireflix": {
+  "cogs": "Non-Cogs",
+  "dept": "Operations",
+  "journaled": "False"
+ },
+ "Cake": {
+  "cogs": "COGS",
+  "dept": "Operations",
+  "journaled": "False"
+ },
+ "Salesforce - Tableau Cloud Creator": {
+  "cogs": "Non-Cogs",
+  "dept": "Tech Operations and AI Enablement",
+  "journaled": "False"
+ },
+ "Carta": {
+  "cogs": "Non-Cogs",
+  "dept": "Operations",
+  "journaled": "True"
+ },
+ "Adobe": {
+  "cogs": "Non-Cogs",
+  "dept": "Tech Operations and AI Enablement",
+  "journaled": "True"
+ },
+ "Salesforce - Slack Internal": {
+  "cogs": "Non-Cogs",
+  "dept": "Tech Operations and AI Enablement",
+  "journaled": "True"
+ },
+ "Notion": {
+  "cogs": "Non-Cogs",
+  "dept": "Tech Operations and AI Enablement",
+  "journaled": "True"
+ },
+ "Cursor": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "True"
+ },
+ "Claude": {
+  "cogs": "Non-Cogs",
+  "dept": "Tech Operations and AI Enablement",
+  "journaled": "False"
+ },
+ "Outreach": {
+  "cogs": "Non-Cogs",
+  "dept": "Sales",
+  "journaled": "True"
+ },
+ "Atlassian": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "True"
+ },
+ "Microsoft": {
+  "cogs": "Non-Cogs",
+  "dept": "Tech Operations and AI Enablement",
+  "journaled": "True"
+ },
+ "Bamboohr": {
+  "cogs": "Non-Cogs",
+  "dept": "People Operations",
+  "journaled": "True"
+ },
+ "Workforce": {
+  "cogs": "Non-Cogs",
+  "dept": "People Operations",
+  "journaled": "True"
+ },
+ "Linkedin": {
+  "cogs": "Non-Cogs",
+  "dept": "Marketing",
+  "journaled": "False"
+ },
+ "Paypal": {
+  "cogs": "Non-Cogs",
+  "dept": "Finance",
+  "journaled": "True"
+ },
+ "Cultureamp": {
+  "cogs": "Non-Cogs",
+  "dept": "People Operations",
+  "journaled": "True"
+ },
+ "Lovable Dover": {
+  "cogs": "Non-Cogs",
+  "dept": "Operations",
+  "journaled": "False"
+ },
+ "Github": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "True"
+ },
+ "Typeform": {
+  "cogs": "COGS",
+  "dept": "Product Management",
+  "journaled": "False"
+ },
+ "Zapier": {
+  "cogs": "Non-Cogs",
+  "dept": "Operations",
+  "journaled": "False"
+ },
+ "Gamma": {
+  "cogs": "Non-Cogs",
+  "dept": "Operations",
+  "journaled": "True"
+ },
+ "Squadcast": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "True"
+ },
+ "Yesware": {
+  "cogs": "Non-Cogs",
+  "dept": "Operations",
+  "journaled": "True"
+ },
+ "Tremendous": {
+  "cogs": "COGS",
+  "dept": "Operations",
+  "journaled": "False"
+ },
+ "Hook Security": {
+  "cogs": "Non-Cogs",
+  "dept": "Operations",
+  "journaled": "False"
+ },
+ "Launchdarkly": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "True"
+ },
+ "Aws": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "False"
+ },
+ "Refiner": {
+  "cogs": "Non-Cogs",
+  "dept": "Operations",
+  "journaled": "True"
+ },
+ "Deepsource": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "True"
+ },
+ "Hex": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "True"
+ },
+ "Artillery": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "True"
+ },
+ "Apprenti Apprentiscope": {
+  "cogs": "COGS",
+  "dept": "Operations",
+  "journaled": "False"
+ },
+ "Coderpad": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "True"
+ },
+ "Geocode": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "True"
+ },
+ "Perplexity": {
+  "cogs": "Non-Cogs",
+  "dept": "Tech Operations and AI Enablement",
+  "journaled": "False"
+ },
+ "Figma": {
+  "cogs": "Non-Cogs",
+  "dept": "Product",
+  "journaled": "True"
+ },
+ "Mailgun": {
+  "cogs": "COGS",
+  "dept": "Operations",
+  "journaled": "True"
+ },
+ "Tango": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "True"
+ },
+ "Dnsimple": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "True"
+ },
+ "Hireright Llc": {
+  "cogs": "Non-Cogs",
+  "dept": "Operations",
+  "journaled": "False"
+ },
+ "Stape": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "False"
+ },
+ "Plus Docs": {
+  "cogs": "Non-Cogs",
+  "dept": "Operations",
+  "journaled": "False"
+ },
+ "Vercel": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "False"
+ },
+ "Paddle": {
+  "cogs": "Non-Cogs",
+  "dept": "Finance",
+  "journaled": "True"
+ },
+ "Dmarcian": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "False"
+ },
+ "Fal Features": {
+  "cogs": "Non-Cogs",
+  "dept": "Operations",
+  "journaled": "False"
+ },
+ "Godaddy": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "True"
+ },
+ "Loom": {
+  "cogs": "COGS",
+  "dept": "Operations",
+  "journaled": "True"
+ },
+ "Helix Pay": {
+  "cogs": "Non-Cogs",
+  "dept": "Operations",
+  "journaled": "False"
+ },
+ "Squarespace": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "False"
+ },
+ "Digital Ocean": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "False"
+ },
+ "Calget": {
+  "cogs": "COGS",
+  "dept": "Tech Operations and AI Enablement",
+  "journaled": "False"
+ },
+ "Canva": {
+  "cogs": "Non-Cogs",
+  "dept": "Marketing",
+  "journaled": "True"
+ },
+ "Docusign": {
+  "cogs": "Non-Cogs",
+  "dept": "People Operations",
+  "journaled": "True"
+ },
+ "Grammarly": {
+  "cogs": "Non-Cogs",
+  "dept": "Tech Operations and AI Enablement",
+  "journaled": "False"
+ },
+ "Hotjar": {
+  "cogs": "Non-Cogs",
+  "dept": "Marketing",
+  "journaled": "False"
+ },
+ "Intego": {
+  "cogs": "Non-Cogs",
+  "dept": "Tech Operations and AI Enablement",
+  "journaled": "False"
+ },
+ "Jotform": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "False"
+ },
+ "Lambdatest": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "False"
+ },
+ "Lightcast": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "True"
+ },
+ "Lingo": {
+  "cogs": "Non-Cogs",
+  "dept": "Operations",
+  "journaled": "False"
+ },
+ "Lucid": {
+  "cogs": "Non-Cogs",
+  "dept": "Engineering",
+  "journaled": "True"
+ },
+ "Miro": {
+  "cogs": "Non-Cogs",
+  "dept": "Product",
+  "journaled": "True"
+ },
+ "Otter": {
+  "cogs": "Non-Cogs",
+  "dept": "Operations",
+  "journaled": "True"
+ },
+ "Productboard": {
+  "cogs": "Non-Cogs",
+  "dept": "#N/A",
+  "journaled": "#N/A"
+ },
+ "Quickbooks Payments": {
+  "cogs": "Non-Cogs",
+  "dept": "#N/A",
+  "journaled": "#N/A"
+ },
+ "Recruitcrm": {
+  "cogs": "Non-Cogs",
+  "dept": "#N/A",
+  "journaled": "#N/A"
+ },
+ "Salesforce - Exams": {
+  "cogs": "COGS",
+  "dept": "#N/A",
+  "journaled": "#N/A"
+ },
+ "Statista": {
+  "cogs": "Non-Cogs",
+  "dept": "Marketing",
+  "journaled": "False"
+ },
+ "Superside": {
+  "cogs": "Non-Cogs",
+  "dept": "Marketing",
+  "journaled": "True"
+ },
+ "Textla": {
+  "cogs": "COGS",
+  "dept": "Operations",
+  "journaled": "False"
+ },
+ "Vimeo": {
+  "cogs": "Non-Cogs",
+  "dept": "#N/A",
+  "journaled": "#N/A"
+ },
+ "Zoominfo": {
+  "cogs": "Non-Cogs",
+  "dept": "Sales",
+  "journaled": "False"
+ }
+}

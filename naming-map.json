@@ -1,44 +1,648 @@
 {
-  "_README": "Canonical name map: FINANCE-SHEET / VENDOR NAME (left)  ->  DASHBOARD DISPLAY NAME (right). When a vendor appears in the GL or App-spend-totals tab under a name you want shown differently on the dashboard, add an entry here. The monthly build reads this file and renames apps accordingly. To add a new rename, add a line: \"Name as it appears in finance sheet\": \"Name to show on dashboard\". Keep names exactly as they appear in the source (case-sensitive).",
-  "_lastUpdated": "2026-05-29",
-
-  "name_map": {
-    "Salesforce Inc": "Salesforce - Other",
-    "Imkey Breda": "Resume IO",
-    "Apprentiscope": "Apprenti Apprentiscope",
-    "Quickbooks": "Quickbooks Payments",
-    "Salesforce - Exams": "Salesforce - Other",
-    "Salesforce - Tableau Cloud Creator": "Salesforce - Other (Non-COGS)",
-    "Salesforce - Sales Cloud Enterprise": "Salesforce - Other (Non-COGS)",
-    "Tableau": "Salesforce - Other (Non-COGS)"
+  "_comment": "Canonical vendor->app mapping for the Tech Ops SaaS dashboard. Order matters: first regex match wins. v3 (Aug 2026 reclassification rebuild): canonical names aligned to the SaaS COGS/Non-COGS Classification Review sheet; CompTIA/Pearson VUE split; LinkedIn/Sales Navigator split; Artisan added.",
+  "vendor_aliases": [
+    [
+      "SLI\\.DO",
+      "Slido"
+    ],
+    [
+      "\\bINDEED\\b",
+      "Indeed"
+    ],
+    [
+      "^PRO SAN FRANCISCO",
+      "Perplexity AI"
+    ],
+    [
+      "SLACK.*BUSINESS PLUS|BUSINESS PLUS.*SLACK",
+      "Salesforce - Slack Internal"
+    ],
+    [
+      "\\bSLACK\\b",
+      "Salesforce - Slack Enterprise"
+    ],
+    [
+      "TABLEAU",
+      "Salesforce - Tableau Cloud"
+    ],
+    [
+      "SALES CLOUD",
+      "Salesforce - Sales Cloud Enterprise"
+    ],
+    [
+      "SALESFORCE",
+      "Salesforce - Certification Exams"
+    ],
+    [
+      "SADA SYSTEMS",
+      "Google Cloud Platform"
+    ],
+    [
+      "AMAZON WEB SERVICES|AWS\\.AMAZON",
+      "Amazon Web Services"
+    ],
+    [
+      "GOOGLE ?\\*?SVCS|GOOGLE ?\\*?WORKSPACE|GSUITE",
+      "Google Workspace"
+    ],
+    [
+      "GITHUB",
+      "GitHub"
+    ],
+    [
+      "ANTHROPIC|CLAUDE",
+      "Claude"
+    ],
+    [
+      "OPENAI|CHATGPT",
+      "ChatGPT"
+    ],
+    [
+      "PEARSON|VUE\\*",
+      "Pearson VUE (Exam Vouchers)"
+    ],
+    [
+      "COMPTIA",
+      "CompTIA"
+    ],
+    [
+      "CODIO",
+      "Codio"
+    ],
+    [
+      "SALES NAVIGATOR",
+      "LinkedIn Sales Navigator"
+    ],
+    [
+      "LINKEDIN",
+      "LinkedIn"
+    ],
+    [
+      "BLS\\*?OUTREACH|OUTREACH",
+      "Outreach"
+    ],
+    [
+      "ZOOMINFO",
+      "ZoomInfo"
+    ],
+    [
+      "APOLLO",
+      "Apollo"
+    ],
+    [
+      "COOPER SQUARE",
+      "Cooper Square Technologies"
+    ],
+    [
+      "TREMENDOUS",
+      "Tremendous"
+    ],
+    [
+      "PROFOUND",
+      "Profound"
+    ],
+    [
+      "MAXIO|SAASOPTICS|SAAS ?OPTICS",
+      "Maxio (formerly SaaSOptics)"
+    ],
+    [
+      "PUMBLE|CAKE\\.COM|\\bCAKE\\b",
+      "Pumble"
+    ],
+    [
+      "EDINVENT|ACCREDIBLE",
+      "Accredible"
+    ],
+    [
+      "APPRENTICESHIPS FOR",
+      "Apprenticeships For"
+    ],
+    [
+      "APPRENTI",
+      "ApprentiScope"
+    ],
+    [
+      "ADOBE",
+      "Adobe"
+    ],
+    [
+      "IMKEY|BREDA|RESUME",
+      "Resume IO"
+    ],
+    [
+      "THE NOUN|NOUN ?PROJECT|THENOUNPROJECT",
+      "The Noun Project"
+    ],
+    [
+      "DIGITALOCEAN|DIGITAL OCEAN",
+      "DigitalOcean"
+    ],
+    [
+      "GODADDY",
+      "GoDaddy"
+    ],
+    [
+      "ZENDESK",
+      "Zendesk"
+    ],
+    [
+      "ATLASSIAN",
+      "Atlassian"
+    ],
+    [
+      "NOTION",
+      "Notion"
+    ],
+    [
+      "FIGMA",
+      "Figma"
+    ],
+    [
+      "HUBSPOT",
+      "HubSpot"
+    ],
+    [
+      "\\bLOOM\\b",
+      "Loom"
+    ],
+    [
+      "\\bZOOM\\b|ZOOM\\.US",
+      "Zoom"
+    ],
+    [
+      "MICROSOFT|MSFT|MSBILL\\.INFO",
+      "Microsoft"
+    ],
+    [
+      "1PASSWORD|AGILEBITS",
+      "1Password"
+    ],
+    [
+      "AIRTABLE",
+      "Airtable"
+    ],
+    [
+      "TWILIO",
+      "Twilio"
+    ],
+    [
+      "MAILGUN",
+      "Mailgun"
+    ],
+    [
+      "MAILCHIMP",
+      "Mailchimp"
+    ],
+    [
+      "MAILJET",
+      "Mailjet"
+    ],
+    [
+      "CALENDLY",
+      "Calendly"
+    ],
+    [
+      "CANVA",
+      "Canva"
+    ],
+    [
+      "CARTA",
+      "Carta"
+    ],
+    [
+      "CIRCLECI",
+      "CircleCI"
+    ],
+    [
+      "CURSOR",
+      "Cursor"
+    ],
+    [
+      "DOCUSIGN",
+      "DocuSign"
+    ],
+    [
+      "DROPBOX",
+      "Dropbox"
+    ],
+    [
+      "EXPENSIFY",
+      "Expensify"
+    ],
+    [
+      "EXPRESSVPN|EXPRESS VPN",
+      "ExpressVPN"
+    ],
+    [
+      "GRAMMARLY",
+      "Grammarly"
+    ],
+    [
+      "GREENHOUSE",
+      "Greenhouse"
+    ],
+    [
+      "\\bHEX\\b",
+      "Hex"
+    ],
+    [
+      "HOTJAR",
+      "Hotjar"
+    ],
+    [
+      "HOXHUNT",
+      "Hoxhunt"
+    ],
+    [
+      "JOTFORM",
+      "Jotform"
+    ],
+    [
+      "KAHOOT",
+      "Kahoot"
+    ],
+    [
+      "LAMBDATEST",
+      "LambdaTest"
+    ],
+    [
+      "LAUNCHDARKLY",
+      "LaunchDarkly"
+    ],
+    [
+      "LUCID",
+      "Lucid"
+    ],
+    [
+      "MENTIMETER",
+      "Mentimeter"
+    ],
+    [
+      "MIRO",
+      "Miro"
+    ],
+    [
+      "MONDAY",
+      "Monday"
+    ],
+    [
+      "\\bMUI\\b",
+      "MUI"
+    ],
+    [
+      "OKTA",
+      "Okta"
+    ],
+    [
+      "OTTER",
+      "Otter"
+    ],
+    [
+      "PADDLE",
+      "Paddle"
+    ],
+    [
+      "PAYPAL",
+      "PayPal"
+    ],
+    [
+      "PERPLEXITY",
+      "Perplexity AI"
+    ],
+    [
+      "QUICKBOOKS|INTUIT",
+      "QuickBooks"
+    ],
+    [
+      "SEMRUSH",
+      "Semrush"
+    ],
+    [
+      "SENTRY",
+      "Sentry"
+    ],
+    [
+      "SPEECHIFY",
+      "Speechify"
+    ],
+    [
+      "SQSP|SQUARESPACE",
+      "Squarespace"
+    ],
+    [
+      "STAPE",
+      "Stape"
+    ],
+    [
+      "STATISTA",
+      "Statista"
+    ],
+    [
+      "SURVEYMONKEY",
+      "SurveyMonkey"
+    ],
+    [
+      "TANGO",
+      "Tango"
+    ],
+    [
+      "TODOIST",
+      "Todoist"
+    ],
+    [
+      "TYPEFORM",
+      "Typeform"
+    ],
+    [
+      "VERCEL",
+      "Vercel"
+    ],
+    [
+      "VIMEO",
+      "Vimeo"
+    ],
+    [
+      "YESWARE",
+      "Yesware"
+    ],
+    [
+      "ZAPIER",
+      "Zapier"
+    ],
+    [
+      "ZLURI",
+      "Zluri"
+    ],
+    [
+      "GAMMA",
+      "Gamma"
+    ],
+    [
+      "WORKSUITE",
+      "Worksuite"
+    ],
+    [
+      "MINDHUB",
+      "MindHub"
+    ],
+    [
+      "BAMBOOHR",
+      "BambooHR"
+    ],
+    [
+      "HIREFLIX",
+      "Hireflix"
+    ],
+    [
+      "WORKFORCE CLOUD|WORKFORCE",
+      "Workforce"
+    ],
+    [
+      "CULTURE AMP|CULTUREAMP",
+      "Culture Amp"
+    ],
+    [
+      "LOVABLE",
+      "Lovable"
+    ],
+    [
+      "SQUADCAST",
+      "Squadcast"
+    ],
+    [
+      "HOOK SECURITY",
+      "Hook Security"
+    ],
+    [
+      "REFINER",
+      "Refiner"
+    ],
+    [
+      "DEEPSOURCE",
+      "DeepSource"
+    ],
+    [
+      "LIBRATO|SOLARWIND",
+      "Librato"
+    ],
+    [
+      "ARTILLERY",
+      "Artillery"
+    ],
+    [
+      "ARTISAN",
+      "Artisan"
+    ],
+    [
+      "CODERPAD",
+      "CoderPad"
+    ],
+    [
+      "DNSIMPLE",
+      "DNSimple"
+    ],
+    [
+      "GEOCODE",
+      "Geocode"
+    ],
+    [
+      "HIRERIGHT",
+      "HireRight"
+    ],
+    [
+      "PLUS DOCS|PLUSDOCS",
+      "PlusDocs"
+    ],
+    [
+      "DMARCIAN",
+      "Dmarcian"
+    ],
+    [
+      "TRACK1099",
+      "Track1099"
+    ],
+    [
+      "GUIDDE",
+      "Guidde"
+    ],
+    [
+      "LINEAR\\.APP|LINEAR",
+      "Linear"
+    ],
+    [
+      "HELIX PAY|HELIXPAY",
+      "HelixPay"
+    ],
+    [
+      "FAL FEATURES|\\bFAL\\b",
+      "Fal"
+    ],
+    [
+      "GILMORE",
+      "Gilmore Global"
+    ],
+    [
+      "KNOWLEDGE ANYWHERE",
+      "Knowledge Anywhere"
+    ],
+    [
+      "LIGHTCAST",
+      "Lightcast"
+    ],
+    [
+      "COCKATOO",
+      "Cockatoo"
+    ],
+    [
+      "HAPPY SCRIBE",
+      "Happy Scribe"
+    ],
+    [
+      "BILLIGENCE",
+      "Billigence"
+    ],
+    [
+      "CORESIGNAL",
+      "Coresignal"
+    ],
+    [
+      "CISION",
+      "Cision"
+    ],
+    [
+      "CTFD",
+      "CTFd"
+    ],
+    [
+      "DONUT",
+      "Donut"
+    ],
+    [
+      "FONT AWESOME|FONTAWESOME",
+      "Font Awesome"
+    ],
+    [
+      "GMELIUS",
+      "Gmelius"
+    ],
+    [
+      "\\bGOTO\\b|LOGMEIN",
+      "GoTo"
+    ],
+    [
+      "INTEGO",
+      "Intego"
+    ],
+    [
+      "MOBBIN",
+      "Mobbin"
+    ],
+    [
+      "NUMBER API",
+      "Number Api"
+    ],
+    [
+      "ONE AND|1AND1|IONOS",
+      "One And"
+    ],
+    [
+      "PAYPRO",
+      "PayPro"
+    ],
+    [
+      "PLAYBOOKUX",
+      "PlaybookUX"
+    ],
+    [
+      "PODCASTLE",
+      "Podcastle"
+    ],
+    [
+      "PRODUCTBOARD",
+      "Productboard"
+    ],
+    [
+      "RECRUITCRM|RECRUIT CRM",
+      "RecruitCRM"
+    ],
+    [
+      "SORENSON",
+      "Sorenson"
+    ],
+    [
+      "SUMUP",
+      "SumUp Social"
+    ],
+    [
+      "SUPERSIDE",
+      "Superside"
+    ],
+    [
+      "TEXTLA",
+      "Textla"
+    ],
+    [
+      "ASKAI|ASK AI",
+      "AskAI"
+    ],
+    [
+      "ABSTRACT",
+      "Abstract"
+    ],
+    [
+      "BEAUTIFUL",
+      "Beautiful"
+    ],
+    [
+      "CALGET",
+      "Calget"
+    ],
+    [
+      "FOCUS FORCE",
+      "Focus Force"
+    ],
+    [
+      "JOBS THAT",
+      "Jobs That"
+    ],
+    [
+      "LINGO",
+      "Lingo"
+    ],
+    [
+      "SHORTLIST",
+      "Worksuite"
+    ],
+    [
+      "QWENCH",
+      "__EXCLUDE__"
+    ],
+    [
+      "ONLINE DOMESTIC WIRE TRANSFER",
+      "Unidentified Wire (55000)"
+    ],
+    [
+      "WONDER",
+      "__EXCLUDE__"
+    ]
+  ],
+  "non_saas_exclusions": {
+    "vendor_patterns": [
+      "WONDER"
+    ],
+    "accounts": [
+      81500
+    ],
+    "notes": "81500 'S&M Other Marketing' contains hotels, flights, wires and event payments - never SaaS. Wonder is food delivery."
   },
-
-  "_salesforce_rule": "Salesforce is consolidated into exactly FOUR dashboard entries, kept classification-accurate so the COGS/Non-COGS split matches the finance sheet: (1) 'Salesforce - Slack Enterprise' = COGS; (2) 'Salesforce - Slack Internal' = Non-COGS; (3) 'Salesforce - Other' = COGS, catch-all for COGS Salesforce SKUs (generic Salesforce Inc, Exams, any future COGS SKU); (4) 'Salesforce - Other (Non-COGS)' = Non-COGS, catch-all for Non-COGS Salesforce SKUs (Tableau Cloud Creator, Sales Cloud Enterprise, any future Non-COGS SKU). RULE FOR NEW SALESFORCE SKUs: check its classification in the SaaS Apps Classification tab, then fold it into the matching 'Other' bucket by classification — COGS SKUs -> 'Salesforce - Other', Non-COGS SKUs -> 'Salesforce - Other (Non-COGS)'. Keep the two Slack lines separate; never fold them into an Other bucket.",
-
-  "_vendor_aliases_README": "These are RAW GL/bank-descriptor strings that map to a single app. Used when parsing the GL so that e.g. all PEARSON VUE / VUE*COMPTIA lines roll up into one 'Comptia' line. Left = substring found in the GL 'Name' or 'Memo' column; right = app name (which is then passed through name_map above for final display).",
-  "vendor_aliases": {
-    "SADA SYSTEMS": "GCP",
-    "CODIO": "Codio",
-    "COMPTIA": "Comptia",
-    "VUE*COMPTIA": "Comptia",
-    "PEARSON VUE": "Comptia",
-    "PEARSON": "Comptia",
-    "SLACK": "Salesforce - Slack Enterprise",
-    "PUMBLE": "Salesforce - Slack Enterprise",
-    "MAXIO": "Saasoptics",
-    "SAASOPTICS": "Saasoptics",
-    "LIBRATO": "Sentry",
-    "SOLARWINDS": "Sentry",
-    "ANTHROPIC": "Claude",
-    "CLAUDE.AI": "Claude",
-    "GOOGLE WORKSPACE": "Google",
-    "GOOGLE SVCS": "Google",
-    "INTUIT": "Quickbooks Payments",
-    "QUICKBOOKS": "Quickbooks Payments"
-  },
-
-  "_non_saas_exclude_README": "Substrings/vendors that are NOT SaaS and should be dropped from the dashboard entirely (e.g. food delivery, reimbursements).",
-  "non_saas_exclude": [
-    "WONDER"
-  ]
+  "included_accounts": [
+    53000,
+    55000,
+    81000,
+    96100
+  ],
+  "classification_source": "SaaS COGS / Non-COGS Classification Review - 2026 YTD (sheet 19nMiuOAaV57aPE6dIm1Vj1sZqLHaJt-PazNjXk_EdYA), Final Classification column. Sole source of truth as of Aug 2026. Apps absent from that sheet fall back to GL-account default (53000/55000 -> COGS, else Non-COGS) and are FLAGGED for addition to the review sheet.",
+  "superseded_rules": {
+    "jun2026_forced_noncogs": "The June 2026 ruling (Airtable, Twilio, Cake, Mailgun -> Non-COGS per GL 96100) is SUPERSEDED by the Aug 2026 review sheet, which classifies all four as COGS under the usage-based rule."
+  }
 }

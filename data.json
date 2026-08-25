@@ -1,222 +1,224 @@
 {
  "meta": {
-  "lastUpdated": "2026-07-29",
-  "currency": "USD",
-  "sources": {
-   "gl": "Software Spend (Google Sheet) tabs Jan\u2013JUNE 26 Spend",
-   "classification": "2026 SaaS Spend \u2014 SaaS Apps Classifcation tab"
-  },
+  "generated": "2026-08-25",
+  "build": "Aug 2026 full rebuild: Jan-Jul 2026, reclassified per COGS/Non-COGS Classification Review",
+  "classificationSource": "SaaS COGS / Non-COGS Classification Review - 2026 YTD (Final Classification column) - sole source of truth",
+  "verification": "Jan/Feb/Mar/May regress to the published GL baseline to the cent on total and old-COGS; Jun matches the verified $171,927.88; Apr restated by finance (see notes)",
   "notes": [
-   "April GCP invoice absent from the Apr GL tab; carried from the verified April build.",
-   "June Codio $35,976.27 is correct as booked: INV-1728 bills May consumption, INV-1767 bills June. Codio shifted its invoice date from start- to end-of-month, so June caught two cycles. Verified against both PDFs 2026-07-29.",
-   "Codio is reported one invoice per month: May $22,278.85 (INV-1700), Jun $18,790.48 (INV-1728). INV-1767 ($17,185.79, issued Jun 30, due Jul 30) is DEFERRED to July and excluded here. CONSEQUENCE: June reads $154,742.10 against $171,927.89 in the GL, and the Jan-Jun total is $17,185.79 short of finance's books. Run `python3 build.py --as-booked` for the GL-tied version.",
-   "OPEN: the April Codio entry is an accrual (prepaid04.26, $14,893.37) with no invoice and no reversing entry in Jan-Jun. Confirm with Ben."
+   "April 2026 restated: finance removed the ~$22,812.62 April GCP (Sada) line from the GL after 21 Jul 2026; no Sada invoice exists between INV317177 (Mar) and INV323897 (May). April total is now $145,267.49 (was $168,080.11). Open with ben@.",
+   "April accrual prepaid04.26 (Codio, $14,893.37) remains booked with no invoice and no reversing entry through July.",
+   "Classification supersedes the Jun-2026 ruling: Airtable, Twilio, Pumble (Cake) and Mailgun are COGS per the review sheet.",
+   "Apps not in the review sheet are classified by GL-account default and flagged; add them to the review sheet to clear the flags.",
+   "10-month rule: apps with no spend Oct 2025 - Jul 2026 are removed from the active list (see dropped)."
   ]
  },
- "months": [
-  "2026-01",
-  "2026-02",
-  "2026-03",
-  "2026-04",
-  "2026-05",
-  "2026-06"
- ],
  "monthLabels": [
   "Jan",
   "Feb",
   "Mar",
   "Apr",
   "May",
-  "Jun"
+  "Jun",
+  "Jul"
+ ],
+ "monthKeys": [
+  "2026-01",
+  "2026-02",
+  "2026-03",
+  "2026-04",
+  "2026-05",
+  "2026-06",
+  "2026-07"
  ],
  "monthly": [
   {
    "total": 151655.48,
-   "cogs": 72751.42,
-   "nonCogs": 78904.06
+   "cogs": 110935.23,
+   "nonCogs": 40720.25,
+   "oldCogs": 72751.42,
+   "oldNonCogs": 78904.06
   },
   {
-   "total": 157003.68,
-   "cogs": 75675.91,
-   "nonCogs": 81327.77
+   "total": 157003.65,
+   "cogs": 111716.97,
+   "nonCogs": 45286.68,
+   "oldCogs": 75675.89,
+   "oldNonCogs": 81327.76
   },
   {
-   "total": 163215.2,
-   "cogs": 82324.88,
-   "nonCogs": 80890.32
+   "total": 163215.17,
+   "cogs": 119254.49,
+   "nonCogs": 43960.68,
+   "oldCogs": 82324.86,
+   "oldNonCogs": 80890.31
   },
   {
-   "total": 168080.11,
-   "cogs": 83793.33,
-   "nonCogs": 84286.78
+   "total": 145267.49,
+   "cogs": 96265.76,
+   "nonCogs": 49001.73,
+   "oldCogs": 83793.33,
+   "oldNonCogs": 61474.16
   },
   {
    "total": 146127.4,
-   "cogs": 62339.02,
-   "nonCogs": 83788.38
+   "cogs": 98038.67,
+   "nonCogs": 48088.73,
+   "oldCogs": 62339.02,
+   "oldNonCogs": 83788.38
   },
   {
-   "total": 154742.1,
-   "cogs": 66112.55,
-   "nonCogs": 88629.55
+   "total": 171927.88,
+   "cogs": 118719.33,
+   "nonCogs": 53208.55,
+   "oldCogs": 83298.34,
+   "oldNonCogs": 88629.54
+  },
+  {
+   "total": 152483.62,
+   "cogs": 98794.11,
+   "nonCogs": 53689.51,
+   "oldCogs": 63426.67,
+   "oldNonCogs": 89056.95
   }
  ],
  "apps": [
   {
-   "name": "GCP",
-   "classification": "Non-COGS",
-   "department": "Engineering",
+   "name": "Google Cloud Platform",
+   "cogs": "COGS",
+   "oldCogs": "Non-COGS",
+   "changed": true,
+   "source": "Review sheet",
+   "dept": "Engineering",
    "journaled": true,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
     25808.48,
     24640.29,
     25931.3,
-    22812.62,
-    22269.96,
-    22797.52
-   ],
-   "projected": [
-    25808.48,
-    25029.69,
-    25480.49,
-    24156.79,
-    23061.07,
-    22624.18
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Comptia",
-   "classification": "COGS",
-   "department": "Operations",
-   "journaled": true,
-   "category": null,
-   "spend": [
-    20324.03,
-    20324.03,
-    20324.03,
-    24618.07,
-    16777.14,
-    15152.14
-   ],
-   "projected": [
-    20324.03,
-    20324.03,
-    20324.03,
-    22471.05,
-    19981.93,
-    17271.46
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Salesforce - Slack Enterprise",
-   "classification": "COGS",
-   "department": "Operations",
-   "journaled": true,
-   "category": null,
-   "spend": [
-    24074.98,
-    24074.98,
-    24074.98,
-    20000.0,
     0.0,
-    8754.64
+    22269.96,
+    22797.52,
+    23189.92
    ],
-   "projected": [
-    24074.98,
-    24074.98,
-    24074.98,
-    22037.49,
-    10679.16,
-    7710.65
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 144637.47,
+   "lastActive": "Jul 2026"
   },
   {
    "name": "Codio",
-   "classification": "COGS",
-   "department": "Learning Experience Design",
-   "journaled": true,
-   "category": null,
-   "spend": [
+   "cogs": "COGS",
+   "oldCogs": "COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Learning Experience Design",
+   "journaled": false,
+   "flag": false,
+   "monthly": [
     3923.8,
     11836.68,
     12598.66,
     14893.37,
     22278.85,
-    18790.48
+    35976.27,
+    15015.47
    ],
-   "projected": [
-    3923.8,
-    9199.05,
-    10898.86,
-    13619.02,
-    18203.66,
-    19303.75
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 116523.1,
+   "lastActive": "Jul 2026"
   },
   {
-   "name": "Google",
-   "classification": "Non-COGS",
-   "department": "Tech Operations and AI Enablement",
+   "name": "Salesforce - Slack Enterprise",
+   "cogs": "COGS",
+   "oldCogs": "COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
+   "journaled": false,
+   "flag": false,
+   "monthly": [
+    24074.98,
+    24074.98,
+    24074.98,
+    20000.0,
+    0.0,
+    8754.64,
+    8754.64
+   ],
+   "total": 109734.22,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "CompTIA",
+   "cogs": "COGS",
+   "oldCogs": "COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
+   "journaled": false,
+   "flag": false,
+   "monthly": [
+    8641.55,
+    8641.55,
+    8641.55,
+    14112.15,
+    7762.9,
+    10766.23,
+    13054.9
+   ],
+   "total": 71620.83,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Pearson VUE (Exam Vouchers)",
+   "cogs": "COGS",
+   "oldCogs": "COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
    "journaled": true,
-   "category": "Productivity & Comms",
-   "spend": [
+   "flag": false,
+   "monthly": [
+    11682.48,
+    11682.48,
+    11682.48,
+    10505.92,
+    9014.24,
+    4385.91,
+    3619.24
+   ],
+   "total": 62572.75,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Google Workspace",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Tech Operations and AI Enablement",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
     8936.58,
     8851.24,
     8808.72,
     8777.96,
     8796.25,
-    8822.36
+    8822.36,
+    8812.09
    ],
-   "projected": [
-    8936.58,
-    8879.69,
-    8844.2,
-    8800.43,
-    8792.23,
-    8806.26
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 61805.2,
+   "lastActive": "Jul 2026"
   },
   {
-   "name": "Salesforce - Other",
-   "classification": "COGS",
-   "department": "Operations",
-   "journaled": true,
-   "category": null,
-   "spend": [
+   "name": "Salesforce - Certification Exams",
+   "cogs": "COGS",
+   "oldCogs": "COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
+   "journaled": false,
+   "flag": false,
+   "monthly": [
     6018.75,
-    6018.75,
-    6018.75,
-    6018.75,
-    6018.75,
-    6018.75
-   ],
-   "projected": [
     6018.75,
     6018.75,
     6018.75,
@@ -224,19 +226,20 @@
     6018.75,
     6018.75
    ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 42131.25,
+   "lastActive": "Jul 2026"
   },
   {
    "name": "Calendly",
-   "classification": "COGS",
-   "department": "Operations",
+   "cogs": "COGS",
+   "oldCogs": "COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
    "journaled": true,
-   "category": "Productivity & Comms",
-   "spend": [
+   "flag": false,
+   "monthly": [
+    3935.83,
     3935.83,
     3935.83,
     3935.83,
@@ -244,175 +247,104 @@
     3935.83,
     3935.83
    ],
-   "projected": [
-    3935.83,
-    3935.83,
-    3935.83,
-    3935.83,
-    3935.83,
-    3935.83
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Worksuite",
-   "classification": "COGS",
-   "department": "People Operations",
-   "journaled": true,
-   "category": null,
-   "spend": [
-    4265.63,
-    328.12,
-    4265.62,
-    4265.63,
-    4265.63,
-    3937.5
-   ],
-   "projected": [
-    4265.63,
-    1640.62,
-    2953.12,
-    3609.38,
-    4265.63,
-    4101.56
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 27550.81,
+   "lastActive": "Jul 2026"
   },
   {
    "name": "Claude",
-   "classification": "Non-COGS",
-   "department": "Tech Operations and AI Enablement",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Tech Operations and AI Enablement",
    "journaled": false,
-   "category": "AI & Automation",
-   "spend": [
+   "flag": false,
+   "monthly": [
     43.03,
     623.86,
     2885.79,
     5315.7,
     5665.82,
-    5749.49
+    5749.49,
+    5650.71
    ],
-   "projected": [
-    43.03,
-    430.25,
-    1658.02,
-    3723.76,
-    5085.77,
-    5649.3
+   "total": 25934.4,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Worksuite",
+   "cogs": "COGS",
+   "oldCogs": "COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "People Operations",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
+    4265.63,
+    328.12,
+    4265.62,
+    4265.63,
+    4265.63,
+    3937.5,
+    3937.5
    ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 25265.63,
+   "lastActive": "Jul 2026"
   },
   {
    "name": "Zoom",
-   "classification": "Non-COGS",
-   "department": "Operations",
+   "cogs": "COGS",
+   "oldCogs": "Non-COGS",
+   "changed": true,
+   "source": "Review sheet",
+   "dept": "Operations",
    "journaled": true,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
     3332.2,
     3332.2,
     3332.2,
     3330.56,
     3330.56,
-    3330.56
+    3330.56,
+    3335.5
    ],
-   "projected": [
-    3332.2,
-    3332.2,
-    3332.2,
-    3331.38,
-    3330.83,
-    3330.56
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 23323.78,
+   "lastActive": "Jul 2026"
   },
   {
-   "name": "Saasoptics",
-   "classification": "Non-COGS",
-   "department": "Finance",
+   "name": "Maxio (formerly SaaSOptics)",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Finance",
    "journaled": true,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
     3402.34,
     3402.34,
     0.0,
     3629.17,
     3629.17,
+    3629.17,
     3629.17
    ],
-   "projected": [
-    3402.34,
-    3402.34,
-    1701.17,
-    2381.64,
-    3024.31,
-    3629.17
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Salesforce - Slack Internal",
-   "classification": "Non-COGS",
-   "department": "Tech Operations and AI Enablement",
-   "journaled": true,
-   "category": null,
-   "spend": [
-    0.0,
-    1529.01,
-    1529.01,
-    4250.89,
-    4250.89,
-    4250.89
-   ],
-   "projected": [
-    0.0,
-    1019.34,
-    1274.17,
-    2889.95,
-    3797.24,
-    4250.89
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 21321.36,
+   "lastActive": "Jul 2026"
   },
   {
    "name": "Okta",
-   "classification": "Non-COGS",
-   "department": "Engineering",
+   "cogs": "COGS",
+   "oldCogs": "Non-COGS",
+   "changed": true,
+   "source": "Review sheet",
+   "dept": "Engineering",
    "journaled": true,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
     2608.6,
-    2608.6,
-    2608.6,
-    2608.6,
-    2608.6,
-    2608.6
-   ],
-   "projected": [
     2608.6,
     2608.6,
     2608.6,
@@ -420,243 +352,209 @@
     2608.6,
     2608.6
    ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 18260.2,
+   "lastActive": "Jul 2026"
   },
   {
    "name": "1Password",
-   "classification": "Non-COGS",
-   "department": "Tech Operations and AI Enablement",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Tech Operations and AI Enablement",
    "journaled": true,
-   "category": "Security",
-   "spend": [
+   "flag": false,
+   "monthly": [
     2421.45,
     2421.45,
     2421.45,
     2421.45,
     2421.45,
+    2568.21,
     2568.21
    ],
-   "projected": [
-    2421.45,
-    2421.45,
-    2421.45,
-    2421.45,
-    2421.45,
-    2494.83
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 17243.67,
+   "lastActive": "Jul 2026"
   },
   {
    "name": "Airtable",
-   "classification": "Non-COGS",
-   "department": "Operations",
+   "cogs": "COGS",
+   "oldCogs": "Non-COGS",
+   "changed": true,
+   "source": "Review sheet",
+   "dept": "Operations",
    "journaled": false,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
     2200.12,
     2226.74,
     2238.55,
     2247.81,
     2189.01,
-    2348.3
+    2348.3,
+    2426.58
    ],
-   "projected": [
-    2200.12,
-    2217.87,
-    2228.21,
-    2241.21,
-    2216.87,
-    2278.46
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 15877.11,
+   "lastActive": "Jul 2026"
   },
   {
-   "name": "Surveymonkey Inc",
-   "classification": "COGS",
-   "department": "Operations",
+   "name": "HubSpot",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
    "journaled": true,
-   "category": null,
-   "spend": [
-    2156.25,
-    2156.25,
-    2156.25,
-    2156.25,
-    2156.25,
-    2156.25
-   ],
-   "projected": [
-    2156.25,
-    2156.25,
-    2156.25,
-    2156.25,
-    2156.25,
-    2156.25
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Hubspot",
-   "classification": "Non-COGS",
-   "department": "Operations",
-   "journaled": true,
-   "category": "Sales & CRM",
-   "spend": [
+   "flag": false,
+   "monthly": [
     2445.53,
-    2445.54,
-    2445.54,
+    2445.53,
+    2445.53,
     2445.53,
     0.0,
-    2817.02
+    2817.01,
+    2817.01
    ],
-   "projected": [
-    2445.53,
-    2445.54,
-    2445.54,
-    2445.53,
-    1222.77,
-    1816.1
+   "total": 15416.14,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "SurveyMonkey",
+   "cogs": "COGS",
+   "oldCogs": "COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
+    2156.25,
+    2156.25,
+    2156.25,
+    2156.25,
+    2156.25,
+    2156.25,
+    2156.25
    ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 15093.75,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Pumble",
+   "cogs": "COGS",
+   "oldCogs": "Non-COGS",
+   "changed": true,
+   "source": "Review sheet",
+   "dept": "Operations",
+   "journaled": false,
+   "flag": false,
+   "monthly": [
+    1395.25,
+    1082.45,
+    1098.58,
+    2721.88,
+    2721.88,
+    2721.88,
+    2721.88
+   ],
+   "total": 14463.8,
+   "lastActive": "Jul 2026"
   },
   {
    "name": "Twilio",
-   "classification": "Non-COGS",
-   "department": "Engineering",
+   "cogs": "COGS",
+   "oldCogs": "Non-COGS",
+   "changed": true,
+   "source": "Review sheet",
+   "dept": "Engineering",
    "journaled": false,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
     2244.63,
     1879.05,
     1582.86,
     2142.05,
     2439.4,
-    1472.57
+    1472.57,
+    944.71
    ],
-   "projected": [
-    2244.63,
-    2000.91,
-    1791.88,
-    1911.82,
-    2197.53,
-    1906.43
+   "total": 12705.27,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Zendesk",
+   "cogs": "COGS",
+   "oldCogs": "COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
+    1285.8,
+    1285.8,
+    2576.14,
+    2082.0,
+    1284.8,
+    1285.8,
+    1285.82
    ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 11086.16,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Sentry",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Engineering",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
+    1474.18,
+    1474.18,
+    1474.18,
+    1799.29,
+    1541.72,
+    1552.23,
+    1625.06
+   ],
+   "total": 10940.84,
+   "lastActive": "Jul 2026"
   },
   {
    "name": "Profound",
-   "classification": "Non-COGS",
-   "department": "Operations",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
    "journaled": true,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
     0.0,
     3750.0,
     3750.0,
     3000.0,
     0.0,
+    0.0,
     0.0
    ],
-   "projected": [
-    0.0,
-    2500.0,
-    3125.0,
-    3375.0,
-    1625.0,
-    500.0
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Sentry",
-   "classification": "Non-COGS",
-   "department": "Engineering",
-   "journaled": true,
-   "category": null,
-   "spend": [
-    1474.18,
-    1474.18,
-    1474.18,
-    2290.59,
-    2007.16,
-    1552.23
-   ],
-   "projected": [
-    1474.18,
-    1474.18,
-    1474.18,
-    1882.39,
-    2012.81,
-    1826.93
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Zendesk",
-   "classification": "COGS",
-   "department": "Operations",
-   "journaled": true,
-   "category": null,
-   "spend": [
-    1285.8,
-    1285.81,
-    2576.15,
-    2082.0,
-    1284.8,
-    1285.8
-   ],
-   "projected": [
-    1285.8,
-    1285.81,
-    1930.98,
-    2114.02,
-    1765.76,
-    1418.17
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 10500.0,
+   "lastActive": "Apr 2026"
   },
   {
    "name": "Mailchimp",
-   "classification": "COGS",
-   "department": "Operations",
+   "cogs": "COGS",
+   "oldCogs": "COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
    "journaled": true,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
+    1469.81,
     1469.81,
     1469.81,
     1469.81,
@@ -664,251 +562,209 @@
     1469.81,
     1469.81
    ],
-   "projected": [
-    1469.81,
-    1469.81,
-    1469.81,
-    1469.81,
-    1469.81,
-    1469.81
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 10288.67,
+   "lastActive": "Jul 2026"
   },
   {
-   "name": "Mindhub",
-   "classification": "COGS",
-   "department": "Operations",
+   "name": "MindHub",
+   "cogs": "COGS",
+   "oldCogs": "COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
    "journaled": true,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
     1818.31,
-    1818.32,
-    1818.32,
+    1818.31,
+    1818.31,
     1026.09,
     1026.09,
-    1026.09
+    1026.09,
+    1273.59
    ],
-   "projected": [
-    1818.31,
-    1818.32,
-    1818.32,
-    1422.2,
-    1158.13,
-    1026.09
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Greenhouse",
-   "classification": "Non-COGS",
-   "department": "People Operations",
-   "journaled": true,
-   "category": "HR & Recruiting",
-   "spend": [
-    1421.78,
-    1421.78,
-    1421.78,
-    1421.78,
-    1421.78,
-    1088.75
-   ],
-   "projected": [
-    1421.78,
-    1421.78,
-    1421.78,
-    1421.78,
-    1421.78,
-    1255.27
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Salesforce - Other (Non-COGS)",
-   "classification": "Non-COGS",
-   "department": "Tech Operations and AI Enablement",
-   "journaled": true,
-   "category": null,
-   "spend": [
-    1171.16,
-    1366.66,
-    1366.66,
-    1366.66,
-    1366.66,
-    1171.16
-   ],
-   "projected": [
-    1171.16,
-    1301.49,
-    1334.08,
-    1366.66,
-    1366.66,
-    1268.91
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Accredible",
-   "classification": "COGS",
-   "department": "Operations",
-   "journaled": true,
-   "category": "Learning & Certification",
-   "spend": [
-    1306.67,
-    1306.67,
-    1306.67,
-    1306.67,
-    1043.39,
-    1043.39
-   ],
-   "projected": [
-    1306.67,
-    1306.67,
-    1306.67,
-    1306.67,
-    1175.03,
-    1087.27
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "ChatGPT",
-   "classification": "Non-COGS",
-   "department": "Tech Operations and AI Enablement",
-   "journaled": true,
-   "category": "AI & Automation",
-   "spend": [
-    1236.45,
-    1215.94,
-    1482.75,
-    899.02,
-    1012.54,
-    1254.63
-   ],
-   "projected": [
-    1236.45,
-    1222.78,
-    1352.76,
-    1146.42,
-    1053.07,
-    1114.66
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Outreach",
-   "classification": "Non-COGS",
-   "department": "Sales",
-   "journaled": true,
-   "category": "Sales & CRM",
-   "spend": [
-    0.0,
-    1367.33,
-    1367.33,
-    1367.33,
-    1367.33,
-    1367.33
-   ],
-   "projected": [
-    0.0,
-    911.55,
-    1139.44,
-    1367.33,
-    1367.33,
-    1367.33
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Adobe",
-   "classification": "Non-COGS",
-   "department": "Tech Operations and AI Enablement",
-   "journaled": true,
-   "category": null,
-   "spend": [
-    1096.14,
-    861.44,
-    1111.44,
-    1111.44,
-    1257.48,
-    1242.04
-   ],
-   "projected": [
-    1096.14,
-    939.67,
-    1025.56,
-    1069.77,
-    1184.46,
-    1225.42
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 9806.79,
+   "lastActive": "Jul 2026"
   },
   {
    "name": "Cooper Square Technologies",
-   "classification": "Non-COGS",
-   "department": null,
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "GL-account default (FLAGGED)",
+   "dept": "Operations",
    "journaled": true,
-   "category": null,
-   "spend": [
+   "flag": true,
+   "monthly": [
     0.0,
     0.0,
     0.0,
     0.0,
     3266.25,
+    3266.25,
     3266.25
    ],
-   "projected": [
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    1633.12,
-    2721.88
+   "total": 9798.75,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Greenhouse",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "People Operations",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
+    1421.78,
+    1421.78,
+    1421.78,
+    1421.78,
+    1421.78,
+    1088.75,
+    1088.75
    ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 9286.4,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Salesforce - Slack Internal",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
+    0.0,
+    1529.01,
+    1529.01,
+    1529.01,
+    1529.01,
+    1529.01,
+    1529.01
+   ],
+   "total": 9174.06,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Accredible",
+   "cogs": "COGS",
+   "oldCogs": "COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
+   "journaled": false,
+   "flag": false,
+   "monthly": [
+    1306.67,
+    1306.67,
+    1306.67,
+    1306.67,
+    1043.39,
+    1043.39,
+    1043.39
+   ],
+   "total": 8356.85,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Outreach",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Sales",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
+    0.0,
+    1367.33,
+    1367.33,
+    1367.33,
+    1367.33,
+    1367.33,
+    1367.33
+   ],
+   "total": 8203.98,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Salesforce - Tableau Cloud",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Data Science & Analytics",
+   "journaled": false,
+   "flag": false,
+   "monthly": [
+    1171.16,
+    1171.16,
+    1171.16,
+    1171.16,
+    1171.16,
+    1171.16,
+    1171.16
+   ],
+   "total": 8198.12,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "ChatGPT",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Tech Operations and AI Enablement",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
+    1236.45,
+    1215.94,
+    1482.75,
+    899.02,
+    1012.54,
+    1254.63,
+    1083.31
+   ],
+   "total": 8184.64,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Adobe",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Tech Operations and AI Enablement",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
+    1096.14,
+    861.44,
+    1111.44,
+    1111.44,
+    1257.48,
+    1242.04,
+    1242.04
+   ],
+   "total": 7922.02,
+   "lastActive": "Jul 2026"
   },
   {
    "name": "Carta",
-   "classification": "Non-COGS",
-   "department": "Operations",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
    "journaled": true,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
+    1043.39,
     1043.39,
     1043.39,
     1043.39,
@@ -916,223 +772,167 @@
     1043.39,
     1043.39
    ],
-   "projected": [
-    1043.39,
-    1043.39,
-    1043.39,
-    1043.39,
-    1043.39,
-    1043.39
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 7303.73,
+   "lastActive": "Jul 2026"
   },
   {
-   "name": "Apprenti Apprentiscope",
-   "classification": "COGS",
-   "department": "Operations",
+   "name": "ApprentiScope",
+   "cogs": "COGS",
+   "oldCogs": "COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
    "journaled": false,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
     399.66,
     399.66,
+    1300.86,
     1300.86,
     1300.86,
     1300.86,
     1300.86
    ],
-   "projected": [
-    399.66,
-    399.66,
-    850.26,
-    1150.66,
-    1300.86,
-    1300.86
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 7303.62,
+   "lastActive": "Jul 2026"
   },
   {
-   "name": "Notion",
-   "classification": "Non-COGS",
-   "department": "Tech Operations and AI Enablement",
-   "journaled": true,
-   "category": "Productivity & Comms",
-   "spend": [
-    993.28,
-    993.27,
-    993.27,
-    993.28,
-    1026.93,
-    993.28
-   ],
-   "projected": [
-    993.28,
-    993.27,
-    993.27,
-    993.27,
-    1010.1,
-    1004.5
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Linkedin",
-   "classification": "Non-COGS",
-   "department": "Marketing",
-   "journaled": true,
-   "category": "HR & Recruiting",
-   "spend": [
-    0.0,
-    1125.53,
-    1125.53,
-    1125.53,
-    1125.53,
-    974.01
-   ],
-   "projected": [
-    0.0,
-    750.35,
-    937.94,
-    1125.53,
-    1125.53,
-    1049.77
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Atlassian",
-   "classification": "Non-COGS",
-   "department": "Engineering",
-   "journaled": true,
-   "category": "Dev & Engineering",
-   "spend": [
-    840.73,
-    840.73,
-    820.81,
-    892.08,
-    935.14,
-    895.17
-   ],
-   "projected": [
-    840.73,
-    840.73,
-    830.77,
-    859.76,
-    901.73,
-    907.98
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Lovable Dover",
-   "classification": "Non-COGS",
-   "department": "Operations",
+   "name": "ZoomInfo",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Sales",
    "journaled": false,
-   "category": null,
-   "spend": [
-    1001.65,
-    86.65,
-    568.97,
-    933.42,
-    439.86,
-    1994.45
-   ],
-   "projected": [
-    1001.65,
-    391.65,
-    480.31,
-    670.81,
-    625.9,
-    1299.42
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Microsoft",
-   "classification": "Non-COGS",
-   "department": "Tech Operations and AI Enablement",
-   "journaled": true,
-   "category": null,
-   "spend": [
-    794.88,
-    913.4,
-    769.19,
-    741.85,
-    740.4,
-    920.54
-   ],
-   "projected": [
-    794.88,
-    873.89,
-    821.54,
-    779.55,
-    745.68,
-    830.71
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Zoominfo",
-   "classification": "Non-COGS",
-   "department": "Sales",
-   "journaled": true,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
     0.0,
     0.0,
     0.0,
     0.0,
     2426.46,
+    2426.46,
     2426.46
    ],
-   "projected": [
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    1213.23,
-    2022.05
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 7279.38,
+   "lastActive": "Jul 2026"
   },
   {
-   "name": "Bamboohr",
-   "classification": "Non-COGS",
-   "department": "People Operations",
+   "name": "Notion",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Tech Operations and AI Enablement",
    "journaled": true,
-   "category": "HR & Recruiting",
-   "spend": [
+   "flag": false,
+   "monthly": [
+    993.28,
+    993.27,
+    993.27,
+    993.28,
+    1026.93,
+    993.28,
+    1231.16
+   ],
+   "total": 7224.47,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Lovable",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
+   "journaled": false,
+   "flag": false,
+   "monthly": [
+    1001.65,
+    86.65,
+    568.97,
+    933.42,
+    439.86,
+    1994.45,
+    1224.84
+   ],
+   "total": 6249.84,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Atlassian",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Engineering",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
+    840.73,
+    840.73,
+    820.81,
+    892.08,
+    935.14,
+    895.17,
+    855.32
+   ],
+   "total": 6079.98,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Microsoft",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Tech Operations and AI Enablement",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
+    794.88,
+    913.4,
+    769.19,
+    741.85,
+    740.4,
+    920.54,
+    994.33
+   ],
+   "total": 5874.59,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "LinkedIn Sales Navigator",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
+    0.0,
+    1125.52,
+    1125.52,
+    151.52,
+    1125.53,
+    974.01,
+    974.01
+   ],
+   "total": 5476.11,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "BambooHR",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "People Operations",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
+    781.8,
     781.8,
     781.8,
     781.8,
@@ -1140,63 +940,20 @@
     781.8,
     781.8
    ],
-   "projected": [
-    781.8,
-    781.8,
-    781.8,
-    781.8,
-    781.8,
-    781.8
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Workforce",
-   "classification": "Non-COGS",
-   "department": "People Operations",
-   "journaled": true,
-   "category": null,
-   "spend": [
-    1100.0,
-    600.0,
-    600.0,
-    600.0,
-    600.0,
-    450.0
-   ],
-   "projected": [
-    1100.0,
-    766.67,
-    683.33,
-    600.0,
-    600.0,
-    525.0
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 5472.6,
+   "lastActive": "Jul 2026"
   },
   {
    "name": "Culture Amp",
-   "classification": "Non-COGS",
-   "department": null,
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "People Operations",
    "journaled": true,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
     642.23,
-    642.23,
-    642.23,
-    642.23,
-    642.23,
-    642.23
-   ],
-   "projected": [
     642.23,
     642.23,
     642.23,
@@ -1204,159 +961,125 @@
     642.23,
     642.23
    ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 4495.61,
+   "lastActive": "Jul 2026"
   },
   {
-   "name": "Github",
-   "classification": "Non-COGS",
-   "department": "Engineering",
+   "name": "Workforce",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "People Operations",
    "journaled": true,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
+    1100.0,
+    600.0,
+    600.0,
+    600.0,
+    600.0,
+    450.0,
+    477.0
+   ],
+   "total": 4427.0,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "GitHub",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Engineering",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
     518.05,
     460.8,
     659.33,
     699.43,
     710.28,
-    602.37
+    602.37,
+    576.69
    ],
-   "projected": [
-    518.05,
-    479.88,
-    569.61,
-    646.29,
-    698.17,
-    654.52
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 4226.95,
+   "lastActive": "Jul 2026"
   },
   {
    "name": "Cursor",
-   "classification": "Non-COGS",
-   "department": "Engineering",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Engineering",
    "journaled": true,
-   "category": "Dev & Engineering",
-   "spend": [
+   "flag": false,
+   "monthly": [
     867.82,
     1354.98,
     697.5,
     217.75,
     263.6,
-    217.75
+    217.75,
+    174.2
    ],
-   "projected": [
-    867.82,
-    1192.59,
-    945.05,
-    567.21,
-    320.63,
-    233.03
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 3793.6,
+   "lastActive": "Jul 2026"
   },
   {
    "name": "Hireflix",
-   "classification": "Non-COGS",
-   "department": "Operations",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
    "journaled": false,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
     3600.0,
     0.0,
     0.0,
     0.0,
     0.0,
-    0.0
-   ],
-   "projected": [
-    3600.0,
-    1200.0,
-    600.0,
-    0.0,
     0.0,
     0.0
    ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Cake",
-   "classification": "Non-COGS",
-   "department": "Operations",
-   "journaled": false,
-   "category": null,
-   "spend": [
-    1395.25,
-    1082.45,
-    1098.58,
-    0.0,
-    0.0,
-    0.0
-   ],
-   "projected": [
-    1395.25,
-    1186.72,
-    1142.65,
-    546.6,
-    183.1,
-    0.0
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 3600.0,
+   "lastActive": "Jan 2026"
   },
   {
    "name": "Tremendous",
-   "classification": "COGS",
-   "department": "Operations",
+   "cogs": "COGS",
+   "oldCogs": "COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
    "journaled": false,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
     103.0,
     721.0,
     478.95,
     0.0,
     781.62,
-    1241.01
+    1241.01,
+    249.26
    ],
-   "projected": [
-    103.0,
-    515.0,
-    496.97,
-    279.82,
-    470.63,
-    881.04
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 3574.84,
+   "lastActive": "Jul 2026"
   },
   {
    "name": "Yesware",
-   "classification": "Non-COGS",
-   "department": "Operations",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
    "journaled": true,
-   "category": "Sales & CRM",
-   "spend": [
+   "flag": false,
+   "monthly": [
+    440.94,
     440.94,
     440.94,
     440.94,
@@ -1364,27 +1087,20 @@
     440.94,
     440.94
    ],
-   "projected": [
-    440.94,
-    440.94,
-    440.94,
-    440.94,
-    440.94,
-    440.94
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 3086.58,
+   "lastActive": "Jul 2026"
   },
   {
-   "name": "Launchdarkly",
-   "classification": "Non-COGS",
-   "department": "Engineering",
+   "name": "LaunchDarkly",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Engineering",
    "journaled": true,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
+    381.06,
     381.06,
     381.06,
     381.06,
@@ -1392,539 +1108,440 @@
     381.06,
     381.06
    ],
-   "projected": [
-    381.06,
-    381.06,
-    381.06,
-    381.06,
-    381.06,
-    381.06
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Gamma",
-   "classification": "Non-COGS",
-   "department": "Operations",
-   "journaled": true,
-   "category": null,
-   "spend": [
-    808.9,
-    348.94,
-    307.76,
-    281.51,
-    124.27,
-    111.28
-   ],
-   "projected": [
-    808.9,
-    502.26,
-    405.01,
-    301.5,
-    207.26,
-    143.98
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Figma",
-   "classification": "Non-COGS",
-   "department": "Product",
-   "journaled": true,
-   "category": "Design & Content",
-   "spend": [
-    49.0,
-    70.07,
-    153.2,
-    1012.78,
-    255.86,
-    255.86
-   ],
-   "projected": [
-    49.0,
-    63.05,
-    108.12,
-    569.13,
-    491.06,
-    382.01
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 2667.42,
+   "lastActive": "Jul 2026"
   },
   {
    "name": "Squadcast",
-   "classification": "Non-COGS",
-   "department": "Engineering",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Engineering",
    "journaled": true,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
     456.0,
     475.79,
     393.04,
     0.0,
     0.0,
-    465.44
+    465.44,
+    498.8
    ],
-   "projected": [
-    456.0,
-    469.19,
-    431.12,
-    210.31,
-    65.51,
-    232.72
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 2289.07,
+   "lastActive": "Jul 2026"
   },
   {
-   "name": "Typeform",
-   "classification": "COGS",
-   "department": "Product Management",
-   "journaled": false,
-   "category": "Marketing",
-   "spend": [
-    1622.24,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
-   ],
-   "projected": [
-    1622.24,
-    540.75,
-    270.37,
-    0.0,
-    0.0,
-    0.0
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Zapier",
-   "classification": "Non-COGS",
-   "department": "Operations",
-   "journaled": false,
-   "category": null,
-   "spend": [
-    29.99,
-    1457.99,
-    29.99,
-    29.99,
-    29.99,
-    29.99
-   ],
-   "projected": [
-    29.99,
-    981.99,
-    505.99,
-    267.99,
-    29.99,
-    29.99
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Paypal",
-   "classification": "Non-COGS",
-   "department": "Finance",
+   "name": "Figma",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Product",
    "journaled": true,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
+    49.0,
+    70.07,
+    153.2,
+    1012.78,
+    255.86,
+    255.86,
+    255.86
+   ],
+   "total": 2052.63,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "PayPal",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Finance",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
     531.18,
-    531.17,
-    531.17,
-    0.0,
-    0.0,
-    0.0
-   ],
-   "projected": [
+    970.96,
     531.18,
-    531.17,
-    531.17,
-    265.58,
-    88.53,
-    0.0
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Refiner",
-   "classification": "Non-COGS",
-   "department": "Operations",
-   "journaled": true,
-   "category": null,
-   "spend": [
-    219.0,
-    219.0,
-    219.0,
-    219.0,
-    219.0,
-    219.0
-   ],
-   "projected": [
-    219.0,
-    219.0,
-    219.0,
-    219.0,
-    219.0,
-    219.0
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Deepsource",
-   "classification": "Non-COGS",
-   "department": "Engineering",
-   "journaled": true,
-   "category": null,
-   "spend": [
-    210.0,
-    210.0,
-    210.0,
-    210.0,
-    210.0,
-    210.0
-   ],
-   "projected": [
-    210.0,
-    210.0,
-    210.0,
-    210.0,
-    210.0,
-    210.0
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Hook Security",
-   "classification": "Non-COGS",
-   "department": "Operations",
-   "journaled": false,
-   "category": null,
-   "spend": [
     0.0,
-    0.0,
-    1176.0,
     0.0,
     0.0,
     0.0
    ],
-   "projected": [
-    0.0,
-    0.0,
-    588.0,
-    392.0,
-    196.0,
+   "total": 2033.32,
+   "lastActive": "Mar 2026"
+  },
+  {
+   "name": "Gamma",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
+    808.9,
+    348.94,
+    307.76,
+    281.51,
+    124.27,
+    111.28,
     0.0
    ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 1982.66,
+   "lastActive": "Jun 2026"
   },
   {
-   "name": "Artillery",
-   "classification": "Non-COGS",
-   "department": "Engineering",
-   "journaled": true,
-   "category": null,
-   "spend": [
-    199.0,
-    132.2,
-    199.0,
-    199.0,
-    199.0,
-    199.0
-   ],
-   "projected": [
-    199.0,
-    154.47,
-    176.73,
-    187.87,
-    199.0,
-    199.0
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Aws",
-   "classification": "Non-COGS",
-   "department": "Engineering",
-   "journaled": true,
-   "category": null,
-   "spend": [
-    554.09,
-    184.65,
-    50.44,
-    54.43,
-    53.14,
-    54.46
-   ],
-   "projected": [
-    554.09,
-    307.8,
-    179.12,
-    74.8,
-    53.12,
-    54.01
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Suptask",
-   "classification": "Non-COGS",
-   "department": null,
+   "name": "Apollo",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
    "journaled": false,
-   "category": null,
-   "spend": [
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    940.68
-   ],
-   "projected": [
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    470.34
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Hex",
-   "classification": "Non-COGS",
-   "department": "Engineering",
-   "journaled": true,
-   "category": null,
-   "spend": [
-    195.98,
-    195.98,
-    195.98,
-    0.0,
-    0.0,
-    248.14
-   ],
-   "projected": [
-    195.98,
-    195.98,
-    195.98,
-    97.99,
-    32.66,
-    124.07
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Loom",
-   "classification": "COGS",
-   "department": "Operations",
-   "journaled": true,
-   "category": null,
-   "spend": [
-    46.66,
-    0.0,
-    0.0,
-    720.0,
-    0.0,
-    0.0
-   ],
-   "projected": [
-    46.66,
-    15.55,
-    7.78,
-    360.0,
-    240.0,
-    120.0
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Quickbooks Payments",
-   "classification": "Non-COGS",
-   "department": null,
-   "journaled": false,
-   "category": null,
-   "spend": [
-    125.21,
-    125.21,
-    125.21,
-    125.21,
-    125.21,
-    125.21
-   ],
-   "projected": [
-    125.21,
-    125.21,
-    125.21,
-    125.21,
-    125.21,
-    125.21
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Apollo.io",
-   "classification": "Non-COGS",
-   "department": null,
-   "journaled": false,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
     0.0,
     0.0,
     0.0,
     0.0,
     323.36,
-    323.36
+    323.36,
+    1121.91
    ],
-   "projected": [
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    161.68,
-    269.47
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 1768.63,
+   "lastActive": "Jul 2026"
   },
   {
-   "name": "Dnsimple",
-   "classification": "Non-COGS",
-   "department": "Engineering",
+   "name": "Zapier",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
+   "journaled": false,
+   "flag": false,
+   "monthly": [
+    29.99,
+    1457.99,
+    29.99,
+    29.99,
+    29.99,
+    29.99,
+    29.99
+   ],
+   "total": 1637.93,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Typeform",
+   "cogs": "COGS",
+   "oldCogs": "COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Product Management",
+   "journaled": false,
+   "flag": false,
+   "monthly": [
+    1622.24,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "total": 1622.24,
+   "lastActive": "Jan 2026"
+  },
+  {
+   "name": "Refiner",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
    "journaled": true,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
+    219.0,
+    219.0,
+    219.0,
+    219.0,
+    219.0,
+    219.0,
+    219.0
+   ],
+   "total": 1533.0,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "DeepSource",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Engineering",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
+    210.0,
+    210.0,
+    210.0,
+    210.0,
+    210.0,
+    210.0,
+    210.0
+   ],
+   "total": 1470.0,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Artillery",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Engineering",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
+    199.0,
+    132.2,
+    199.0,
+    199.0,
+    199.0,
+    199.0,
+    199.0
+   ],
+   "total": 1326.2,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Hex",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Engineering",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
+    195.98,
+    195.98,
+    195.98,
+    0.0,
+    0.0,
+    248.14,
+    356.55
+   ],
+   "total": 1192.63,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Hook Security",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
+   "journaled": false,
+   "flag": false,
+   "monthly": [
+    0.0,
+    0.0,
+    1176.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "total": 1176.0,
+   "lastActive": "Mar 2026"
+  },
+  {
+   "name": "Paddle",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Finance",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
+    27.22,
+    27.22,
+    27.22,
+    27.22,
+    27.22,
+    967.9,
+    27.22
+   ],
+   "total": 1131.22,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Amazon Web Services",
+   "cogs": "COGS",
+   "oldCogs": "Non-COGS",
+   "changed": true,
+   "source": "Review sheet",
+   "dept": "Engineering",
+   "journaled": false,
+   "flag": false,
+   "monthly": [
+    554.09,
+    184.65,
+    50.44,
+    54.43,
+    53.14,
+    54.46,
+    53.15
+   ],
+   "total": 1004.36,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "LinkedIn",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Marketing",
+   "journaled": false,
+   "flag": false,
+   "monthly": [
+    0.0,
+    0.0,
+    0.0,
+    974.01,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "total": 974.01,
+   "lastActive": "Apr 2026"
+  },
+  {
+   "name": "Librato",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "GL-account default (FLAGGED)",
+   "dept": "Operations",
+   "journaled": false,
+   "flag": true,
+   "monthly": [
+    0.0,
+    0.0,
+    0.0,
+    491.3,
+    465.44,
+    0.0,
+    0.0
+   ],
+   "total": 956.74,
+   "lastActive": "May 2026"
+  },
+  {
+   "name": "QuickBooks",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
+   "journaled": false,
+   "flag": false,
+   "monthly": [
+    125.21,
+    125.21,
+    125.21,
+    125.21,
+    125.21,
+    125.21,
+    125.21
+   ],
+   "total": 876.47,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Salesforce - Sales Cloud Enterprise",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "GL-account default (FLAGGED)",
+   "dept": "Tech Operations and AI Enablement",
+   "journaled": true,
+   "flag": true,
+   "monthly": [
+    0.0,
+    195.5,
+    195.5,
+    195.5,
+    195.5,
+    0.0,
+    0.0
+   ],
+   "total": 782.0,
+   "lastActive": "May 2026"
+  },
+  {
+   "name": "Loom",
+   "cogs": "Non-COGS",
+   "oldCogs": "COGS",
+   "changed": true,
+   "source": "Review sheet",
+   "dept": "Operations",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
+    46.66,
+    0.0,
+    0.0,
+    720.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "total": 766.66,
+   "lastActive": "Apr 2026"
+  },
+  {
+   "name": "DNSimple",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Engineering",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
     66.0,
     97.0,
     81.5,
     162.0,
     141.4,
+    81.5,
     81.5
    ],
-   "projected": [
-    66.0,
-    86.67,
-    84.08,
-    124.33,
-    138.28,
-    114.88
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Coderpad",
-   "classification": "Non-COGS",
-   "department": "Engineering",
-   "journaled": true,
-   "category": null,
-   "spend": [
-    108.88,
-    108.88,
-    130.65,
-    130.65,
-    130.65,
-    0.0
-   ],
-   "projected": [
-    108.88,
-    108.88,
-    119.77,
-    127.02,
-    130.65,
-    65.33
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 710.9,
+   "lastActive": "Jul 2026"
   },
   {
    "name": "Geocode",
-   "classification": "Non-COGS",
-   "department": "Engineering",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Engineering",
    "journaled": true,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
     100.0,
-    100.0,
-    100.0,
-    100.0,
-    100.0,
-    100.0
-   ],
-   "projected": [
     100.0,
     100.0,
     100.0,
@@ -1932,655 +1549,755 @@
     100.0,
     100.0
    ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 700.0,
+   "lastActive": "Jul 2026"
   },
   {
-   "name": "Godaddy",
-   "classification": "Non-COGS",
-   "department": "Engineering",
+   "name": "CoderPad",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Engineering",
    "journaled": true,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
+    108.88,
+    108.88,
+    130.65,
+    130.65,
+    130.65,
+    0.0,
+    0.0
+   ],
+   "total": 609.71,
+   "lastActive": "May 2026"
+  },
+  {
+   "name": "Mailgun",
+   "cogs": "COGS",
+   "oldCogs": "Non-COGS",
+   "changed": true,
+   "source": "Review sheet",
+   "dept": "Operations",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
+    87.1,
+    87.1,
+    87.1,
+    87.1,
+    87.1,
+    87.1,
+    87.1
+   ],
+   "total": 609.7,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Lucid",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "GL-account default (FLAGGED)",
+   "dept": "Engineering",
+   "journaled": true,
+   "flag": true,
+   "monthly": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    548.39
+   ],
+   "total": 548.39,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "GoDaddy",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Engineering",
+   "journaled": true,
+   "flag": false,
+   "monthly": [
     47.18,
     0.0,
     0.0,
     89.99,
     411.1,
+    0.0,
     0.0
    ],
-   "projected": [
-    47.18,
-    15.73,
-    7.86,
-    44.99,
-    235.55,
-    152.03
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 548.27,
+   "lastActive": "May 2026"
   },
   {
-   "name": "Mailgun",
-   "classification": "Non-COGS",
-   "department": "Operations",
-   "journaled": true,
-   "category": null,
-   "spend": [
-    87.1,
-    87.1,
-    87.1,
-    87.1,
-    87.1,
-    87.1
-   ],
-   "projected": [
-    87.1,
-    87.1,
-    87.1,
-    87.1,
-    87.1,
-    87.1
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Artisan AI",
-   "classification": "Non-COGS",
-   "department": null,
+   "name": "Artisan",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
    "journaled": false,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
     0.0,
     0.0,
     0.0,
     0.0,
     0.0,
-    493.41
-   ],
-   "projected": [
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    246.71
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Intego",
-   "classification": "Non-COGS",
-   "department": "Tech Operations and AI Enablement",
-   "journaled": false,
-   "category": null,
-   "spend": [
-    0.0,
-    439.78,
-    0.0,
-    0.0,
-    0.0,
+    493.41,
     0.0
    ],
-   "projected": [
-    0.0,
-    293.19,
-    146.59,
-    73.3,
-    0.0,
-    0.0
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 493.41,
+   "lastActive": "Jun 2026"
   },
   {
    "name": "Tango",
-   "classification": "Non-COGS",
-   "department": "Engineering",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Engineering",
    "journaled": true,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
     84.92,
     84.92,
     84.92,
     65.33,
     65.33,
-    48.75
+    48.75,
+    56.62
    ],
-   "projected": [
-    84.92,
-    84.92,
-    84.92,
-    75.12,
-    68.59,
-    57.04
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 490.79,
+   "lastActive": "Jul 2026"
   },
   {
-   "name": "Perplexity",
-   "classification": "Non-COGS",
-   "department": "Tech Operations and AI Enablement",
+   "name": "Squarespace",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Engineering",
    "journaled": false,
-   "category": null,
-   "spend": [
-    239.0,
-    21.25,
-    21.25,
-    21.25,
-    21.25,
-    21.25
-   ],
-   "projected": [
-    239.0,
-    93.83,
-    57.54,
-    21.25,
-    21.25,
-    21.25
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Docusign",
-   "classification": "Non-COGS",
-   "department": "People Operations",
-   "journaled": true,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
+    0.0,
+    0.0,
+    24.0,
     0.0,
     0.0,
     0.0,
-    326.63,
-    0.0,
-    0.0
+    428.0
    ],
-   "projected": [
-    0.0,
-    0.0,
-    0.0,
-    163.31,
-    108.88,
-    54.44
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Stape",
-   "classification": "Non-COGS",
-   "department": "Engineering",
-   "journaled": false,
-   "category": null,
-   "spend": [
-    50.0,
-    54.44,
-    54.44,
-    54.44,
-    54.44,
-    54.44
-   ],
-   "projected": [
-    50.0,
-    52.96,
-    53.7,
-    54.44,
-    54.44,
-    54.44
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Dropbox",
-   "classification": "Non-COGS",
-   "department": "Operations",
-   "journaled": false,
-   "category": null,
-   "spend": [
-    41.76,
-    43.53,
-    43.53,
-    43.53,
-    43.53,
-    43.52
-   ],
-   "projected": [
-    41.76,
-    42.94,
-    43.24,
-    43.53,
-    43.53,
-    43.52
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Vercel",
-   "classification": "Non-COGS",
-   "department": "Engineering",
-   "journaled": false,
-   "category": null,
-   "spend": [
-    40.0,
-    40.0,
-    40.0,
-    44.8,
-    44.8,
-    44.8
-   ],
-   "projected": [
-    40.0,
-    40.0,
-    40.0,
-    42.4,
-    44.0,
-    44.8
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Plus Docs",
-   "classification": "Non-COGS",
-   "department": "Operations",
-   "journaled": false,
-   "category": null,
-   "spend": [
-    40.0,
-    40.0,
-    40.0,
-    40.0,
-    40.0,
-    40.0
-   ],
-   "projected": [
-    40.0,
-    40.0,
-    40.0,
-    40.0,
-    40.0,
-    40.0
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 452.0,
+   "lastActive": "Jul 2026"
   },
   {
    "name": "Linear",
-   "classification": "Non-COGS",
-   "department": null,
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Engineering",
    "journaled": false,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
     0.0,
     0.0,
     0.0,
     0.0,
     58.79,
-    176.38
+    176.38,
+    215.57
    ],
-   "projected": [
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    29.39,
-    107.79
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 450.74,
+   "lastActive": "Jul 2026"
   },
   {
-   "name": "Hireright Llc",
-   "classification": "Non-COGS",
-   "department": "Operations",
+   "name": "Stape",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Engineering",
    "journaled": false,
-   "category": null,
-   "spend": [
-    224.23,
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    0.0
+   "flag": false,
+   "monthly": [
+    50.0,
+    54.44,
+    54.44,
+    54.44,
+    54.44,
+    54.44,
+    54.44
    ],
-   "projected": [
-    224.23,
-    74.74,
-    37.37,
-    0.0,
-    0.0,
-    0.0
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 376.64,
+   "lastActive": "Jul 2026"
   },
   {
-   "name": "Paddle",
-   "classification": "Non-COGS",
-   "department": "Finance",
+   "name": "Perplexity AI",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Tech Operations and AI Enablement",
+   "journaled": false,
+   "flag": false,
+   "monthly": [
+    239.0,
+    21.25,
+    21.25,
+    21.25,
+    21.25,
+    21.25,
+    21.25
+   ],
+   "total": 366.5,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "DocuSign",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "People Operations",
    "journaled": true,
-   "category": null,
-   "spend": [
-    27.22,
-    27.22,
-    27.22,
-    27.22,
-    27.22,
-    27.22
-   ],
-   "projected": [
-    27.22,
-    27.22,
-    27.22,
-    27.22,
-    27.22,
-    27.22
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Dmarcian",
-   "classification": "Non-COGS",
-   "department": "Engineering",
-   "journaled": false,
-   "category": null,
-   "spend": [
-    24.0,
-    24.0,
-    24.0,
-    24.0,
-    24.0,
-    24.0
-   ],
-   "projected": [
-    24.0,
-    24.0,
-    24.0,
-    24.0,
-    24.0,
-    24.0
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
-  },
-  {
-   "name": "Resume IO",
-   "classification": "Non-COGS",
-   "department": "Operations",
-   "journaled": false,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
     0.0,
-    32.9,
-    101.59,
+    0.0,
+    0.0,
+    326.63,
     0.0,
     0.0,
     0.0
    ],
-   "projected": [
+   "total": 326.63,
+   "lastActive": "Apr 2026"
+  },
+  {
+   "name": "LambdaTest",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "GL-account default (FLAGGED)",
+   "dept": "Unassigned",
+   "journaled": false,
+   "flag": true,
+   "monthly": [
     0.0,
-    21.93,
-    61.76,
-    39.35,
-    16.93,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    326.63
+   ],
+   "total": 326.63,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Unidentified Wire (55000)",
+   "cogs": "COGS",
+   "oldCogs": "COGS",
+   "changed": false,
+   "source": "GL-account default (FLAGGED)",
+   "dept": "Unassigned",
+   "journaled": true,
+   "flag": true,
+   "monthly": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    311.36
+   ],
+   "total": 311.36,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Dropbox",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "GL-account default (FLAGGED)",
+   "dept": "Operations",
+   "journaled": false,
+   "flag": true,
+   "monthly": [
+    41.76,
+    43.53,
+    43.53,
+    43.53,
+    43.53,
+    43.52,
+    43.53
+   ],
+   "total": 302.93,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Vercel",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Engineering",
+   "journaled": false,
+   "flag": false,
+   "monthly": [
+    40.0,
+    40.0,
+    40.0,
+    44.8,
+    44.8,
+    44.8,
+    44.8
+   ],
+   "total": 299.2,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "PlusDocs",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
+   "journaled": false,
+   "flag": false,
+   "monthly": [
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0
+   ],
+   "total": 280.0,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Speechify",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "GL-account default (FLAGGED)",
+   "dept": "Unassigned",
+   "journaled": false,
+   "flag": true,
+   "monthly": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    239.0
+   ],
+   "total": 239.0,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "HireRight",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
+   "journaled": false,
+   "flag": false,
+   "monthly": [
+    224.23,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
     0.0
    ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 224.23,
+   "lastActive": "Jan 2026"
+  },
+  {
+   "name": "Slido",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "GL-account default (FLAGGED)",
+   "dept": "Unassigned",
+   "journaled": false,
+   "flag": true,
+   "monthly": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    211.12
+   ],
+   "total": 211.12,
+   "lastActive": "Jul 2026"
   },
   {
    "name": "Guidde",
-   "classification": "Non-COGS",
-   "department": null,
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
    "journaled": false,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
     0.0,
     0.0,
     0.0,
     0.0,
     64.24,
+    64.24,
     64.24
    ],
-   "projected": [
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    32.12,
-    53.53
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 192.72,
+   "lastActive": "Jul 2026"
   },
   {
-   "name": "Noun Project",
-   "classification": "Non-COGS",
-   "department": null,
+   "name": "Dmarcian",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Engineering",
    "journaled": false,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
+    24.0,
+    24.0,
+    24.0,
+    24.0,
+    24.0,
+    24.0,
+    24.0
+   ],
+   "total": 168.0,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "Resume IO",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "GL-account default (FLAGGED)",
+   "dept": "Operations",
+   "journaled": false,
+   "flag": true,
+   "monthly": [
+    0.0,
+    32.9,
+    101.59,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "total": 134.49,
+   "lastActive": "Mar 2026"
+  },
+  {
+   "name": "The Noun Project",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "GL-account default (FLAGGED)",
+   "dept": "Marketing",
+   "journaled": false,
+   "flag": true,
+   "monthly": [
     0.0,
     0.0,
     0.0,
     0.0,
     39.99,
-    39.99
+    39.99,
+    0.0
    ],
-   "projected": [
-    0.0,
-    0.0,
-    0.0,
-    0.0,
-    20.0,
-    33.32
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 79.98,
+   "lastActive": "Jun 2026"
   },
   {
    "name": "Track1099",
-   "classification": "Non-COGS",
-   "department": "Operations",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "GL-account default (FLAGGED)",
+   "dept": "Operations",
    "journaled": false,
-   "category": null,
-   "spend": [
+   "flag": true,
+   "monthly": [
     68.32,
     4.87,
     2.57,
     0.0,
     0.0,
+    0.0,
     0.0
    ],
-   "projected": [
-    68.32,
-    26.02,
-    14.29,
-    1.67,
-    0.43,
-    0.0
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 75.76,
+   "lastActive": "Mar 2026"
   },
   {
-   "name": "Helix Pay",
-   "classification": "Non-COGS",
-   "department": "Operations",
+   "name": "Indeed",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "GL-account default (FLAGGED)",
+   "dept": "Unassigned",
    "journaled": false,
-   "category": null,
-   "spend": [
+   "flag": true,
+   "monthly": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    67.35
+   ],
+   "total": 67.35,
+   "lastActive": "Jul 2026"
+  },
+  {
+   "name": "HelixPay",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
+   "journaled": false,
+   "flag": false,
+   "monthly": [
     27.35,
     0.0,
     0.0,
     0.0,
     30.78,
+    0.0,
     0.0
    ],
-   "projected": [
-    27.35,
-    9.12,
-    4.56,
-    0.0,
-    15.39,
-    10.26
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 58.13,
+   "lastActive": "May 2026"
   },
   {
-   "name": "Fal Features",
-   "classification": "Non-COGS",
-   "department": "Operations",
+   "name": "Fal",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Operations",
    "journaled": false,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
     0.0,
     0.0,
     50.0,
     0.0,
     0.0,
+    0.0,
     0.0
    ],
-   "projected": [
-    0.0,
-    0.0,
-    25.0,
-    16.67,
-    8.33,
-    0.0
-   ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "total": 50.0,
+   "lastActive": "Mar 2026"
   },
   {
-   "name": "Digitalocean",
-   "classification": "Non-COGS",
-   "department": null,
+   "name": "DigitalOcean",
+   "cogs": "Non-COGS",
+   "oldCogs": "Non-COGS",
+   "changed": false,
+   "source": "Review sheet",
+   "dept": "Engineering",
    "journaled": false,
-   "category": null,
-   "spend": [
+   "flag": false,
+   "monthly": [
     6.0,
     6.0,
     6.0,
     6.0,
     6.0,
-    0.0
+    0.0,
+    6.0
    ],
-   "projected": [
-    6.0,
-    6.0,
-    6.0,
-    6.0,
-    6.0,
-    3.0
+   "total": 36.0,
+   "lastActive": "Jul 2026"
+  }
+ ],
+ "dropped": [
+  "Abstract",
+  "Apprenticeships For",
+  "AskAI",
+  "Beautiful",
+  "CTFd",
+  "Calget",
+  "CircleCI",
+  "Cockatoo",
+  "Coresignal",
+  "Donut",
+  "Every",
+  "Expensify",
+  "ExpressVPN",
+  "Focus Force",
+  "Font Awesome",
+  "Gilmore Global",
+  "Gmelius",
+  "GoTo",
+  "Grammarly",
+  "Happy Scribe",
+  "Hotjar",
+  "Hoxhunt",
+  "Intego",
+  "Jobs That",
+  "Jotform",
+  "Kahoot",
+  "Lightcast",
+  "Lingo",
+  "Mailjet",
+  "Miro",
+  "Mobbin",
+  "Monday",
+  "Number Api",
+  "Productboard",
+  "RecruitCRM",
+  "Statista",
+  "Superside",
+  "Textla"
+ ],
+ "flags": [
+  {
+   "app": "Dropbox",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    96100
    ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "h1_jul": 302.93
   },
   {
-   "name": "Squarespace",
-   "classification": "Non-COGS",
-   "department": "Engineering",
-   "journaled": false,
-   "category": null,
-   "spend": [
-    0.0,
-    0.0,
-    24.0,
-    0.0,
-    0.0,
-    0.0
+   "app": "Track1099",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    96100
    ],
-   "projected": [
-    0.0,
-    0.0,
-    12.0,
-    8.0,
-    4.0,
-    0.0
+   "h1_jul": 75.76
+  },
+  {
+   "app": "Resume IO",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    96100
    ],
-   "renewalDate": null,
-   "renewalStatus": null,
-   "owner": null,
-   "annualCost": null,
-   "billingCycle": null
+   "h1_jul": 134.49
+  },
+  {
+   "app": "Salesforce - Sales Cloud Enterprise",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    81000
+   ],
+   "h1_jul": 782.0
+  },
+  {
+   "app": "Librato",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    96100
+   ],
+   "h1_jul": 956.74
+  },
+  {
+   "app": "The Noun Project",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    96100
+   ],
+   "h1_jul": 79.98
+  },
+  {
+   "app": "Cooper Square Technologies",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    96100
+   ],
+   "h1_jul": 9798.75
+  },
+  {
+   "app": "Indeed",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    96100
+   ],
+   "h1_jul": 67.35
+  },
+  {
+   "app": "LambdaTest",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    96100
+   ],
+   "h1_jul": 326.63
+  },
+  {
+   "app": "Lucid",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    96100
+   ],
+   "h1_jul": 548.39
+  },
+  {
+   "app": "Slido",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    96100
+   ],
+   "h1_jul": 211.12
+  },
+  {
+   "app": "Speechify",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "Non-COGS",
+   "accounts": [
+    96100
+   ],
+   "h1_jul": 239.0
+  },
+  {
+   "app": "Unidentified Wire (55000)",
+   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
+   "defaulted": "COGS",
+   "accounts": [
+    55000
+   ],
+   "h1_jul": 311.36
   }
  ]
 }
