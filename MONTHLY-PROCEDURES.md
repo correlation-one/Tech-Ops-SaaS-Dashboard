@@ -1,122 +1,43 @@
-# Tech Ops SaaS Dashboard — Monthly Update Runbook
+# Monthly build runbook — Tech Ops SaaS Dashboard (v3 · Aug 2026)
 
-_Last updated: 2026-05-29_
+## What changed in v3
+- **Classification source of truth:** the *SaaS COGS / Non-COGS Classification Review – 2026 YTD* Google Sheet, **Final Classification** column. Never GL account coding, never the finance sheet, never the old classification tab. Apps missing from the review sheet ship with a GL-account default **and a visible flag** until a row is added.
+- Full history (Jan 2026 onward) was rebuilt on this classification in Aug 2026, verified against the GL to the cent.
+- Active app list is pruned by the **10-month rule**: no spend in the trailing 10 months → removed from the list (recomputed every build; see `dropped` in data.json).
+- Pipeline: `build.py` runs `parse_gl.py → classify.py → assemble.py`, then a **regression gate** that freezes history.
 
-This is the checklist for refreshing the dashboard each month. The dashboard lives at
-**https://correlation-one.github.io/Tech-Ops-SaaS-Dashboard/** (repo `correlation-one/Tech-Ops-SaaS-Dashboard`).
-It is a static site: one `index.html` (layout + charts) and one `data.json` (all the numbers). Updating = regenerating `data.json` and pushing.
+## Monthly steps
+1. **Get the data.** Export finance's "Software Spend" workbook as xlsx (Drive `download_file_content` with `exportMimeType: xlsx`) and save to `inputs/software_spend.xlsx`. Never use the markdown/`read_file_content` path — it backslash-escapes negatives, misaligns blank cells, and truncates large tabs silently.
+2. **Register the new month.**
+   - `parse_gl.py`: add the tab to `TABS`, e.g. `'Aug 26 Spend': ('2026','Aug')` (copy the tab name exactly — casing drifts).
+   - `classify.py` and `assemble.py`: append the month key to `MONTHS`.
+3. **Run** `python3 build.py`.
+4. **Unresolved vendors?** The build prints them and refuses to pass silently. Add `["REGEX","App Name"]` pairs to `naming-map.json` — first match wins, so specific patterns go before generic ones. Re-run.
+5. **New flags?** Those apps aren't in the review sheet. Get a Final Classification row added, then mirror it in `REVIEW` (classify.py) and `REVIEW_DEPT` (assemble.py). Until then they ship flagged with the account default (53000/55000 → COGS, else Non-COGS).
+6. **Regression gate must pass.** History is frozen to the cent in `EXPECTED` (build.py). If a past month moves, finance restated the GL — investigate, document in data.json notes, then update `EXPECTED` deliberately. Never paper over it.
+7. **Smoke-check locally:** `python3 -m http.server` and open index.html (data.json loads via fetch, so file:// won't work). Check KPIs, month tabs, movers, table, flags panel.
+8. **Ship:** commit and push from the local clone (SSH from the sandbox is blocked). GitHub Pages caches data.json — hard refresh to verify.
 
----
+## Dashboard design & data.json schema
+The dashboard is the ORIGINAL leadership design (renewal calendar/radar, Outliers & Anomalies, Actual vs Projected, movers, drill-down modal). `index.html` is month-dynamic and is never regenerated; only `data.json` changes each build. Notes and open items live in `review_flags.json` and the deploy doc, never on the page.
+`data.json` app fields (legacy schema, keep exactly): name, classification ("COGS"|"Non-COGS"), department, journaled, category, spend[], projected[] (avg of last <=3 non-zero prior months), renewalDate, renewalStatus, owner, annualCost, billingCycle. Renewal fields carry over from `inputs/legacy_data.json` (currently null) until renewals are re-synced from Notion.
 
-## 1. Data sources (where every number comes from)
+## Parsing rules (encoded in parse_gl.py — for reference)
+- Parse **by header names**, never fixed column indexes; the schema drifts monthly.
+- Account = **last 5-digit group** of the account path. Prefer `Full name` / `Account full name`; never `Item split account` (that's the payment source).
+- Include accounts **53000, 55000, 81000, 96100**. Always exclude **81500** (hotels/flights/events) and WONDER (food delivery).
+- Journal rows with blank accounts are included when the vendor resolves to a known app.
+- **Slack routing:** any resolved Slack row under $5K → *Salesforce - Slack Internal* (the memo is often just "Slack" for the internal plan).
+- The row-1 checksum cell covers the **card/AP portion only**; month-end journals add on top.
+- Credits are real negatives in xlsx exports — keep them.
 
-| What | Source | Notes |
-|---|---|---|
-| Per-app spend, **Jan–Mar** | "App spend totals" tab in the **2026 SaaS Spend** Google Sheet (`fileId 1Cr6AhulaGHzkNYSnjNTj3nYSQiwKeLvOgWpUkFVT6zM`) | The Tableau row is a **duplicate** of "Salesforce - Tableau Cloud Creator" — exclude it. |
-| Classification (COGS / Non-COGS), **Department**, Journaled flags | "SaaS Apps Classifcation" tab in the same sheet (note the misspelling) | **Source of truth** for classification + department. |
-| Headline monthly totals (KPIs) | "Dashboard" tab of the same sheet | Used for Total / COGS / Non-COGS headline figures. |
-| Per-app spend, **April onward** | Uploaded `Software_Spend.xlsx`, tab "Apr 26 Spend" | New month = new tab (e.g. "May 26 Spend"). 7 columns: Date, Transaction Type, Num, Name, Memo/Description, Account, Amount. |
-| Renewal calendar (dates, status, owner, annual cost, category, billing cycle) | **Notion** "SaaS Apps" database (`collection://c08d6bf9-fc36-4a55-95ca-cbccf4062c6b`) | Manual snapshot — pulled on request, does not auto-refresh. |
+## Classification rules
+- Review sheet Final Classification, full stop. This **supersedes the Jun-2026 ruling** — Airtable, Twilio, Pumble (Cake), and Mailgun are **COGS**.
+- The Salesforce GL family stays split into five canonical apps: Slack Enterprise (COGS), Slack Internal (Non-COGS), Certification Exams (COGS), Tableau Cloud (Non-COGS), Sales Cloud Enterprise (flagged).
+- CompTIA and Pearson VUE (Exam Vouchers) are now **separate apps**; LinkedIn and LinkedIn Sales Navigator likewise.
 
----
-
-## 2. Monthly steps
-
-1. **Get the new month's GL** as a tab in `Software_Spend.xlsx` (same 7-column format).
-2. **Map every GL line to an app name** using `naming-map.json`:
-   - `vendor_aliases` rolls raw GL descriptors up to an app (e.g. all `COMPTIA` / `PEARSON VUE` / `VUE*COMPTIA` lines → `Comptia`). **Order matters: most specific first.**
-   - `non_saas_exclude` drops non-SaaS rows (food delivery, reimbursements, etc.).
-   - `name_map` applies final display renames (e.g. `Salesforce Inc` → `Salesforce - Other`).
-   - **Confirm the new-month total matches the GL grand total** (minus excluded non-SaaS) before trusting it.
-   - **Salesforce consolidation (do every month):** Salesforce must collapse to exactly **four** entries, kept classification-accurate:
-     - `Salesforce - Slack Enterprise` (COGS) — keep separate
-     - `Salesforce - Slack Internal` (Non-COGS) — keep separate
-     - `Salesforce - Other` (COGS) — fold in every **COGS** Salesforce SKU (generic Salesforce Inc, Exams, etc.)
-     - `Salesforce - Other (Non-COGS)` — fold in every **Non-COGS** Salesforce SKU (Tableau Cloud Creator, Sales Cloud Enterprise, etc.)
-     - If a **new** Salesforce SKU appears: look up its COGS/Non-COGS in the Classification tab, then fold it into the matching "Other" bucket. Never merge across classifications (that would throw off the COGS/Non-COGS split).
-3. **Reconcile classification + department** against the "SaaS Apps Classifcation" tab.
-4. **Run the new-app + journaling review** (Section 3) — flag anything ambiguous.
-5. **Refresh renewals from Notion** if dates have changed.
-6. Regenerate `data.json`, validate, screenshot-check, and push `index.html` + `data.json`.
-7. **Hard-refresh** the live page (Cmd/Ctrl+Shift+R) — GitHub Pages caches aggressively.
-
----
-
-## 3. Manual review rules (the part finance does NOT do automatically)
-
-### 3a. Journaling — finance only journals payments **above $5,000**
-So some real subscriptions/COGS are **not** journaled simply because each payment was under $5k.
-Example: **Hook Security** is not journaled because its payments are below the threshold.
-
-**Heuristic to catch these:** any app with **one big spend and little/nothing the other months** needs a manual check —
-is it a **one-time payment** or a **subscription** (annual/lump or just a small recurring one that fell under $5k)?
-
-The build script auto-flags apps matching any of:
-- only **1 month** of spend in the year (one-time vs new subscription?),
-- **one month much larger** than the rest (>3× the next — possible annual/lump),
-- a **single payment ≥ $5k that is NOT journaled** (verify it should be),
-- spend that **stopped before the latest month** (cancelled, or annual that already billed?).
-
-For each flagged app: decide **one-time vs recurring**, and **whether it should be journaled**. I can either
-(a) flag the list for you to confirm, or (b) make a judgment call and note it — your call per item.
-
-### 3b. New apps that appear need two classifications
-Whenever a vendor shows up that wasn't there before, it needs:
-- **COGS vs Non-COGS**, and
-- **Department**.
-
-If either is **ambiguous**, flag it for review rather than guessing. If it's clearly the same family as an
-existing app (e.g. another Salesforce SKU), apply the obvious answer and note it.
-
----
-
-## 4. Current open review items (as of 2026-05-29)
-
-These are flagged by the heuristic above and need a one-time/subscription + journaling decision.
-See `review_flags.json` for the full machine-readable list. Highest-value first:
-
-**Large & not journaled (most likely SHOULD be journaled — verify the $5k rule):**
-- **Comptia** — COGS, ~$20–24k/mo every month, not journaled. Clearly recurring COGS; likely a journaling gap.
-- **Salesforce - Slack Enterprise** — COGS, ~$22–24k/mo, not journaled. Same — likely a journaling gap.
-- **Codio** — COGS, ramping $3.9k→$14.9k, not journaled. Recurring; verify journaling.
-- **Claude** — Non-COGS, ramping to $5.3k in Apr, not journaled. Recurring (monthly billing); verify.
-
-**Single-month / stopped — one-time vs subscription?**
-- Hireflix ($3.6k Jan only), Apprenticeships For ($1.9k Feb only), Typeform ($1,622 Jan only),
-  Docusign ($327 Apr only), Hireright Llc ($224 Jan only), Helix Pay ($27 Jan only), Squarespace ($24 Mar only).
-- Stopped before April: Apprentiscope, Cake, Hook Security, Tremendous, Quickbooks Payments, Resume IO,
-  Salesforce - Slack Internal, Paypal, Squadcast, Hex, Fal Features.
-
-**Possible annual/lump (one big month):**
-- Zapier, Apprenti Apprentiscope, Figma, Loom, Aws, Perplexity.
-
-> Note: Several of the "stopped before April" items may simply be **annual** (already billed for the year) or
-> **cancelled**. The dashboard's Outliers & Anomalies panel surfaces these live each month too.
-
----
-
-## 5. Files in this project
-
-| File | Purpose |
-|---|---|
-| `index.html` | Dashboard layout, charts, per-app drill-down. Rarely changes month to month. |
-| `data.json` | All numbers. **This is what you regenerate monthly.** |
-| `naming-map.json` | Finance/vendor name → dashboard name. **Add new renames + vendor roll-ups here.** |
-| `MONTHLY-PROCEDURES.md` | This file. |
-| `review_flags.json` | Auto-generated list of apps needing a journaling / one-time decision. |
-
----
-
-## 6. data.json schema (for reference)
-
-```
-meta        { lastUpdated, currency, sources }
-months      ["2026-01", ...]            ISO month keys
-monthLabels ["Jan", ...]
-monthly     [ { total, cogs, nonCogs }, ... ]   one per month (headline KPIs)
-apps        [ {
-                name, classification ("COGS"|"Non-COGS"), department, journaled (bool),
-                category, spend[per month], projected[per month],
-                renewalDate, renewalStatus, owner, annualCost, billingCycle
-            }, ... ]
-```
+## Known history notes
+- **Apr 2026 restated by finance after 21 Jul 2026:** the ~$22,812.62 April GCP (Sada) line was removed; no Sada invoice exists between INV317177 (Mar) and INV323897 (May). April total is 145,267.49 (previously published 168,080.11). Open with ben@.
+- **prepaid04.26** (Codio, $14,893.37): still booked with no invoice and no reversing entry — open with ben@.
+- **Codio Jun $35,976.27 is correct** (invoice-date shift caught two cycles: INV-1728 bills May, INV-1767 bills June). Do not reverse.
+- The **"App spend totals" tab** in the 2026 SaaS Spend sheet is a stale copy of the pre-rebuild dashboard. Never reconcile against it — the GL is the only spend truth.

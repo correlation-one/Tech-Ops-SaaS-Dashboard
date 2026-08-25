@@ -43,3 +43,7 @@ YTD Jan–Jul: **$1,087,680.69**. Verification: Jan/Feb/Mar/May reproduce the pr
 
 ## After deploy
 Step two: update the "2026 SaaS Spend" classification tab to match the review sheet (separate session, per plan).
+
+
+## v2 (same day) — original design restored
+Per Ahmad: the Aug redesign is replaced by the ORIGINAL dashboard design (renewal calendar/radar, Outliers & Anomalies, Actual vs Projected, movers, per-app drill-down). The notes & open items panel is gone from the page — open items live in `review_flags.json` and this doc. `data.json` is emitted in the original schema with the same verified reclassified numbers (regression gate unchanged). Footer source line updated to name the Classification Review sheet. Re-upload `index.html` and `data.json` (or everything) exactly as before, then hard-refresh.
