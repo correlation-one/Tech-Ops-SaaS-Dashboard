@@ -50,3 +50,6 @@ Per Ahmad: the Aug redesign is replaced by the ORIGINAL dashboard design (renewa
 
 ## v3 — movers window toggle · Profound merge · Notion renewals
 Per Joe (via Ahmad): the Biggest Increases/Decreases panels now have a 1M / 3M / 6M comparison-window toggle (slow growers like Claude surface on the 6M view: +$5.6K Jan→Jul, #2 increase). Cooper Square Technologies is merged into Profound (billing entity) — 97 active apps, monthly totals and COGS splits unchanged. The renewal calendar and radar are now fed from the Notion SaaS Renewals Hub (30 apps with dates; 8 renewals in the current radar/calendar window, incl. Outreach and Tableau marked "Cancel?"). Re-upload `index.html` and `data.json` (plus pipeline files ideally), hard-refresh.
+
+## v4 — movers base filter · renewal wording
+Movers (all windows): apps with zero spend in the comparison month no longer appear as "increases" — a 0-to-X jump is a new or resumed app, not growth; those still surface in Outliers & Anomalies as NEW. Renewals: past dates on file no longer render "Expired" (Codio et al. renewed — the hub date is just stale); the table pill now shows a muted "needs update" pointing at the SaaS Renewals Hub, the 90-day radar lists upcoming dates only, and the calendar legend reads "Date passed". Re-upload index.html (data.json unchanged), hard-refresh.

@@ -35,7 +35,7 @@ The renewal calendar and radar read renewalDate/renewalStatus/owner/annualCost/b
 - Credits are real negatives in xlsx exports — keep them.
 
 ## Dashboard features added Aug 2026
-The MoM movers panels have a comparison-window toggle (1M / 3M / 6M, requested by Joe) — deltas compare the selected month against the month N back, clamped to available history, with the comparison month named in the panel header. Cooper Square Technologies is Profound's billing entity and merges into Profound in `naming-map.json`.
+The MoM movers panels have a comparison-window toggle (1M / 3M / 6M, requested by Joe) — deltas compare the selected month against the month N back, clamped to available history, with the comparison month named in the panel header. Movers require spend in the comparison month (zero-base apps are "new", not "increases" — they appear in Outliers & Anomalies as NEW). Past renewal dates never render as "Expired": they show a muted "needs update" pill and are excluded from the 90-day radar, since a past date on an active app means the hub needs refreshing. Cooper Square Technologies is Profound's billing entity and merges into Profound in `naming-map.json`.
 
 ## Classification rules
 - Review sheet Final Classification, full stop. This **supersedes the Jun-2026 ruling** — Airtable, Twilio, Pumble (Cake), and Mailgun are **COGS**.
