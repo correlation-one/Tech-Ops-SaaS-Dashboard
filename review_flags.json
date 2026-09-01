@@ -1,5 +1,100 @@
 {
- "generated": "2026-08-25",
+ "generated": "2026-08-31",
+ "notion_renewal_sync": {
+  "matched": 40,
+  "active_apps_missing_from_notion": [
+   "Adobe",
+   "Airtable",
+   "Amazon Web Services",
+   "Apollo",
+   "ApprentiScope",
+   "Artillery",
+   "Artisan",
+   "CoderPad",
+   "CompTIA",
+   "Culture Amp",
+   "DNSimple",
+   "DeepSource",
+   "DigitalOcean",
+   "Dmarcian",
+   "DocuSign",
+   "Dropbox",
+   "Fal",
+   "Gamma",
+   "Geocode",
+   "GitHub",
+   "GoDaddy",
+   "Google Cloud Platform",
+   "HelixPay",
+   "Hex",
+   "HireRight",
+   "Hireflix",
+   "Indeed",
+   "LambdaTest",
+   "LaunchDarkly",
+   "Librato",
+   "LinkedIn Sales Navigator",
+   "Lovable",
+   "Mailchimp",
+   "Mailgun",
+   "Microsoft",
+   "Paddle",
+   "Pearson VUE (Exam Vouchers)",
+   "Perplexity AI",
+   "PlusDocs",
+   "Profound",
+   "Pumble",
+   "QuickBooks",
+   "Refiner",
+   "Resume IO",
+   "Slido",
+   "Speechify",
+   "Squarespace",
+   "Stape",
+   "Tango",
+   "The Noun Project",
+   "Track1099",
+   "Tremendous",
+   "Twilio",
+   "Unidentified Wire (55000)",
+   "Vercel",
+   "Workforce",
+   "Zoom"
+  ],
+  "notion_rows_not_on_dashboard": [
+   "Billigence",
+   "Canva",
+   "Expensify",
+   "Grammarly",
+   "Hotjar",
+   "Intego",
+   "Mentimeter",
+   "Miro",
+   "Otter",
+   "Semrush",
+   "Suptask",
+   "Vimeo"
+  ],
+  "stale_renewal_dates": [
+   "Accredible: 2026-05-14 (\u26a0\ufe0f Review)",
+   "Calendly: 2026-01-05 (\u2705 Active)",
+   "Carta: 2026-06-30 (\u2705 Active)",
+   "Codio: 2026-03-14 (\u2705 Active)",
+   "Google Workspace: 2025-02-09 (\u2705 Active)",
+   "Greenhouse: 2026-05-18 (\u26a0\ufe0f Review)",
+   "HubSpot: 2026-05-17 (\u26a0\ufe0f Review)",
+   "LinkedIn: 2026-01-02 (\u2705 Active)",
+   "Maxio (formerly SaaSOptics): 2025-02-21 (\u2705 Active)",
+   "Notion: 2026-06-22 (\u2705 Active)",
+   "PayPal: 2026-03-31 (\u2705 Active)",
+   "Salesforce - Sales Cloud Enterprise: 2026-01-23 (\u2705 Active)",
+   "Salesforce - Slack Enterprise: 2026-05-01 (\u2705 Active)",
+   "Salesforce - Slack Internal: 2026-01-31 (\u2705 Active)",
+   "Sentry: 2026-06-27 (None)",
+   "SurveyMonkey: 2026-06-18 (\u2705 Active)",
+   "ZoomInfo: 2026-01-02 (\u274c Cancel?)"
+  ]
+ },
  "classification_flags": [
   {
    "app": "Dropbox",
@@ -54,15 +149,6 @@
     96100
    ],
    "h1_jul": 79.98
-  },
-  {
-   "app": "Cooper Square Technologies",
-   "issue": "NOT IN REVIEW SHEET - classification defaulted from GL account",
-   "defaulted": "Non-COGS",
-   "accounts": [
-    96100
-   ],
-   "h1_jul": 9798.75
   },
   {
    "app": "Indeed",
@@ -128,6 +214,7 @@
   "Calget",
   "CircleCI",
   "Cockatoo",
+  "Cooper Square Technologies",
   "Coresignal",
   "Donut",
   "Every",
@@ -166,6 +253,6 @@
   "PRO SAN FRANCISCO CA $21.25 (Jul) mapped to Perplexity AI by amount pattern - confirm",
   "Indeed $67.35 (Jul, 96100) treated as an app - confirm SaaS vs recruiting spend",
   "Slido $211.12 (Jul) - new app, needs owner/department",
-  "Cooper Square Technologies - needs a review-sheet row (defaulted Non-COGS)"
+  "12 apps still need review-sheet rows (all account-defaulted; largest is Librato, $957 Jan-Jul)"
  ]
 }

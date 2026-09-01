@@ -47,3 +47,6 @@ Step two: update the "2026 SaaS Spend" classification tab to match the review sh
 
 ## v2 (same day) — original design restored
 Per Ahmad: the Aug redesign is replaced by the ORIGINAL dashboard design (renewal calendar/radar, Outliers & Anomalies, Actual vs Projected, movers, per-app drill-down). The notes & open items panel is gone from the page — open items live in `review_flags.json` and this doc. `data.json` is emitted in the original schema with the same verified reclassified numbers (regression gate unchanged). Footer source line updated to name the Classification Review sheet. Re-upload `index.html` and `data.json` (or everything) exactly as before, then hard-refresh.
+
+## v3 — movers window toggle · Profound merge · Notion renewals
+Per Joe (via Ahmad): the Biggest Increases/Decreases panels now have a 1M / 3M / 6M comparison-window toggle (slow growers like Claude surface on the 6M view: +$5.6K Jan→Jul, #2 increase). Cooper Square Technologies is merged into Profound (billing entity) — 97 active apps, monthly totals and COGS splits unchanged. The renewal calendar and radar are now fed from the Notion SaaS Renewals Hub (30 apps with dates; 8 renewals in the current radar/calendar window, incl. Outreach and Tableau marked "Cancel?"). Re-upload `index.html` and `data.json` (plus pipeline files ideally), hard-refresh.

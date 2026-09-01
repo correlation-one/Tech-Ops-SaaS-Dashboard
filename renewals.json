@@ -1,0 +1,470 @@
+{
+ "1Password": {
+  "renewalDate": "2027-05-29",
+  "renewalStatus": "\ud83d\udd34 Renewing Soon",
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Security"
+ },
+ "Accredible": {
+  "renewalDate": "2026-05-14",
+  "renewalStatus": "\u26a0\ufe0f Review",
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Learning & Certification"
+ },
+ "Claude": {
+  "renewalDate": null,
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": 9169.59,
+  "billingCycle": "Monthly",
+  "autoRenew": true,
+  "category": "AI & Automation"
+ },
+ "Atlassian": {
+  "renewalDate": null,
+  "renewalStatus": "\u2705 Active",
+  "owner": "Jose Gunasingh",
+  "annualCost": 9511.77,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Dev & Engineering"
+ },
+ "BambooHR": {
+  "renewalDate": "2026-10-04",
+  "renewalStatus": "\u2705 Active",
+  "owner": "Janna Millette",
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "HR & Recruiting"
+ },
+ "Billigence": {
+  "renewalDate": "2025-10-24",
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Finance & Admin"
+ },
+ "Calendly": {
+  "renewalDate": "2026-01-05",
+  "renewalStatus": "\u2705 Active",
+  "owner": "Trevor Cook",
+  "annualCost": 179.63,
+  "billingCycle": null,
+  "autoRenew": true,
+  "category": "Productivity & Comms"
+ },
+ "Canva": {
+  "renewalDate": null,
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": 705.03,
+  "billingCycle": "Monthly",
+  "autoRenew": true,
+  "category": "Design & Content"
+ },
+ "Carta": {
+  "renewalDate": "2026-06-30",
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Finance & Admin"
+ },
+ "Codio": {
+  "renewalDate": "2026-03-14",
+  "renewalStatus": "\u2705 Active",
+  "owner": "Matt Hoffberg",
+  "annualCost": 157351.16,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Learning & Certification"
+ },
+ "Cursor": {
+  "renewalDate": null,
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": 7839.03,
+  "billingCycle": "Monthly",
+  "autoRenew": true,
+  "category": "Dev & Engineering"
+ },
+ "Expensify": {
+  "renewalDate": null,
+  "renewalStatus": "\u2705 Active",
+  "owner": "Janna Millette",
+  "annualCost": 470.34,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Finance & Admin"
+ },
+ "Figma": {
+  "renewalDate": null,
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": 1635.95,
+  "billingCycle": "Monthly",
+  "autoRenew": true,
+  "category": "Design & Content"
+ },
+ "Google Workspace": {
+  "renewalDate": "2025-02-09",
+  "renewalStatus": "\u2705 Active",
+  "owner": "Joe Novak",
+  "annualCost": 95833.54,
+  "billingCycle": "Monthly",
+  "autoRenew": true,
+  "category": "Productivity & Comms"
+ },
+ "Grammarly": {
+  "renewalDate": null,
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": 375,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Productivity & Comms"
+ },
+ "Greenhouse": {
+  "renewalDate": "2026-05-18",
+  "renewalStatus": "\u26a0\ufe0f Review",
+  "owner": "Janna Millette",
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "HR & Recruiting"
+ },
+ "Guidde": {
+  "renewalDate": null,
+  "renewalStatus": null,
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": "Monthly",
+  "autoRenew": false,
+  "category": null
+ },
+ "Hook Security": {
+  "renewalDate": "2027-03-25",
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Security"
+ },
+ "Hotjar": {
+  "renewalDate": null,
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": 107.79,
+  "billingCycle": "Monthly",
+  "autoRenew": true,
+  "category": "Marketing"
+ },
+ "HubSpot": {
+  "renewalDate": "2026-05-17",
+  "renewalStatus": "\u26a0\ufe0f Review",
+  "owner": "Laurence Chalude",
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Sales & CRM"
+ },
+ "Intego": {
+  "renewalDate": "2026-12-01",
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": null
+ },
+ "Linear": {
+  "renewalDate": null,
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": "Monthly",
+  "autoRenew": true,
+  "category": "Infrastructure & Cloud"
+ },
+ "LinkedIn": {
+  "renewalDate": "2026-01-02",
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "HR & Recruiting"
+ },
+ "Loom": {
+  "renewalDate": "2027-04-17",
+  "renewalStatus": "\u2705 Active",
+  "owner": "Matt Hoffberg",
+  "annualCost": 987.7,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Productivity & Comms"
+ },
+ "Lucid": {
+  "renewalDate": "2026-07-20",
+  "renewalStatus": "\u2705 Active",
+  "owner": "Jose Gunasingh",
+  "annualCost": 2742.01,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Design & Content"
+ },
+ "Mentimeter": {
+  "renewalDate": null,
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": 179.88,
+  "billingCycle": "Monthly",
+  "autoRenew": false,
+  "category": "Productivity & Comms"
+ },
+ "MindHub": {
+  "renewalDate": "2026-07-31",
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Learning & Certification"
+ },
+ "Miro": {
+  "renewalDate": "2026-04-13",
+  "renewalStatus": "\u2705 Active",
+  "owner": "Jose Gunasingh",
+  "annualCost": 3266.25,
+  "billingCycle": null,
+  "autoRenew": true,
+  "category": "Design & Content"
+ },
+ "Notion": {
+  "renewalDate": "2026-06-22",
+  "renewalStatus": "\u2705 Active",
+  "owner": "Joe Novak",
+  "annualCost": 285.62,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Productivity & Comms"
+ },
+ "Okta": {
+  "renewalDate": "2026-09-18",
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Security"
+ },
+ "ChatGPT": {
+  "renewalDate": null,
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": 11650.5,
+  "billingCycle": "Monthly",
+  "autoRenew": true,
+  "category": "AI & Automation"
+ },
+ "Otter": {
+  "renewalDate": "2026-09-01",
+  "renewalStatus": "\u2705 Active",
+  "owner": "John Nelson",
+  "annualCost": 4714.82,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Productivity & Comms"
+ },
+ "Outreach": {
+  "renewalDate": "2026-09-15",
+  "renewalStatus": "\u274c Cancel?",
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Sales & CRM"
+ },
+ "PayPal": {
+  "renewalDate": "2026-03-31",
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Finance & Admin"
+ },
+ "Maxio (formerly SaaSOptics)": {
+  "renewalDate": "2025-02-21",
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Finance & Admin"
+ },
+ "Salesforce - Sales Cloud Enterprise": {
+  "renewalDate": "2026-01-23",
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Sales & CRM"
+ },
+ "Salesforce - Slack Enterprise": {
+  "renewalDate": "2026-05-01",
+  "renewalStatus": "\u2705 Active",
+  "owner": "Joe Novak",
+  "annualCost": 42131.22,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Sales & CRM"
+ },
+ "Salesforce - Slack Internal": {
+  "renewalDate": "2026-01-31",
+  "renewalStatus": "\u2705 Active",
+  "owner": "Joe Novak",
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Sales & CRM"
+ },
+ "Salesforce - Certification Exams": {
+  "renewalDate": null,
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Sales & CRM"
+ },
+ "Semrush": {
+  "renewalDate": null,
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": 179.6,
+  "billingCycle": "Monthly",
+  "autoRenew": true,
+  "category": "Marketing"
+ },
+ "Sentry": {
+  "renewalDate": "2026-06-27",
+  "renewalStatus": null,
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": "Monthly",
+  "autoRenew": true,
+  "category": null
+ },
+ "Squadcast": {
+  "renewalDate": null,
+  "renewalStatus": "\u2705 Active",
+  "owner": "Joe",
+  "annualCost": 4647.83,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Dev & Engineering"
+ },
+ "Suptask": {
+  "renewalDate": "2026-06-10",
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": "Annual",
+  "autoRenew": true,
+  "category": null
+ },
+ "SurveyMonkey": {
+  "renewalDate": "2026-06-18",
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": true,
+  "category": null
+ },
+ "Salesforce - Tableau Cloud": {
+  "renewalDate": "2026-09-22",
+  "renewalStatus": "\u274c Cancel?",
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Sales & CRM"
+ },
+ "Typeform": {
+  "renewalDate": "2027-01-17",
+  "renewalStatus": "\u2705 Active",
+  "owner": "Trevor Cook",
+  "annualCost": 1622.24,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Marketing"
+ },
+ "Vimeo": {
+  "renewalDate": "2026-08-05",
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Design & Content"
+ },
+ "Worksuite": {
+  "renewalDate": null,
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "HR & Recruiting"
+ },
+ "Yesware": {
+  "renewalDate": "2026-10-04",
+  "renewalStatus": "\u2705 Active",
+  "owner": "Trevor Cook",
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": true,
+  "category": "Sales & CRM"
+ },
+ "Zapier": {
+  "renewalDate": "2027-02-28",
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "AI & Automation"
+ },
+ "Zendesk": {
+  "renewalDate": "2026-10-09",
+  "renewalStatus": "\u2705 Active",
+  "owner": null,
+  "annualCost": 2096.54,
+  "billingCycle": null,
+  "autoRenew": false,
+  "category": "Customer Success"
+ },
+ "ZoomInfo": {
+  "renewalDate": "2026-01-02",
+  "renewalStatus": "\u274c Cancel?",
+  "owner": null,
+  "annualCost": null,
+  "billingCycle": null,
+  "autoRenew": true,
+  "category": "Sales & CRM"
+ }
+}

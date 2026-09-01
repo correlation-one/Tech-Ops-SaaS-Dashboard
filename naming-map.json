@@ -91,7 +91,7 @@
     ],
     [
       "COOPER SQUARE",
-      "Cooper Square Technologies"
+      "Profound"
     ],
     [
       "TREMENDOUS",
@@ -643,6 +643,7 @@
   ],
   "classification_source": "SaaS COGS / Non-COGS Classification Review - 2026 YTD (sheet 19nMiuOAaV57aPE6dIm1Vj1sZqLHaJt-PazNjXk_EdYA), Final Classification column. Sole source of truth as of Aug 2026. Apps absent from that sheet fall back to GL-account default (53000/55000 -> COGS, else Non-COGS) and are FLAGGED for addition to the review sheet.",
   "superseded_rules": {
-    "jun2026_forced_noncogs": "The June 2026 ruling (Airtable, Twilio, Cake, Mailgun -> Non-COGS per GL 96100) is SUPERSEDED by the Aug 2026 review sheet, which classifies all four as COGS under the usage-based rule."
+    "jun2026_forced_noncogs": "The June 2026 ruling (Airtable, Twilio, Cake, Mailgun -> Non-COGS per GL 96100) is SUPERSEDED by the Aug 2026 review sheet, which classifies all four as COGS under the usage-based rule.",
+    "cooper_square": "Cooper Square Technologies is Profound\u2019s legal/billing entity; rows merge into Profound (Aug 2026, per Ahmad)."
   }
 }

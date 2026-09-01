@@ -22,6 +22,9 @@
 The dashboard is the ORIGINAL leadership design (renewal calendar/radar, Outliers & Anomalies, Actual vs Projected, movers, drill-down modal). `index.html` is month-dynamic and is never regenerated; only `data.json` changes each build. Notes and open items live in `review_flags.json` and the deploy doc, never on the page.
 `data.json` app fields (legacy schema, keep exactly): name, classification ("COGS"|"Non-COGS"), department, journaled, category, spend[], projected[] (avg of last <=3 non-zero prior months), renewalDate, renewalStatus, owner, annualCost, billingCycle. Renewal fields carry over from `inputs/legacy_data.json` (currently null) until renewals are re-synced from Notion.
 
+## Renewal sync (Notion)
+The renewal calendar and radar read renewalDate/renewalStatus/owner/annualCost/billingCycle from `inputs/renewals.json`, pulled from the Notion "SaaS Apps" database in the SaaS Renewals Hub (data source `collection://c08d6bf9-fc36-4a55-95ca-cbccf4062c6b`, owned by Ashreeya). Refresh it whenever renewals change (Claude pulls it via the Notion connector and maps names to dashboard canon). Sync gaps — active apps missing from the hub, hub rows not on the dashboard, and stale (past) renewal dates — are reported in `review_flags.json` under `notion_renewal_sync`.
+
 ## Parsing rules (encoded in parse_gl.py — for reference)
 - Parse **by header names**, never fixed column indexes; the schema drifts monthly.
 - Account = **last 5-digit group** of the account path. Prefer `Full name` / `Account full name`; never `Item split account` (that's the payment source).
@@ -30,6 +33,9 @@ The dashboard is the ORIGINAL leadership design (renewal calendar/radar, Outlier
 - **Slack routing:** any resolved Slack row under $5K → *Salesforce - Slack Internal* (the memo is often just "Slack" for the internal plan).
 - The row-1 checksum cell covers the **card/AP portion only**; month-end journals add on top.
 - Credits are real negatives in xlsx exports — keep them.
+
+## Dashboard features added Aug 2026
+The MoM movers panels have a comparison-window toggle (1M / 3M / 6M, requested by Joe) — deltas compare the selected month against the month N back, clamped to available history, with the comparison month named in the panel header. Cooper Square Technologies is Profound's billing entity and merges into Profound in `naming-map.json`.
 
 ## Classification rules
 - Review sheet Final Classification, full stop. This **supersedes the Jun-2026 ruling** — Airtable, Twilio, Pumble (Cake), and Mailgun are **COGS**.

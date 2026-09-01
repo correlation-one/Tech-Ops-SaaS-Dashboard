@@ -12,6 +12,10 @@ try:
     LEGACY = {a['name']: a for a in json.load(open('inputs/legacy_data.json'))['apps']}
 except FileNotFoundError:
     LEGACY = {}
+try:
+    RENEW = json.load(open('inputs/renewals.json'))
+except FileNotFoundError:
+    RENEW = {}
 MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul']
 LBL25 = {'Oct25':'Oct 2025','Nov25':'Nov 2025','Dec25':'Dec 2025'}
 
@@ -187,19 +191,20 @@ flag_apps = {f['app'] for f in C['flags']}
 for a in sorted(mat, key=lambda x: -sum(mat[x].values())):
     spend = [round(mat[a][m], 2) for m in MONTHS]
     leg = leg_n.get(a, {})
+    ren = RENEW.get(a, {})
     apps.append(dict(
         name=a,
         classification=newmap[a],
         department=dept(a),
         journaled=journaled(a),
-        category=leg.get('category'),
+        category=ren.get('category') or leg.get('category'),
         spend=spend,
         projected=project(spend),
-        renewalDate=leg.get('renewalDate'),
-        renewalStatus=leg.get('renewalStatus'),
-        owner=leg.get('owner'),
-        annualCost=leg.get('annualCost'),
-        billingCycle=leg.get('billingCycle')))
+        renewalDate=ren.get('renewalDate') or leg.get('renewalDate'),
+        renewalStatus=ren.get('renewalStatus') or leg.get('renewalStatus'),
+        owner=ren.get('owner') or leg.get('owner'),
+        annualCost=ren.get('annualCost') or leg.get('annualCost'),
+        billingCycle=ren.get('billingCycle') or leg.get('billingCycle')))
 
 monthly = []
 for m in MONTHS:
@@ -224,7 +229,18 @@ data = dict(
 json.dump(data, open('data.json', 'w'), indent=1)
 print('data.json (legacy schema):', len(apps), 'apps,', len(MONTHS), 'months')
 
+_today = datetime.date.today()
+_matched = {a['name'] for a in apps if RENEW.get(a['name'])}
+_active_names = {a['name'] for a in apps}
+notion_sync = dict(
+    matched=len(_matched),
+    active_apps_missing_from_notion=sorted(_active_names - set(RENEW)),
+    notion_rows_not_on_dashboard=sorted(set(RENEW) - _active_names),
+    stale_renewal_dates=sorted([
+        f"{a['name']}: {a['renewalDate']} ({a['renewalStatus']})" for a in apps
+        if a['renewalDate'] and (datetime.date.fromisoformat(a['renewalDate']) - _today).days < -60]))
 json.dump(dict(generated=str(datetime.date.today()),
+               notion_renewal_sync=notion_sync,
                classification_flags=C['flags'],
                dropped_by_10_month_rule=C['dropped'],
                open_items=[
@@ -234,7 +250,7 @@ json.dump(dict(generated=str(datetime.date.today()),
                  'PRO SAN FRANCISCO CA $21.25 (Jul) mapped to Perplexity AI by amount pattern - confirm',
                  'Indeed $67.35 (Jul, 96100) treated as an app - confirm SaaS vs recruiting spend',
                  'Slido $211.12 (Jul) - new app, needs owner/department',
-                 'Cooper Square Technologies - needs a review-sheet row (defaulted Non-COGS)']),
+                 '12 apps still need review-sheet rows (all account-defaulted; largest is Librato, $957 Jan-Jul)']),
           open('review_flags.json', 'w'), indent=1)
 
 bym = defaultdict(list)
